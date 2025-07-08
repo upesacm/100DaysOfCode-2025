@@ -24,8 +24,10 @@ int main(){
     createNode(4);
     createNode(4);
     createNode(5);
+    printf("Before : ");
     Print();
     printf("\n");
+    printf("After : ");
     RemoveDups();
     Print();
 }
