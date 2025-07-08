@@ -1,37 +1,39 @@
 # Hello Everyone,
 
-We are excited to announce that the **"21 Days of Code"** event is starting from 16/06/2025 at **12 PM**! This is a fantastic opportunity to hone your coding skills and collaborate with fellow participants. Here's how it will work:
+We are thrilled to announce that the **"100 Days of Code"** event is officially starting from **06/07/2025 at 12 PM**! This is an incredible opportunity to build consistency, sharpen your problem-solving skills, and grow as a developer. Here's everything you need to know:
 
-## Event Start:-
-- Each day, three new question will be provided at the same time in the `README` of the GitHub repository.
-- The questions will be updated at **12 PM**.
+## Event Start:
+- Each day, three new questions will be provided in the `README` file of the GitHub repository.
+- The questions will be updated daily at **12 PM** sharp.
 
 ## Repository Setup:
 
-1. **Fork the Repository:** 
-   - Today, after the question is posted, everyone must fork the given GitHub repository.
-   
-2. **Create Your Folder:**
-   - Inside your forked repository, create a folder with your name.
-   
-3. **Add Your Name File:**
-   - Inside your folder, add a `[your name].md` file.
+1. **Fork the Repository:**  
+   - On the day the questions are released, fork the official GitHub repository to your own account.
 
-## Rules and Tips:
+2. **Create Your Folder:**  
+   - Inside your forked repository, create a folder named after yourself.
 
-- **Edit Only Your Files:**
-  - Please ensure you only edit your own folder and files. Do not make changes to other participants' codes and files.
+3. **Add Your Name File:**  
+   - Inside your personal folder, create a file named `[your name].md` to log your progress or reflections.
 
-- **Data Structures and Algorithms:**
-  - Use meaningful variable names to enhance code readability.
+## Rules and Guidelines:
 
-- **Commit Deadlines:**
-  - Ensure your commits for each day's question are made before **12 PM** the next day. Only commits made before this deadline will be accepted.
+- **Edit Only Your Files:**  
+  - Make sure you only work within your own folder. Do not alter any files or folders belonging to other participants.
 
-## Doubts and Queries:
-If you have any doubts regarding GitHub or the event, feel free to message in the group before the event starts.
+- **Coding Standards:**  
+  - Use clear and meaningful variable names to keep your code readable and maintainable.
 
-Looking forward to seeing your amazing contributions. Happy coding!
+- **Daily Submission Deadline:**  
+  - Submit your solutions before **12 PM** the following day. Only submissions before the deadline will be considered.
+
+## Doubts and Support:
+If you have any questions regarding GitHub operations or anything related to the event, feel free to drop a message in the group before the event begins.
+
+We can’t wait to witness your progress throughout these 100 days. Let’s stay committed and make this journey impactful!
+
+Happy Coding!
 
 Best regards,  
 **Technical Heads,**  
