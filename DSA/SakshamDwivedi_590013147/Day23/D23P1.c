@@ -19,6 +19,7 @@ int main(){
     createNode(3);
     createNode(4);
     createNode(5);
+    printf("The Linked List : ")
     Print();
     printf("\n");
     printf("Enter the kth position : ");
@@ -27,7 +28,7 @@ int main(){
         printf("Invalid Position!");
     }
     else{
-        printf("%d", Traverse(pos));
+        printf("The element at %d position is %d", pos, Traverse(pos));
     }
 }
 
