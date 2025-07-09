@@ -25,7 +25,6 @@ int main(){
     printf("Enter m : ");
     scanf("%d", &m);
     printf("Before : ");
-    printf("Before : ");
     Print();
     printf("\n");
     printf("After : ");
