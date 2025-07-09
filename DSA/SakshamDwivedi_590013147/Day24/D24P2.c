@@ -7,6 +7,7 @@ struct node {
 };
 
 int size = 0;
+int n, m;
 struct node* head = NULL;
 void createNode(int);
 void Print();
@@ -19,11 +20,16 @@ int main(){
     createNode(4);
     createNode(5);
     createNode(6);
+    printf("Enter n : ");
+    scanf("%d", &n);
+    printf("Enter m : ");
+    scanf("%d", &m);
+    printf("Before : ");
     printf("Before : ");
     Print();
     printf("\n");
     printf("After : ");
-    DeletePattern(1, 2);
+    DeletePattern(n, m);
     Print();
 }
 
