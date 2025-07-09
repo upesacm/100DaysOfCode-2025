@@ -18,7 +18,7 @@ int main(){
     createNode(3);
     createNode(4);
     createNode(5);
-    createNode(6);
+    //createNode(6);
     printf("Before : ");
     Print();
     printf("\n");
@@ -47,11 +47,10 @@ void createNode(int data){
 void Print(){
     struct node* current = head;
     while(current != NULL){
-        if(current -> next != NULL){
-        printf("%d -> ", current -> data);}
-        else{printf("%d", current -> data);}
+        printf("%d -> ", current -> data);
         current = current -> next;
     }
+    printf("NULL\n");
 
 }
 
