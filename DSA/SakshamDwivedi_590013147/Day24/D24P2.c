@@ -59,29 +59,46 @@ void Print(){
 
 }
 
-void DeletePattern(int m, int n) {
+void DeletePattern(int m, int n){
     struct node *current = head;
-    struct node *freenode = head;
-    while(current != NULL){
-        for(int i = 1; i < m; i++){
-            if(freenode != NULL){
-             current = current -> next;
+    struct node *freenode;
+    if(m==0){
+        while(head!=NULL){
+            for(int i=0; i<n; i++){
+                if(head!=NULL){
+                    freenode = head;
+                    head = head->next;
+                    free(freenode);
+                    size--;
+                }
             }
         }
-        if(current == NULL || current -> next == NULL){
+        return;
+    }
+    while(current!=NULL){
+        for(int i=1; i<m; i++){
+            if(current!=NULL){
+                current = current->next;
+            }
+        }
+        if(current==NULL){
             break;
         }
-
-        freenode = current -> next;
-        for(int i = 0; i < n; i++){
-            if(freenode != NULL){
+        if(current->next==NULL){
+            break;
+        }
+        freenode = current->next;
+        for(int i=0; i<n; i++){
+            if(freenode!=NULL){
                 struct node* del = freenode;
                 freenode = freenode->next;
                 free(del);
                 size--;
             }
         }
-        current -> next = freenode;
+        current->next = freenode;
         current = freenode;
     }
 }
+
+
