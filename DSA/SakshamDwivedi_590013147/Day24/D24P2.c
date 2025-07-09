@@ -20,15 +20,15 @@ int main(){
     createNode(4);
     createNode(5);
     createNode(6);
-    printf("Enter n : ");
-    scanf("%d", &n);
     printf("Enter m : ");
     scanf("%d", &m);
+    printf("Enter n : ");
+    scanf("%d", &n);
     printf("Before : ");
     Print();
     printf("\n");
     printf("After : ");
-    DeletePattern(n, m);
+    DeletePattern(m, n);
     Print();
 }
 
@@ -59,13 +59,13 @@ void Print(){
 
 }
 
-void DeletePattern(int n, int m) {
+void DeletePattern(int m, int n) {
     struct node *current = head;
     struct node *freenode = head;
     while(current != NULL){
         for(int i = 1; i < m; i++){
-            if(current != NULL){
-                current = current -> next;
+            if(freenode != NULL){
+             current = current -> next;
             }
         }
         if(current == NULL || current -> next == NULL){
@@ -74,14 +74,14 @@ void DeletePattern(int n, int m) {
 
         freenode = current -> next;
         for(int i = 0; i < n; i++){
-            if(freenode!=NULL){
+            if(freenode != NULL){
                 struct node* del = freenode;
                 freenode = freenode->next;
                 free(del);
                 size--;
             }
-            current -> next = freenode;
-            current = freenode;
         }
+        current -> next = freenode;
+        current = freenode;
     }
 }
