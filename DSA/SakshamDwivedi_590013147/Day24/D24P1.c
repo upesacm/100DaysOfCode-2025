@@ -18,7 +18,7 @@ int main(){
     createNode(3);
     createNode(4);
     createNode(5);
-    //createNode(6);
+    createNode(6);
     printf("Before : ");
     Print();
     printf("\n");
