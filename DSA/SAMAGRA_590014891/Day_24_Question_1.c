@@ -26,7 +26,6 @@ struct Node* appendNode(struct Node* head, int data) {
     return head;
 }
 
-// Reverse the linked list iteratively
 struct Node* reverseList(struct Node* head) {
     struct Node* prev = NULL;
     struct Node* current = head;
