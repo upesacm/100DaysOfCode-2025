@@ -1,109 +1,98 @@
-<h2 align="center">Day 24 (09/07/2025)</h2>
+<h2 align="center">Day 25 (10/07/2025)</h2>
 
-## 1. Reverse a Linked List
-A problem that introduces fundamental linked list manipulation techniques and teaches how to reverse the direction of node connections efficiently.
+## 1. Palindrome Linked List
+A problem that introduces advanced linked list analysis techniques and teaches how to check symmetry in sequential data structures efficiently.
 
-Given the **head of a linked list**, the task is to **reverse this list** and return the reversed head. This is one of the most **fundamental operations** in linked list manipulation and appears frequently in **interviews** and **real-world applications** like implementing undo functionality, reversing data streams, or processing data in reverse order. You can solve this iteratively by changing the links between nodes, or recursively by processing nodes from the end. Understanding pointer manipulation is crucial for this problem.
+Given a **head singly linked list** of positive integers, the task is to check if the given linked list is **palindrome or not**. A palindrome reads the same forwards and backwards. This problem appears frequently in **interviews** and **real-world applications** like data validation, symmetry detection in sequences, or implementing verification algorithms. You can solve this by converting to an array first, but try to think of **more efficient approaches** using techniques like reversing half the list or using two pointers with recursion.
 
-This teaches **pointer manipulation** and **iterative/recursive thinking** techniques that are essential for **advanced linked list operations and data structure transformations**.
+This teaches **symmetry detection** and **two-pointer validation** techniques that are essential for **pattern recognition and efficient data structure analysis**.
 
-**Your task:** Reverse the direction of a linked list by changing node connections using efficient pointer manipulation.
-
-### Examples
-
-**Input:**
-```
-head: 1 -> 2 -> 3 -> 4 -> NULL
-```
-**Output:**
-```
-head: 4 -> 3 -> 2 -> 1 -> NULL
-```
-
----
-
-**Input:**
-```
-head: 2 -> 7 -> 10 -> 9 -> 8 -> NULL
-```
-**Output:**
-```
-head: 8 -> 9 -> 10 -> 7 -> 2 -> NULL
-```
-
----
-
-**Input:**
-```
-head: 2 -> NULL
-```
-**Output:**
-```
-2 -> NULL
-```
-
----
-
-## 2. Delete N nodes after M nodes of a linked list
-A problem that demonstrates pattern-based linked list modification and teaches how to delete nodes following specific intervals and patterns.
-
-Given a **linked list**, delete **n nodes** after skipping **m nodes** of a linked list until the last of the linked list. This operation is commonly used in **data filtering** and **pattern-based processing** applications where you need to **remove elements at regular intervals** while preserving specific sections. The challenge involves understanding how to maintain proper node connections while following a deletion pattern throughout the entire list.
-
-This introduces **pattern-based traversal** and **conditional node deletion** techniques that are crucial for **data stream processing and interval-based operations**.
-
-**Your task:** Delete nodes following a specific pattern while maintaining proper list connections and handling edge cases.
+**Your task:** Check if a linked list is a palindrome using efficient techniques without extra space or with minimal space complexity.
 
 ### Examples
 
 **Input:**
 ```
-Linked List: 9->1->3->5->9->4->10->1, n = 1, m = 2
+head: 1 -> 2 -> 1 -> 1 -> 2 -> 1
 ```
 **Output:**
 ```
-9->1->5->9->10->1
+true
 ```
 
 ---
 
 **Input:**
 ```
-Linked List: 1->2->3->4->5->6, n = 1, m = 6
+head: 1 -> 2 -> 3 -> 4
 ```
 **Output:**
 ```
-1->2->3->4->5->6
+false
 ```
 
 ---
 
-## 3. Delete in a Singly Linked List
-A problem that teaches position-based node deletion and demonstrates how to remove specific nodes by their index while maintaining list integrity.
+## 2. Intersection Sorted Linked Lists
+A problem that demonstrates merge-like operations on sorted data structures and teaches how to find common elements efficiently between two sorted lists.
 
-Given a **singly linked list** and an integer **x**, delete the **xth node** (1-based indexing) from the singly linked list. This operation is fundamental in **dynamic data management** and **position-based removal** applications where you need to **delete elements at specific positions** efficiently. The challenge involves understanding how to traverse to the correct position, handle edge cases like deleting the head node, and properly reconnect the remaining nodes.
+Given that **two linked lists are sorted** in increasing order, create a **new linked list** representing the **intersection** of the two linked lists. The new linked list should be made **without changing the original lists**. The elements of the linked list are not necessarily distinct. This operation is fundamental in **data analysis** and **set operations** where you need to **find common elements between sorted datasets** efficiently without modifying the original data structures.
 
-This teaches **position-based deletion** and **index-based traversal** techniques that are essential for **dynamic list management and efficient element removal**.
+This introduces **merge-based intersection** and **sorted data processing** techniques that are crucial for **database operations and efficient set computations**.
 
-**Your task:** Delete a node at a specific position while properly handling edge cases and maintaining list connections.
+**Your task:** Find intersection of two sorted linked lists by creating a new list while preserving original lists.
 
 ### Examples
 
 **Input:**
 ```
-Linked list: 1 -> 3 -> 4, x = 3
+LinkedList1 = 1->2->3->4->6, LinkedList2 = 2->4->6->8
 ```
 **Output:**
 ```
-1 -> 3
+2->4->6
 ```
 
 ---
 
 **Input:**
 ```
-Linked list: 1 -> 5 -> 2 -> 9, x = 2
+LinkedList1 = 10->20->40->50, LinkedList2 = 15->40
 ```
 **Output:**
 ```
-1 -> 2 -> 9
+40
+```
+
+---
+
+## 3. Add Number Linked Lists
+A problem that teaches arithmetic operations on linked list representations and demonstrates how to perform addition on numbers stored as linked lists.
+
+Given the **head of two singly linked lists** num1 and num2 representing two **non-negative integers**, the task is to return the head of the linked list representing the **sum of these two numbers**. For example, num1 represented by the linked list: 1 -> 9 -> 0, similarly num2 represented by the linked list: 2 -> 5. Sum of these two numbers is represented by 2 -> 1 -> 5. There can be **leading zeros** in the input lists, but there should not be any leading zeros in the output list. This problem simulates **big number arithmetic** commonly used in cryptography and mathematical computations.
+
+This teaches **digit-by-digit arithmetic** and **carry propagation** techniques that are essential for **big number operations and mathematical computations in linked structures**.
+
+**Your task:** Add two numbers represented as linked lists while handling carry propagation and leading zero elimination.
+
+### Examples
+
+**Input:**
+```
+num1 = 4 -> 5, num2 = 3 -> 4 -> 5
+```
+**Output:**
+```
+3 -> 9 -> 0
+```
+
+---
+
+**Input:**
+```
+num1 = 0 -> 0 -> 6 -> 3, num2 = 0 -> 7
+```
+**Output:**
+```
+7 -> 0
 ```
