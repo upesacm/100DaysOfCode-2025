@@ -17,7 +17,7 @@ public class Q3 {
         num2.next.next = new Node(5);
 
         Node result = addLists(num1, num2);
-        printList(result);  // Output: 3 -> 9 -> 0
+        printList(result);  
     }
 
     public static Node addLists(Node l1, Node l2) {
