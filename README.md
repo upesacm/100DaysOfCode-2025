@@ -1,98 +1,98 @@
-<h2 align="center">Day 22 (07/07/2025)</h2>
+<h2 align="center">Day 25 (10/07/2025)</h2>
 
-## 1. Middle of a Linked List
-A problem that introduces linked list traversal techniques and teaches how to find the middle element efficiently using the two-pointer approach.
+## 1. Palindrome Linked List
+A problem that introduces advanced linked list analysis techniques and teaches how to check symmetry in sequential data structures efficiently.
 
-Given the **head of a linked list**, the task is to find the **middle node**. For example, the middle of 1->2->3->4->5 is 3. If there are **two middle nodes** (even count), return the **second middle**. For example, middle of 1->2->3->4->5->6 is 4. This problem appears frequently in **interviews** and **real-world applications** like implementing efficient search algorithms or dividing linked lists for processing. You can solve this by first counting nodes and then traversing again, but try to think of **more efficient approaches** using the two-pointer technique.
+Given a **head singly linked list** of positive integers, the task is to check if the given linked list is **palindrome or not**. A palindrome reads the same forwards and backwards. This problem appears frequently in **interviews** and **real-world applications** like data validation, symmetry detection in sequences, or implementing verification algorithms. You can solve this by converting to an array first, but try to think of **more efficient approaches** using techniques like reversing half the list or using two pointers with recursion.
 
-This teaches **two-pointer traversal** and **optimal linked list navigation** techniques that are essential for **efficient list processing and divide-and-conquer algorithms**.
+This teaches **symmetry detection** and **two-pointer validation** techniques that are essential for **pattern recognition and efficient data structure analysis**.
 
-**Your task:** Find the middle node of a linked list using efficient traversal techniques without multiple passes.
-
-### Examples
-
-**Input:**
-```
-Linked list: 1->2->3->4->5
-```
-**Output:**
-```
-3
-```
-
----
-
-**Input:**
-```
-Linked list: 2->4->6->7->5->1
-```
-**Output:**
-```
-7
-```
-
----
-
-## 2. Frequency in a Linked List
-A problem that demonstrates linked list traversal and counting techniques, teaching how to search and count occurrences of specific elements.
-
-Given a **singly linked list** and a **key**, count the number of occurrences of the given key in the linked list. This operation is fundamental in **data analysis** and **frequency counting** applications where you need to **determine how often specific values appear** in sequential data structures. The challenge involves understanding how to traverse the entire list while maintaining an accurate count of matches.
-
-This introduces **sequential search algorithms** and **frequency analysis techniques** that are crucial for **data processing and statistical analysis of linked data structures**.
-
-**Your task:** Count occurrences of a specific key in a linked list using efficient traversal and counting methods.
+**Your task:** Check if a linked list is a palindrome using efficient techniques without extra space or with minimal space complexity.
 
 ### Examples
 
 **Input:**
 ```
-Linked List: 1->2->1->2->1->3->1, key = 1
+head: 1 -> 2 -> 1 -> 1 -> 2 -> 1
 ```
 **Output:**
 ```
-4
+true
 ```
 
 ---
 
 **Input:**
 ```
-Linked List: 1->2->1->2->1, key = 3
+head: 1 -> 2 -> 3 -> 4
 ```
 **Output:**
 ```
-0
+false
 ```
 
 ---
 
-## 3. Print Linked List
-A problem that teaches basic linked list traversal and output formatting, demonstrating fundamental operations for displaying linked list contents.
+## 2. Intersection Sorted Linked Lists
+A problem that demonstrates merge-like operations on sorted data structures and teaches how to find common elements efficiently between two sorted lists.
 
-Given a **linked list**, print all the elements of the linked list **separated by space**. This is a fundamental operation in **linked list manipulation** and serves as the building block for more complex linked list algorithms. Understanding how to properly traverse and display linked list contents is essential for **debugging** and **data visualization** in real-world applications.
+Given that **two linked lists are sorted** in increasing order, create a **new linked list** representing the **intersection** of the two linked lists. The new linked list should be made **without changing the original lists**. The elements of the linked list are not necessarily distinct. This operation is fundamental in **data analysis** and **set operations** where you need to **find common elements between sorted datasets** efficiently without modifying the original data structures.
 
-This teaches **basic linked list traversal** and **output formatting techniques** that are essential for **linked list debugging and data presentation**.
+This introduces **merge-based intersection** and **sorted data processing** techniques that are crucial for **database operations and efficient set computations**.
 
-**Your task:** Traverse and print all elements of a linked list in the correct order with proper spacing.
+**Your task:** Find intersection of two sorted linked lists by creating a new list while preserving original lists.
 
 ### Examples
 
 **Input:**
 ```
-LinkedList: 1 -> 2
+LinkedList1 = 1->2->3->4->6, LinkedList2 = 2->4->6->8
 ```
 **Output:**
 ```
-1 2
+2->4->6
 ```
 
 ---
 
 **Input:**
 ```
-Linked List: 49 -> 10 -> 30
+LinkedList1 = 10->20->40->50, LinkedList2 = 15->40
 ```
 **Output:**
 ```
-49 10 30
+40
+```
+
+---
+
+## 3. Add Number Linked Lists
+A problem that teaches arithmetic operations on linked list representations and demonstrates how to perform addition on numbers stored as linked lists.
+
+Given the **head of two singly linked lists** num1 and num2 representing two **non-negative integers**, the task is to return the head of the linked list representing the **sum of these two numbers**. For example, num1 represented by the linked list: 1 -> 9 -> 0, similarly num2 represented by the linked list: 2 -> 5. Sum of these two numbers is represented by 2 -> 1 -> 5. There can be **leading zeros** in the input lists, but there should not be any leading zeros in the output list. This problem simulates **big number arithmetic** commonly used in cryptography and mathematical computations.
+
+This teaches **digit-by-digit arithmetic** and **carry propagation** techniques that are essential for **big number operations and mathematical computations in linked structures**.
+
+**Your task:** Add two numbers represented as linked lists while handling carry propagation and leading zero elimination.
+
+### Examples
+
+**Input:**
+```
+num1 = 4 -> 5, num2 = 3 -> 4 -> 5
+```
+**Output:**
+```
+3 -> 9 -> 0
+```
+
+---
+
+**Input:**
+```
+num1 = 0 -> 0 -> 6 -> 3, num2 = 0 -> 7
+```
+**Output:**
+```
+7 -> 0
 ```
