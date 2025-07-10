@@ -11,7 +11,6 @@ struct node* head2 = NULL;
 void createNode(struct node**, int);
 void Print(struct node**);
 struct node* Intersection(struct node**, struct node**);
-int size(struct node**);
 
 int main(){
     createNode(&head, 1);
@@ -53,17 +52,6 @@ void Print(struct node** ll){
     }
     printf("NULL\n");
 
-}
-
-int size(struct node** ll){
-    struct node* trav = *ll;
-    int size = 0;
-    while(trav != NULL){
-        trav = trav -> next;
-        size++;
-    }
-
-    return size;
 }
 
 struct node* Intersection(struct node** ll, struct node** ll2){
