@@ -13,7 +13,7 @@ struct Node* mkNode(int n)
     nd->lnk = NULL;
     return nd;
 }
-struct Node* makeUnion(struct Node* lst1, struct Node* lst2) 
+struct Node* Union(struct Node* lst1, struct Node* lst2) 
 {
     struct Node* res = NULL;
     struct Node* tail = NULL;
@@ -71,7 +71,7 @@ int main()
     show(lst1);
     printf("List 2: ");
     show(lst2);
-    struct Node* res = makeUnion(lst1, lst2);
+    struct Node* res = Union(lst1, lst2);
     printf("Union: ");
     show(res);
     struct Node* c = lst1;
