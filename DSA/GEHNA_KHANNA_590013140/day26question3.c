@@ -6,77 +6,65 @@ struct Node {
     struct Node* next;
 };
 
-struct Node* create(int data) {
-    struct Node* new = (struct Node*)malloc(sizeof(struct Node));
-    new->data = data;
-    new->next = NULL;
-    return new;
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+}
+
+struct Node* sortList(struct Node* head) {
+    struct Node zeroDummy, oneDummy, twoDummy;
+    struct Node *zero = &zeroDummy, *one = &oneDummy, *two = &twoDummy;
+    zero->next = one->next = two->next = NULL;
+
+    while (head) {
+        if (head->data == 0) {
+            zero->next = head;
+            zero = zero->next;
+        } else if (head->data == 1) {
+            one->next = head;
+            one = one->next;
+        } else {
+            two->next = head;
+            two = two->next;
+        }
+        head = head->next;
+    }
+
+    two->next = NULL;
+    one->next = twoDummy.next;
+    zero->next = oneDummy.next;
+
+    return zeroDummy.next;
+}
+
+void printList(struct Node* head) {
+    while (head) {
+        printf("%d ", head->data);
+        head = head->next;
+    }
 }
 
 void append(struct Node** head, int data) {
-    struct Node* new = create(data);
+    struct Node* newNode = createNode(data);
     if (*head == NULL) {
-        *head = new;
+        *head = newNode;
         return;
     }
     struct Node* temp = *head;
     while (temp->next) temp = temp->next;
-    temp->next = new;
-}
-
-void sortList(struct Node* head) {
-    int count0 = 0, count1 = 0, count2 = 0;
-
-    struct Node* temp = head;
-
-    while (temp) {
-        if (temp->data == 0) count0++;
-        else if (temp->data == 1) count1++;
-        else count2++;
-        temp = temp->next;
-    }
-
-    temp = head;
-
-    while (count0--) {
-        temp->data = 0;
-        temp = temp->next;
-    }
-    while (count1--) {
-        temp->data = 1;
-        temp = temp->next;
-    }
-    while (count2--) {
-        temp->data = 2;
-        temp = temp->next;
-    }
-}
-
-void print(struct Node* head) {
-    while (head) {
-        printf("%d", head->data);
-        if (head->next) printf(" -> ");
-        head = head->next;
-    }
-    printf("\n");
+    temp->next = newNode;
 }
 
 int main() {
-    int n, val;
     struct Node* head = NULL;
-
-    printf("Enter number of nodes: ");
-    scanf("%d", &n);
-
-    printf("Enter values (only 0, 1, or 2):\n");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &val);
-        append(&head, val);
+    int arr[] = {1, 2, 2, 1, 2, 0, 2, 2};
+    for (int i = 0; i < 8; i++) {
+        append(&head, arr[i]);
     }
 
-    sortList(head);
-    printf("Sorted List:\n");
-    print(head);
-
+    head = sortList(head);
+    printList(head);
     return 0;
 }
