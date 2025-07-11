@@ -1,109 +1,98 @@
-<h2 align="center">Day 24 (09/07/2025)</h2>
+<h2 align="center">Day 26 (11/07/2025)</h2>
 
-## 1. Reverse a Linked List
-A problem that introduces fundamental linked list manipulation techniques and teaches how to reverse the direction of node connections efficiently.
+## 1. Swap Kth nodes from ends
+A problem that introduces advanced linked list manipulation techniques and teaches how to swap nodes at symmetric positions efficiently using pointer operations.
 
-Given the **head of a linked list**, the task is to **reverse this list** and return the reversed head. This is one of the most **fundamental operations** in linked list manipulation and appears frequently in **interviews** and **real-world applications** like implementing undo functionality, reversing data streams, or processing data in reverse order. You can solve this iteratively by changing the links between nodes, or recursively by processing nodes from the end. Understanding pointer manipulation is crucial for this problem.
+Given a **singly linked list** and an integer **k**, you need to swap the **kth node from the beginning** and the **kth node from the end** of the linked list. Swap the nodes through the **links**, not by changing the content of the nodes. This problem appears frequently in **interviews** and **real-world applications** like implementing symmetric operations, data rearrangement, or palindrome creation algorithms. The challenge involves finding the correct nodes to swap and properly handling all the pointer connections without breaking the list structure.
 
-This teaches **pointer manipulation** and **iterative/recursive thinking** techniques that are essential for **advanced linked list operations and data structure transformations**.
+This teaches **symmetric node manipulation** and **complex pointer operations** that are essential for **advanced linked list transformations and positional swapping algorithms**.
 
-**Your task:** Reverse the direction of a linked list by changing node connections using efficient pointer manipulation.
-
-### Examples
-
-**Input:**
-```
-head: 1 -> 2 -> 3 -> 4 -> NULL
-```
-**Output:**
-```
-head: 4 -> 3 -> 2 -> 1 -> NULL
-```
-
----
-
-**Input:**
-```
-head: 2 -> 7 -> 10 -> 9 -> 8 -> NULL
-```
-**Output:**
-```
-head: 8 -> 9 -> 10 -> 7 -> 2 -> NULL
-```
-
----
-
-**Input:**
-```
-head: 2 -> NULL
-```
-**Output:**
-```
-2 -> NULL
-```
-
----
-
-## 2. Delete N nodes after M nodes of a linked list
-A problem that demonstrates pattern-based linked list modification and teaches how to delete nodes following specific intervals and patterns.
-
-Given a **linked list**, delete **n nodes** after skipping **m nodes** of a linked list until the last of the linked list. This operation is commonly used in **data filtering** and **pattern-based processing** applications where you need to **remove elements at regular intervals** while preserving specific sections. The challenge involves understanding how to maintain proper node connections while following a deletion pattern throughout the entire list.
-
-This introduces **pattern-based traversal** and **conditional node deletion** techniques that are crucial for **data stream processing and interval-based operations**.
-
-**Your task:** Delete nodes following a specific pattern while maintaining proper list connections and handling edge cases.
+**Your task:** Swap nodes at symmetric positions by manipulating pointers while maintaining list integrity and handling edge cases.
 
 ### Examples
 
 **Input:**
 ```
-Linked List: 9->1->3->5->9->4->10->1, n = 1, m = 2
+LinkedList: 1->2->3->4, k = 1
 ```
 **Output:**
 ```
-9->1->5->9->10->1
+true
 ```
 
 ---
 
 **Input:**
 ```
-Linked List: 1->2->3->4->5->6, n = 1, m = 6
+LinkedList: 1->2->3->4->5, k = 7
 ```
 **Output:**
 ```
-1->2->3->4->5->6
+true
 ```
 
 ---
 
-## 3. Delete in a Singly Linked List
-A problem that teaches position-based node deletion and demonstrates how to remove specific nodes by their index while maintaining list integrity.
+## 2. Union of Two Linked Lists
+A problem that demonstrates set operations on linked lists and teaches how to combine two lists while eliminating duplicates and maintaining sorted order.
 
-Given a **singly linked list** and an integer **x**, delete the **xth node** (1-based indexing) from the singly linked list. This operation is fundamental in **dynamic data management** and **position-based removal** applications where you need to **delete elements at specific positions** efficiently. The challenge involves understanding how to traverse to the correct position, handle edge cases like deleting the head node, and properly reconnect the remaining nodes.
+Given **two linked lists** (L1 & L2), your task is to complete the function makeUnion(), which returns the **union list** of two linked lists. This union list should include all the **distinct elements only** and it should be **sorted in ascending order**. This operation is fundamental in **data merging** and **set operations** where you need to **combine datasets while removing duplicates** and maintaining order. The challenge involves efficiently handling duplicates and sorting the final result.
 
-This teaches **position-based deletion** and **index-based traversal** techniques that are essential for **dynamic list management and efficient element removal**.
+This introduces **set union operations** and **duplicate elimination techniques** that are crucial for **data consolidation and efficient list merging operations**.
 
-**Your task:** Delete a node at a specific position while properly handling edge cases and maintaining list connections.
+**Your task:** Create union of two linked lists with distinct elements in sorted order using efficient merging and deduplication.
 
 ### Examples
 
 **Input:**
 ```
-Linked list: 1 -> 3 -> 4, x = 3
+L1 = 9->6->4->2->3->8, L2 = 1->2->8->6->2
 ```
 **Output:**
 ```
-1 -> 3
+1 -> 2 -> 3 -> 4 -> 6 -> 8 -> 9
 ```
 
 ---
 
 **Input:**
 ```
-Linked list: 1 -> 5 -> 2 -> 9, x = 2
+L1 = 1->5->1->2->2->5, L2 = 4->5->6->7->1
 ```
 **Output:**
 ```
-1 -> 2 -> 9
+1 -> 2 -> 4 -> 5 -> 6 -> 7
+```
+
+---
+
+## 3. Sort a linked list of 0s, 1s and 2s
+A problem that teaches specialized sorting techniques and demonstrates how to rearrange linked lists with limited value domains efficiently.
+
+Given the **head of a linked list** where nodes can contain values **0s, 1s, and 2s only**, your task is to rearrange the list so that all **0s appear at the beginning**, followed by all **1s**, and all **2s are placed at the end**. This is a variation of the **Dutch National Flag problem** applied to linked lists and is commonly used in **data preprocessing** and **categorical sorting** applications. You can solve this by counting occurrences first, but try to think of **more efficient approaches** using three-pointer technique or node rearrangement.
+
+This teaches **categorical sorting** and **three-way partitioning** techniques that are essential for **specialized sorting algorithms and efficient data categorization**.
+
+**Your task:** Sort a linked list containing only 0s, 1s, and 2s using efficient partitioning techniques without extra space.
+
+### Examples
+
+**Input:**
+```
+head = 1 → 2 → 2 → 1 → 2 → 0 → 2 → 2
+```
+**Output:**
+```
+0 → 1 → 1 → 2 → 2 → 2 → 2 → 2
+```
+
+---
+
+**Input:**
+```
+head = 2 → 2 → 0 → 1
+```
+**Output:**
+```
+0 → 1 → 2 → 2
 ```
