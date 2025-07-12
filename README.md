@@ -1,19 +1,19 @@
-<h2 align="center">Day 25 (10/07/2025)</h2>
+<h2 align="center">Day 26 (11/07/2025)</h2>
 
-## 1. Palindrome Linked List
-A problem that introduces advanced linked list analysis techniques and teaches how to check symmetry in sequential data structures efficiently.
+## 1. Swap Kth nodes from ends
+A problem that introduces advanced linked list manipulation techniques and teaches how to swap nodes at symmetric positions efficiently using pointer operations.
 
-Given a **head singly linked list** of positive integers, the task is to check if the given linked list is **palindrome or not**. A palindrome reads the same forwards and backwards. This problem appears frequently in **interviews** and **real-world applications** like data validation, symmetry detection in sequences, or implementing verification algorithms. You can solve this by converting to an array first, but try to think of **more efficient approaches** using techniques like reversing half the list or using two pointers with recursion.
+Given a **singly linked list** and an integer **k**, you need to swap the **kth node from the beginning** and the **kth node from the end** of the linked list. Swap the nodes through the **links**, not by changing the content of the nodes. This problem appears frequently in **interviews** and **real-world applications** like implementing symmetric operations, data rearrangement, or palindrome creation algorithms. The challenge involves finding the correct nodes to swap and properly handling all the pointer connections without breaking the list structure.
 
-This teaches **symmetry detection** and **two-pointer validation** techniques that are essential for **pattern recognition and efficient data structure analysis**.
+This teaches **symmetric node manipulation** and **complex pointer operations** that are essential for **advanced linked list transformations and positional swapping algorithms**.
 
-**Your task:** Check if a linked list is a palindrome using efficient techniques without extra space or with minimal space complexity.
+**Your task:** Swap nodes at symmetric positions by manipulating pointers while maintaining list integrity and handling edge cases.
 
 ### Examples
 
 **Input:**
 ```
-head: 1 -> 2 -> 1 -> 1 -> 2 -> 1
+LinkedList: 1->2->3->4, k = 1
 ```
 **Output:**
 ```
@@ -24,75 +24,75 @@ true
 
 **Input:**
 ```
-head: 1 -> 2 -> 3 -> 4
+LinkedList: 1->2->3->4->5, k = 7
 ```
 **Output:**
 ```
-false
+true
 ```
 
 ---
 
-## 2. Intersection Sorted Linked Lists
-A problem that demonstrates merge-like operations on sorted data structures and teaches how to find common elements efficiently between two sorted lists.
+## 2. Union of Two Linked Lists
+A problem that demonstrates set operations on linked lists and teaches how to combine two lists while eliminating duplicates and maintaining sorted order.
 
-Given that **two linked lists are sorted** in increasing order, create a **new linked list** representing the **intersection** of the two linked lists. The new linked list should be made **without changing the original lists**. The elements of the linked list are not necessarily distinct. This operation is fundamental in **data analysis** and **set operations** where you need to **find common elements between sorted datasets** efficiently without modifying the original data structures.
+Given **two linked lists** (L1 & L2), your task is to complete the function makeUnion(), which returns the **union list** of two linked lists. This union list should include all the **distinct elements only** and it should be **sorted in ascending order**. This operation is fundamental in **data merging** and **set operations** where you need to **combine datasets while removing duplicates** and maintaining order. The challenge involves efficiently handling duplicates and sorting the final result.
 
-This introduces **merge-based intersection** and **sorted data processing** techniques that are crucial for **database operations and efficient set computations**.
+This introduces **set union operations** and **duplicate elimination techniques** that are crucial for **data consolidation and efficient list merging operations**.
 
-**Your task:** Find intersection of two sorted linked lists by creating a new list while preserving original lists.
+**Your task:** Create union of two linked lists with distinct elements in sorted order using efficient merging and deduplication.
 
 ### Examples
 
 **Input:**
 ```
-LinkedList1 = 1->2->3->4->6, LinkedList2 = 2->4->6->8
+L1 = 9->6->4->2->3->8, L2 = 1->2->8->6->2
 ```
 **Output:**
 ```
-2->4->6
+1 -> 2 -> 3 -> 4 -> 6 -> 8 -> 9
 ```
 
 ---
 
 **Input:**
 ```
-LinkedList1 = 10->20->40->50, LinkedList2 = 15->40
+L1 = 1->5->1->2->2->5, L2 = 4->5->6->7->1
 ```
 **Output:**
 ```
-40
+1 -> 2 -> 4 -> 5 -> 6 -> 7
 ```
 
 ---
 
-## 3. Add Number Linked Lists
-A problem that teaches arithmetic operations on linked list representations and demonstrates how to perform addition on numbers stored as linked lists.
+## 3. Sort a linked list of 0s, 1s and 2s
+A problem that teaches specialized sorting techniques and demonstrates how to rearrange linked lists with limited value domains efficiently.
 
-Given the **head of two singly linked lists** num1 and num2 representing two **non-negative integers**, the task is to return the head of the linked list representing the **sum of these two numbers**. For example, num1 represented by the linked list: 1 -> 9 -> 0, similarly num2 represented by the linked list: 2 -> 5. Sum of these two numbers is represented by 2 -> 1 -> 5. There can be **leading zeros** in the input lists, but there should not be any leading zeros in the output list. This problem simulates **big number arithmetic** commonly used in cryptography and mathematical computations.
+Given the **head of a linked list** where nodes can contain values **0s, 1s, and 2s only**, your task is to rearrange the list so that all **0s appear at the beginning**, followed by all **1s**, and all **2s are placed at the end**. This is a variation of the **Dutch National Flag problem** applied to linked lists and is commonly used in **data preprocessing** and **categorical sorting** applications. You can solve this by counting occurrences first, but try to think of **more efficient approaches** using three-pointer technique or node rearrangement.
 
-This teaches **digit-by-digit arithmetic** and **carry propagation** techniques that are essential for **big number operations and mathematical computations in linked structures**.
+This teaches **categorical sorting** and **three-way partitioning** techniques that are essential for **specialized sorting algorithms and efficient data categorization**.
 
-**Your task:** Add two numbers represented as linked lists while handling carry propagation and leading zero elimination.
+**Your task:** Sort a linked list containing only 0s, 1s, and 2s using efficient partitioning techniques without extra space.
 
 ### Examples
 
 **Input:**
 ```
-num1 = 4 -> 5, num2 = 3 -> 4 -> 5
+head = 1 → 2 → 2 → 1 → 2 → 0 → 2 → 2
 ```
 **Output:**
 ```
-3 -> 9 -> 0
+0 → 1 → 1 → 2 → 2 → 2 → 2 → 2
 ```
 
 ---
 
 **Input:**
 ```
-num1 = 0 -> 0 -> 6 -> 3, num2 = 0 -> 7
+head = 2 → 2 → 0 → 1
 ```
 **Output:**
 ```
-7 -> 0
+0 → 1 → 2 → 2
 ```
