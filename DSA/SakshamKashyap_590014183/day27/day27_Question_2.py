@@ -21,20 +21,25 @@ class Doubly_linked_list:
 
     def traversing(self):
         if self.head is None:
-            return "List is empty"
+            print("List is empty")
+            return
         current_Node = self.head
         while current_Node:
             print(f"{current_Node.data} <-> ",end = " ")
             current_Node = current_Node.next
         print("NULL")
-    def delete(self,kth_Node):
+    def reverse(self):
+        tail = None
         if self.head is None:
-            return "List is empty"
+            print("List is empty")
+            return
         current_Node = self.head
-        for _ in range(1,kth_Node):
+        while current_Node.next:
             current_Node = current_Node.next
-        current_Node.prev.next = current_Node.next
-
+        while current_Node:
+            print(f"{current_Node.data} <-> ",end = " ")
+            current_Node = current_Node.prev
+        print("NULL")
 def main():
     My_Doubly_list = Doubly_linked_list()
     while True:
@@ -50,10 +55,8 @@ def main():
     
     print("\nThe Doubly Linked list is:")
     My_Doubly_list.traversing()
-    k = int(input("Enter the element u want to delete(Give the specific position of node): "))
-    My_Doubly_list.delete(k)
-    print("\n The updated Linked List: ")
-    My_Doubly_list.traversing()
+    print("\nThe Reverse of Doubly Linked list is:")
+    My_Doubly_list.reverse()
 
 if __name__ == "__main__":
     main()
