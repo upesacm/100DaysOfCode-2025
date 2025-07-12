@@ -6,17 +6,22 @@ struct Node {
     struct Node* next;
 };
 
-struct Node* createNode(int data) {
+// Insert at end
+struct Node* insertEnd(struct Node* head, int val) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->data = data;
+    newNode->data = val;
     newNode->next = NULL;
-    return newNode;
+    if (!head) return newNode;
+    struct Node* temp = head;
+    while (temp->next) temp = temp->next;
+    temp->next = newNode;
+    return head;
 }
 
+// Sort the list
 struct Node* sortList(struct Node* head) {
-    struct Node zeroDummy, oneDummy, twoDummy;
+    struct Node zeroDummy = {0, NULL}, oneDummy = {0, NULL}, twoDummy = {0, NULL};
     struct Node *zero = &zeroDummy, *one = &oneDummy, *two = &twoDummy;
-    zero->next = one->next = two->next = NULL;
 
     while (head) {
         if (head->data == 0) {
@@ -32,39 +37,37 @@ struct Node* sortList(struct Node* head) {
         head = head->next;
     }
 
-    two->next = NULL;
+    // Connect lists
+    zero->next = oneDummy.next ? oneDummy.next : twoDummy.next;
     one->next = twoDummy.next;
-    zero->next = oneDummy.next;
+    two->next = NULL;
 
     return zeroDummy.next;
 }
 
+// Print linked list
 void printList(struct Node* head) {
     while (head) {
         printf("%d ", head->data);
         head = head->next;
     }
-}
-
-void append(struct Node** head, int data) {
-    struct Node* newNode = createNode(data);
-    if (*head == NULL) {
-        *head = newNode;
-        return;
-    }
-    struct Node* temp = *head;
-    while (temp->next) temp = temp->next;
-    temp->next = newNode;
+    printf("\n");
 }
 
 int main() {
     struct Node* head = NULL;
-    int arr[] = {1, 2, 2, 1, 2, 0, 2, 2};
-    for (int i = 0; i < 8; i++) {
-        append(&head, arr[i]);
+    int n, val;
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+    printf("Enter values (only 0s, 1s, and 2s): ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &val);
+        head = insertEnd(head, val);
     }
 
     head = sortList(head);
+    printf("Sorted List: ");
     printList(head);
+
     return 0;
 }
