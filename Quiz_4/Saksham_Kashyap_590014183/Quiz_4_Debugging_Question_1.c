@@ -38,7 +38,9 @@ struct ListNode* removeDuplicates(struct ListNode* head)
         }
         else
         {
-            current = current->next;  // Ans 2: because when no deletion is there, current pointer should move forward
+            current = current->next;            
+/* Ans 2: The main reason we move the current pointer only in the else block is because,when a duplicate is found and removed,
+the next node changes — and we need to compare the new next with the current value before moving ahead. */
         }
 
     }
