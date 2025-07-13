@@ -1,0 +1,77 @@
+/*
+1. Debug the code for the correct output 
+--This loop advances first k+1 times, which is incorrect. To position first k nodes ahead of second, it should run exactly k times.
+2.. Is it necessary to check first == NULL inside the loop?  
+--Yes, it is necessary. This check ensures that the list has at least k nodes. If first becomes NULL before completing k steps, it means k is 
+  larger than the length of the list, and the function should return -1.
+Correct code-- */
+#include <stdio.h>
+#include <stdlib.h>
+
+struct ListNode {
+    int val;
+    struct ListNode* next;
+};
+
+struct ListNode* createNode(int val) {
+    struct ListNode* newNode = (struct ListNode*)malloc(sizeof(struct ListNode));
+    newNode->val = val;
+    newNode->next = NULL;
+    return newNode;
+}
+
+int findKthFromEnd(struct ListNode* head, int k) {
+    if (head == NULL || k <= 0) {
+        return -1;
+    }
+
+    struct ListNode* first = head;
+    struct ListNode* second = head;
+
+    // Move first pointer k steps ahead
+    for (int i = 0; i < k; i++) {
+        if (first == NULL) {
+            return -1;  // k is larger than list length
+        }
+        first = first->next;
+    }
+
+    // Move both pointers until first reaches the end
+    while (first != NULL) {
+        first = first->next;
+        second = second->next;
+    }
+
+    return second->val;
+}
+
+void printList(struct ListNode* head) {
+    struct ListNode* current = head;
+    while (current != NULL) {
+        printf("%d ", current->val);
+        current = current->next;
+    }
+    printf("\n");
+}
+
+int main() {
+    struct ListNode* head = createNode(1);
+    head->next = createNode(2);
+    head->next->next = createNode(3);
+    head->next->next->next = createNode(4);
+    head->next->next->next->next = createNode(5);
+
+    printf("Original list: ");
+    printList(head);
+
+    int k = 2;
+    int result = findKthFromEnd(head, k);
+
+    if (result != -1) {
+        printf("The %dth node from end is: %d\n", k, result);
+    } else {
+        printf("Invalid k or empty list\n");
+    }
+
+    return 0;
+}
