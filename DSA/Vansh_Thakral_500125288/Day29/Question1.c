@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 void checkEvenOrOdd(int n) {
     if (n & 1) {
         printf("Odd\n");
@@ -7,6 +8,7 @@ void checkEvenOrOdd(int n) {
         printf("Even\n");
     }
 }
+
 
 int main() {
     int n;
