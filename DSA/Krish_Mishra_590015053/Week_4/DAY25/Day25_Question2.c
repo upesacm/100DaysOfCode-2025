@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct Node {
     int data;
     struct Node* next;
 };
-
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
-
 void append(struct Node** headRef, int data) {
     struct Node* newNode = createNode(data);
     if (*headRef == NULL) {
@@ -24,7 +21,6 @@ void append(struct Node** headRef, int data) {
         temp = temp->next;
     temp->next = newNode;
 }
-
 struct Node* getIntersection(struct Node* head1, struct Node* head2) {
     struct Node* result = NULL;
     struct Node** tail = &result;
@@ -42,14 +38,12 @@ struct Node* getIntersection(struct Node* head1, struct Node* head2) {
     }
     return result;
 }
-
 void printList(struct Node* head) {
     while (head != NULL) {
         printf("%d ", head->data);
         head = head->next;
     }
 }
-
 int main() {
     struct Node *head1 = NULL, *head2 = NULL;
     int n1, n2, val;
