@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct Node {
     int data;
     struct Node* next;
 };
-
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
-
 void append(struct Node** headRef, int data) {
     struct Node* newNode = createNode(data);
     if (*headRef == NULL) {
@@ -24,7 +21,6 @@ void append(struct Node** headRef, int data) {
         temp = temp->next;
     temp->next = newNode;
 }
-
 int kthFromEnd(struct Node* head, int k) {
     struct Node* fast = head;
     struct Node* slow = head;
@@ -39,7 +35,6 @@ int kthFromEnd(struct Node* head, int k) {
     }
     return slow ? slow->data : -1;
 }
-
 int main() {
     struct Node* head = NULL;
     int n, val, k;
