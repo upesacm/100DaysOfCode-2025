@@ -5,14 +5,12 @@ struct Node {
     int data;
     struct Node* next;
 };
-
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
-
 void append(struct Node** headRef, int data) {
     struct Node* newNode = createNode(data);
     if (*headRef == NULL) {
@@ -24,7 +22,6 @@ void append(struct Node** headRef, int data) {
         temp = temp->next;
     temp->next = newNode;
 }
-
 void removeDuplicates(struct Node* head) {
     struct Node* current = head;
     while (current != NULL && current->next != NULL) {
@@ -37,14 +34,12 @@ void removeDuplicates(struct Node* head) {
         }
     }
 }
-
 void printList(struct Node* head) {
     while (head != NULL) {
         printf("%d ", head->data);
         head = head->next;
     }
 }
-
 int main() {
     struct Node* head = NULL;
     int n, val;
