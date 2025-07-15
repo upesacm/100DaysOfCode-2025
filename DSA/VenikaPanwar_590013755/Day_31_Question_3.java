@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DivideByTwo {
+public class Day_31_Question_3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
