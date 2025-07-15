@@ -6,14 +6,12 @@ struct Node {
     int data;
     struct Node* next;
 };
-
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
-
 void append(struct Node** headRef, int data) {
     struct Node* newNode = createNode(data);
     if (*headRef == NULL) {
@@ -25,7 +23,6 @@ void append(struct Node** headRef, int data) {
         temp = temp->next;
     temp->next = newNode;
 }
-
 struct Node* reverse(struct Node* head) {
     struct Node* prev = NULL;
     struct Node* current = head;
@@ -38,7 +35,6 @@ struct Node* reverse(struct Node* head) {
     }
     return prev;
 }
-
 bool isPalindrome(struct Node* head) {
     if (head == NULL || head->next == NULL)
         return true;
@@ -63,7 +59,6 @@ bool isPalindrome(struct Node* head) {
     slow->next = reverse(secondHalf);
     return result;
 }
-
 int main() {
     struct Node* head = NULL;
     int n, val;
