@@ -5,14 +5,12 @@ struct Node {
     int data;
     struct Node* next;
 };
-
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
-
 void append(struct Node** headRef, int data) {
     struct Node* newNode = createNode(data);
     if (*headRef == NULL) {
@@ -24,7 +22,6 @@ void append(struct Node** headRef, int data) {
         temp = temp->next;
     temp->next = newNode;
 }
-
 struct Node* reverse(struct Node* head) {
     struct Node* prev = NULL;
     struct Node* curr = head;
@@ -37,7 +34,6 @@ struct Node* reverse(struct Node* head) {
     }
     return prev;
 }
-
 struct Node* addLists(struct Node* l1, struct Node* l2) {
     l1 = reverse(l1);
     l2 = reverse(l2);
@@ -68,7 +64,6 @@ void printList(struct Node* head) {
         head = head->next;
     }
 }
-
 int main() {
     struct Node *num1 = NULL, *num2 = NULL;
     int n1, n2, val;
