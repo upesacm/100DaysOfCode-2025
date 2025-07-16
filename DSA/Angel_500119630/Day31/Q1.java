@@ -1,4 +1,4 @@
-public class Day_31_Q1{
+public class Q1{
     public static void powOf2(int n)
     {
         int y= n & (n-1);
