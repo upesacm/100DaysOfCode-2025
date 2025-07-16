@@ -1,98 +1,101 @@
-<h2 align="center">Day 29 (14/07/2025)</h2>
+<h2 align="center">Day 31 (16/07/2025)</h2>
 
-## 1. Check if a Number is Even or Odd Using Bit Manipulation
-A problem that introduces fundamental bitwise operations and teaches how to determine number parity using bit-level analysis instead of arithmetic operations.
+## 1. Check if a Number is Power of 2  
+A problem that introduces **bitwise logic** and demonstrates how binary representations can simplify numerical checks.  
 
-You are given an integer **n**. Using **bitwise operations**, determine if the number is **even or odd**. Do not use the **modulus operator**. This problem demonstrates how bit manipulation can replace traditional arithmetic operations and is commonly used in **low-level programming** and **performance-critical applications** where bitwise operations are faster than division or modulus operations. The key insight is that the **least significant bit (LSB)** determines the parity of any number.
+Given a number **n**, check if it is a power of 2 using bitwise operations. A power of 2 has only **one bit set** in its binary form. This problem is commonly used to teach efficient computation using bit manipulation and highlights the use of the `n & (n - 1)` trick to verify powers of two.
 
-This teaches **bit-level number analysis** and **bitwise parity detection** techniques that are essential for **low-level programming and efficient arithmetic operations**.
+This teaches **binary logic**, **bitwise operations**, and **efficient numeric checks**, which are essential for **low-level programming and competitive coding**.
 
-**Your task:** Determine if a number is even or odd using only bitwise operations without arithmetic operators.
+**Your task:** Determine if the given number is a power of 2 using bitwise operators only.
 
 ### Examples
 
 **Input:**
+```
+n = 8
+```
+**Output:**
+```
+Yes
+```
+
+---
+
+**Input:**
+```
+n = 10
+```
+**Output:**
+```
+No
+```
+
+---
+
+## 2. Multiply a Number by 2 Using Bitwise  
+A classic bit manipulation exercise that demonstrates how to use **left shift** operations to perform multiplication efficiently.
+
+Given an integer **n**, write a program to multiply it by 2 using only bitwise operators. This is equivalent to shifting all bits to the left by one position, a common low-level optimization technique used in systems and embedded programming.
+
+This teaches **bitwise left shifting** and **efficient arithmetic tricks** that are useful in **performance-critical applications**.
+
+**Your task:** Multiply the given number by 2 using bitwise operations.
+
+### Examples
+
+**Input:**
+```
+n = 3
+```
+**Output:**
+```
+6
+```
+
+---
+
+**Input:**
+```
+n = 7
+```
+**Output:**
+```
+14
+```
+
+---
+
+## 3. Divide a Number by 2 Using Bitwise  
+A problem that illustrates the use of **right shift** operations to perform integer division efficiently.
+
+Given a number **n**, write a program to divide it by 2 using bitwise shift operators. This operation discards the decimal part, making it a fast alternative to division in certain applications like graphics, embedded systems, or real-time computations.
+
+This teaches **bitwise right shifting** and **low-level arithmetic operations** that are essential for **speed-critical systems** and **resource-constrained environments**.
+
+**Your task:** Divide the number by 2 using bitwise operators (ignore decimals).
+
+### Examples
+
+**Input:**
+```
+n = 10
+```
+**Output:**
+```
+5
+```
+
+---
+
+**Input:**
+```
+n = 9
+```
+**Output:**
 ```
 4
 ```
-**Output:**
-```
-Even
-```
 
 ---
 
-**Input:**
-```
-7
-```
-**Output:**
-```
-Odd
-```
-
----
-
-## 2. Get the i-th Bit of a Number
-A problem that demonstrates bit extraction techniques and teaches how to check specific bit positions using bitwise operations for binary data analysis.
-
-Given an integer **n** and a position **i** (0-indexed from the right), find whether the **i-th bit is set (1) or not (0)** using bitwise operations. This operation is fundamental in **bit manipulation** and **binary data processing** where you need to **examine specific bit positions** for flags, permissions, or data encoding. The challenge involves understanding how to isolate and check individual bits using masking and shifting operations.
-
-This introduces **bit masking** and **position-based bit extraction** techniques that are crucial for **binary data analysis and bit-level data processing**.
-
-**Your task:** Extract and check the value of a specific bit position using efficient bitwise masking operations.
-
-### Examples
-
-**Input:**
-```
-n = 5, i = 0
-```
-**Output:**
-```
-1
-```
-
----
-
-**Input:**
-```
-n = 5, i = 1
-```
-**Output:**
-```
-0
-```
-
----
-
-## 3. Set the i-th Bit of a Number
-A problem that teaches bit modification techniques and demonstrates how to set specific bit positions using bitwise operations for binary data manipulation.
-
-You are given an integer **n** and a position **i**. Set the **i-th bit** (0-indexed from right) of the number to **1** using bitwise operations and return the new number. This operation is commonly used in **system programming** and **flag management** where you need to **enable specific bits** for configuration settings, permissions, or status indicators. The challenge involves understanding how to modify individual bits without affecting other bit positions.
-
-This teaches **bit setting** and **selective bit modification** techniques that are essential for **system programming and efficient bit-level data manipulation**.
-
-**Your task:** Set a specific bit position to 1 using bitwise operations while preserving all other bits.
-
-### Examples
-
-**Input:**
-```
-n = 5, i = 1
-```
-**Output:**
-```
-7
-```
-
----
-
-**Input:**
-```
-n = 8, i = 2
-```
-**Output:**
-```
-12
-```
