@@ -1,101 +1,101 @@
-<h2 align="center">Day 31 (16/07/2025)</h2>
 
-## 1. Check if a Number is Power of 2  
-A problem that introduces **bitwise logic** and demonstrates how binary representations can simplify numerical checks.  
+<h2 align="center">Day 32 (17/07/2025)</h2>
 
-Given a number **n**, check if it is a power of 2 using bitwise operations. A power of 2 has only **one bit set** in its binary form. This problem is commonly used to teach efficient computation using bit manipulation and highlights the use of the `n & (n - 1)` trick to verify powers of two.
+## 1. Swap Two Numbers Without Temporary Variable  
+A classic bitwise trick that shows how XOR can be used to **swap values without using extra memory**. This problem reinforces the concept that XOR has properties which make it suitable for in-place data manipulation.
 
-This teaches **binary logic**, **bitwise operations**, and **efficient numeric checks**, which are essential for **low-level programming and competitive coding**.
+Given two integers **a** and **b**, swap their values using **bitwise XOR** without using any temporary variable. This is a common interview question to test your understanding of bitwise fundamentals.
 
-**Your task:** Determine if the given number is a power of 2 using bitwise operators only.
+This teaches **XOR logic**, **in-place data manipulation**, and **memory-efficient algorithms**, useful for **embedded systems** and **interview prep**.
 
-### Examples
-
-**Input:**
-```
-n = 8
-```
-**Output:**
-```
-Yes
-```
-
----
-
-**Input:**
-```
-n = 10
-```
-**Output:**
-```
-No
-```
-
----
-
-## 2. Multiply a Number by 2 Using Bitwise  
-A classic bit manipulation exercise that demonstrates how to use **left shift** operations to perform multiplication efficiently.
-
-Given an integer **n**, write a program to multiply it by 2 using only bitwise operators. This is equivalent to shifting all bits to the left by one position, a common low-level optimization technique used in systems and embedded programming.
-
-This teaches **bitwise left shifting** and **efficient arithmetic tricks** that are useful in **performance-critical applications**.
-
-**Your task:** Multiply the given number by 2 using bitwise operations.
+**Your task:** Swap two integers using only bitwise operators.
 
 ### Examples
 
 **Input:**
 ```
-n = 3
+a = 4, b = 7
 ```
 **Output:**
 ```
-6
+a = 7, b = 4
 ```
 
 ---
 
 **Input:**
 ```
-n = 7
+a = 1, b = 2
 ```
 **Output:**
 ```
-14
+a = 2, b = 1
 ```
 
 ---
 
-## 3. Divide a Number by 2 Using Bitwise  
-A problem that illustrates the use of **right shift** operations to perform integer division efficiently.
+## 2. Find the Only Non-Repeating Element  
+A problem that leverages XOR's property where identical bits cancel out, helping you find a **unique element** in a set of duplicates.
 
-Given a number **n**, write a program to divide it by 2 using bitwise shift operators. This operation discards the decimal part, making it a fast alternative to division in certain applications like graphics, embedded systems, or real-time computations.
+Given an array of integers where every element appears twice **except for one**, find the unique **non-repeating element** using bitwise XOR. This is efficient and requires no additional memory, unlike frequency maps.
 
-This teaches **bitwise right shifting** and **low-level arithmetic operations** that are essential for **speed-critical systems** and **resource-constrained environments**.
+This teaches **XOR aggregation**, **data deduplication**, and **memory-optimized searching**, which are highly valuable for **competitive programming** and **low-memory devices**.
 
-**Your task:** Divide the number by 2 using bitwise operators (ignore decimals).
+**Your task:** Find the single non-repeating number using XOR.
 
 ### Examples
 
 **Input:**
 ```
-n = 10
+arr = [2, 3, 2]
 ```
 **Output:**
 ```
-5
+3
 ```
 
 ---
 
 **Input:**
 ```
-n = 9
+arr = [5, 1, 1, 5, 7]
 ```
 **Output:**
 ```
-4
+7
 ```
 
 ---
 
+## 3. Find XOR of All Numbers in an Array  
+An introductory problem in **bitwise accumulation** that builds a strong foundation for many XOR-based problems.
+
+Write a function to **compute the XOR of all elements** in the array. XOR acts like a parity check, and this concept is frequently used in **encryption**, **checksum validation**, and **binary data processing**.
+
+This teaches **bitwise reduction techniques**, **XOR properties**, and is a stepping stone toward **advanced XOR-based algorithms**.
+
+**Your task:** Return the result of XORing all numbers in the array.
+
+### Examples
+
+**Input:**
+```
+arr = [1, 2, 3]
+```
+**Output:**
+```
+0
+```
+
+---
+
+**Input:**
+```
+arr = [4, 5, 6]
+```
+**Output:**
+```
+7
+```
+
+---
