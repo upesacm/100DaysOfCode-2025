@@ -1,9 +1,9 @@
 #Solution Function
 def non_repeating(arr):
-    result = 0
+    current_xor = 0
     for i in range(len(arr)):
-        result = result ^ arr[i]
-    return result
+        current_xor = current_xor ^ arr[i]
+    return current_xor
 
 #Fixed Input
 print(non_repeating([2,3,2]))
