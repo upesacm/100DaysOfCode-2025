@@ -1,64 +1,63 @@
+<h2 align="center">Day 34 (19/07/2025)</h2>
 
-<h2 align="center">Day 32 (17/07/2025)</h2>
+## 1. Add 1 to an Integer Using Bitwise
+A problem that introduces advanced arithmetic simulation using bitwise operations and teaches how to perform addition without traditional arithmetic operators.
 
-## 1. Swap Two Numbers Without Temporary Variable  
-A classic bitwise trick that shows how XOR can be used to **swap values without using extra memory**. This problem reinforces the concept that XOR has properties which make it suitable for in-place data manipulation.
+Add **1** to an integer **n** using only **bitwise operators** (no + or -). This problem demonstrates how fundamental arithmetic operations can be implemented using bit manipulation and is commonly used in **low-level programming** and **embedded systems** where arithmetic operations might be restricted or need optimization. The challenge involves understanding how binary addition works at the bit level, including handling carry propagation through multiple bit positions.
 
-Given two integers **a** and **b**, swap their values using **bitwise XOR** without using any temporary variable. This is a common interview question to test your understanding of bitwise fundamentals.
+This teaches **bitwise arithmetic simulation** and **carry propagation techniques** that are essential for **low-level programming and efficient arithmetic implementations**.
 
-This teaches **XOR logic**, **in-place data manipulation**, and **memory-efficient algorithms**, useful for **embedded systems** and **interview prep**.
-
-**Your task:** Swap two integers using only bitwise operators.
-
-### Examples
-
-**Input:**
-```
-a = 4, b = 7
-```
-**Output:**
-```
-a = 7, b = 4
-```
-
----
-
-**Input:**
-```
-a = 1, b = 2
-```
-**Output:**
-```
-a = 2, b = 1
-```
-
----
-
-## 2. Find the Only Non-Repeating Element  
-A problem that leverages XOR's property where identical bits cancel out, helping you find a **unique element** in a set of duplicates.
-
-Given an array of integers where every element appears twice **except for one**, find the unique **non-repeating element** using bitwise XOR. This is efficient and requires no additional memory, unlike frequency maps.
-
-This teaches **XOR aggregation**, **data deduplication**, and **memory-optimized searching**, which are highly valuable for **competitive programming** and **low-memory devices**.
-
-**Your task:** Find the single non-repeating number using XOR.
+**Your task:** Implement addition of 1 using only bitwise operations by simulating binary arithmetic carry propagation.
 
 ### Examples
 
 **Input:**
 ```
-arr = [2, 3, 2]
+n = 4
 ```
 **Output:**
 ```
-3
+5
 ```
 
 ---
 
 **Input:**
 ```
-arr = [5, 1, 1, 5, 7]
+n = 7
+```
+**Output:**
+```
+8
+```
+
+---
+
+## 2. Subtract 1 from an Integer Using Bitwise
+A problem that demonstrates subtraction simulation using bitwise operations and teaches how to perform decrement operations without traditional arithmetic operators.
+
+Subtract **1** from a given number **n** using only **bitwise operations**, without using the subtraction operator. This operation is fundamental in **bit manipulation** and **low-level programming** where you need to **implement arithmetic operations** using only logical operations. The challenge involves understanding how binary subtraction works, including handling borrow operations when subtracting from numbers with trailing zeros.
+
+This introduces **bitwise subtraction simulation** and **borrow handling techniques** that are crucial for **arithmetic operation implementation and low-level mathematical computations**.
+
+**Your task:** Implement subtraction of 1 using only bitwise operations by simulating binary arithmetic borrow propagation.
+
+### Examples
+
+**Input:**
+```
+n = 5
+```
+**Output:**
+```
+4
+```
+
+---
+
+**Input:**
+```
+n = 8
 ```
 **Output:**
 ```
@@ -67,35 +66,33 @@ arr = [5, 1, 1, 5, 7]
 
 ---
 
-## 3. Find XOR of All Numbers in an Array  
-An introductory problem in **bitwise accumulation** that builds a strong foundation for many XOR-based problems.
+## 3. Check if Binary Representation of a Number is Palindrome
+A problem that teaches binary pattern analysis and demonstrates how to check symmetry in binary representations using bit manipulation techniques.
 
-Write a function to **compute the XOR of all elements** in the array. XOR acts like a parity check, and this concept is frequently used in **encryption**, **checksum validation**, and **binary data processing**.
+Given a number **n**, check whether its **binary representation is a palindrome** (i.e., reads the same forwards and backwards). This problem combines **bit manipulation** with **palindrome detection** and is commonly used in **digital signal processing** and **pattern recognition** where you need to **analyze binary symmetry**. The challenge involves efficiently comparing bits from both ends of the binary representation without converting to strings.
 
-This teaches **bitwise reduction techniques**, **XOR properties**, and is a stepping stone toward **advanced XOR-based algorithms**.
+This teaches **binary symmetry detection** and **bit-level palindrome checking** techniques that are essential for **pattern recognition and efficient binary data analysis**.
 
-**Your task:** Return the result of XORing all numbers in the array.
+**Your task:** Check if a number's binary representation is palindromic using efficient bit manipulation without string conversion.
 
 ### Examples
 
 **Input:**
 ```
-arr = [1, 2, 3]
+n = 9 (binary: 1001)
 ```
 **Output:**
 ```
-0
+Yes
 ```
 
 ---
 
 **Input:**
 ```
-arr = [4, 5, 6]
+n = 10 (binary: 1010)
 ```
 **Output:**
 ```
-7
+No
 ```
-
----
