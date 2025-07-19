@@ -1,52 +1,30 @@
-<h2 align="center">Day 33 (18/07/2025)</h2>
+<h2 align="center">Day 34 (19/07/2025)</h2>
 
-## 1. Check if Two Numbers Have Opposite Signs  
-A fundamental bitwise check that determines if two integers have **opposite signs** by using the sign bit. This is commonly used in systems programming, signal handling, and even game logic.
+## 1. Add 1 to an Integer Using Bitwise
+A problem that introduces advanced arithmetic simulation using bitwise operations and teaches how to perform addition without traditional arithmetic operators.
 
-Given two integers **a** and **b**, use bitwise operations to check if they have opposite signs. This works because the sign bit (most significant bit) will differ if the signs are different.
+Add **1** to an integer **n** using only **bitwise operators** (no + or -). This problem demonstrates how fundamental arithmetic operations can be implemented using bit manipulation and is commonly used in **low-level programming** and **embedded systems** where arithmetic operations might be restricted or need optimization. The challenge involves understanding how binary addition works at the bit level, including handling carry propagation through multiple bit positions.
 
-This teaches **sign bit manipulation**, **XOR/sign checking**, and is useful in **low-level debugging** or **optimization**.
+This teaches **bitwise arithmetic simulation** and **carry propagation techniques** that are essential for **low-level programming and efficient arithmetic implementations**.
 
-**Your task:** Check whether two numbers have opposite signs using bitwise operations.
+**Your task:** Implement addition of 1 using only bitwise operations by simulating binary arithmetic carry propagation.
 
 ### Examples
 
 **Input:**
 ```
-a = 2, b = -3
+n = 4
 ```
 **Output:**
 ```
-True
+5
 ```
 
 ---
 
 **Input:**
 ```
-a = -4, b = -5
-```
-**Output:**
-```
-False
-```
-
----
-
-## 2. Turn Off the Rightmost Set Bit  
-A popular bit manipulation technique that clears the **rightmost set bit (1)** from a number. This is often used in **bit counting algorithms** or **efficient looping**.
-
-Given an integer **n**, use bitwise operations to turn off its rightmost 1-bit.
-
-This teaches **AND with (n - 1)**, a classic trick used in **Hamming weight**, **submask enumeration**, and **power-of-two logic**.
-
-**Your task:** Clear the rightmost set bit of the number.
-
-### Examples
-
-**Input:**
-```
-n = 12
+n = 7
 ```
 **Output:**
 ```
@@ -55,44 +33,66 @@ n = 12
 
 ---
 
-**Input:**
-```
-n = 10
-```
-**Output:**
-```
-8
-```
+## 2. Subtract 1 from an Integer Using Bitwise
+A problem that demonstrates subtraction simulation using bitwise operations and teaches how to perform decrement operations without traditional arithmetic operators.
 
----
+Subtract **1** from a given number **n** using only **bitwise operations**, without using the subtraction operator. This operation is fundamental in **bit manipulation** and **low-level programming** where you need to **implement arithmetic operations** using only logical operations. The challenge involves understanding how binary subtraction works, including handling borrow operations when subtracting from numbers with trailing zeros.
 
-## 3. Isolate the Rightmost Set Bit  
-This problem helps you extract the **rightmost 1-bit** from a number while resetting all other bits — a useful technique in many **binary search optimizations**, **bit masks**, and **hardware manipulation routines**.
+This introduces **bitwise subtraction simulation** and **borrow handling techniques** that are crucial for **arithmetic operation implementation and low-level mathematical computations**.
 
-Given an integer **n**, isolate and return only the rightmost set bit as a new number (all other bits should be 0).
-
-This teaches **bit masking**, **two’s complement logic**, and **bitfield extraction**.
-
-**Your task:** Isolate the rightmost set bit of the number.
+**Your task:** Implement subtraction of 1 using only bitwise operations by simulating binary arithmetic borrow propagation.
 
 ### Examples
 
 **Input:**
 ```
-n = 10
-```
-**Output:**
-```
-2
-```
-
----
-
-**Input:**
-```
-n = 12
+n = 5
 ```
 **Output:**
 ```
 4
+```
+
+---
+
+**Input:**
+```
+n = 8
+```
+**Output:**
+```
+7
+```
+
+---
+
+## 3. Check if Binary Representation of a Number is Palindrome
+A problem that teaches binary pattern analysis and demonstrates how to check symmetry in binary representations using bit manipulation techniques.
+
+Given a number **n**, check whether its **binary representation is a palindrome** (i.e., reads the same forwards and backwards). This problem combines **bit manipulation** with **palindrome detection** and is commonly used in **digital signal processing** and **pattern recognition** where you need to **analyze binary symmetry**. The challenge involves efficiently comparing bits from both ends of the binary representation without converting to strings.
+
+This teaches **binary symmetry detection** and **bit-level palindrome checking** techniques that are essential for **pattern recognition and efficient binary data analysis**.
+
+**Your task:** Check if a number's binary representation is palindromic using efficient bit manipulation without string conversion.
+
+### Examples
+
+**Input:**
+```
+n = 9 (binary: 1001)
+```
+**Output:**
+```
+Yes
+```
+
+---
+
+**Input:**
+```
+n = 10 (binary: 1010)
+```
+**Output:**
+```
+No
 ```
