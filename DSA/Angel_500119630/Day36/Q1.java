@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class ReverseStringUsingStack {
+public class Q1 {
     public static String reverse(String input) {
         Stack<Character> stack = new Stack<>();
 
