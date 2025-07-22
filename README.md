@@ -1,101 +1,98 @@
-<h2 align="center">Day 31 (16/07/2025)</h2>
+<h2 align="center">Day 37 (22/07/2025)</h2>
 
-## 1. Check if a Number is Power of 2  
-A problem that introduces **bitwise logic** and demonstrates how binary representations can simplify numerical checks.  
+## 1. Sort a Stack using Another Stack
+A problem that demonstrates advanced stack manipulation techniques and teaches efficient sorting algorithms using only stack-based operations without auxiliary data structures.
 
-Given a number **n**, check if it is a power of 2 using bitwise operations. A power of 2 has only **one bit set** in its binary form. This problem is commonly used to teach efficient computation using bit manipulation and highlights the use of the `n & (n - 1)` trick to verify powers of two.
+Given a stack of integers, sort it in **ascending order** using only **another stack** as auxiliary storage (no arrays, lists, or other data structures allowed). This operation challenges traditional sorting approaches and requires understanding **stack-based sorting algorithms** that work within the constraints of LIFO operations. The technique is crucial in **memory-constrained environments** where you need to **sort data efficiently** using minimal additional space. This approach teaches how to leverage **temporary stack storage** for organizing data while maintaining the fundamental properties of stack operations throughout the sorting process.
 
-This teaches **binary logic**, **bitwise operations**, and **efficient numeric checks**, which are essential for **low-level programming and competitive coding**.
+This teaches **constrained sorting algorithms** and **stack-based data organization techniques** that are essential for **memory-efficient sorting and space-optimized algorithmic solutions**.
 
-**Your task:** Determine if the given number is a power of 2 using bitwise operators only.
-
-### Examples
-
-**Input:**
-```
-n = 8
-```
-**Output:**
-```
-Yes
-```
-
----
-
-**Input:**
-```
-n = 10
-```
-**Output:**
-```
-No
-```
-
----
-
-## 2. Multiply a Number by 2 Using Bitwise  
-A classic bit manipulation exercise that demonstrates how to use **left shift** operations to perform multiplication efficiently.
-
-Given an integer **n**, write a program to multiply it by 2 using only bitwise operators. This is equivalent to shifting all bits to the left by one position, a common low-level optimization technique used in systems and embedded programming.
-
-This teaches **bitwise left shifting** and **efficient arithmetic tricks** that are useful in **performance-critical applications**.
-
-**Your task:** Multiply the given number by 2 using bitwise operations.
+**Your task:** Implement a sorting algorithm using only stack operations and one additional stack as temporary storage for efficient data organization.
 
 ### Examples
 
 **Input:**
 ```
-n = 3
+[3, 1, 4, 2]
 ```
 **Output:**
 ```
-6
+[1, 2, 3, 4]
 ```
 
 ---
 
 **Input:**
 ```
-n = 7
+[6, 5, 8]
 ```
 **Output:**
 ```
-14
+[5, 6, 8]
 ```
 
 ---
 
-## 3. Divide a Number by 2 Using Bitwise  
-A problem that illustrates the use of **right shift** operations to perform integer division efficiently.
+## 2. Evaluate Postfix Expression
+A problem that introduces stack-based expression evaluation and teaches how to process Reverse Polish Notation using systematic operand and operator handling techniques.
 
-Given a number **n**, write a program to divide it by 2 using bitwise shift operators. This operation discards the decimal part, making it a fast alternative to division in certain applications like graphics, embedded systems, or real-time computations.
+Given a **postfix expression** (Reverse Polish Notation), evaluate the mathematical result using a stack data structure. This operation is fundamental in **compiler design** and **expression parsing** where postfix notation eliminates the need for parentheses and operator precedence rules. The technique is essential in **calculator implementations** and **mathematical expression evaluators** where you need to **process operators systematically** after encountering their operands. Understanding postfix evaluation is crucial for **stack-based virtual machines** and **expression compilation** in programming language interpreters.
 
-This teaches **bitwise right shifting** and **low-level arithmetic operations** that are essential for **speed-critical systems** and **resource-constrained environments**.
+This introduces **postfix evaluation algorithms** and **expression processing techniques** that are crucial for **compiler development and mathematical computation systems**.
 
-**Your task:** Divide the number by 2 using bitwise operators (ignore decimals).
+**Your task:** Use a stack to systematically process operands and operators in postfix notation for accurate mathematical expression evaluation.
 
 ### Examples
 
 **Input:**
 ```
-n = 10
+"231*+9-"
 ```
 **Output:**
 ```
-5
+-4
 ```
 
 ---
 
 **Input:**
 ```
-n = 9
+"52+"
 ```
 **Output:**
 ```
-4
+7
 ```
 
 ---
 
+## 3. Delete Middle Element of Stack
+A problem that teaches precision stack manipulation and demonstrates recursive techniques for accessing and modifying specific stack positions using positional algorithms.
+
+Given a stack, delete its **middle element** using only **stack operations** and **recursion** without converting to other data structures. This operation requires understanding **positional calculations** in stacks and implementing **recursive traversal** to reach specific elements while preserving the order of remaining elements. The technique is important in **data structure maintenance** where you need to **remove specific elements** from constrained access structures. This concept teaches **recursive stack traversal** and **selective element removal** techniques that are essential for advanced stack-based algorithms and data manipulation operations.
+
+This teaches **recursive stack traversal** and **positional element manipulation techniques** that are essential for **advanced data structure operations and selective element processing**.
+
+**Your task:** Implement recursive stack operations to locate and remove the middle element while maintaining the original order of all other elements.
+
+### Examples
+
+**Input:**
+```
+[1, 2, 3, 4, 5]
+```
+**Output:**
+```
+[1, 2, 4, 5]
+```
+
+---
+
+**Input:**
+```
+[10, 20, 30]
+```
+**Output:**
+```
+[10, 30]
+```
