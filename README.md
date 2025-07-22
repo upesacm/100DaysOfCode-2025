@@ -1,98 +1,98 @@
-<h2 align="center">Day 36 (21/07/2025)</h2>
+<h2 align="center">Day 37 (22/07/2025)</h2>
 
-## 1. Reverse a String using Stack
-A problem that introduces fundamental stack operations and demonstrates the Last-In-First-Out (LIFO) principle through string manipulation techniques.
+## 1. Sort a Stack using Another Stack
+A problem that demonstrates advanced stack manipulation techniques and teaches efficient sorting algorithms using only stack-based operations without auxiliary data structures.
 
-You are given a string and need to use a **stack data structure** to reverse the characters and return the reversed result. This operation showcases the core **LIFO behavior** of stacks where elements are removed in the opposite order of their insertion. The challenge is fundamental in **data structure education** and teaches how stacks can be used for **order reversal operations** in various applications like **undo functionality** and **expression evaluation**. Understanding this concept is crucial for implementing **backtracking algorithms** and **parsing operations**.
+Given a stack of integers, sort it in **ascending order** using only **another stack** as auxiliary storage (no arrays, lists, or other data structures allowed). This operation challenges traditional sorting approaches and requires understanding **stack-based sorting algorithms** that work within the constraints of LIFO operations. The technique is crucial in **memory-constrained environments** where you need to **sort data efficiently** using minimal additional space. This approach teaches how to leverage **temporary stack storage** for organizing data while maintaining the fundamental properties of stack operations throughout the sorting process.
 
-This teaches **stack fundamentals** and **LIFO principles** that are essential for **algorithm design and efficient order manipulation operations**.
+This teaches **constrained sorting algorithms** and **stack-based data organization techniques** that are essential for **memory-efficient sorting and space-optimized algorithmic solutions**.
 
-**Your task:** Utilize a stack's LIFO property to reverse string characters by pushing all characters and then popping them sequentially.
-
-### Examples
-
-**Input:**
-```
-"hello"
-```
-**Output:**
-```
-"olleh"
-```
-
----
-
-**Input:**
-```
-"abcde"
-```
-**Output:**
-```
-"edcba"
-```
-
----
-
-## 2. Check for Balanced Parentheses
-A problem that demonstrates stack-based parsing techniques and teaches how to validate nested structures using systematic bracket matching algorithms.
-
-Given a string containing parentheses **()**, **{}**, and **[]**, check whether the input string has **balanced parentheses** using a stack data structure. This operation is fundamental in **compiler design** and **expression parsing** where you need to **validate syntax correctness** and ensure proper nesting of brackets. The challenge involves understanding how stacks can track opening brackets and match them with corresponding closing brackets, making it essential for **syntax validation** and **parser implementation**. This technique is widely used in **code editors** and **mathematical expression evaluators**.
-
-This introduces **bracket matching algorithms** and **syntax validation techniques** that are crucial for **parser development and expression evaluation systems**.
-
-**Your task:** Use a stack to track opening brackets and validate proper pairing with closing brackets for complete balance verification.
+**Your task:** Implement a sorting algorithm using only stack operations and one additional stack as temporary storage for efficient data organization.
 
 ### Examples
 
 **Input:**
 ```
-"([])"
+[3, 1, 4, 2]
 ```
 **Output:**
 ```
-Balanced
+[1, 2, 3, 4]
 ```
 
 ---
 
 **Input:**
 ```
-"(["
+[6, 5, 8]
 ```
 **Output:**
 ```
-Not Balanced
+[5, 6, 8]
 ```
 
 ---
 
-## 3. Insert at Bottom of Stack
-A problem that teaches advanced stack manipulation techniques and demonstrates recursive operations combined with stack-based data structure modification.
+## 2. Evaluate Postfix Expression
+A problem that introduces stack-based expression evaluation and teaches how to process Reverse Polish Notation using systematic operand and operator handling techniques.
 
-Given a stack and an element **x**, insert **x** at the **bottom of the stack** using recursion or additional stack operations without using auxiliary data structures like arrays. This operation challenges the natural **LIFO behavior** of stacks and requires **creative manipulation** to access the bottom position. The technique is important in **stack-based algorithms** where you need to **modify stack foundations** while preserving the existing order. This concept is essential for implementing **advanced stack operations** and understanding **recursive stack manipulation** in complex algorithmic scenarios.
+Given a **postfix expression** (Reverse Polish Notation), evaluate the mathematical result using a stack data structure. This operation is fundamental in **compiler design** and **expression parsing** where postfix notation eliminates the need for parentheses and operator precedence rules. The technique is essential in **calculator implementations** and **mathematical expression evaluators** where you need to **process operators systematically** after encountering their operands. Understanding postfix evaluation is crucial for **stack-based virtual machines** and **expression compilation** in programming language interpreters.
 
-This teaches **recursive stack operations** and **advanced stack manipulation techniques** that are essential for **complex data structure modifications and algorithmic problem solving**.
+This introduces **postfix evaluation algorithms** and **expression processing techniques** that are crucial for **compiler development and mathematical computation systems**.
 
-**Your task:** Insert an element at the stack's bottom position using recursive operations while maintaining the original order of existing elements.
+**Your task:** Use a stack to systematically process operands and operators in postfix notation for accurate mathematical expression evaluation.
 
 ### Examples
 
 **Input:**
 ```
-Stack: [1, 2, 3], x = 0
+"231*+9-"
 ```
 **Output:**
 ```
-[0, 1, 2, 3]
+-4
 ```
 
 ---
 
 **Input:**
 ```
-Stack: [5, 6], x = 9
+"52+"
 ```
 **Output:**
 ```
-[9, 5, 6]
+7
+```
+
+---
+
+## 3. Delete Middle Element of Stack
+A problem that teaches precision stack manipulation and demonstrates recursive techniques for accessing and modifying specific stack positions using positional algorithms.
+
+Given a stack, delete its **middle element** using only **stack operations** and **recursion** without converting to other data structures. This operation requires understanding **positional calculations** in stacks and implementing **recursive traversal** to reach specific elements while preserving the order of remaining elements. The technique is important in **data structure maintenance** where you need to **remove specific elements** from constrained access structures. This concept teaches **recursive stack traversal** and **selective element removal** techniques that are essential for advanced stack-based algorithms and data manipulation operations.
+
+This teaches **recursive stack traversal** and **positional element manipulation techniques** that are essential for **advanced data structure operations and selective element processing**.
+
+**Your task:** Implement recursive stack operations to locate and remove the middle element while maintaining the original order of all other elements.
+
+### Examples
+
+**Input:**
+```
+[1, 2, 3, 4, 5]
+```
+**Output:**
+```
+[1, 2, 4, 5]
+```
+
+---
+
+**Input:**
+```
+[10, 20, 30]
+```
+**Output:**
+```
+[10, 30]
 ```
