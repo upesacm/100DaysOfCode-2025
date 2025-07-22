@@ -24,18 +24,18 @@ def evaluate_postfix(expression):
     stack = []
     for token in expression:
         if token.isdigit():
-            stack.append(int(token))
+            push(stack, int(token))
         else:
-            b = stack.pop()
-            a = stack.pop()     
+            b = pop(stack)
+            a = pop(stack)     
             if token == '+':
-                stack.append(a + b)
+                push(stack, a+b)
             elif token == '-':
-                stack.append(a - b)
+                push(stack, a-b)
             elif token == '*':
-                stack.append(a * b)
+                push(stack, a*b)
             elif token == '/':
-                stack.append(int(a / b))       
+                push(stack, int(a/b))     
     return stack[0]
 
 #Fixed Input
