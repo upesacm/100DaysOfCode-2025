@@ -1,98 +1,98 @@
-<h2 align="center">Day 37 (22/07/2025)</h2>
+<h2 align="center">Day 38 (23/07/2025)</h2>
 
-## 1. Sort a Stack using Another Stack
-A problem that demonstrates advanced stack manipulation techniques and teaches efficient sorting algorithms using only stack-based operations without auxiliary data structures.
+## 1. Next Greater Element
+A problem that demonstrates monotonic stack techniques and teaches efficient nearest greater element finding algorithms for array processing and optimization problems.
 
-Given a stack of integers, sort it in **ascending order** using only **another stack** as auxiliary storage (no arrays, lists, or other data structures allowed). This operation challenges traditional sorting approaches and requires understanding **stack-based sorting algorithms** that work within the constraints of LIFO operations. The technique is crucial in **memory-constrained environments** where you need to **sort data efficiently** using minimal additional space. This approach teaches how to leverage **temporary stack storage** for organizing data while maintaining the fundamental properties of stack operations throughout the sorting process.
+For each element in the array, find the **next greater element** to the right using a stack-based approach. If there is no greater element, assign **-1**. This operation is fundamental in **algorithmic optimization** and **array processing** where you need to **identify nearest greater values** efficiently. The technique uses a **monotonic stack** to maintain elements in decreasing order, enabling **O(n) time complexity** instead of the naive O(n²) approach. This concept is essential in **stock span problems**, **histogram analysis**, and **competitive programming** where efficient nearest element queries are crucial for performance optimization.
 
-This teaches **constrained sorting algorithms** and **stack-based data organization techniques** that are essential for **memory-efficient sorting and space-optimized algorithmic solutions**.
+This teaches **monotonic stack algorithms** and **nearest greater element techniques** that are essential for **array optimization and efficient element comparison operations**.
 
-**Your task:** Implement a sorting algorithm using only stack operations and one additional stack as temporary storage for efficient data organization.
-
-### Examples
-
-**Input:**
-```
-[3, 1, 4, 2]
-```
-**Output:**
-```
-[1, 2, 3, 4]
-```
-
----
-
-**Input:**
-```
-[6, 5, 8]
-```
-**Output:**
-```
-[5, 6, 8]
-```
-
----
-
-## 2. Evaluate Postfix Expression
-A problem that introduces stack-based expression evaluation and teaches how to process Reverse Polish Notation using systematic operand and operator handling techniques.
-
-Given a **postfix expression** (Reverse Polish Notation), evaluate the mathematical result using a stack data structure. This operation is fundamental in **compiler design** and **expression parsing** where postfix notation eliminates the need for parentheses and operator precedence rules. The technique is essential in **calculator implementations** and **mathematical expression evaluators** where you need to **process operators systematically** after encountering their operands. Understanding postfix evaluation is crucial for **stack-based virtual machines** and **expression compilation** in programming language interpreters.
-
-This introduces **postfix evaluation algorithms** and **expression processing techniques** that are crucial for **compiler development and mathematical computation systems**.
-
-**Your task:** Use a stack to systematically process operands and operators in postfix notation for accurate mathematical expression evaluation.
+**Your task:** Implement a monotonic stack solution to find the next greater element for each array position in linear time complexity.
 
 ### Examples
 
 **Input:**
 ```
-"231*+9-"
+[4, 5, 2, 25]
 ```
 **Output:**
 ```
--4
+[5, 25, 25, -1]
 ```
 
 ---
 
 **Input:**
 ```
-"52+"
+[13, 7, 6, 12]
 ```
 **Output:**
 ```
-7
+[-1, 12, 12, -1]
 ```
 
 ---
 
-## 3. Delete Middle Element of Stack
-A problem that teaches precision stack manipulation and demonstrates recursive techniques for accessing and modifying specific stack positions using positional algorithms.
+## 2. Min Stack
+A problem that introduces auxiliary data structure design and teaches how to maintain additional information while preserving constant-time operations for specialized stack requirements.
 
-Given a stack, delete its **middle element** using only **stack operations** and **recursion** without converting to other data structures. This operation requires understanding **positional calculations** in stacks and implementing **recursive traversal** to reach specific elements while preserving the order of remaining elements. The technique is important in **data structure maintenance** where you need to **remove specific elements** from constrained access structures. This concept teaches **recursive stack traversal** and **selective element removal** techniques that are essential for advanced stack-based algorithms and data manipulation operations.
+Design a stack that supports **push**, **pop**, **top**, and retrieving the **minimum element** in **constant time O(1)**. This operation requires understanding **auxiliary storage techniques** and **invariant maintenance** where you need to **track additional metadata** without compromising basic stack operations. The challenge is crucial in **system design** and **data structure optimization** where you need **efficient minimum queries** alongside standard stack functionality. This concept teaches **space-time tradeoffs** and **auxiliary structure design** that are essential for building efficient specialized data structures.
 
-This teaches **recursive stack traversal** and **positional element manipulation techniques** that are essential for **advanced data structure operations and selective element processing**.
+This introduces **auxiliary data structure design** and **constant-time optimization techniques** that are crucial for **specialized container implementations and system performance optimization**.
 
-**Your task:** Implement recursive stack operations to locate and remove the middle element while maintaining the original order of all other elements.
+**Your task:** Design a stack with auxiliary storage to maintain minimum element information while ensuring all operations remain O(1) complexity.
 
 ### Examples
 
 **Input:**
 ```
-[1, 2, 3, 4, 5]
+Push: 5, 3, 7 → Get Min
 ```
 **Output:**
 ```
-[1, 2, 4, 5]
+3
 ```
 
 ---
 
 **Input:**
 ```
-[10, 20, 30]
+Push: 8, 2, 6 → Pop → Get Min
 ```
 **Output:**
 ```
-[10, 30]
+2
+```
+
+---
+
+## 3. Redundant Brackets
+A problem that teaches expression analysis techniques and demonstrates stack-based parsing for identifying unnecessary parentheses in mathematical expressions through systematic bracket evaluation.
+
+Given a valid mathematical expression in the form of a string, find whether it contains any **redundant brackets** using a stack-based approach. This operation is fundamental in **expression optimization** and **compiler design** where you need to **identify unnecessary parentheses** that don't affect operator precedence or evaluation order. The technique involves **systematic bracket tracking** and **operator counting** to determine if brackets enclose meaningful sub-expressions. This concept is essential in **code optimization**, **expression simplification**, and **parser development** where removing redundant elements improves performance and readability.
+
+This teaches **expression parsing algorithms** and **bracket redundancy detection techniques** that are essential for **compiler optimization and mathematical expression analysis systems**.
+
+**Your task:** Use stack-based parsing to identify redundant bracket pairs by tracking operators and operands within parentheses for optimization detection.
+
+### Examples
+
+**Input:**
+```
+"((a+b))"
+```
+**Output:**
+```
+Yes
+```
+
+---
+
+**Input:**
+```
+"(a+b)"
+```
+**Output:**
+```
+No
 ```
