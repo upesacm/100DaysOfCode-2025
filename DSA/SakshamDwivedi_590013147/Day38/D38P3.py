@@ -20,8 +20,6 @@ def display():
 '''
 def redundant_check(expression):
     for i in expression:
-        push(stack, i)
-    for i in expression:
         if i == ")":
             operator_found = False
             top = pop(stack)
