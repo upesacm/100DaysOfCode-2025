@@ -1,98 +1,98 @@
-<h2 align="center">Day 38 (23/07/2025)</h2>
+<h2 align="center">Day 39 (24/07/2025)</h2>
 
-## 1. Next Greater Element
-A problem that demonstrates monotonic stack techniques and teaches efficient nearest greater element finding algorithms for array processing and optimization problems.
+## 1. Reverse a Stack using Recursion
+A problem that demonstrates advanced recursive techniques and teaches in-place data structure manipulation without auxiliary storage through systematic recursive operations.
 
-For each element in the array, find the **next greater element** to the right using a stack-based approach. If there is no greater element, assign **-1**. This operation is fundamental in **algorithmic optimization** and **array processing** where you need to **identify nearest greater values** efficiently. The technique uses a **monotonic stack** to maintain elements in decreasing order, enabling **O(n) time complexity** instead of the naive O(n²) approach. This concept is essential in **stock span problems**, **histogram analysis**, and **competitive programming** where efficient nearest element queries are crucial for performance optimization.
+Reverse the elements of a stack without using any **extra space** (use **recursion only**). This operation challenges traditional reversal approaches by eliminating auxiliary data structures and relying purely on **recursive call stack** for temporary storage. The technique is fundamental in **space-constrained algorithms** and **in-place manipulation** where you need to **transform data structures** without additional memory allocation. Understanding this concept is crucial for **memory-efficient programming** and **recursive problem solving** where the call stack itself becomes the working storage. This approach teaches **advanced recursion patterns** that are essential for implementing complex transformations with minimal space overhead.
 
-This teaches **monotonic stack algorithms** and **nearest greater element techniques** that are essential for **array optimization and efficient element comparison operations**.
+This teaches **in-place recursive algorithms** and **call stack utilization techniques** that are essential for **memory-efficient data structure manipulation and space-optimized recursive operations**.
 
-**Your task:** Implement a monotonic stack solution to find the next greater element for each array position in linear time complexity.
-
-### Examples
-
-**Input:**
-```
-[4, 5, 2, 25]
-```
-**Output:**
-```
-[5, 25, 25, -1]
-```
-
----
-
-**Input:**
-```
-[13, 7, 6, 12]
-```
-**Output:**
-```
-[-1, 12, 12, -1]
-```
-
----
-
-## 2. Min Stack
-A problem that introduces auxiliary data structure design and teaches how to maintain additional information while preserving constant-time operations for specialized stack requirements.
-
-Design a stack that supports **push**, **pop**, **top**, and retrieving the **minimum element** in **constant time O(1)**. This operation requires understanding **auxiliary storage techniques** and **invariant maintenance** where you need to **track additional metadata** without compromising basic stack operations. The challenge is crucial in **system design** and **data structure optimization** where you need **efficient minimum queries** alongside standard stack functionality. This concept teaches **space-time tradeoffs** and **auxiliary structure design** that are essential for building efficient specialized data structures.
-
-This introduces **auxiliary data structure design** and **constant-time optimization techniques** that are crucial for **specialized container implementations and system performance optimization**.
-
-**Your task:** Design a stack with auxiliary storage to maintain minimum element information while ensuring all operations remain O(1) complexity.
+**Your task:** Implement recursive stack reversal using only the implicit call stack as temporary storage while maintaining O(1) auxiliary space complexity.
 
 ### Examples
 
 **Input:**
 ```
-Push: 5, 3, 7 → Get Min
+[1, 2, 3]
 ```
 **Output:**
 ```
-3
+[3, 2, 1]
 ```
 
 ---
 
 **Input:**
 ```
-Push: 8, 2, 6 → Pop → Get Min
+[5, 6]
 ```
 **Output:**
 ```
-2
+[6, 5]
 ```
 
 ---
 
-## 3. Redundant Brackets
-A problem that teaches expression analysis techniques and demonstrates stack-based parsing for identifying unnecessary parentheses in mathematical expressions through systematic bracket evaluation.
+## 2. Stock Span Problem
+A problem that introduces financial algorithm applications and teaches monotonic stack techniques for analyzing time-series data and computing backward-looking statistics efficiently.
 
-Given a valid mathematical expression in the form of a string, find whether it contains any **redundant brackets** using a stack-based approach. This operation is fundamental in **expression optimization** and **compiler design** where you need to **identify unnecessary parentheses** that don't affect operator precedence or evaluation order. The technique involves **systematic bracket tracking** and **operator counting** to determine if brackets enclose meaningful sub-expressions. This concept is essential in **code optimization**, **expression simplification**, and **parser development** where removing redundant elements improves performance and readability.
+Given a list of daily stock prices, return the **span of stocks** for each day using a stack-based approach. The span represents the number of **consecutive days before** the current day with **smaller or equal price**. This operation is fundamental in **financial analysis** and **technical indicators** where you need to **compute price momentum** and **trend analysis metrics**. The technique uses a **monotonic decreasing stack** to efficiently track previous higher prices, enabling **O(n) time complexity** for span calculation. This concept is essential in **algorithmic trading**, **market analysis**, and **time-series processing** where efficient backward-looking computations are crucial for real-time decision making.
 
-This teaches **expression parsing algorithms** and **bracket redundancy detection techniques** that are essential for **compiler optimization and mathematical expression analysis systems**.
+This introduces **financial algorithm techniques** and **time-series analysis methods** that are crucial for **trading systems and efficient market data processing operations**.
 
-**Your task:** Use stack-based parsing to identify redundant bracket pairs by tracking operators and operands within parentheses for optimization detection.
+**Your task:** Use a monotonic stack to efficiently compute stock price spans by tracking previous higher prices for optimal time-series analysis.
 
 ### Examples
 
 **Input:**
 ```
-"((a+b))"
+[100, 80, 60, 70, 60, 75, 85]
 ```
 **Output:**
 ```
-Yes
+[1, 1, 1, 2, 1, 4, 6]
 ```
 
 ---
 
 **Input:**
 ```
-"(a+b)"
+[10, 20, 30]
 ```
 **Output:**
 ```
-No
+[1, 2, 3]
+```
+
+---
+
+## 3. Implement 2 Stacks in an Array
+A problem that teaches space-efficient data structure design and demonstrates optimal memory utilization techniques for implementing multiple stacks within shared storage constraints.
+
+Design a data structure that implements **two stacks** in **one array** such that neither stack overflows until the **total space is used**. This operation requires understanding **space partitioning strategies** and **dynamic boundary management** where you need to **maximize space utilization** while maintaining stack properties. The technique is crucial in **embedded systems** and **memory-constrained environments** where you need **efficient multi-stack implementations** without wasting allocated space. This concept teaches **optimal space allocation** and **collision detection** that are essential for building efficient container classes and system-level data structures.
+
+This teaches **space-efficient container design** and **memory optimization techniques** that are essential for **system programming and resource-constrained data structure implementations**.
+
+**Your task:** Design a dual-stack array implementation with optimal space utilization by managing dynamic boundaries and preventing premature overflow conditions.
+
+### Examples
+
+**Input:**
+```
+Push 1, 2 in stack1, Push 9, 8 in stack2
+```
+**Output:**
+```
+Stack1: [1, 2], Stack2: [8, 9]
+```
+
+---
+
+**Input:**
+```
+Push 3 in stack1, Pop stack2
+```
+**Output:**
+```
+Stack1: [1, 2, 3], Stack2: [8]
 ```
