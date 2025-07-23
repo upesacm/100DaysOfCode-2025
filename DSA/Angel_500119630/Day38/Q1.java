@@ -1,4 +1,4 @@
-class Solution {
+class Q1 {
     public int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
