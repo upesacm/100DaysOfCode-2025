@@ -1,15 +1,22 @@
 #Implement recursive stack reversal using only the implicit call stack as temporary storage while maintaining O(1) auxiliary space complexity.
-def next_greater_elements(arr):
-    stack = []
-    res = [-1] * len(arr)
+def insert_at_bottom(stack, item):
+    if len(stack) == 0:
+        stack.append(item)
+    else:
+        temp = stack.pop()
+        insert_at_bottom(stack, item)
+        stack.append(temp)
 
-    for i in range(len(arr) - 1, -1, -1):
-        while stack and stack[-1] <= arr[i]:
-            stack.pop()
-        if stack:
-            res[i] = stack[-1]
-        stack.append(arr[i])
-    return res
+def reverse_stack(stack):
+    if len(stack) > 0:
+        temp = stack.pop()
+        reverse_stack(stack)
+        insert_at_bottom(stack, temp)
 
-arr = list(map(int, input("Enter array elements: ").split()))
-print("Next greater elements:", next_greater_elements(arr))
+input_str = input("Enter stack elements separated by space: ")
+stack = list(map(int, input_str.strip().split()))
+
+reverse_stack(stack)
+
+print("Reversed Stack:")
+print(stack)
