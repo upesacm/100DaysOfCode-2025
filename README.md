@@ -1,89 +1,56 @@
-<h2 align="center">Day 37 (22/07/2025)</h2>
+<h2 align="center">Day 39 (24/07/2025)</h2>
 
-## 1. Sort a Stack using Another Stack
-A problem that demonstrates advanced stack manipulation techniques and teaches efficient sorting algorithms using only stack-based operations without auxiliary data structures.
+## 1. Reverse a Stack using Recursion
+A problem that demonstrates advanced recursive techniques and teaches in-place data structure manipulation without auxiliary storage through systematic recursive operations.
 
-Given a stack of integers, sort it in **ascending order** using only **another stack** as auxiliary storage (no arrays, lists, or other data structures allowed). This operation challenges traditional sorting approaches and requires understanding **stack-based sorting algorithms** that work within the constraints of LIFO operations. The technique is crucial in **memory-constrained environments** where you need to **sort data efficiently** using minimal additional space. This approach teaches how to leverage **temporary stack storage** for organizing data while maintaining the fundamental properties of stack operations throughout the sorting process.
+Reverse the elements of a stack without using any **extra space** (use **recursion only**). This operation challenges traditional reversal approaches by eliminating auxiliary data structures and relying purely on **recursive call stack** for temporary storage. The technique is fundamental in **space-constrained algorithms** and **in-place manipulation** where you need to **transform data structures** without additional memory allocation. Understanding this concept is crucial for **memory-efficient programming** and **recursive problem solving** where the call stack itself becomes the working storage. This approach teaches **advanced recursion patterns** that are essential for implementing complex transformations with minimal space overhead.
 
-This teaches **constrained sorting algorithms** and **stack-based data organization techniques** that are essential for **memory-efficient sorting and space-optimized algorithmic solutions**.
+This teaches **in-place recursive algorithms** and **call stack utilization techniques** that are essential for **memory-efficient data structure manipulation and space-optimized recursive operations**.
 
-**Your task:** Implement a sorting algorithm using only stack operations and one additional stack as temporary storage for efficient data organization.
-
-### Examples
-
-**Input:**
-```
-[3, 1, 4, 2]
-```
-**Output:**
-```
-[1, 2, 3, 4]
-```
-
----
-
-**Input:**
-```
-[6, 5, 8]
-```
-**Output:**
-```
-[5, 6, 8]
-```
-
----
-
-## 2. Evaluate Postfix Expression
-A problem that introduces stack-based expression evaluation and teaches how to process Reverse Polish Notation using systematic operand and operator handling techniques.
-
-Given a **postfix expression** (Reverse Polish Notation), evaluate the mathematical result using a stack data structure. This operation is fundamental in **compiler design** and **expression parsing** where postfix notation eliminates the need for parentheses and operator precedence rules. The technique is essential in **calculator implementations** and **mathematical expression evaluators** where you need to **process operators systematically** after encountering their operands. Understanding postfix evaluation is crucial for **stack-based virtual machines** and **expression compilation** in programming language interpreters.
-
-This introduces **postfix evaluation algorithms** and **expression processing techniques** that are crucial for **compiler development and mathematical computation systems**.
-
-**Your task:** Use a stack to systematically process operands and operators in postfix notation for accurate mathematical expression evaluation.
+**Your task:** Implement recursive stack reversal using only the implicit call stack as temporary storage while maintaining O(1) auxiliary space complexity.
 
 ### Examples
 
 **Input:**
 ```
-"231*+9-"
+[1, 2, 3]
 ```
 **Output:**
 ```
--4
+[3, 2, 1]
 ```
 
 ---
 
 **Input:**
 ```
-"52+"
+[5, 6]
 ```
 **Output:**
 ```
-7
+[6, 5]
 ```
 
 ---
 
-## 3. Delete Middle Element of Stack
-A problem that teaches precision stack manipulation and demonstrates recursive techniques for accessing and modifying specific stack positions using positional algorithms.
+## 2. Stock Span Problem
+A problem that introduces financial algorithm applications and teaches monotonic stack techniques for analyzing time-series data and computing backward-looking statistics efficiently.
 
-Given a stack, delete its **middle element** using only **stack operations** and **recursion** without converting to other data structures. This operation requires understanding **positional calculations** in stacks and implementing **recursive traversal** to reach specific elements while preserving the order of remaining elements. The technique is important in **data structure maintenance** where you need to **remove specific elements** from constrained access structures. This concept teaches **recursive stack traversal** and **selective element removal** techniques that are essential for advanced stack-based algorithms and data manipulation operations.
+Given a list of daily stock prices, return the **span of stocks** for each day using a stack-based approach. The span represents the number of **consecutive days before** the current day with **smaller or equal price**. This operation is fundamental in **financial analysis** and **technical indicators** where you need to **compute price momentum** and **trend analysis metrics**. The technique uses a **monotonic decreasing stack** to efficiently track previous higher prices, enabling **O(n) time complexity** for span calculation. This concept is essential in **algorithmic trading**, **market analysis**, and **time-series processing** where efficient backward-looking computations are crucial for real-time decision making.
 
-This teaches **recursive stack traversal** and **positional element manipulation techniques** that are essential for **advanced data structure operations and selective element processing**.
+This introduces **financial algorithm techniques** and **time-series analysis methods** that are crucial for **trading systems and efficient market data processing operations**.
 
-**Your task:** Implement recursive stack operations to locate and remove the middle element while maintaining the original order of all other elements.
+**Your task:** Use a monotonic stack to efficiently compute stock price spans by tracking previous higher prices for optimal time-series analysis.
 
 ### Examples
 
 **Input:**
 ```
-[1, 2, 3, 4, 5]
+[100, 80, 60, 70, 60, 75, 85]
 ```
 **Output:**
 ```
-[1, 2, 4, 5]
+[1, 1, 1, 2, 1, 4, 6]
 ```
 
 ---
@@ -94,5 +61,38 @@ This teaches **recursive stack traversal** and **positional element manipulation
 ```
 **Output:**
 ```
-[10, 30]
+[1, 2, 3]
+```
+
+---
+
+## 3. Implement 2 Stacks in an Array
+A problem that teaches space-efficient data structure design and demonstrates optimal memory utilization techniques for implementing multiple stacks within shared storage constraints.
+
+Design a data structure that implements **two stacks** in **one array** such that neither stack overflows until the **total space is used**. This operation requires understanding **space partitioning strategies** and **dynamic boundary management** where you need to **maximize space utilization** while maintaining stack properties. The technique is crucial in **embedded systems** and **memory-constrained environments** where you need **efficient multi-stack implementations** without wasting allocated space. This concept teaches **optimal space allocation** and **collision detection** that are essential for building efficient container classes and system-level data structures.
+
+This teaches **space-efficient container design** and **memory optimization techniques** that are essential for **system programming and resource-constrained data structure implementations**.
+
+**Your task:** Design a dual-stack array implementation with optimal space utilization by managing dynamic boundaries and preventing premature overflow conditions.
+
+### Examples
+
+**Input:**
+```
+Push 1, 2 in stack1, Push 9, 8 in stack2
+```
+**Output:**
+```
+Stack1: [1, 2], Stack2: [8, 9]
+```
+
+---
+
+**Input:**
+```
+Push 3 in stack1, Pop stack2
+```
+**Output:**
+```
+Stack1: [1, 2, 3], Stack2: [8]
 ```
