@@ -47,7 +47,7 @@ def display():
     print("Stack1:", arr[:top1+1])
     print("Stack2:", arr[top2:])
 
-# ----- Interaction -----
+#Custom Input
 con = "y"
 while con == "y" or con == "Y":
     print("\n1. Push to Stack 1")
