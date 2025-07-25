@@ -1,98 +1,102 @@
-<h2 align="center">Day 39 (24/07/2025)</h2>
+<h2 align="center">Day 40 (25/07/2025)</h2>
 
-## 1. Reverse a Stack using Recursion
-A problem that demonstrates advanced recursive techniques and teaches in-place data structure manipulation without auxiliary storage through systematic recursive operations.
+## 1. Celebrity Problem
+A problem that demonstrates graph theory applications and teaches efficient candidate elimination techniques using stack-based algorithms for social network analysis and relationship mapping.
 
-Reverse the elements of a stack without using any **extra space** (use **recursion only**). This operation challenges traditional reversal approaches by eliminating auxiliary data structures and relying purely on **recursive call stack** for temporary storage. The technique is fundamental in **space-constrained algorithms** and **in-place manipulation** where you need to **transform data structures** without additional memory allocation. Understanding this concept is crucial for **memory-efficient programming** and **recursive problem solving** where the call stack itself becomes the working storage. This approach teaches **advanced recursion patterns** that are essential for implementing complex transformations with minimal space overhead.
+In a party of **n people**, find the **celebrity** using a stack-based approach. A celebrity is **known by everyone** but **knows no one**. This operation is fundamental in **graph theory** and **social network analysis** where you need to **identify central nodes** with specific connectivity properties. The technique uses **systematic elimination** through stack operations to reduce the search space from O(n²) to **O(n) time complexity**. Understanding this concept is crucial for **influence analysis**, **network topology** problems, and **graph traversal optimization** where identifying nodes with unique properties requires efficient filtering algorithms.
 
-This teaches **in-place recursive algorithms** and **call stack utilization techniques** that are essential for **memory-efficient data structure manipulation and space-optimized recursive operations**.
+This teaches **graph-based elimination algorithms** and **social network analysis techniques** that are essential for **relationship mapping and efficient node identification in complex network structures**.
 
-**Your task:** Implement recursive stack reversal using only the implicit call stack as temporary storage while maintaining O(1) auxiliary space complexity.
-
-### Examples
-
-**Input:**
-```
-[1, 2, 3]
-```
-**Output:**
-```
-[3, 2, 1]
-```
-
----
-
-**Input:**
-```
-[5, 6]
-```
-**Output:**
-```
-[6, 5]
-```
-
----
-
-## 2. Stock Span Problem
-A problem that introduces financial algorithm applications and teaches monotonic stack techniques for analyzing time-series data and computing backward-looking statistics efficiently.
-
-Given a list of daily stock prices, return the **span of stocks** for each day using a stack-based approach. The span represents the number of **consecutive days before** the current day with **smaller or equal price**. This operation is fundamental in **financial analysis** and **technical indicators** where you need to **compute price momentum** and **trend analysis metrics**. The technique uses a **monotonic decreasing stack** to efficiently track previous higher prices, enabling **O(n) time complexity** for span calculation. This concept is essential in **algorithmic trading**, **market analysis**, and **time-series processing** where efficient backward-looking computations are crucial for real-time decision making.
-
-This introduces **financial algorithm techniques** and **time-series analysis methods** that are crucial for **trading systems and efficient market data processing operations**.
-
-**Your task:** Use a monotonic stack to efficiently compute stock price spans by tracking previous higher prices for optimal time-series analysis.
+**Your task:** Use stack-based candidate elimination to efficiently identify the celebrity by systematically reducing potential candidates through relationship queries.
 
 ### Examples
 
 **Input:**
 ```
-[100, 80, 60, 70, 60, 75, 85]
+Matrix for 3 people
+0 1 1
+0 0 1
+0 0 0
 ```
 **Output:**
 ```
-[1, 1, 1, 2, 1, 4, 6]
+2
 ```
 
 ---
 
 **Input:**
 ```
-[10, 20, 30]
+0 1
+1 0
 ```
 **Output:**
 ```
-[1, 2, 3]
+-1
 ```
 
 ---
 
-## 3. Implement 2 Stacks in an Array
-A problem that teaches space-efficient data structure design and demonstrates optimal memory utilization techniques for implementing multiple stacks within shared storage constraints.
+## 2. Largest Rectangle in Histogram
+A problem that introduces computational geometry applications and teaches advanced monotonic stack techniques for area optimization and geometric analysis in histogram data structures.
 
-Design a data structure that implements **two stacks** in **one array** such that neither stack overflows until the **total space is used**. This operation requires understanding **space partitioning strategies** and **dynamic boundary management** where you need to **maximize space utilization** while maintaining stack properties. The technique is crucial in **embedded systems** and **memory-constrained environments** where you need **efficient multi-stack implementations** without wasting allocated space. This concept teaches **optimal space allocation** and **collision detection** that are essential for building efficient container classes and system-level data structures.
+Given **n non-negative integers** representing histogram bar heights, find the area of the **largest rectangle** that can be formed using a stack-based approach. This operation is fundamental in **computational geometry** and **area optimization** where you need to **find maximum rectangular regions** within constrained boundaries. The technique uses a **monotonic increasing stack** to efficiently track potential rectangle boundaries, enabling **O(n) time complexity** for area computation. This concept is essential in **image processing**, **architectural design**, and **optimization problems** where maximum area calculations are crucial for space utilization and geometric analysis.
 
-This teaches **space-efficient container design** and **memory optimization techniques** that are essential for **system programming and resource-constrained data structure implementations**.
+This introduces **computational geometry algorithms** and **area optimization techniques** that are crucial for **geometric analysis and efficient spatial computation operations**.
 
-**Your task:** Design a dual-stack array implementation with optimal space utilization by managing dynamic boundaries and preventing premature overflow conditions.
+**Your task:** Implement a monotonic stack solution to find the maximum rectangular area by tracking height boundaries and computing optimal width extensions.
 
 ### Examples
 
 **Input:**
 ```
-Push 1, 2 in stack1, Push 9, 8 in stack2
+[2,1,5,6,2,3]
 ```
 **Output:**
 ```
-Stack1: [1, 2], Stack2: [8, 9]
+10
 ```
 
 ---
 
 **Input:**
 ```
-Push 3 in stack1, Pop stack2
+[2,4]
 ```
 **Output:**
 ```
-Stack1: [1, 2, 3], Stack2: [8]
+4
+```
+
+---
+
+## 3. Design a Stack that Supports getMax()
+A problem that teaches specialized container design and demonstrates auxiliary data structure techniques for maintaining maximum element tracking with constant-time query operations.
+
+Implement a stack that supports **push**, **pop**, and also retrieving the **maximum element** in **constant time O(1)**. This operation requires understanding **auxiliary storage optimization** and **maximum tracking algorithms** where you need to **maintain metadata efficiently** alongside standard stack operations. The technique involves **parallel data structure management** to track maximum values without compromising performance. This concept is crucial in **system design**, **database indexing**, and **real-time analytics** where efficient maximum queries are essential for performance monitoring and statistical analysis operations.
+
+This teaches **auxiliary metadata management** and **constant-time optimization techniques** that are essential for **specialized container implementations and high-performance data structure design**.
+
+**Your task:** Design a stack with auxiliary maximum tracking to maintain peak element information while ensuring all operations remain O(1) complexity.
+
+### Examples
+
+**Input:**
+```
+Push: 3, 5, 2 → getMax
+```
+**Output:**
+```
+5
+```
+
+---
+
+**Input:**
+```
+Pop → getMax
+```
+**Output:**
+```
+3
 ```
