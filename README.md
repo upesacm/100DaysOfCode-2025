@@ -1,4 +1,4 @@
-<h2 align="center">Quiz 6 (20/07/2025)</h2>
+<h2 align="center">Quiz 6 (27/07/2025)</h2>
 
 **Time:** Sunday, 8:00 PM - 9:00 PM (1 Hour)
 
