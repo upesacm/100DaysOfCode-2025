@@ -1,0 +1,44 @@
+class Stack:
+    def __init__(self):
+        self.stack = []
+    def push(self, data):
+        self.stack.append(data)
+    def pop(self):
+        if not self.isEmpty():
+            return self.stack.pop()
+        else:
+            return ''    
+    def peek(self):
+        if not self.isEmpty():
+            return self.stack[-1]
+        else:
+            return None
+    def isEmpty(self):
+        return len(self.stack)==0
+            
+    def display(self):
+        print(self.stack)
+
+    def lengthofstk(self):
+        return len(self.stack)  
+
+class Solution():
+    def removeknums(self, num, k):
+        res = Stack()
+        for n in num:
+            while not res.isEmpty() and k>0 and n<res.peek():
+                    res.pop()
+                    k-=1
+            res.push(n)  
+        return res    
+
+def main():
+    user_input = input("Enter the number: ")
+    k = int(input("Enter k: "))
+    sol = Solution()
+    res = sol.removeknums(user_input, k)
+    print("".join(res.stack))
+
+
+if __name__ == "__main__":
+    main()  
