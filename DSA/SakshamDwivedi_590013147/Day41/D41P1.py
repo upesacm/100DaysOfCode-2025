@@ -1,18 +1,10 @@
 stack = []
-maxStack = []
 
 def push(stack, num):
     stack.append(num)
-    if not maxStack or num >= maxStack[-1]:
-        maxStack.append(num)
-    else:
-        maxStack.append(maxStack[-1])
 
 def pop(stack):
-    if stack:
-        maxStack.pop()
-        return stack.pop()
-    return None
+    return stack.pop()
 
 def peek(stack):
     if stack:
