@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class DecodeString {
+public class Q2 {
 
     public String decodeString(String s) {
         Stack<Integer> numStack = new Stack<>();
