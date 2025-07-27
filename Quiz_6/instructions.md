@@ -1,17 +1,9 @@
-<h2 align="center">Quiz 6 (27/07/2025)</h2>
-
-**Time:** Sunday, 8:00 PM - 9:00 PM (1 Hour)
-
-## Format
-- MCQs: Submit via Google Form
-- Debugging Questions: Submit to GitHub
-
 ## Repository Structure
 ```
-📁 Quiz_6/
+📁 Quiz_5/
 └── 📁 Your_Name_SapID/
-    ├── Quiz_6_Debugging_Question_1.c / .py
-    └── Quiz_6_Debugging_Question_2.c / .py
+    ├── Quiz_5_Debugging_Question_1.c / .py
+    └── Quiz_5_Debugging_Question_2.c / .py
 ```
 
 ## Notes
@@ -20,5 +12,3 @@
 - Use the appropriate file extension (.c for C, .py for Python)
 - Follow the folder naming format strictly: Your_Name_SapID
 - Submit within time limit
-
-Good luck!
