@@ -1,33 +1,44 @@
-# Solution of question 2
-def calculate_stock_span(prices):
-    stack = []
-    spans = []
+# Solution for question 2:
 
-    for i in range(len(prices)):
-        # BUG: `prices[stack[-1]] >= prices[i]` is incorrect
-        # FIX: We want to remove *strictly smaller or equal* prices
-        while stack and prices[stack[-1]] <= prices[i]:
-            stack.pop()
+# BUG:
+# - min_val was only updated when pushing new elements.
+# - If the minimum element was popped, min_val was not recalculated.
+# - So get_min() returned outdated values after popping the minimum.
 
-        # Span calculation remains the same
-        if not stack:
-            span = i + 1
-        else:
-            span = i - stack[-1]
+# FIX:
+# - Use an extra stack (min_stack) to keep track of the minimum at every push.
+# - When popping, if the popped value is equal to the top of min_stack, pop that too.
+# - This ensures get_min() always gives the correct minimum in O(1) time.
 
-        spans.append(span)
-        stack.append(i)
+class MinStack:
+    def __init__(self):
+        self.stack = []
+        self.min_stack = []
 
-    return spans
+    def push(self, val):
+        self.stack.append(val)
+        # Push to min_stack if it's empty or the new value is <= current min
+        if not self.min_stack or val <= self.min_stack[-1]:
+            self.min_stack.append(val)
 
-#Task 1:
-# Bug Summary:
-# Buggy condition: `while stack and prices[stack[-1]] >= prices[i]`
+    def pop(self):
+        if self.stack:
+            popped = self.stack.pop()
+            # Also pop from min_stack if we removed the current min
+            if popped == self.min_stack[-1]:
+                self.min_stack.pop()
+            return popped
 
-#Task 2: 
-# Why it's wrong:
-#     - It pops *larger* prices instead of smaller/equal ones
-#     - This reverses the logic — span becomes inaccurate
+    def get_min(self):
+        # Return the current minimum, or None if the stack is empty
+        return self.min_stack[-1] if self.min_stack else None
 
-# Correct condition: `prices[stack[-1]] <= prices[i]`
-#     - This ensures we track all **previous smaller or equal** prices for correct span
+# Test case
+min_stack = MinStack()
+min_stack.push(5)
+min_stack.push(2)
+min_stack.push(8)
+print(min_stack.get_min())  # Output: 2
+min_stack.pop()             # Pops 8
+min_stack.pop()             # Pops 2 (min)
+print(min_stack.get_min())  # Output: 5 (correct)
