@@ -1,3 +1,5 @@
+# Solution for question 1:
+
 # BUG:
 # - min_val was only updated when pushing new elements.
 # - If the minimum element was popped, min_val was not recalculated.
