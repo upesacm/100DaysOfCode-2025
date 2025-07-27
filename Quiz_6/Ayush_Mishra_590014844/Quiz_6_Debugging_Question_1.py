@@ -19,3 +19,11 @@ class MinStack:
         if self.min_stack:
             return self.min_stack[-1]
         return None
+min_stack = MinStack()
+min_stack.push(5)
+min_stack.push(2)
+min_stack.push(8)
+print(min_stack.get_min()) 
+min_stack.pop()
+min_stack.pop()
+print(min_stack.get_min())
