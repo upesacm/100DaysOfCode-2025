@@ -15,9 +15,12 @@ class q1:
 
     def get_min(self):
         return self.min_val
-#1. Identify the bug in the stack condition:
-# while stack and prices[stack[-1]] >= prices[i]:
-
-# 2. Why this causes incorrect behavior:
-# The logic pops larger or equal prices, but stock span should count all previous prices that are smaller or equal to current.
-# By removing higher prices, we lose the history of spans that should’ve been counted.
+#1. Identify the specific line(s) causing the bug:
+#def pop(self):
+ #   if self.stack:
+ #       popped = self.stack.pop()
+ #       return popped
+#2. Why this causes incorrect behavior:
+#The pop() function removes elements from self.stack, but does not update self.min_val when the minimum value is removed.
+#self.min_val is only updated during push(), so once the actual minimum is popped, the old min value remains.
+#This causes get_min() to return incorrect results after popping the minimum.
