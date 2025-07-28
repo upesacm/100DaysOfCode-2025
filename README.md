@@ -1,4 +1,4 @@
-<h2 align="center">Day 43 (29/07/2025)</h2>
+<h2 align="center">Day 43 (28/07/2025)</h2>
 
 ## 1. Reverse First K Elements of Queue
 A problem that demonstrates partial queue manipulation techniques and teaches selective element reversal using auxiliary data structures while preserving the First-In-First-Out principle for remaining elements.
