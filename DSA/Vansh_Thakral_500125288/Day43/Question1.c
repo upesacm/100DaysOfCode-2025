@@ -3,85 +3,81 @@
 
 #define MAX 100
 
-
 typedef struct {
-    int data[MAX];
+    int arr[MAX];
     int front, rear;
 } Queue;
 
-void enqueue(Queue *q, int val) {
-    if (q->rear == MAX - 1) return;
-    q->data[++q->rear] = val;
-    if (q->front == -1) q->front = 0;
-}
-
-int dequeue(Queue *q) {
-    if (q->front == -1 || q->front > q->rear) return -1;
-    return q->data[q->front++];
-}
-
-int isEmptyQueue(Queue *q) {
-    return q->front == -1 || q->front > q->rear;
-}
-
 typedef struct {
-    int data[MAX];
+    int arr[MAX];
     int top;
 } Stack;
 
+
+void enqueue(Queue *q, int val) {
+    q->arr[q->rear++] = val;
+}
+
+int dequeue(Queue *q) {
+    return q->arr[q->front++];
+}
+
+int isQueueEmpty(Queue *q) {
+    return q->front == q->rear;
+}
+
+
 void push(Stack *s, int val) {
-    if (s->top == MAX - 1) return;
-    s->data[++s->top] = val;
+    s->arr[++s->top] = val;
 }
 
 int pop(Stack *s) {
-    if (s->top == -1) return -1;
-    return s->data[s->top--];
+    return s->arr[s->top--];
 }
 
+int isStackEmpty(Stack *s) {
+    return s->top == -1;
+}
 
-void reverseKElements(Queue *q, int k) {
-    Stack s;
-    s.top = -1;
-
+void reverseFirstK(Queue *q, int k) {
+    Stack s = {.top = -1};
+    Queue tempQ = {.front = 0, .rear = 0};
 
     for (int i = 0; i < k; i++) {
         push(&s, dequeue(q));
     }
 
     
-    while (s.top != -1) {
-        enqueue(q, pop(&s));
+    while (!isStackEmpty(&s)) {
+        enqueue(&tempQ, pop(&s));
     }
 
-    int size = q->rear - q->front + 1;
-    for (int i = 0; i < size - k; i++) {
-        enqueue(q, dequeue(q));
+
+    while (!isQueueEmpty(q)) {
+        enqueue(&tempQ, dequeue(q));
     }
+
+   
+    *q = tempQ;
 }
 
-
-void printQueue(Queue q) {
-    for (int i = q.front; i <= q.rear; i++) {
-        printf("%d ", q.data[i]);
+void printQueue(Queue *q) {
+    for (int i = q->front; i < q->rear; i++) {
+        printf("%d ", q->arr[i]);
     }
     printf("\n");
 }
 
 
 int main() {
-    Queue q = {.front = -1, .rear = -1};
+    Queue q = {.front = 0, .rear = 0};
+    int arr[] = {1, 2, 3, 4, 5}, k = 3;
 
-    enqueue(&q, 1);
-    enqueue(&q, 2);
-    enqueue(&q, 3);
-    enqueue(&q, 4);
-    enqueue(&q, 5);
+    for (int i = 0; i < 5; i++)
+        enqueue(&q, arr[i]);
 
-    int k = 3;
-    reverseKElements(&q, k);
-
-    printQueue(q); 
+    reverseFirstK(&q, k);
+    printQueue(&q);  
 
     return 0;
 }
