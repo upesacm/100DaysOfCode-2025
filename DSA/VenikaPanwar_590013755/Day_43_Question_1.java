@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ReverseFirstK {
+public class Day_43_Question_1 {
     public static Queue<Integer> reverseFirstK(Queue<Integer> queue, int k) {
         if (queue == null || k > queue.size() || k <= 0) return queue;
 
