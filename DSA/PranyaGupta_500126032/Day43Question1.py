@@ -22,9 +22,9 @@ class Stack:
 class Queue:
     def __init__(self):
         self.queue = []
-    def enque(self, data):
+    def enqueue(self, data):
         self.queue.append(data)
-    def deque(self):
+    def dequeue(self):
         if not self.isEmpty():
             return self.queue.pop(0)
         else:
@@ -42,15 +42,15 @@ class Solution():
         s= Stack()
         l = len(arr)
         for n in arr:
-            q.enque(n)
+            q.enqueue(n)
         i=0;    
         while not q.isEmpty() and i<k:
-            s.push(q.deque())
+            s.push(q.dequee())
             i+=1;
         while not s.isEmpty():
-            q.enque(s.pop())
+            q.enqueue(s.pop())
         for i in range(l-k):
-            q.enque(q.deque())
+            q.enqueue(q.dequeue())
         q.display()    
 
     
