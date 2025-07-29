@@ -10,28 +10,24 @@ class Queue:
             return None
     def isEmpty(self):
         return len(self.queue)==0
-            
-    def display(self):
-        print(self.queue)
  
 
 class Solution():
-    def palindromequeue(self, q):
-        lst = q.queue
-        if lst[::-1]==lst:
-            return "Yes"
-        else:
-            return "No"    
+    def displaylength(self, q):
+        print(len(q.queue))  
+
+            
+
+    
 
 def main():
-    s= input("Enter the string (with space in between): ")
-    arr = list(s)
+    user_input = input("Enter the elements of arr  (with space in between): ")
+    arr = list(map(int, user_input.strip().split()))
     q = Queue()
-    for c in s:
-        q.enqueue(c)
+    for n in arr:
+        q.enqueue(n)
     sol = Solution()
-    res = sol.palindromequeue(q)
-    print(res)
+    res = sol.displaylength(q)
 
 
 
