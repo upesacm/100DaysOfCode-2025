@@ -10,7 +10,7 @@ public class Q3 {
         Queue<Integer> q1 = new LinkedList<>();
         Queue<String> q2 = new LinkedList<>(List.of("data"));
 
-        System.out.println(isQueueEmpty(q1)); // true
-        System.out.println(isQueueEmpty(q2)); // false
+        System.out.println(isQueueEmpty(q1)); 
+        System.out.println(isQueueEmpty(q2)); 
     }
 }
