@@ -3,7 +3,7 @@ import java.util.*;
 public class Q3 {
 
     public static boolean isQueueEmpty(Queue<?> queue) {
-        return queue.isEmpty();  // Built-in method for state validation
+        return queue.isEmpty();  
     }
 
     public static void main(String[] args) {
