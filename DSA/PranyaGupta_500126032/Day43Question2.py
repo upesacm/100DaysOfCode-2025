@@ -1,9 +1,9 @@
 class Queue:
     def __init__(self):
         self.queue = []
-    def enque(self, data):
+    def enqueue(self, data):
         self.queue.append(data)
-    def deque(self):
+    def dequeue(self):
         if not self.isEmpty():
             return self.queue.pop(0)
         else:
@@ -19,12 +19,12 @@ class Solution():
     def binaryNumbers(self, n):
         q = Queue() 
         res = []
-        q.enque("1")
+        q.enqueue("1")
         for i in range(n):
-            num = q.deque()
+            num = q.dequeue()
             res.append(str(num))
-            q.enque(str(num)+"1")
-            q.enque(str(num)+"0")
+            q.enqueue(str(num)+"1")
+            q.enqueue(str(num)+"0")
 
         return res
     
