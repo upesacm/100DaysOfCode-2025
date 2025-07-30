@@ -1,72 +1,81 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 100
+#define SIZE 100
 
 typedef struct {
-    int arr[MAX];
-    int front, rear;
+    int items[SIZE];
+    int front;
+    int rear;
 } Queue;
 
+// Initialize queue
 void initQueue(Queue *q) {
-    q->front = q->rear = -1;
+    q->front = -1;
+    q->rear = -1;
 }
 
+// Check if queue is empty
 int isEmpty(Queue *q) {
     return q->front == -1;
 }
 
+// Check if queue is full
 int isFull(Queue *q) {
-    return (q->rear + 1) % MAX == q->front;
+    return q->rear == SIZE - 1;
 }
 
-void enqueue(Queue *q, int val) {
-    if (isFull(q)) return;
-    if (isEmpty(q))
-        q->front = q->rear = 0;
-    else
-        q->rear = (q->rear + 1) % MAX;
-    q->arr[q->rear] = val;
+// Enqueue
+void enqueue(Queue *q, int value) {
+    if (isFull(q)) {
+        printf("Queue Overflow\n");
+        return;
+    }
+    if (isEmpty(q)) {
+        q->front = 0;
+    }
+    q->items[++q->rear] = value;
 }
 
+// Dequeue
 int dequeue(Queue *q) {
-    if (isEmpty(q)) return -1;
-    int val = q->arr[q->front];
-    if (q->front == q->rear)
+    if (isEmpty(q)) {
+        printf("Queue Underflow\n");
+        return -1;
+    }
+    int item = q->items[q->front];
+    if (q->front == q->rear) {
         q->front = q->rear = -1;
-    else
-        q->front = (q->front + 1) % MAX;
-    return val;
+    } else {
+        q->front++;
+    }
+    return item;
 }
 
-int queueSize(Queue *q) {
-    if (isEmpty(q)) return 0;
-    if (q->rear >= q->front)
-        return q->rear - q->front + 1;
-    return MAX - q->front + q->rear + 1;
-}
-
+// Function to calculate sum without modifying queue
 int sumQueue(Queue *q) {
     int sum = 0;
-    int size = queueSize(q);
-    for (int i = 0; i < size; i++) {
-        int val = dequeue(q);
-        sum += val;
-        enqueue(q, val);  // Restore
+    int n = q->rear - q->front + 1;
+
+    for (int i = 0; i < n; i++) {
+        int val = dequeue(q);   // Remove element
+        sum += val;             // Add to sum
+        enqueue(q, val);        // Put it back
     }
     return sum;
 }
 
-// Usage example
+// Driver code
 int main() {
     Queue q;
     initQueue(&q);
 
-    enqueue(&q, 10);
-    enqueue(&q, 20);
-    enqueue(&q, 30);
+    enqueue(&q, 1);
+    enqueue(&q, 2);
+    enqueue(&q, 3);
 
-    printf("Sum: %d\n", sumQueue(&q)); // Output: 60
+    int total = sumQueue(&q);
+    printf("Sum: %d\n", total);  // Output: 6
+
     return 0;
 }
-
