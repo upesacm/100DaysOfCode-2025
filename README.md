@@ -1,98 +1,98 @@
-<h2 align="center">Day 45 (30/07/2025)</h2>
+<h2 align="center">Day 46 (31/07/2025)</h2>
 
-## 1. Sum of Elements in a Queue
-A problem that introduces queue aggregation techniques and teaches accumulative operations on queue data structures using traversal-based computation methods for statistical analysis.
+## 1. Find Minimum Element in a Queue
+A problem that introduces queue optimization techniques and teaches minimum value detection using efficient traversal algorithms for extremum identification in linear data structures with comparative analysis methods.
 
-Calculate and return the **sum of all elements** present in a queue without modifying its structure. This operation is fundamental in **statistical computation** and **data aggregation** where you need to **perform mathematical operations** on queue contents while preserving the original data structure. The technique requires understanding **accumulative traversal** methods that process each queue element systematically. This concept is essential in **financial calculations**, **data analytics**, and **mathematical processing** where sum operations provide insights into data totals and enable further statistical computations on queue-based data streams.
+Given a queue of integers, find and return the **minimum element** present without altering the queue structure. This operation is fundamental in **optimization problems** and **data analysis** where you need to **identify lowest values** within queue datasets for threshold detection and boundary analysis. The technique requires understanding **comparative traversal** methods that track minimum values while processing queue elements sequentially through systematic comparison operations. This concept is essential in **resource optimization**, **cost analysis**, and **performance monitoring** where minimum value identification enables efficient decision making and analytical insights from queue-based data streams.
 
-This teaches **queue aggregation algorithms** and **accumulative computation techniques** that are essential for **statistical analysis and efficient mathematical operations on queue data structures**.
+This teaches **extremum detection algorithms** and **comparative traversal techniques** that are essential for **optimization analysis and efficient minimum value identification in queue structures**.
 
-**Your task:** Implement queue traversal with accumulative summation to calculate total values while maintaining queue integrity and structure.
-
-### Examples
-
-**Input:**
-```
-[1, 2, 3]
-```
-**Output:**
-```
-6
-```
-
----
-
-**Input:**
-```
-[10, 20, 30]
-```
-**Output:**
-```
-60
-```
-
----
-
-## 2. Compare Two Queues
-A problem that demonstrates queue comparison algorithms and teaches element-by-element equality checking using systematic traversal methods for data structure validation and verification operations.
-
-Given two queues, check if they are **identical in order and content** through systematic comparison. This operation is fundamental in **data validation** and **queue synchronization** where you need to **verify data consistency** between different queue instances. The technique involves understanding **parallel traversal** methods that compare corresponding elements while maintaining queue structures. This concept is essential in **testing frameworks**, **data replication**, and **quality assurance** where queue equality verification ensures data integrity and system correctness across distributed or replicated queue systems.
-
-This introduces **queue comparison algorithms** and **parallel traversal techniques** that are crucial for **data validation and efficient queue equality verification operations**.
-
-**Your task:** Implement systematic queue comparison using parallel element traversal to verify complete structural and content equality between queue instances.
+**Your task:** Implement queue traversal with minimum tracking to identify the smallest element while preserving queue state and maintaining computational efficiency.
 
 ### Examples
 
 **Input:**
 ```
-Q1 = [1, 2, 3], Q2 = [1, 2, 3]
+[4, 2, 7, 1]
 ```
 **Output:**
 ```
-Yes
+1
 ```
 
 ---
 
 **Input:**
 ```
-Q1 = [1, 2], Q2 = [2, 1]
+[9, 3]
 ```
 **Output:**
 ```
-No
+3
 ```
 
 ---
 
-## 3. Find Maximum Element in a Queue
-A problem that teaches queue optimization techniques and demonstrates maximum value detection using efficient traversal algorithms for extremum finding in linear data structures.
+## 2. Count Even and Odd Numbers in Queue
+A problem that demonstrates queue classification algorithms and teaches numerical categorization using systematic traversal methods for statistical analysis and data partitioning operations on integer datasets.
 
-Given a queue of integers, find and return the **maximum element** present without altering the queue structure. This operation is fundamental in **optimization problems** and **data analysis** where you need to **identify peak values** within queue datasets. The technique requires understanding **comparative traversal** methods that track maximum values while processing queue elements sequentially. This concept is essential in **performance monitoring**, **threshold detection**, and **data mining** where maximum value identification enables decision making and analytical insights from queue-based data streams.
+Given a queue of integers, count and return the **number of even and odd elements** through systematic classification analysis. This operation is fundamental in **statistical computation** and **data categorization** where you need to **partition numerical data** based on mathematical properties for analytical insights. The technique involves understanding **conditional traversal** methods that classify elements while maintaining running counts for different categories. This concept is essential in **data preprocessing**, **statistical analysis**, and **pattern recognition** where numerical classification enables data understanding and facilitates further computational processing on categorized queue datasets.
 
-This teaches **extremum detection algorithms** and **comparative traversal techniques** that are essential for **optimization analysis and efficient maximum value identification in queue structures**.
+This introduces **classification algorithms** and **conditional counting techniques** that are crucial for **statistical analysis and efficient numerical categorization in queue structures**.
 
-**Your task:** Implement queue traversal with maximum tracking to identify the largest element while preserving queue state and maintaining efficiency.
+**Your task:** Implement queue traversal with conditional counting to classify and enumerate even and odd elements while maintaining queue integrity and computational accuracy.
 
 ### Examples
 
 **Input:**
 ```
-[3, 5, 1, 2]
+[1, 2, 3, 4, 5]
 ```
 **Output:**
 ```
-5
+Even: 2, Odd: 3
 ```
 
 ---
 
 **Input:**
 ```
-[10, 7, 4]
+[6, 8, 10]
 ```
 **Output:**
 ```
-10
+Even: 3, Odd: 0
+```
+
+---
+
+## 3. Merge Two Queues
+A problem that teaches queue concatenation techniques and demonstrates linear data structure combination using sequential append operations for unified data structure creation and queue integration methods.
+
+Given two queues, merge them into a **single unified queue** by systematically appending all elements from the second queue to the first queue. This operation is fundamental in **data integration** and **queue consolidation** where you need to **combine multiple data streams** into unified structures for comprehensive processing. The technique requires understanding **sequential append** methods that preserve element ordering while efficiently transferring data between queue structures. This concept is essential in **data pipeline processing**, **stream merging**, and **batch operations** where queue combination enables unified data processing and facilitates comprehensive analysis on consolidated datasets.
+
+This teaches **queue concatenation algorithms** and **sequential merging techniques** that are essential for **data integration and efficient queue combination operations**.
+
+**Your task:** Implement systematic queue merging using sequential append operations to create unified data structures while maintaining element ordering and queue efficiency.
+
+### Examples
+
+**Input:**
+```
+Q1 = [1, 2], Q2 = [3, 4]
+```
+**Output:**
+```
+[1, 2, 3, 4]
+```
+
+---
+
+**Input:**
+```
+Q1 = [5], Q2 = [6, 7]
+```
+**Output:**
+```
+[5, 6, 7]
 ```
