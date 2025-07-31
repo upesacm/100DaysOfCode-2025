@@ -1,63 +1,19 @@
-<h2 align="center">Day 44 (29/07/2025)</h2>
+<h2 align="center">Day 46 (31/07/2025)</h2>
 
-## 1. Display Elements of a Queue
-A problem that introduces fundamental queue traversal techniques and teaches non-destructive element access methods for queue inspection while preserving the original data structure integrity.
+## 1. Find Minimum Element in a Queue
+A problem that introduces queue optimization techniques and teaches minimum value detection using efficient traversal algorithms for extremum identification in linear data structures with comparative analysis methods.
 
-Write a function to display all elements of a queue from **front to rear** without **modifying the queue**. This operation is fundamental in **queue debugging** and **data structure inspection** where you need to **examine queue contents** without affecting the underlying FIFO structure. The technique requires understanding **non-destructive traversal** methods that preserve queue state while providing visibility into stored elements. This concept is essential in **system monitoring**, **debugging operations**, and **queue analysis** where inspecting data flow without disruption is crucial for maintaining system stability and performance diagnostics.
+Given a queue of integers, find and return the **minimum element** present without altering the queue structure. This operation is fundamental in **optimization problems** and **data analysis** where you need to **identify lowest values** within queue datasets for threshold detection and boundary analysis. The technique requires understanding **comparative traversal** methods that track minimum values while processing queue elements sequentially through systematic comparison operations. This concept is essential in **resource optimization**, **cost analysis**, and **performance monitoring** where minimum value identification enables efficient decision making and analytical insights from queue-based data streams.
 
-This teaches **non-destructive traversal algorithms** and **queue inspection techniques** that are essential for **system debugging and efficient queue state analysis operations**.
+This teaches **extremum detection algorithms** and **comparative traversal techniques** that are essential for **optimization analysis and efficient minimum value identification in queue structures**.
 
-**Your task:** Implement queue traversal that displays all elements in FIFO order while maintaining the original queue structure and state.
-
-### Examples
-
-**Input:**
-```
-Queue = [10, 20, 30]
-```
-**Output:**
-```
-10 20 30
-```
-
----
-
-**Input:**
-```
-Queue = [5, 15]
-```
-**Output:**
-```
-5 15
-```
-
----
-
-## 2. Find the Size of a Queue
-A problem that demonstrates queue metadata operations and teaches efficient size calculation techniques for dynamic data structures using built-in properties or iterative counting methods.
-
-Given a queue, write a program to return the **number of elements** present in it. This operation is fundamental in **memory management** and **capacity planning** where you need to **monitor queue utilization** and **track data structure growth**. The technique involves understanding **size tracking mechanisms** that can be implemented through direct property access or iterative counting depending on the queue implementation. This concept is essential in **resource allocation**, **performance monitoring**, and **system optimization** where knowing data structure sizes enables efficient memory management and capacity planning decisions.
-
-This introduces **queue metadata analysis** and **size tracking techniques** that are crucial for **resource management and efficient queue capacity monitoring operations**.
-
-**Your task:** Implement efficient queue size calculation using appropriate methods based on the underlying queue implementation and access patterns.
+**Your task:** Implement queue traversal with minimum tracking to identify the smallest element while preserving queue state and maintaining computational efficiency.
 
 ### Examples
 
 **Input:**
 ```
-Queue = [1, 2, 3, 4]
-```
-**Output:**
-```
-4
-```
-
----
-
-**Input:**
-```
-Queue = [7]
+[4, 2, 7, 1]
 ```
 **Output:**
 ```
@@ -66,33 +22,77 @@ Queue = [7]
 
 ---
 
-## 3. Check if Queue is Empty
-A problem that teaches queue state validation techniques and demonstrates boolean condition checking for empty data structures using efficient state detection methods for control flow operations.
+**Input:**
+```
+[9, 3]
+```
+**Output:**
+```
+3
+```
 
-Write a function to check whether the queue is **empty or not** and return a **boolean result**. This operation is fundamental in **control flow logic** and **queue processing loops** where you need to **validate queue state** before performing operations that require elements. The technique involves understanding **state validation patterns** that prevent errors in queue operations and enable safe processing workflows. This concept is essential in **iterative processing**, **consumer-producer patterns**, and **queue-based algorithms** where empty state detection prevents runtime errors and enables graceful handling of boundary conditions.
+---
 
-This teaches **state validation algorithms** and **boolean condition techniques** that are essential for **safe queue operations and efficient boundary condition handling**.
+## 2. Count Even and Odd Numbers in Queue
+A problem that demonstrates queue classification algorithms and teaches numerical categorization using systematic traversal methods for statistical analysis and data partitioning operations on integer datasets.
 
-**Your task:** Implement reliable empty state detection that accurately identifies queue emptiness for safe operation control and error prevention.
+Given a queue of integers, count and return the **number of even and odd elements** through systematic classification analysis. This operation is fundamental in **statistical computation** and **data categorization** where you need to **partition numerical data** based on mathematical properties for analytical insights. The technique involves understanding **conditional traversal** methods that classify elements while maintaining running counts for different categories. This concept is essential in **data preprocessing**, **statistical analysis**, and **pattern recognition** where numerical classification enables data understanding and facilitates further computational processing on categorized queue datasets.
+
+This introduces **classification algorithms** and **conditional counting techniques** that are crucial for **statistical analysis and efficient numerical categorization in queue structures**.
+
+**Your task:** Implement queue traversal with conditional counting to classify and enumerate even and odd elements while maintaining queue integrity and computational accuracy.
 
 ### Examples
 
 **Input:**
 ```
-Queue = []
+[1, 2, 3, 4, 5]
 ```
 **Output:**
 ```
-True
+Even: 2, Odd: 3
 ```
 
 ---
 
 **Input:**
 ```
-Queue = [1, 2]
+[6, 8, 10]
 ```
 **Output:**
 ```
-False
+Even: 3, Odd: 0
+```
+
+---
+
+## 3. Merge Two Queues
+A problem that teaches queue concatenation techniques and demonstrates linear data structure combination using sequential append operations for unified data structure creation and queue integration methods.
+
+Given two queues, merge them into a **single unified queue** by systematically appending all elements from the second queue to the first queue. This operation is fundamental in **data integration** and **queue consolidation** where you need to **combine multiple data streams** into unified structures for comprehensive processing. The technique requires understanding **sequential append** methods that preserve element ordering while efficiently transferring data between queue structures. This concept is essential in **data pipeline processing**, **stream merging**, and **batch operations** where queue combination enables unified data processing and facilitates comprehensive analysis on consolidated datasets.
+
+This teaches **queue concatenation algorithms** and **sequential merging techniques** that are essential for **data integration and efficient queue combination operations**.
+
+**Your task:** Implement systematic queue merging using sequential append operations to create unified data structures while maintaining element ordering and queue efficiency.
+
+### Examples
+
+**Input:**
+```
+Q1 = [1, 2], Q2 = [3, 4]
+```
+**Output:**
+```
+[1, 2, 3, 4]
+```
+
+---
+
+**Input:**
+```
+Q1 = [5], Q2 = [6, 7]
+```
+**Output:**
+```
+[5, 6, 7]
 ```
