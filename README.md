@@ -1,100 +1,98 @@
-<h2 align="center">Day 47 (01/08/2025)</h2>
+<h2 align="center">Day 48 (02/08/2025)</h2>
 
-## 1. Insert Element at Rear of Queue  
-A basic yet essential operation in queue handling that introduces the concept of **enqueueing** elements at the rear for standard FIFO behavior. This builds a strong foundation in **linear data structure manipulation**.
+## 1. Remove All Occurrences of an Element from a Queue
+A problem that demonstrates selective queue modification techniques and teaches element filtering operations using conditional removal algorithms for data cleaning and queue purification processes.
 
-Write a function that inserts a given element at the rear of a queue and returns the updated queue.
+Given a queue of integers and an integer **x**, remove **all occurrences** of **x** from the queue and return the updated queue. This operation is fundamental in **data filtering** and **queue cleaning** where you need to **eliminate specific values** while preserving the order of remaining elements. The technique requires understanding **conditional traversal** methods that selectively retain or discard elements based on matching criteria. This concept is essential in **data preprocessing**, **noise removal**, and **stream filtering** where removing unwanted values improves data quality and enables focused processing of relevant information.
 
-This teaches **rear insertion**, **queue dynamics**, and is fundamental to **real-time systems**, **task scheduling**, and **data buffering**.
+This teaches **selective filtering algorithms** and **conditional queue modification techniques** that are essential for **data cleaning and efficient element removal operations**.
 
-**Your task:** Insert an element at the end of a queue and return the updated queue.
+**Your task:** Implement conditional queue traversal with selective element retention to remove all instances of the target value while preserving queue order.
 
 ### Examples
 
 **Input:**
 ```
-Queue = [1, 2], Insert = 3
+Queue = [1, 2, 3, 2, 4], x = 2
 ```
 **Output:**
 ```
-[1, 2, 3]
+[1, 3, 4]
 ```
 
 ---
 
 **Input:**
 ```
-Queue = [4, 5], Insert = 6
+Queue = [5, 5, 5], x = 5
 ```
 **Output:**
 ```
-[4, 5, 6]
+[]
 ```
 
 ---
 
-## 2. Insert Element at Front of Queue  
-An operation that demonstrates **priority queue behavior** by adding elements to the front, which is useful in **task reordering**, **interrupt handling**, and **control systems**.
+## 2. Check if All Elements in Queue are Unique
+A problem that introduces uniqueness validation techniques and teaches duplicate detection algorithms using efficient comparison methods for data integrity verification in queue structures.
 
-Write a function to insert a given element at the front of a queue.
+Given a queue of integers, determine whether **all elements are unique** (no duplicates) and return **True or False**. This operation is fundamental in **data validation** and **integrity checking** where you need to **verify element uniqueness** within queue datasets. The technique involves understanding **duplicate detection** methods that can use hash-based tracking or comparative analysis to identify repeated values efficiently. This concept is essential in **database operations**, **set validation**, and **data quality assurance** where uniqueness constraints ensure data consistency and prevent duplicate processing in queue-based systems.
 
-This teaches **front insertion**, **queue prioritization**, and **head adjustment techniques** useful in **data streams** and **real-time control queues**.
+This introduces **uniqueness validation algorithms** and **duplicate detection techniques** that are crucial for **data integrity verification and efficient uniqueness checking operations**.
 
-**Your task:** Add an element to the front of a queue and return the updated queue.
+**Your task:** Implement efficient duplicate detection using appropriate data structures to verify complete element uniqueness across the entire queue.
 
 ### Examples
 
 **Input:**
-```
-Queue = [2, 3, 4], Insert = 1
-```
-**Output:**
 ```
 [1, 2, 3, 4]
 ```
+**Output:**
+```
+True
+```
 
 ---
 
 **Input:**
 ```
-Queue = [7, 8], Insert = 6
+[1, 2, 2, 3]
 ```
 **Output:**
 ```
-[6, 7, 8]
+False
 ```
 
 ---
 
-## 3. Find the Front and Rear of the Queue  
-A diagnostic operation to retrieve **boundary elements** of a queue without altering it — useful for **monitoring**, **status checks**, and **queue visualization**.
+## 3. Count Occurrences of Each Element in a Queue
+A problem that teaches frequency analysis techniques and demonstrates element counting algorithms using hash-based tracking methods for statistical analysis and data profiling operations.
 
-Write a function that returns the front and rear elements of a queue without modifying it. If the queue is empty, return an appropriate message.
+Given a queue of integers, count the **occurrences of each element** and return the frequency distribution as a dictionary or mapping structure. This operation is fundamental in **statistical analysis** and **data profiling** where you need to **analyze element frequencies** within queue datasets. The technique requires understanding **frequency counting** methods that track element occurrences efficiently using hash-based storage. This concept is essential in **data mining**, **pattern analysis**, and **statistical computing** where frequency distributions provide insights into data patterns and enable further analytical processing on queue-based information.
 
-This teaches **non-destructive access**, **queue boundary analysis**, and helps in **queue status validation** in various applications.
+This teaches **frequency analysis algorithms** and **statistical counting techniques** that are essential for **data profiling and efficient element frequency tracking operations**.
 
-**Your task:** Retrieve the front and rear of the queue or return an empty message.
+**Your task:** Implement hash-based frequency counting to analyze element occurrences and generate comprehensive frequency distribution from queue data.
 
 ### Examples
 
 **Input:**
 ```
-Queue = [10, 20, 30]
+[1, 2, 2, 3, 1, 1]
 ```
 **Output:**
 ```
-Front: 10, Rear: 30
+{1: 3, 2: 2, 3: 1}
 ```
 
 ---
 
 **Input:**
 ```
-Queue = []
+[5, 5, 7, 8, 7]
 ```
 **Output:**
 ```
-Queue is empty
+{5: 2, 7: 2, 8: 1}
 ```
-
----
