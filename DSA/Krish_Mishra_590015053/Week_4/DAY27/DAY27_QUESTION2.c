@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct Node 
 {
     int data;
@@ -21,7 +20,6 @@ Node* createNode(int data)
     newNode->next = NULL;
     return newNode;
 }
-
 void insertAtEnd(Node** head, int data) 
 {
     Node* newNode = createNode(data);
