@@ -1,0 +1,12 @@
+ Tasks:
+1. Identify the specific line(s) causing the bug:
+
+Line 11: queue.pop(0)
+→ This modifies the original queue.
+
+2. Why this causes incorrect behavior:
+
+The function modifies the original queue, which is unexpected in a checker function.
+After checking, queue is mutated, so it's no longer usable (see test_queue output).
+Also, the final line return len(queue) == len(stack) is unnecessary and misleading — lengths will always match at that point or already returned.
+
