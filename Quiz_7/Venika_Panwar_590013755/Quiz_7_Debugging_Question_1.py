@@ -1,17 +1,19 @@
 # Task 1:
-# BUG Identification:
-# - The line `queue.pop(0)` modifies the original queue, so it's no longer preserved.
-# - The final line `return len(queue) == len(stack)` is unnecessary and can give wrong results.
+# BUGGY LINE (Original Code):
+# Line 11: `if queue.pop(0) != stack.pop():`  -> Modifies original queue.
+# Line 15: `return len(queue) == len(stack)` -> Irrelevant final check.
 
+# Task 2:
 # WHY THIS CAUSES INCORRECT BEHAVIOR:
-# - The queue is altered during checking, so it's no longer reusable afterward.
-# - The return condition doesn't actually confirm palindrome—it just checks queue and stack are both empty.
+# - Line 11 mutates the input queue, so the original data is lost.
+# - Line 15 does not validate palindrome logic—just checks both structures are empty.
 
 # FIX:
-# - Use a temporary copy of the queue for both comparison and preservation.
-# - Return False immediately on mismatch, True at the end if all matched.
+# - Use a temporary copy of the queue for comparison.
+# - Compare elements using the original sequence and a reversed stack.
 
 def is_queue_palindrome(queue):
+    """Check whether a queue forms a palindrome without modifying it."""
     stack = []
     temp_queue = queue.copy()  # Preserve original queue
 
@@ -20,13 +22,12 @@ def is_queue_palindrome(queue):
 
     for item in temp_queue:
         if item != stack.pop():
-            return False  # Mismatch found → not a palindrome
+            return False  # Mismatch → not a palindrome
 
-    return True  # All matched
+    return True  # All characters matched
 
-# Test case that now works correctly
+# Test case
 test_queue = ["r", "a", "c", "e", "c", "a", "r"]
 result = is_queue_palindrome(test_queue)
-print(f"Is palindrome: {result}")  # Output: True
-print(f"Original queue after check: {test_queue}")  # Queue remains unchanged
-
+print(f"Is palindrome: {result}")  #  Output: True
+print(f"Original queue after check: {test_queue}")  # Queue preserved
