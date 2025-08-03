@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
 typedef struct Node {
     int data;
     struct Node* next;
@@ -17,7 +16,6 @@ Node* createNode(int data) {
     newNode->next = NULL;
     return newNode;
 }
-
 void insertAtEnd(Node** head, int data) {
     Node* newNode = createNode(data);
     if (*head == NULL) {
@@ -30,7 +28,6 @@ void insertAtEnd(Node** head, int data) {
     }
     temp->next = newNode;
 }
-
 Node* removeKthNode(Node* head, int k) {
     if (head == NULL || k <= 0) {
         return head;
