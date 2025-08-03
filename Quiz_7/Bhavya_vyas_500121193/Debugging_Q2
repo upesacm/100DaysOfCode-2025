@@ -1,0 +1,11 @@
+ Tasks:
+1. Identify the specific line(s) causing the bug:
+
+The logic is mostly correct, but not a bug per se.
+However, it silently consumes the queues (q1, q2) and alters the original inputs.
+It also assumes q1 and q2 are deques and not regular lists or Queue.
+
+
+2. Why this causes incorrect behavior (edge case):
+
+If the function is expected not to modify original queues, this breaks that contract.
