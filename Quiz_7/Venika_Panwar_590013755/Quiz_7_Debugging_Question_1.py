@@ -1,3 +1,5 @@
+# Question 1:
+
 # Task 1:
 # BUGGY LINE (Original Code):
 # Line 11: `if queue.pop(0) != stack.pop():`  -> Modifies original queue.
