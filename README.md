@@ -1,52 +1,52 @@
-<h2 align="center">Day 50 (04/08/2025)</h2>
+<h2 align="center">Day 51 (05/08/2025)</h2>
 
-## 1. Maximum Sum Subarray of Size K
-A problem that introduces sliding window optimization techniques and teaches fixed-size subarray analysis using efficient window-based computation methods for array processing and optimization.
+## 1. Longest Substring with K Unique Characters
+A problem that demonstrates advanced sliding window techniques and teaches constraint-based substring optimization using dynamic window adjustment for character diversity analysis and string processing operations.
 
-Given an array and a number **k**, find the **maximum sum** of a subarray of size **k** using a sliding window approach. This operation is fundamental in **array optimization** and **window-based analysis** where you need to **find optimal segments** within larger datasets efficiently. The technique uses **sliding window optimization** to avoid redundant calculations by maintaining a moving window and updating sums incrementally. This concept is essential in **signal processing**, **time series analysis**, and **performance monitoring** where finding peak values within fixed intervals enables trend analysis and anomaly detection in continuous data streams.
+Given a string, find the length of the **longest substring** that contains **exactly k unique characters** using a sliding window approach. This operation is fundamental in **string analysis** and **pattern optimization** where you need to **find optimal segments** with specific character diversity constraints. The technique uses **variable sliding window** with character frequency tracking to maintain exactly k unique characters while maximizing substring length. This concept is essential in **text processing**, **DNA sequence analysis**, and **data compression** where finding segments with controlled character diversity enables pattern recognition and sequence optimization in biological and textual data.
 
-This teaches **sliding window algorithms** and **fixed-size optimization techniques** that are essential for **array analysis and efficient subarray computation operations**.
+This teaches **constraint-based sliding window algorithms** and **character diversity optimization techniques** that are essential for **string analysis and efficient substring pattern recognition operations**.
 
-**Your task:** Implement sliding window technique to find the maximum sum subarray by maintaining a moving window and updating sums efficiently.
+**Your task:** Implement dynamic sliding window with character frequency tracking to find the longest substring maintaining exactly k unique characters.
 
 ### Examples
 
 **Input:**
 ```
-arr = [1, 4, 2, 10], k = 2
+str = "aabacbebebe", k = 3
 ```
 **Output:**
 ```
-12
+7
 ```
 
 ---
 
 **Input:**
 ```
-arr = [100, 200, 300, 400], k = 2
+str = "aaaa", k = 2
 ```
 **Output:**
 ```
-700
+0
 ```
 
 ---
 
-## 2. Count Occurrences of Anagram
-A problem that demonstrates pattern matching techniques and teaches anagram detection algorithms using frequency-based sliding window methods for string analysis and pattern recognition operations.
+## 2. Smallest Subarray with Sum Greater than X
+A problem that introduces minimum window optimization and teaches efficient subarray finding using sliding window techniques for threshold-based analysis and optimization problems.
 
-Given a **text** and a **pattern**, return the number of occurrences of the **anagram of the pattern** in the text using sliding window technique. This operation is fundamental in **string pattern matching** and **anagram analysis** where you need to **detect character rearrangements** within text efficiently. The technique uses **frequency-based sliding window** to track character counts and identify anagram matches without generating all permutations. This concept is essential in **text processing**, **plagiarism detection**, and **bioinformatics** where finding character pattern variations enables content analysis and sequence matching in large text datasets.
+Given an array and a number **x**, find the **smallest subarray** with a **sum greater than x** using sliding window technique. This operation is fundamental in **optimization analysis** and **threshold detection** where you need to **find minimal segments** that exceed specific criteria efficiently. The technique uses **variable sliding window** with dynamic expansion and contraction to minimize subarray length while maintaining sum constraints. This concept is essential in **resource optimization**, **performance analysis**, and **financial modeling** where finding minimal resource allocations that meet targets enables efficient planning and cost optimization in array-based data systems.
 
-This introduces **anagram detection algorithms** and **frequency-based pattern matching techniques** that are crucial for **text analysis and efficient string pattern recognition operations**.
+This introduces **minimum window algorithms** and **threshold-based optimization techniques** that are crucial for **resource analysis and efficient minimal subarray computation operations**.
 
-**Your task:** Implement frequency-based sliding window to detect anagram patterns by tracking character counts and identifying matching distributions.
+**Your task:** Implement dynamic sliding window with threshold tracking to find the smallest subarray exceeding target sums through efficient window management.
 
 ### Examples
 
 **Input:**
 ```
-text = "forxxorfxdofr", pattern = "for"
+arr = [1, 4, 45, 6, 0, 19], x = 51
 ```
 **Output:**
 ```
@@ -57,42 +57,42 @@ text = "forxxorfxdofr", pattern = "for"
 
 **Input:**
 ```
-text = "aabaabaa", pattern = "aaba"
+arr = [1, 10, 5, 2, 7], x = 9
 ```
 **Output:**
 ```
-4
+1
 ```
 
 ---
 
-## 3. Subarray with Given Sum
-A problem that teaches variable-size sliding window techniques and demonstrates dynamic window adjustment algorithms for target sum finding using efficient pointer-based traversal methods.
+## 3. Minimum Window Substring
+A problem that teaches advanced pattern matching techniques and demonstrates complex sliding window algorithms for multi-character substring finding using frequency-based window validation methods.
 
-Given an array of **non-negative integers** and a **target sum**, find the subarray with the given sum using **sliding window technique**. This operation is fundamental in **subarray analysis** and **target finding** where you need to **locate specific sum ranges** within arrays efficiently. The technique uses **variable-size sliding window** with two pointers that expand and contract dynamically to match the target sum. This concept is essential in **financial analysis**, **resource allocation**, and **optimization problems** where finding segments that meet specific criteria enables decision making and resource planning in array-based data structures.
+Given two strings **s** and **t**, return the **minimum window** in s which **contains all characters of t** using advanced sliding window technique. This operation is fundamental in **advanced pattern matching** and **substring optimization** where you need to **find minimal containing segments** with complete character coverage. The technique uses **complex sliding window** with dual frequency tracking to maintain character requirements while minimizing window size. This concept is essential in **bioinformatics**, **text search engines**, and **data mining** where finding minimal segments containing all required elements enables efficient pattern extraction and sequence analysis in complex textual datasets.
 
-This teaches **variable sliding window algorithms** and **dynamic window adjustment techniques** that are essential for **target finding and efficient subarray sum computation operations**.
+This teaches **advanced pattern matching algorithms** and **multi-constraint window optimization techniques** that are essential for **complex substring analysis and efficient pattern containment operations**.
 
-**Your task:** Implement dynamic sliding window with two pointers to find subarrays matching target sums through efficient window expansion and contraction.
+**Your task:** Implement advanced sliding window with dual frequency tracking to find minimal substrings containing all required characters efficiently.
 
 ### Examples
 
 **Input:**
 ```
-arr = [1, 4, 20, 3, 10, 5], target = 33
+s = "ADOBECODEBANC", t = "ABC"
 ```
 **Output:**
 ```
-Subarray found from index 2 to 4
+"BANC"
 ```
 
 ---
 
 **Input:**
 ```
-arr = [1, 4, 0, 0, 3, 10, 5], target = 7
+s = "a", t = "a"
 ```
 **Output:**
 ```
-Subarray found from index 1 to 4
+"a"
 ```
