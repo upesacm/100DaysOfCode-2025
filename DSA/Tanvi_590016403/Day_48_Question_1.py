@@ -1,27 +1,39 @@
-from collections import Counter, deque
+from collections import deque, Counter
 
-def process_queue(queue, x):
-    # Step 1: Remove all occurrences of x
-    cleaned_queue = [item for item in queue if item != x]
+# 1. Remove All Occurrences of an Element from a Queue
+def remove_occurrences(queue, x):
+    updated_queue = deque()
+    for element in queue:
+        if element != x:
+            updated_queue.append(element)
+    return list(updated_queue)
 
-    # Step 2: Check if all elements are unique
-    is_unique = len(set(cleaned_queue)) == len(cleaned_queue)
+# 2. Check if All Elements in Queue are Unique
+def are_elements_unique(queue):
+    seen = set()
+    for element in queue:
+        if element in seen:
+            return False
+        seen.add(element)
+    return True
 
-    # Step 3: Count occurrences of each element
-    frequency = dict(Counter(cleaned_queue))
+# 3. Count Occurrences of Each Element in a Queue
+def count_occurrences(queue):
+    return dict(Counter(queue))
 
-    return {
-        "cleaned_queue": cleaned_queue,
-        "all_elements_unique": is_unique,
-        "frequency_distribution": frequency
-    }
+# ----------- Test Cases -----------
 
-# 🔍 Example Usage:
-queue = [1, 2, 2, 3, 1, 4]
-x = 2
+# Test 1: Remove Occurrences
+print("1. Remove All Occurrences:")
+print(remove_occurrences([1, 2, 3, 2, 4], 2))  # Output: [1, 3, 4]
+print(remove_occurrences([5, 5, 5], 5))        # Output: []
 
-result = process_queue(queue, x)
+# Test 2: Uniqueness Check
+print("\n2. Check Uniqueness:")
+print(are_elements_unique([1, 2, 3, 4]))       # Output: True
+print(are_elements_unique([1, 2, 2, 3]))       # Output: False
 
-print("Cleaned Queue:", result["cleaned_queue"])
-print("All Elements Unique:", result["all_elements_unique"])
-print("Frequency Distribution:", result["frequency_distribution"])
+# Test 3: Frequency Count
+print("\n3. Count Occurrences:")
+print(count_occurrences([1, 2, 2, 3, 1, 1]))   # Output: {1: 3, 2: 2, 3: 1}
+print(count_occurrences([5, 5, 7, 8, 7]))      # Output: {5: 2, 7: 2, 8: 1}
