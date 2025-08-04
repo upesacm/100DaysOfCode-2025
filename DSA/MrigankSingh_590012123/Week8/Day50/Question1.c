@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-int maxSumSubarray(int arr[], int n, int k) {
+int max_Sum_Subarray(int arr[], int n, int k) {
     if (k <= 0 || k > n) {
         printf("Invalid window size\n");
         return INT_MIN;
@@ -60,7 +60,7 @@ int main() {
         return 1;
     }
 
-    int result = maxSumSubarray(arr, n, k);
+    int result = max_Sum_Subarray(arr, n, k);
     if (result != INT_MIN) {
         printf("Maximum sum of subarray of size %d: %d\n", k, result);
     }
