@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int areFrequenciesEqual(int freq1[], int freq2[], int size) {
+int Frequencies_Equal(int freq1[], int freq2[], int size) {
     for (int i = 0; i < size; i++) {
         if (freq1[i] != freq2[i]) {
             return 0;
@@ -11,7 +11,7 @@ int areFrequenciesEqual(int freq1[], int freq2[], int size) {
     return 1;
 }
 
-int countAnagramOccurrences(const char* text, const char* pattern) {
+int count_Anagram(const char* text, const char* pattern) {
     int textLen = strlen(text);
     int patLen = strlen(pattern);
     
@@ -28,7 +28,7 @@ int countAnagramOccurrences(const char* text, const char* pattern) {
         winFreq[(unsigned char)text[i]]++;
     }
     
-    if (areFrequenciesEqual(patFreq, winFreq, 256)) {
+    if (Frequencies_Equal(patFreq, winFreq, 256)) {
         count++;
     }
     
@@ -36,7 +36,7 @@ int countAnagramOccurrences(const char* text, const char* pattern) {
         winFreq[(unsigned char)text[i - patLen]]--;
         winFreq[(unsigned char)text[i]]++;
         
-        if (areFrequenciesEqual(patFreq, winFreq, 256)) {
+        if (Frequencies_Equal(patFreq, winFreq, 256)) {
             count++;
         }
     }
@@ -44,7 +44,7 @@ int countAnagramOccurrences(const char* text, const char* pattern) {
     return count;
 }
 
-char* getDynamicInput(const char* prompt) {
+char* getInput(const char* prompt) {
     char buffer[100];
     char* input = NULL;
     
@@ -60,8 +60,8 @@ char* getDynamicInput(const char* prompt) {
 }
 
 int main() {
-    char* text = getDynamicInput("Enter the text: ");
-    char* pattern = getDynamicInput("Enter the pattern: ");
+    char* text = getInput("Enter the text: ");
+    char* pattern = getInput("Enter the pattern: ");
     
     if (!text || !pattern) {
         printf("Error reading input\n");
@@ -70,7 +70,7 @@ int main() {
         return 1;
     }
     
-    int count = countAnagramOccurrences(text, pattern);
+    int count = count_Anagram(text, pattern);
     printf("Number of anagram occurrences: %d\n", count);
     
     free(text);
