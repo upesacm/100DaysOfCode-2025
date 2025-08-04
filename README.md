@@ -1,98 +1,98 @@
-<h2 align="center">Day 48 (02/08/2025)</h2>
+<h2 align="center">Day 50 (04/08/2025)</h2>
 
-## 1. Remove All Occurrences of an Element from a Queue
-A problem that demonstrates selective queue modification techniques and teaches element filtering operations using conditional removal algorithms for data cleaning and queue purification processes.
+## 1. Maximum Sum Subarray of Size K
+A problem that introduces sliding window optimization techniques and teaches fixed-size subarray analysis using efficient window-based computation methods for array processing and optimization.
 
-Given a queue of integers and an integer **x**, remove **all occurrences** of **x** from the queue and return the updated queue. This operation is fundamental in **data filtering** and **queue cleaning** where you need to **eliminate specific values** while preserving the order of remaining elements. The technique requires understanding **conditional traversal** methods that selectively retain or discard elements based on matching criteria. This concept is essential in **data preprocessing**, **noise removal**, and **stream filtering** where removing unwanted values improves data quality and enables focused processing of relevant information.
+Given an array and a number **k**, find the **maximum sum** of a subarray of size **k** using a sliding window approach. This operation is fundamental in **array optimization** and **window-based analysis** where you need to **find optimal segments** within larger datasets efficiently. The technique uses **sliding window optimization** to avoid redundant calculations by maintaining a moving window and updating sums incrementally. This concept is essential in **signal processing**, **time series analysis**, and **performance monitoring** where finding peak values within fixed intervals enables trend analysis and anomaly detection in continuous data streams.
 
-This teaches **selective filtering algorithms** and **conditional queue modification techniques** that are essential for **data cleaning and efficient element removal operations**.
+This teaches **sliding window algorithms** and **fixed-size optimization techniques** that are essential for **array analysis and efficient subarray computation operations**.
 
-**Your task:** Implement conditional queue traversal with selective element retention to remove all instances of the target value while preserving queue order.
-
-### Examples
-
-**Input:**
-```
-Queue = [1, 2, 3, 2, 4], x = 2
-```
-**Output:**
-```
-[1, 3, 4]
-```
-
----
-
-**Input:**
-```
-Queue = [5, 5, 5], x = 5
-```
-**Output:**
-```
-[]
-```
-
----
-
-## 2. Check if All Elements in Queue are Unique
-A problem that introduces uniqueness validation techniques and teaches duplicate detection algorithms using efficient comparison methods for data integrity verification in queue structures.
-
-Given a queue of integers, determine whether **all elements are unique** (no duplicates) and return **True or False**. This operation is fundamental in **data validation** and **integrity checking** where you need to **verify element uniqueness** within queue datasets. The technique involves understanding **duplicate detection** methods that can use hash-based tracking or comparative analysis to identify repeated values efficiently. This concept is essential in **database operations**, **set validation**, and **data quality assurance** where uniqueness constraints ensure data consistency and prevent duplicate processing in queue-based systems.
-
-This introduces **uniqueness validation algorithms** and **duplicate detection techniques** that are crucial for **data integrity verification and efficient uniqueness checking operations**.
-
-**Your task:** Implement efficient duplicate detection using appropriate data structures to verify complete element uniqueness across the entire queue.
+**Your task:** Implement sliding window technique to find the maximum sum subarray by maintaining a moving window and updating sums efficiently.
 
 ### Examples
 
 **Input:**
 ```
-[1, 2, 3, 4]
+arr = [1, 4, 2, 10], k = 2
 ```
 **Output:**
 ```
-True
+12
 ```
 
 ---
 
 **Input:**
 ```
-[1, 2, 2, 3]
+arr = [100, 200, 300, 400], k = 2
 ```
 **Output:**
 ```
-False
+700
 ```
 
 ---
 
-## 3. Count Occurrences of Each Element in a Queue
-A problem that teaches frequency analysis techniques and demonstrates element counting algorithms using hash-based tracking methods for statistical analysis and data profiling operations.
+## 2. Count Occurrences of Anagram
+A problem that demonstrates pattern matching techniques and teaches anagram detection algorithms using frequency-based sliding window methods for string analysis and pattern recognition operations.
 
-Given a queue of integers, count the **occurrences of each element** and return the frequency distribution as a dictionary or mapping structure. This operation is fundamental in **statistical analysis** and **data profiling** where you need to **analyze element frequencies** within queue datasets. The technique requires understanding **frequency counting** methods that track element occurrences efficiently using hash-based storage. This concept is essential in **data mining**, **pattern analysis**, and **statistical computing** where frequency distributions provide insights into data patterns and enable further analytical processing on queue-based information.
+Given a **text** and a **pattern**, return the number of occurrences of the **anagram of the pattern** in the text using sliding window technique. This operation is fundamental in **string pattern matching** and **anagram analysis** where you need to **detect character rearrangements** within text efficiently. The technique uses **frequency-based sliding window** to track character counts and identify anagram matches without generating all permutations. This concept is essential in **text processing**, **plagiarism detection**, and **bioinformatics** where finding character pattern variations enables content analysis and sequence matching in large text datasets.
 
-This teaches **frequency analysis algorithms** and **statistical counting techniques** that are essential for **data profiling and efficient element frequency tracking operations**.
+This introduces **anagram detection algorithms** and **frequency-based pattern matching techniques** that are crucial for **text analysis and efficient string pattern recognition operations**.
 
-**Your task:** Implement hash-based frequency counting to analyze element occurrences and generate comprehensive frequency distribution from queue data.
+**Your task:** Implement frequency-based sliding window to detect anagram patterns by tracking character counts and identifying matching distributions.
 
 ### Examples
 
 **Input:**
 ```
-[1, 2, 2, 3, 1, 1]
+text = "forxxorfxdofr", pattern = "for"
 ```
 **Output:**
 ```
-{1: 3, 2: 2, 3: 1}
+3
 ```
 
 ---
 
 **Input:**
 ```
-[5, 5, 7, 8, 7]
+text = "aabaabaa", pattern = "aaba"
 ```
 **Output:**
 ```
-{5: 2, 7: 2, 8: 1}
+4
+```
+
+---
+
+## 3. Subarray with Given Sum
+A problem that teaches variable-size sliding window techniques and demonstrates dynamic window adjustment algorithms for target sum finding using efficient pointer-based traversal methods.
+
+Given an array of **non-negative integers** and a **target sum**, find the subarray with the given sum using **sliding window technique**. This operation is fundamental in **subarray analysis** and **target finding** where you need to **locate specific sum ranges** within arrays efficiently. The technique uses **variable-size sliding window** with two pointers that expand and contract dynamically to match the target sum. This concept is essential in **financial analysis**, **resource allocation**, and **optimization problems** where finding segments that meet specific criteria enables decision making and resource planning in array-based data structures.
+
+This teaches **variable sliding window algorithms** and **dynamic window adjustment techniques** that are essential for **target finding and efficient subarray sum computation operations**.
+
+**Your task:** Implement dynamic sliding window with two pointers to find subarrays matching target sums through efficient window expansion and contraction.
+
+### Examples
+
+**Input:**
+```
+arr = [1, 4, 20, 3, 10, 5], target = 33
+```
+**Output:**
+```
+Subarray found from index 2 to 4
+```
+
+---
+
+**Input:**
+```
+arr = [1, 4, 0, 0, 3, 10, 5], target = 7
+```
+**Output:**
+```
+Subarray found from index 1 to 4
 ```
