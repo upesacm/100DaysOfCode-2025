@@ -23,3 +23,6 @@ def longest_k_unique_substring(s, k):
             max_len = max(max_len, right - left + 1)
 
     return max_len
+
+#Fixed Input
+print(longest_k_unique_substring("aabacbebebe", 3))
