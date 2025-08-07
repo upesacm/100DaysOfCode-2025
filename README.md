@@ -1,98 +1,98 @@
-<h2 align="center">Day 51 (05/08/2025)</h2>
+<h2 align="center">Day 52 (06/08/2025)</h2>
 
-## 1. Longest Substring with K Unique Characters
-A problem that demonstrates advanced sliding window techniques and teaches constraint-based substring optimization using dynamic window adjustment for character diversity analysis and string processing operations.
+## 1. Check Array for Pair with Sum
+A problem that introduces two-pointer optimization techniques and teaches efficient pair finding algorithms using sorted array properties for target sum detection and array analysis operations.
 
-Given a string, find the length of the **longest substring** that contains **exactly k unique characters** using a sliding window approach. This operation is fundamental in **string analysis** and **pattern optimization** where you need to **find optimal segments** with specific character diversity constraints. The technique uses **variable sliding window** with character frequency tracking to maintain exactly k unique characters while maximizing substring length. This concept is essential in **text processing**, **DNA sequence analysis**, and **data compression** where finding segments with controlled character diversity enables pattern recognition and sequence optimization in biological and textual data.
+Given a sorted array and a number **x**, check if there exists a **pair of elements** whose **sum is exactly x** using two-pointer technique. This operation is fundamental in **pair searching** and **target sum problems** where you need to **find complementary elements** efficiently within sorted datasets. The technique uses **two-pointer convergence** from array ends to eliminate the need for nested loops, reducing time complexity from O(n²) to O(n). This concept is essential in **algorithmic optimization**, **data analysis**, and **search problems** where finding element pairs that meet specific criteria enables efficient problem solving and reduces computational overhead in large datasets.
 
-This teaches **constraint-based sliding window algorithms** and **character diversity optimization techniques** that are essential for **string analysis and efficient substring pattern recognition operations**.
+This teaches **two-pointer algorithms** and **sorted array optimization techniques** that are essential for **pair finding and efficient target sum detection operations**.
 
-**Your task:** Implement dynamic sliding window with character frequency tracking to find the longest substring maintaining exactly k unique characters.
-
-### Examples
-
-**Input:**
-```
-str = "aabacbebebe", k = 3
-```
-**Output:**
-```
-7
-```
-
----
-
-**Input:**
-```
-str = "aaaa", k = 2
-```
-**Output:**
-```
-0
-```
-
----
-
-## 2. Smallest Subarray with Sum Greater than X
-A problem that introduces minimum window optimization and teaches efficient subarray finding using sliding window techniques for threshold-based analysis and optimization problems.
-
-Given an array and a number **x**, find the **smallest subarray** with a **sum greater than x** using sliding window technique. This operation is fundamental in **optimization analysis** and **threshold detection** where you need to **find minimal segments** that exceed specific criteria efficiently. The technique uses **variable sliding window** with dynamic expansion and contraction to minimize subarray length while maintaining sum constraints. This concept is essential in **resource optimization**, **performance analysis**, and **financial modeling** where finding minimal resource allocations that meet targets enables efficient planning and cost optimization in array-based data systems.
-
-This introduces **minimum window algorithms** and **threshold-based optimization techniques** that are crucial for **resource analysis and efficient minimal subarray computation operations**.
-
-**Your task:** Implement dynamic sliding window with threshold tracking to find the smallest subarray exceeding target sums through efficient window management.
+**Your task:** Implement two-pointer convergence on sorted arrays to efficiently detect pairs with target sums using optimal time complexity.
 
 ### Examples
 
 **Input:**
 ```
-arr = [1, 4, 45, 6, 0, 19], x = 51
+arr = [1, 4, 45, 6, 10, 8], x = 16
 ```
 **Output:**
 ```
-3
+true
 ```
 
 ---
 
 **Input:**
 ```
-arr = [1, 10, 5, 2, 7], x = 9
+arr = [1, 2, 4, 3, 6], x = 10
 ```
 **Output:**
 ```
-1
+false
 ```
 
 ---
 
-## 3. Minimum Window Substring
-A problem that teaches advanced pattern matching techniques and demonstrates complex sliding window algorithms for multi-character substring finding using frequency-based window validation methods.
+## 2. Find All Pairs with Given Difference
+A problem that demonstrates systematic pair enumeration and teaches difference-based searching algorithms using hash-based or two-pointer methods for comprehensive pair analysis operations.
 
-Given two strings **s** and **t**, return the **minimum window** in s which **contains all characters of t** using advanced sliding window technique. This operation is fundamental in **advanced pattern matching** and **substring optimization** where you need to **find minimal containing segments** with complete character coverage. The technique uses **complex sliding window** with dual frequency tracking to maintain character requirements while minimizing window size. This concept is essential in **bioinformatics**, **text search engines**, and **data mining** where finding minimal segments containing all required elements enables efficient pattern extraction and sequence analysis in complex textual datasets.
+Given an array and a value **k**, find **all pairs** with **difference k** using efficient searching techniques. This operation is fundamental in **difference analysis** and **pair enumeration** where you need to **identify all element relationships** that meet specific difference criteria. The technique can use **hash-based lookup** or **sorted array traversal** to find all pairs efficiently while avoiding duplicate combinations. This concept is essential in **statistical analysis**, **data comparison**, and **relationship mapping** where finding all pairs with specific differences enables comprehensive data analysis and pattern recognition in numerical datasets.
 
-This teaches **advanced pattern matching algorithms** and **multi-constraint window optimization techniques** that are essential for **complex substring analysis and efficient pattern containment operations**.
+This introduces **comprehensive pair finding algorithms** and **difference-based search techniques** that are crucial for **relationship analysis and efficient pair enumeration operations**.
 
-**Your task:** Implement advanced sliding window with dual frequency tracking to find minimal substrings containing all required characters efficiently.
+**Your task:** Implement systematic pair finding using hash-based lookup or sorted traversal to identify all pairs meeting difference criteria comprehensively.
 
 ### Examples
 
 **Input:**
 ```
-s = "ADOBECODEBANC", t = "ABC"
+arr = [1, 5, 3, 4, 2], k = 2
 ```
 **Output:**
 ```
-"BANC"
+[(1, 3), (3, 5), (5, 3), (4, 2)]
 ```
 
 ---
 
 **Input:**
 ```
-s = "a", t = "a"
+arr = [8, 12, 16, 4, 0, 20], k = 4
 ```
 **Output:**
 ```
-"a"
+[(8, 12), (12, 16), (16, 20)]
+```
+
+---
+
+## 3. Trapping Rain Water
+A problem that teaches advanced two-pointer techniques and demonstrates elevation-based computation algorithms using height analysis for geometric calculation and optimization problems.
+
+Given **n non-negative integers** representing an elevation map, compute **how much water** it can trap after raining using two-pointer technique. This operation is fundamental in **geometric computation** and **area calculation** where you need to **analyze elevation profiles** and calculate trapped volumes efficiently. The technique uses **two-pointer approach** with height tracking to determine water levels at each position based on surrounding elevation barriers. This concept is essential in **civil engineering**, **terrain analysis**, and **computational geometry** where calculating trapped volumes enables water management planning and geometric optimization in elevation-based scenarios.
+
+This teaches **geometric computation algorithms** and **elevation analysis techniques** that are essential for **volume calculation and efficient geometric optimization operations**.
+
+**Your task:** Implement two-pointer elevation analysis to calculate trapped water volumes by tracking maximum heights and computing water levels efficiently.
+
+### Examples
+
+**Input:**
+```
+height = [0,1,0,2,1,0,1,3,2,1,2,1]
+```
+**Output:**
+```
+6
+```
+
+---
+
+**Input:**
+```
+height = [4,2,0,3,2,5]
+```
+**Output:**
+```
+9
 ```
