@@ -7,7 +7,7 @@ typedef struct {
     int index;
 } HashEntry;
 
-int longestSubarraySumK(int arr[], int n, int k) {
+int longest_Subarray_Sum(int arr[], int n, int k) {
     HashEntry* hashMap = (HashEntry*)calloc(2 * 1000000 + 1, sizeof(HashEntry));
     if (hashMap == NULL) {
         printf("Memory allocation failed.\n");
@@ -63,7 +63,7 @@ int main() {
     printf("Enter the value of k: ");
     scanf("%d", &k);
     
-    int result = longestSubarraySumK(arr, n, k);
+    int result = longest_Subarray_Sum(arr, n, k);
     if (result != -1) {
         printf("Length of the longest subarray with sum %d: %d\n", k, result);
     }
