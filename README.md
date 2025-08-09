@@ -1,30 +1,30 @@
-<h2 align="center">Day 53 (07/08/2025)</h2>
+<h2 align="center">Day 55 (09/08/2025)</h2>
 
-## 1. Max Consecutive Ones
-A problem that introduces consecutive pattern detection and teaches streak counting algorithms using single-pass traversal methods for binary data analysis and sequence processing operations.
+## 1. Longest Subarray with Sum K
+A problem that demonstrates prefix sum optimization and teaches hash-based subarray finding algorithms using cumulative sum techniques for efficient target sum detection and length maximization operations.
 
-Given a binary array, find the **maximum number of consecutive 1s** in the array using efficient traversal techniques. This operation is fundamental in **binary data analysis** and **streak detection** where you need to **identify longest continuous patterns** within binary sequences efficiently. The technique uses **single-pass traversal** with streak counting to track current and maximum consecutive occurrences simultaneously. This concept is essential in **signal processing**, **quality control**, and **uptime monitoring** where finding longest continuous positive states enables performance analysis and reliability assessment in binary data streams.
+Given an array and integer **k**, find the length of the **longest subarray** with **sum equal to k** using prefix sum and hash map approach. This operation is fundamental in **subarray optimization** and **target sum analysis** where you need to **find maximum length segments** meeting specific sum criteria efficiently. The technique uses **prefix sum tracking** with hash-based storage to detect when cumulative sums differ by exactly k, enabling O(n) time complexity. This concept is essential in **financial analysis**, **performance tracking**, and **data segmentation** where finding longest periods meeting target metrics enables trend analysis and performance optimization.
 
-This teaches **consecutive pattern algorithms** and **streak detection techniques** that are essential for **binary analysis and efficient sequence pattern recognition operations**.
+This teaches **prefix sum algorithms** and **hash-based subarray optimization techniques** that are essential for **target sum analysis and efficient length maximization operations**.
 
-**Your task:** Implement single-pass streak counting to identify maximum consecutive patterns while maintaining optimal time and space complexity.
+**Your task:** Implement prefix sum tracking with hash map storage to efficiently find longest subarrays meeting exact sum requirements.
 
 ### Examples
 
 **Input:**
 ```
-[1,1,0,1,1,1]
+arr = [10, 5, 2, 7, 1, 9], k = 15
 ```
 **Output:**
 ```
-3
+4
 ```
 
 ---
 
 **Input:**
 ```
-[1,0,1,1,0,1]
+arr = [1, 2, 3], k = 3
 ```
 **Output:**
 ```
@@ -33,20 +33,20 @@ This teaches **consecutive pattern algorithms** and **streak detection technique
 
 ---
 
-## 2. Fruit Into Baskets
-A problem that demonstrates sliding window with constraint optimization and teaches two-element substring finding using variable window techniques for resource allocation and selection problems.
+## 2. Longest Substring with All Distinct Characters
+A problem that introduces character uniqueness optimization and teaches sliding window techniques using hash-based duplicate detection for maximum substring length finding with distinctness constraints.
 
-You are given an array representing **types of fruits**. Pick **two types** and return the length of **longest subarray** with those two types using sliding window approach. This operation is fundamental in **resource selection** and **constraint optimization** where you need to **maximize collection efficiency** within selection limitations. The technique uses **variable sliding window** with type tracking to maintain exactly two fruit types while maximizing subarray length. This concept is essential in **inventory management**, **resource allocation**, and **selection optimization** where finding optimal segments with limited variety enables efficient resource utilization and strategic planning.
+Given a string, find the length of the **longest substring** without **repeating characters** using sliding window with character tracking. This operation is fundamental in **string optimization** and **uniqueness analysis** where you need to **maximize substring length** while maintaining character distinctness efficiently. The technique uses **variable sliding window** with hash-based character tracking to detect duplicates and contract window appropriately. This concept is essential in **text processing**, **data validation**, and **pattern analysis** where finding longest unique segments enables content analysis and string optimization in text-based applications.
 
-This introduces **constraint-based optimization algorithms** and **resource selection techniques** that are crucial for **allocation problems and efficient selection strategy operations**.
+This introduces **uniqueness constraint algorithms** and **character tracking techniques** that are crucial for **string optimization and efficient distinctness analysis operations**.
 
-**Your task:** Implement sliding window with type constraint tracking to find maximum subarray length containing exactly two distinct elements efficiently.
+**Your task:** Implement sliding window with hash-based character tracking to find maximum length substrings maintaining complete character uniqueness.
 
 ### Examples
 
 **Input:**
 ```
-[1,2,1]
+"abcabcbb"
 ```
 **Output:**
 ```
@@ -57,42 +57,42 @@ This introduces **constraint-based optimization algorithms** and **resource sele
 
 **Input:**
 ```
-[0,1,2,2]
+"bbbbb"
 ```
 **Output:**
 ```
-3
+1
 ```
 
 ---
 
-## 3. Longest Mountain in Array
-A problem that teaches geometric pattern recognition and demonstrates peak-valley detection algorithms using state-based traversal methods for topological analysis and shape recognition operations.
+## 3. Binary Subarray with Sum
+A problem that teaches binary array analysis and demonstrates counting algorithms using prefix sum techniques for goal-based subarray enumeration in binary data structures.
 
-Find the length of the **longest mountain** (increasing then decreasing) in the array using pattern recognition techniques. This operation is fundamental in **topological analysis** and **shape recognition** where you need to **identify geometric patterns** within numerical sequences efficiently. The technique uses **state-based traversal** to track increasing and decreasing phases while detecting complete mountain formations. This concept is essential in **terrain analysis**, **stock market patterns**, and **signal processing** where identifying peak-valley formations enables trend analysis and pattern recognition in time-series and elevation data.
+Given a **binary array** and an integer **goal**, return the **number of non-empty subarrays** with **sum equal to goal** using prefix sum counting approach. This operation is fundamental in **binary data analysis** and **pattern counting** where you need to **enumerate all segments** meeting specific sum criteria efficiently. The technique uses **prefix sum frequency tracking** to count how many previous sums enable current position to achieve the goal sum. This concept is essential in **binary signal processing**, **digital analysis**, and **statistical counting** where enumerating binary patterns meeting criteria enables frequency analysis and pattern recognition in digital data streams.
 
-This teaches **geometric pattern algorithms** and **state-based recognition techniques** that are essential for **topological analysis and efficient shape pattern detection operations**.
+This teaches **binary pattern counting algorithms** and **prefix sum enumeration techniques** that are essential for **binary analysis and efficient subarray counting operations**.
 
-**Your task:** Implement state-based traversal to detect complete mountain patterns by tracking increasing and decreasing phases for optimal geometric recognition.
+**Your task:** Implement prefix sum frequency counting to enumerate all binary subarrays meeting goal sum requirements through efficient pattern analysis.
 
 ### Examples
 
 **Input:**
 ```
-[2,1,4,7,3,2,5]
+nums = [1,0,1,0,1], goal = 2
 ```
 **Output:**
 ```
-5
+4
 ```
 
 ---
 
 **Input:**
 ```
-[2,2,2]
+nums = [0,0,0,0,0], goal = 0
 ```
 **Output:**
 ```
-0
+15
 ```
