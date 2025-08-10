@@ -1,6 +1,5 @@
-// =========================================
 // Solution 2: Pair Sum in Sorted Array (Two-Pointer Technique)
-// =========================================
+
 #include <stdio.h>
 #include <stdbool.h>
 
