@@ -21,7 +21,7 @@ bool hasPairWithSum(int arr[], int n, int target)
 
         if (sum == target) 
         {
-            return true; // Found the magic combo 
+            return true; // Found a valid pair
         } 
         else if (sum < target) 
         {
@@ -32,7 +32,7 @@ bool hasPairWithSum(int arr[], int n, int target)
             right--; // Sum too big? Move right backward to try something smaller.
         }
     }
-    return false; // Went through all options, no luck 😞
+    return false; // Checked all possibilities, no matching pair found
 }
 
 int main() 
