@@ -21,7 +21,7 @@ bool hasPairWithSum(int arr[], int n, int target)
 
         if (sum == target) 
         {
-            return true; // Found the magic combo 🎯
+            return true; // Found the magic combo 
         } 
         else if (sum < target) 
         {
