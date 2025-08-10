@@ -1,13 +1,10 @@
-
-// =========================================
 // Solution 1: Maximum Sum Subarray (Sliding Window)
-// =========================================
+
 #include <stdio.h>
 
 // Function to find the maximum sum of any subarray of size k
 int maxSumSubarray(int arr[], int n, int k)
 {
-    // Task 1:
     // Edge case: if k is larger than array size, return -1
     if (n < k) return -1;
 
@@ -50,10 +47,12 @@ int main()
     printf("Max sum of subarray of size %d: %d\n", k, result);
     return 0;
 }
-// Task 2:
 /*
 Explanation of fixes & answers to tasks:
+Task 1:
 1. Bug in loop condition: `for (int i = 0; i <= k; i++)` → changed to `< k` to avoid out-of-bounds.
+Task 2:
 2. Why subtract arr[i - k]? → This removes the element that's sliding out of the window so we can add the next one without recalculating the whole sum.
+Task 3:
 3. Code now runs correctly and preserves O(n) efficiency.
 */
