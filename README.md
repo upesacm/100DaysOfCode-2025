@@ -1,98 +1,98 @@
-<h2 align="center">Day 58 (12/08/2025)</h2>
+<h2 align="center">Day 59 (13/08/2025)</h2>
 
-## 1. Kth Smallest Element
-A problem that demonstrates order statistics algorithms and teaches efficient selection techniques using min-heap data structures for rank-based element retrieval and statistical analysis operations.
+## 1. Min Heap Implementation
+A problem that introduces fundamental heap data structure implementation and teaches core heap operations using array-based representation for efficient priority queue functionality and dynamic data management.
 
-Given an array and a number **k**, find the **kth smallest element** using min-heap approach. This operation is fundamental in **order statistics** and **rank-based analysis** where you need to **find elements by rank** efficiently without complete sorting. The technique uses **min-heap construction** followed by k-1 extractions to reach the kth smallest element, or alternatively uses a max-heap of size k for space optimization. This concept is essential in **statistical analysis**, **percentile calculations**, and **data ranking** where finding specific rank elements enables quantile analysis and performance benchmarking in large datasets.
+Implement basic operations (**insert**, **extractMin**) of a **min-heap** using array-based representation with proper heap property maintenance. This operation is fundamental in **data structure implementation** and **priority queue design** where you need to **maintain minimum element accessibility** while supporting dynamic insertions and deletions efficiently. The technique uses **bubble-up and bubble-down operations** to maintain heap invariants after modifications, ensuring O(log n) complexity for both operations. This concept is essential in **algorithm implementation**, **system programming**, and **priority-based scheduling** where building efficient heap structures enables optimal priority queue functionality and resource management.
 
-This teaches **order statistic algorithms** and **rank-based selection techniques** that are essential for **statistical analysis and efficient element ranking operations**.
+This teaches **heap implementation algorithms** and **priority queue construction techniques** that are essential for **data structure design and efficient heap operation implementation**.
 
-**Your task:** Implement min-heap based kth smallest selection using optimal heap operations to efficiently find rank-based elements.
-
-### Examples
-
-**Input:**
-```
-arr = [7, 10, 4, 3, 20, 15], k = 3
-```
-**Output:**
-```
-7
-```
-
----
-
-**Input:**
-```
-arr = [7, 10, 4, 20, 15], k = 4
-```
-**Output:**
-```
-15
-```
-
----
-
-## 2. Heapify an Array
-A problem that introduces heap construction algorithms and teaches bottom-up heapification techniques using efficient in-place transformation methods for data structure conversion operations.
-
-Convert an **unsorted array** into a **valid max-heap** using the heapify process. This operation is fundamental in **heap construction** and **data structure transformation** where you need to **establish heap properties** efficiently from arbitrary data. The technique uses **bottom-up heapification** starting from the last non-leaf node and applying sift-down operations to maintain heap invariants. This concept is essential in **heap sort implementation**, **priority queue initialization**, and **algorithm optimization** where efficient heap construction enables fast sorting and priority-based operations on unorganized data.
-
-This introduces **heap construction algorithms** and **bottom-up heapification techniques** that are crucial for **data structure transformation and efficient heap initialization operations**.
-
-**Your task:** Implement bottom-up heapification using sift-down operations to efficiently convert unsorted arrays into valid max-heap structures.
+**Your task:** Implement complete min-heap with insert and extractMin operations using array representation and proper heap property maintenance algorithms.
 
 ### Examples
 
 **Input:**
 ```
-arr = [3, 5, 9, 6, 8, 20, 10, 12, 18, 9]
+Insert 3, 2, 15 → extractMin
 ```
 **Output:**
 ```
-A valid max-heap array
+2
 ```
 
 ---
 
 **Input:**
 ```
-arr = [1, 3, 6, 5, 9, 8]
+Insert 10, 5, 20, 8 → extractMin → extractMin
 ```
 **Output:**
 ```
-A valid max-heap array
+5, 8
 ```
 
 ---
 
-## 3. Replace Root with New Element
-A problem that teaches heap maintenance algorithms and demonstrates dynamic heap modification techniques using property restoration methods for efficient heap update operations.
+## 2. Max Heap Using Priority Queue
+A problem that demonstrates priority queue utilization and teaches max-heap operations using built-in data structures for efficient maximum element management and priority-based processing operations.
 
-Given a **max-heap**, replace the **root** with a **new value** and **maintain heap property** through appropriate restructuring operations. This operation is fundamental in **dynamic heap management** and **priority queue updates** where you need to **modify heap elements** while preserving structural invariants efficiently. The technique involves **root replacement** followed by **sift-down operations** to restore heap property by comparing with children and swapping as necessary. This concept is essential in **real-time systems**, **dynamic priority management**, and **heap-based algorithms** where maintaining heap properties during updates enables efficient priority adjustments and system responsiveness.
+Insert elements into a **max heap** using **priority queue** implementation and retrieve maximum elements efficiently. This operation is fundamental in **priority-based processing** and **maximum tracking** where you need to **maintain largest element accessibility** using standard library implementations. The technique leverages **built-in priority queue structures** with appropriate comparators or value negation to achieve max-heap behavior. This concept is essential in **competitive programming**, **algorithm optimization**, and **system design** where utilizing standard priority queue implementations enables rapid development and reliable maximum element management.
 
-This teaches **heap maintenance algorithms** and **dynamic modification techniques** that are essential for **heap updates and efficient priority queue management operations**.
+This introduces **priority queue utilization algorithms** and **max-heap management techniques** that are crucial for **efficient maximum tracking and priority-based element processing operations**.
 
-**Your task:** Implement root replacement with heap property restoration using sift-down operations to maintain valid heap structure after modifications.
+**Your task:** Implement max-heap functionality using priority queue libraries with proper element insertion and maximum extraction operations.
 
 ### Examples
 
 **Input:**
 ```
-arr = [50, 30, 20, 15, 10, 8, 16], newElement = 25
+Insert 5, 1, 10 → extractMax
 ```
 **Output:**
 ```
-New heap with root replaced and heap property maintained
+10
 ```
 
 ---
 
 **Input:**
 ```
-arr = [100, 80, 70, 60, 50, 40, 30], newElement = 35
+Insert 3, 7, 2, 9 → extractMax → extractMax
 ```
 **Output:**
 ```
-New heap with root replaced and heap property maintained
+9, 7
+```
+
+---
+
+## 3. Check if Two Heaps are Identical
+A problem that teaches heap structure comparison and demonstrates array-based heap equality verification using systematic element and structural analysis for heap validation operations.
+
+Given **two arrays**, check if they **represent the same heap structure** through comprehensive structural and element comparison. This operation is fundamental in **heap validation** and **data structure verification** where you need to **confirm heap equivalence** beyond simple element equality. The technique involves **systematic array comparison** ensuring both element values and heap property satisfaction are identical across both structures. This concept is essential in **testing frameworks**, **algorithm verification**, and **data structure validation** where confirming heap equality ensures correctness of heap operations and maintains data structure integrity in complex systems.
+
+This teaches **heap comparison algorithms** and **structural verification techniques** that are essential for **heap validation and efficient data structure equality checking operations**.
+
+**Your task:** Implement comprehensive heap equality checking using array comparison with heap property verification for complete structural validation.
+
+### Examples
+
+**Input:**
+```
+arr1 = [10, 9, 8], arr2 = [10, 9, 8]
+```
+**Output:**
+```
+true
+```
+
+---
+
+**Input:**
+```
+arr1 = [10, 9, 8], arr2 = [10, 8, 9]
+```
+**Output:**
+```
+false
 ```
