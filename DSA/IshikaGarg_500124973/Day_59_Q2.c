@@ -66,15 +66,14 @@ int main() {
     insert(&heap, 5);
     insert(&heap, 1);
     insert(&heap, 10);
-    printf("%d\n", extractMax(&heap)); // Output: 10
+    printf("%d\n", extractMax(&heap)); 
 
     insert(&heap, 3);
     insert(&heap, 7);
     insert(&heap, 2);
     insert(&heap, 9);
-    printf("%d\n", extractMax(&heap)); // Output: 9
-    printf("%d\n", extractMax(&heap)); // Output: 7
-
+    printf("%d\n", extractMax(&heap)); 
+    printf("%d\n", extractMax(&heap)); 
     return 0;
 }
 
