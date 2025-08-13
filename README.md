@@ -1,98 +1,98 @@
-<h2 align="center">Day 59 (13/08/2025)</h2>
+<h2 align="center">Day 60 (14/08/2025)</h2>
 
-## 1. Min Heap Implementation
-A problem that introduces fundamental heap data structure implementation and teaches core heap operations using array-based representation for efficient priority queue functionality and dynamic data management.
+## 1. Sort a K-Sorted Array
+A problem that demonstrates nearly-sorted array optimization and teaches efficient sorting techniques using min-heap for arrays with bounded disorder, leveraging partial order properties for optimal performance.
 
-Implement basic operations (**insert**, **extractMin**) of a **min-heap** using array-based representation with proper heap property maintenance. This operation is fundamental in **data structure implementation** and **priority queue design** where you need to **maintain minimum element accessibility** while supporting dynamic insertions and deletions efficiently. The technique uses **bubble-up and bubble-down operations** to maintain heap invariants after modifications, ensuring O(log n) complexity for both operations. This concept is essential in **algorithm implementation**, **system programming**, and **priority-based scheduling** where building efficient heap structures enables optimal priority queue functionality and resource management.
+Given an array where every element is **at most k positions away** from its **sorted position**, sort it using heap-based optimization. This operation is fundamental in **partially sorted data processing** and **bounded disorder optimization** where you need to **sort nearly-ordered sequences** more efficiently than general sorting algorithms. The technique uses **min-heap of size k+1** to maintain the smallest elements within the valid range, ensuring each position gets its correct element. This concept is essential in **real-time data processing**, **streaming algorithms**, and **external sorting** where data arrives in nearly-sorted order and requires efficient ordering with minimal memory overhead.
 
-This teaches **heap implementation algorithms** and **priority queue construction techniques** that are essential for **data structure design and efficient heap operation implementation**.
+This teaches **nearly-sorted optimization algorithms** and **bounded heap sorting techniques** that are essential for **partial order processing and efficient k-sorted array manipulation operations**.
 
-**Your task:** Implement complete min-heap with insert and extractMin operations using array representation and proper heap property maintenance algorithms.
-
-### Examples
-
-**Input:**
-```
-Insert 3, 2, 15 → extractMin
-```
-**Output:**
-```
-2
-```
-
----
-
-**Input:**
-```
-Insert 10, 5, 20, 8 → extractMin → extractMin
-```
-**Output:**
-```
-5, 8
-```
-
----
-
-## 2. Max Heap Using Priority Queue
-A problem that demonstrates priority queue utilization and teaches max-heap operations using built-in data structures for efficient maximum element management and priority-based processing operations.
-
-Insert elements into a **max heap** using **priority queue** implementation and retrieve maximum elements efficiently. This operation is fundamental in **priority-based processing** and **maximum tracking** where you need to **maintain largest element accessibility** using standard library implementations. The technique leverages **built-in priority queue structures** with appropriate comparators or value negation to achieve max-heap behavior. This concept is essential in **competitive programming**, **algorithm optimization**, and **system design** where utilizing standard priority queue implementations enables rapid development and reliable maximum element management.
-
-This introduces **priority queue utilization algorithms** and **max-heap management techniques** that are crucial for **efficient maximum tracking and priority-based element processing operations**.
-
-**Your task:** Implement max-heap functionality using priority queue libraries with proper element insertion and maximum extraction operations.
+**Your task:** Implement k-sorted array optimization using min-heap of size k+1 to achieve better than O(n log n) sorting performance on nearly-sorted data.
 
 ### Examples
 
 **Input:**
 ```
-Insert 5, 1, 10 → extractMax
+arr = [6, 5, 3, 2, 8, 10, 9], k = 3
 ```
 **Output:**
 ```
-10
+[2, 3, 5, 6, 8, 9, 10]
 ```
 
 ---
 
 **Input:**
 ```
-Insert 3, 7, 2, 9 → extractMax → extractMax
+arr = [3, 2, 1, 5, 4, 7, 6, 5], k = 3
 ```
 **Output:**
 ```
-9, 7
+[1, 2, 3, 4, 5, 5, 6, 7]
 ```
 
 ---
 
-## 3. Check if Two Heaps are Identical
-A problem that teaches heap structure comparison and demonstrates array-based heap equality verification using systematic element and structural analysis for heap validation operations.
+## 2. Median in a Stream
+A problem that introduces dynamic median tracking and teaches dual-heap techniques using balanced max-heap and min-heap structures for efficient running median computation in streaming data.
 
-Given **two arrays**, check if they **represent the same heap structure** through comprehensive structural and element comparison. This operation is fundamental in **heap validation** and **data structure verification** where you need to **confirm heap equivalence** beyond simple element equality. The technique involves **systematic array comparison** ensuring both element values and heap property satisfaction are identical across both structures. This concept is essential in **testing frameworks**, **algorithm verification**, and **data structure validation** where confirming heap equality ensures correctness of heap operations and maintains data structure integrity in complex systems.
+Given a **stream of integers**, find the **median after each insertion** using dual-heap approach for optimal performance. This operation is fundamental in **streaming statistics** and **real-time analytics** where you need to **maintain median values** dynamically as data arrives continuously. The technique uses **balanced dual-heap structure** with max-heap for smaller half and min-heap for larger half, ensuring O(log n) insertion and O(1) median retrieval. This concept is essential in **financial trading**, **sensor data processing**, and **real-time monitoring** where continuous median calculation enables trend analysis and anomaly detection in streaming datasets.
 
-This teaches **heap comparison algorithms** and **structural verification techniques** that are essential for **heap validation and efficient data structure equality checking operations**.
+This introduces **streaming median algorithms** and **dual-heap balancing techniques** that are crucial for **real-time statistics and efficient dynamic median computation operations**.
 
-**Your task:** Implement comprehensive heap equality checking using array comparison with heap property verification for complete structural validation.
+**Your task:** Implement dual-heap median tracking using balanced max-heap and min-heap structures to maintain running median with optimal time complexity.
 
 ### Examples
 
 **Input:**
 ```
-arr1 = [10, 9, 8], arr2 = [10, 9, 8]
+[5, 15, 1, 3]
 ```
 **Output:**
 ```
-true
+5, 10, 5, 4
 ```
 
 ---
 
 **Input:**
 ```
-arr1 = [10, 9, 8], arr2 = [10, 8, 9]
+[1, 2, 3, 4, 5]
 ```
 **Output:**
 ```
-false
+1, 1.5, 2, 2.5, 3
+```
+
+---
+
+## 3. Top K Frequent Elements
+A problem that teaches frequency analysis optimization and demonstrates heap-based selection algorithms using frequency counting and priority queue techniques for efficient top-k element identification.
+
+Given a list of elements, find the **k most frequent elements** using heap-based frequency analysis. This operation is fundamental in **frequency analysis** and **popularity ranking** where you need to **identify most common elements** efficiently from large datasets. The technique combines **frequency counting** with **min-heap of size k** to maintain the k most frequent elements, or uses max-heap for direct frequency-based selection. This concept is essential in **data mining**, **recommendation systems**, and **trend analysis** where finding popular items enables content ranking and user preference analysis in large-scale applications.
+
+This teaches **frequency-based heap algorithms** and **top-k selection techniques** that are essential for **popularity analysis and efficient frequent element identification operations**.
+
+**Your task:** Implement frequency-based top-k selection using heap structures to efficiently identify most frequent elements with optimal time and space complexity.
+
+### Examples
+
+**Input:**
+```
+arr = [1, 1, 1, 2, 2, 3], k = 2
+```
+**Output:**
+```
+[1, 2]
+```
+
+---
+
+**Input:**
+```
+arr = [4, 1, -1, 2, -1, 2, 3], k = 2
+```
+**Output:**
+```
+[-1, 2]
 ```
