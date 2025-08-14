@@ -1,98 +1,98 @@
-<h2 align="center">Day 57 (11/08/2025)</h2>
+<h2 align="center">Day 58 (12/08/2025)</h2>
 
-## 1. K Largest Elements
-A problem that introduces heap-based selection algorithms and teaches efficient top-k finding techniques using priority queue data structures for optimal element retrieval and ranking operations.
+## 1. Kth Smallest Element
+A problem that demonstrates order statistics algorithms and teaches efficient selection techniques using min-heap data structures for rank-based element retrieval and statistical analysis operations.
 
-Given an array and a number **k**, print the **k largest elements** using a heap-based approach. This operation is fundamental in **selection algorithms** and **ranking systems** where you need to **identify top performers** or **highest values** efficiently without full array sorting. The technique uses **min-heap of size k** to maintain the k largest elements seen so far, replacing smaller elements as larger ones are encountered. This concept is essential in **data analytics**, **recommendation systems**, and **performance monitoring** where finding top-k elements enables efficient ranking and selection without the overhead of complete sorting operations.
+Given an array and a number **k**, find the **kth smallest element** using min-heap approach. This operation is fundamental in **order statistics** and **rank-based analysis** where you need to **find elements by rank** efficiently without complete sorting. The technique uses **min-heap construction** followed by k-1 extractions to reach the kth smallest element, or alternatively uses a max-heap of size k for space optimization. This concept is essential in **statistical analysis**, **percentile calculations**, and **data ranking** where finding specific rank elements enables quantile analysis and performance benchmarking in large datasets.
 
-This teaches **heap-based selection algorithms** and **priority queue optimization techniques** that are essential for **top-k analysis and efficient element ranking operations**.
+This teaches **order statistic algorithms** and **rank-based selection techniques** that are essential for **statistical analysis and efficient element ranking operations**.
 
-**Your task:** Implement min-heap based k-largest selection to efficiently identify top elements while maintaining optimal time and space complexity.
-
-### Examples
-
-**Input:**
-```
-arr = [1, 23, 12, 9, 30, 2, 50], k = 3
-```
-**Output:**
-```
-[50, 30, 23]
-```
-
----
-
-**Input:**
-```
-arr = [10, 15, 5], k = 2
-```
-**Output:**
-```
-[15, 10]
-```
-
----
-
-## 2. Is Array a Max Heap
-A problem that demonstrates heap property validation and teaches structural verification algorithms using parent-child relationship checking for data structure integrity analysis.
-
-Given an array, check if it **satisfies the max-heap property** using systematic parent-child comparison. This operation is fundamental in **data structure validation** and **heap integrity checking** where you need to **verify heap properties** are maintained after operations. The technique uses **systematic traversal** checking that each parent node is greater than or equal to its children, ensuring the complete binary tree satisfies max-heap constraints. This concept is essential in **algorithm verification**, **data structure testing**, and **system validation** where confirming heap properties ensures correct behavior of heap-based algorithms and maintains data structure invariants.
-
-This introduces **heap property validation algorithms** and **structural verification techniques** that are crucial for **data structure integrity and efficient heap validation operations**.
-
-**Your task:** Implement systematic parent-child validation to verify complete max-heap property compliance through efficient structural analysis.
+**Your task:** Implement min-heap based kth smallest selection using optimal heap operations to efficiently find rank-based elements.
 
 ### Examples
 
 **Input:**
 ```
-arr = [90, 15, 10, 7, 12, 2]
+arr = [7, 10, 4, 3, 20, 15], k = 3
 ```
 **Output:**
 ```
-true
+7
 ```
 
 ---
 
 **Input:**
 ```
-arr = [9, 15, 10, 7, 12, 2]
+arr = [7, 10, 4, 20, 15], k = 4
 ```
 **Output:**
 ```
-false
+15
 ```
 
 ---
 
-## 3. Merge K Sorted Arrays
-A problem that teaches multi-way merging techniques and demonstrates heap-based algorithm optimization for efficient sorted sequence combination using priority queue coordination methods.
+## 2. Heapify an Array
+A problem that introduces heap construction algorithms and teaches bottom-up heapification techniques using efficient in-place transformation methods for data structure conversion operations.
 
-Given **k sorted arrays**, merge them into a **single sorted array** using heap-based multi-way merge algorithm. This operation is fundamental in **external sorting** and **distributed data processing** where you need to **combine multiple sorted sequences** efficiently while maintaining overall sorted order. The technique uses **min-heap coordination** to track the smallest available element from each array, ensuring optimal merging without redundant comparisons. This concept is essential in **database systems**, **distributed computing**, and **large-scale data processing** where merging sorted partitions enables efficient data consolidation and parallel processing optimization.
+Convert an **unsorted array** into a **valid max-heap** using the heapify process. This operation is fundamental in **heap construction** and **data structure transformation** where you need to **establish heap properties** efficiently from arbitrary data. The technique uses **bottom-up heapification** starting from the last non-leaf node and applying sift-down operations to maintain heap invariants. This concept is essential in **heap sort implementation**, **priority queue initialization**, and **algorithm optimization** where efficient heap construction enables fast sorting and priority-based operations on unorganized data.
 
-This teaches **multi-way merge algorithms** and **heap-based coordination techniques** that are essential for **sorted sequence combination and efficient distributed data processing operations**.
+This introduces **heap construction algorithms** and **bottom-up heapification techniques** that are crucial for **data structure transformation and efficient heap initialization operations**.
 
-**Your task:** Implement heap-coordinated multi-way merge to efficiently combine multiple sorted arrays while maintaining optimal time complexity and sorted order.
+**Your task:** Implement bottom-up heapification using sift-down operations to efficiently convert unsorted arrays into valid max-heap structures.
 
 ### Examples
 
 **Input:**
 ```
-[[1, 3], [2, 4], [5, 6]]
+arr = [3, 5, 9, 6, 8, 20, 10, 12, 18, 9]
 ```
 **Output:**
 ```
-[1, 2, 3, 4, 5, 6]
+A valid max-heap array
 ```
 
 ---
 
 **Input:**
 ```
-[[1, 4, 5], [1, 3, 4], [2, 6]]
+arr = [1, 3, 6, 5, 9, 8]
 ```
 **Output:**
 ```
-[1, 1, 2, 3, 4, 4, 5, 6]
+A valid max-heap array
+```
+
+---
+
+## 3. Replace Root with New Element
+A problem that teaches heap maintenance algorithms and demonstrates dynamic heap modification techniques using property restoration methods for efficient heap update operations.
+
+Given a **max-heap**, replace the **root** with a **new value** and **maintain heap property** through appropriate restructuring operations. This operation is fundamental in **dynamic heap management** and **priority queue updates** where you need to **modify heap elements** while preserving structural invariants efficiently. The technique involves **root replacement** followed by **sift-down operations** to restore heap property by comparing with children and swapping as necessary. This concept is essential in **real-time systems**, **dynamic priority management**, and **heap-based algorithms** where maintaining heap properties during updates enables efficient priority adjustments and system responsiveness.
+
+This teaches **heap maintenance algorithms** and **dynamic modification techniques** that are essential for **heap updates and efficient priority queue management operations**.
+
+**Your task:** Implement root replacement with heap property restoration using sift-down operations to maintain valid heap structure after modifications.
+
+### Examples
+
+**Input:**
+```
+arr = [50, 30, 20, 15, 10, 8, 16], newElement = 25
+```
+**Output:**
+```
+New heap with root replaced and heap property maintained
+```
+
+---
+
+**Input:**
+```
+arr = [100, 80, 70, 60, 50, 40, 30], newElement = 35
+```
+**Output:**
+```
+New heap with root replaced and heap property maintained
 ```
