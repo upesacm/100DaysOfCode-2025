@@ -15,6 +15,6 @@ def top_k_frequent(nums, k):
 
 # Example usage
 print(top_k_frequent([1, 1, 1, 2, 2, 3], 2))  
-# Output: [1, 2]
+
 print(top_k_frequent([4, 1, -1, 2, -1, 2, 3], 2))  
-# Output: [-1, 2]
+
