@@ -1,98 +1,98 @@
-<h2 align="center">Day 55 (09/08/2025)</h2>
+<h2 align="center">Day 60 (14/08/2025)</h2>
 
-## 1. Longest Subarray with Sum K
-A problem that demonstrates prefix sum optimization and teaches hash-based subarray finding algorithms using cumulative sum techniques for efficient target sum detection and length maximization operations.
+## 1. Sort a K-Sorted Array
+A problem that demonstrates nearly-sorted array optimization and teaches efficient sorting techniques using min-heap for arrays with bounded disorder, leveraging partial order properties for optimal performance.
 
-Given an array and integer **k**, find the length of the **longest subarray** with **sum equal to k** using prefix sum and hash map approach. This operation is fundamental in **subarray optimization** and **target sum analysis** where you need to **find maximum length segments** meeting specific sum criteria efficiently. The technique uses **prefix sum tracking** with hash-based storage to detect when cumulative sums differ by exactly k, enabling O(n) time complexity. This concept is essential in **financial analysis**, **performance tracking**, and **data segmentation** where finding longest periods meeting target metrics enables trend analysis and performance optimization.
+Given an array where every element is **at most k positions away** from its **sorted position**, sort it using heap-based optimization. This operation is fundamental in **partially sorted data processing** and **bounded disorder optimization** where you need to **sort nearly-ordered sequences** more efficiently than general sorting algorithms. The technique uses **min-heap of size k+1** to maintain the smallest elements within the valid range, ensuring each position gets its correct element. This concept is essential in **real-time data processing**, **streaming algorithms**, and **external sorting** where data arrives in nearly-sorted order and requires efficient ordering with minimal memory overhead.
 
-This teaches **prefix sum algorithms** and **hash-based subarray optimization techniques** that are essential for **target sum analysis and efficient length maximization operations**.
+This teaches **nearly-sorted optimization algorithms** and **bounded heap sorting techniques** that are essential for **partial order processing and efficient k-sorted array manipulation operations**.
 
-**Your task:** Implement prefix sum tracking with hash map storage to efficiently find longest subarrays meeting exact sum requirements.
-
-### Examples
-
-**Input:**
-```
-arr = [10, 5, 2, 7, 1, 9], k = 15
-```
-**Output:**
-```
-4
-```
-
----
-
-**Input:**
-```
-arr = [1, 2, 3], k = 3
-```
-**Output:**
-```
-2
-```
-
----
-
-## 2. Longest Substring with All Distinct Characters
-A problem that introduces character uniqueness optimization and teaches sliding window techniques using hash-based duplicate detection for maximum substring length finding with distinctness constraints.
-
-Given a string, find the length of the **longest substring** without **repeating characters** using sliding window with character tracking. This operation is fundamental in **string optimization** and **uniqueness analysis** where you need to **maximize substring length** while maintaining character distinctness efficiently. The technique uses **variable sliding window** with hash-based character tracking to detect duplicates and contract window appropriately. This concept is essential in **text processing**, **data validation**, and **pattern analysis** where finding longest unique segments enables content analysis and string optimization in text-based applications.
-
-This introduces **uniqueness constraint algorithms** and **character tracking techniques** that are crucial for **string optimization and efficient distinctness analysis operations**.
-
-**Your task:** Implement sliding window with hash-based character tracking to find maximum length substrings maintaining complete character uniqueness.
+**Your task:** Implement k-sorted array optimization using min-heap of size k+1 to achieve better than O(n log n) sorting performance on nearly-sorted data.
 
 ### Examples
 
 **Input:**
 ```
-"abcabcbb"
+arr = [6, 5, 3, 2, 8, 10, 9], k = 3
 ```
 **Output:**
 ```
-3
+[2, 3, 5, 6, 8, 9, 10]
 ```
 
 ---
 
 **Input:**
 ```
-"bbbbb"
+arr = [3, 2, 1, 5, 4, 7, 6, 5], k = 3
 ```
 **Output:**
 ```
-1
+[1, 2, 3, 4, 5, 5, 6, 7]
 ```
 
 ---
 
-## 3. Binary Subarray with Sum
-A problem that teaches binary array analysis and demonstrates counting algorithms using prefix sum techniques for goal-based subarray enumeration in binary data structures.
+## 2. Median in a Stream
+A problem that introduces dynamic median tracking and teaches dual-heap techniques using balanced max-heap and min-heap structures for efficient running median computation in streaming data.
 
-Given a **binary array** and an integer **goal**, return the **number of non-empty subarrays** with **sum equal to goal** using prefix sum counting approach. This operation is fundamental in **binary data analysis** and **pattern counting** where you need to **enumerate all segments** meeting specific sum criteria efficiently. The technique uses **prefix sum frequency tracking** to count how many previous sums enable current position to achieve the goal sum. This concept is essential in **binary signal processing**, **digital analysis**, and **statistical counting** where enumerating binary patterns meeting criteria enables frequency analysis and pattern recognition in digital data streams.
+Given a **stream of integers**, find the **median after each insertion** using dual-heap approach for optimal performance. This operation is fundamental in **streaming statistics** and **real-time analytics** where you need to **maintain median values** dynamically as data arrives continuously. The technique uses **balanced dual-heap structure** with max-heap for smaller half and min-heap for larger half, ensuring O(log n) insertion and O(1) median retrieval. This concept is essential in **financial trading**, **sensor data processing**, and **real-time monitoring** where continuous median calculation enables trend analysis and anomaly detection in streaming datasets.
 
-This teaches **binary pattern counting algorithms** and **prefix sum enumeration techniques** that are essential for **binary analysis and efficient subarray counting operations**.
+This introduces **streaming median algorithms** and **dual-heap balancing techniques** that are crucial for **real-time statistics and efficient dynamic median computation operations**.
 
-**Your task:** Implement prefix sum frequency counting to enumerate all binary subarrays meeting goal sum requirements through efficient pattern analysis.
+**Your task:** Implement dual-heap median tracking using balanced max-heap and min-heap structures to maintain running median with optimal time complexity.
 
 ### Examples
 
 **Input:**
 ```
-nums = [1,0,1,0,1], goal = 2
+[5, 15, 1, 3]
 ```
 **Output:**
 ```
-4
+5, 10, 5, 4
 ```
 
 ---
 
 **Input:**
 ```
-nums = [0,0,0,0,0], goal = 0
+[1, 2, 3, 4, 5]
 ```
 **Output:**
 ```
-15
+1, 1.5, 2, 2.5, 3
+```
+
+---
+
+## 3. Top K Frequent Elements
+A problem that teaches frequency analysis optimization and demonstrates heap-based selection algorithms using frequency counting and priority queue techniques for efficient top-k element identification.
+
+Given a list of elements, find the **k most frequent elements** using heap-based frequency analysis. This operation is fundamental in **frequency analysis** and **popularity ranking** where you need to **identify most common elements** efficiently from large datasets. The technique combines **frequency counting** with **min-heap of size k** to maintain the k most frequent elements, or uses max-heap for direct frequency-based selection. This concept is essential in **data mining**, **recommendation systems**, and **trend analysis** where finding popular items enables content ranking and user preference analysis in large-scale applications.
+
+This teaches **frequency-based heap algorithms** and **top-k selection techniques** that are essential for **popularity analysis and efficient frequent element identification operations**.
+
+**Your task:** Implement frequency-based top-k selection using heap structures to efficiently identify most frequent elements with optimal time and space complexity.
+
+### Examples
+
+**Input:**
+```
+arr = [1, 1, 1, 2, 2, 3], k = 2
+```
+**Output:**
+```
+[1, 2]
+```
+
+---
+
+**Input:**
+```
+arr = [4, 1, -1, 2, -1, 2, 3], k = 2
+```
+**Output:**
+```
+[-1, 2]
 ```
