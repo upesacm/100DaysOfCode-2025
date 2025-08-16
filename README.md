@@ -1,3 +1,11 @@
+<h2 align="center">Quiz 9 (17/08/2025)</h2>
+
+**Time:** Sunday, 8:00 PM - 9:00 PM (1 Hour)
+
+## Format
+- MCQs: Submit via Google Form
+- Debugging Questions: Submit to GitHub
+
 ## Repository Structure
 ```
 📁 Quiz_9/
@@ -12,3 +20,5 @@
 - Use the appropriate file extension (.c for C, .py for Python)
 - Follow the folder naming format strictly: Your_Name_SapID
 - Submit within time limit
+
+Good luck!
