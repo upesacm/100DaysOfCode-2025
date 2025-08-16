@@ -1,9 +1,9 @@
 ## Repository Structure
 ```
-📁 Quiz_9/
+📁 Quiz_7/
 └── 📁 Your_Name_SapID/
-    ├── Quiz_9_Debugging_Question_1.c / .py
-    └── Quiz_9_Debugging_Question_2.c / .py
+    ├── Quiz_7_Debugging_Question_1.c / .py
+    └── Quiz_7_Debugging_Question_2.c / .py
 ```
 
 ## Notes
