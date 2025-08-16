@@ -1,98 +1,98 @@
-<h2 align="center">Day 61 (15/08/2025)</h2>
+<h2 align="center">Day 62 (16/08/2025)</h2>
 
-## 1. Convert Min Heap to Max Heap
-A problem that demonstrates heap transformation algorithms and teaches property conversion techniques using bottom-up heapification methods for efficient data structure type modification operations.
+## 1. Connect N Ropes with Minimum Cost
+A problem that demonstrates greedy optimization algorithms and teaches cost minimization techniques using min-heap for optimal sequence selection in combinatorial optimization problems.
 
-Given a **min heap**, convert it into a **max heap** using efficient transformation algorithms. This operation is fundamental in **heap property conversion** and **data structure adaptation** where you need to **change heap semantics** without rebuilding from scratch. The technique uses **bottom-up heapification** with reversed comparison logic, starting from non-leaf nodes and applying sift-down operations with max-heap properties. This concept is essential in **algorithm adaptation**, **data structure reuse**, and **system optimization** where converting existing heap structures enables functionality changes without complete reconstruction, saving computational resources and maintaining existing data.
+Given **N ropes** with different lengths, connect them with **minimum cost** using min-heap based greedy approach. This operation is fundamental in **combinatorial optimization** and **cost minimization** where you need to **find optimal combination sequences** that minimize total expense. The technique uses **min-heap to always combine shortest ropes** first, as connecting shorter ropes early reduces the total cost of subsequent combinations. This concept is essential in **resource optimization**, **manufacturing processes**, and **network design** where minimizing connection costs enables efficient resource utilization and optimal system design in cost-sensitive applications.
 
-This teaches **heap transformation algorithms** and **property conversion techniques** that are essential for **data structure adaptation and efficient heap type modification operations**.
+This teaches **greedy optimization algorithms** and **min-heap cost minimization techniques** that are essential for **combinatorial optimization and efficient cost reduction operations**.
 
-**Your task:** Implement bottom-up max-heapification on existing min-heap structure to efficiently convert heap properties while preserving all elements.
-
-### Examples
-
-**Input:**
-```
-arr = [1, 3, 5, 7, 9, 2]
-```
-**Output:**
-```
-A valid max heap array
-```
-
----
-
-**Input:**
-```
-arr = [2, 4, 6, 8, 10, 12]
-```
-**Output:**
-```
-A valid max heap array
-```
-
----
-
-## 2. Insert and Delete in Heap
-A problem that introduces comprehensive heap manipulation and teaches dynamic heap operations using insertion and deletion algorithms for complete heap management functionality.
-
-Perform **insert and delete operations** in a **max heap** using proper heap maintenance algorithms. This operation is fundamental in **dynamic heap management** and **priority queue operations** where you need to **modify heap contents** while preserving structural properties efficiently. The technique combines **bubble-up insertion** for new elements and **extract-root deletion** with heap property restoration through sift-down operations. This concept is essential in **priority scheduling**, **event management**, and **resource allocation** where dynamic heap modifications enable real-time priority adjustments and efficient resource management in changing system conditions.
-
-This introduces **comprehensive heap manipulation algorithms** and **dynamic operation techniques** that are crucial for **priority queue management and efficient heap modification operations**.
-
-**Your task:** Implement complete heap manipulation with proper insertion using bubble-up and deletion using extract-root with sift-down restoration.
+**Your task:** Implement greedy rope connection using min-heap to always select shortest ropes for combination, achieving optimal cost minimization.
 
 ### Examples
 
 **Input:**
 ```
-Insert 20, 15, 8 → Delete root
+[4, 3, 2, 6]
 ```
 **Output:**
 ```
-Heap after operations
+29
 ```
 
 ---
 
 **Input:**
 ```
-Insert 30, 25, 10, 35 → Delete root → Insert 40
+[1, 2, 3, 4, 5]
 ```
 **Output:**
 ```
-Heap after operations
+33
 ```
 
 ---
 
-## 3. Heap Sort
-A problem that teaches comparison-based sorting optimization and demonstrates heap-based sorting algorithms using heapification and systematic extraction for efficient in-place sorting operations.
+## 2. K Closest Numbers
+A problem that introduces proximity-based selection and teaches distance-based heap algorithms using custom comparators for efficient nearest neighbor finding operations.
 
-Sort an array using **heap sort algorithm** through heapification and systematic maximum extraction. This operation is fundamental in **comparison-based sorting** and **in-place algorithm design** where you need to **achieve O(n log n) performance** with guaranteed worst-case complexity and minimal space overhead. The technique uses **initial heapification** followed by **iterative root extraction** with heap size reduction, placing sorted elements at array end. This concept is essential in **system programming**, **embedded systems**, and **performance-critical applications** where guaranteed sorting performance with minimal memory usage enables reliable sorting in resource-constrained environments.
+Find **k closest numbers** to a **target** using heap-based distance analysis. This operation is fundamental in **proximity analysis** and **nearest neighbor search** where you need to **identify elements closest to reference points** efficiently. The technique uses **max-heap of size k** with distance-based comparison to maintain the k closest elements, or min-heap with all distances for comprehensive analysis. This concept is essential in **machine learning**, **recommendation systems**, and **spatial analysis** where finding nearest elements enables similarity matching and clustering operations in multi-dimensional data spaces.
 
-This teaches **heap-based sorting algorithms** and **in-place optimization techniques** that are essential for **guaranteed performance sorting and efficient comparison-based array ordering operations**.
+This introduces **proximity-based heap algorithms** and **distance optimization techniques** that are crucial for **nearest neighbor analysis and efficient similarity-based selection operations**.
 
-**Your task:** Implement complete heap sort using initial heapification followed by systematic extraction with in-place element positioning for optimal sorting.
+**Your task:** Implement distance-based k-closest selection using heap structures with custom distance comparators for optimal proximity analysis.
 
 ### Examples
 
 **Input:**
 ```
-arr = [4, 10, 3, 5, 1]
+arr = [1, 2, 3, 4, 5], target = 3, k = 2
 ```
 **Output:**
 ```
-[1, 3, 4, 5, 10]
+[2, 4]
 ```
 
 ---
 
 **Input:**
 ```
-arr = [12, 11, 13, 5, 6, 7]
+arr = [5, 6, 7, 8, 9], target = 7, k = 3
 ```
 **Output:**
 ```
-[5, 6, 7, 11, 12, 13]
+[6, 7, 8]
+```
+
+---
+
+## 3. Find Kth Largest Sum of Subarray
+A problem that teaches subarray analysis optimization and demonstrates heap-based selection algorithms using sum computation and priority queue techniques for efficient ranking operations.
+
+Given an array, find the **kth largest sum** of **contiguous subarrays** using heap-based selection approach. This operation is fundamental in **subarray analysis** and **sum-based ranking** where you need to **identify optimal segments** based on cumulative values efficiently. The technique can use **min-heap of size k** to maintain largest sums, or generate all subarray sums with max-heap for comprehensive analysis. This concept is essential in **financial analysis**, **performance monitoring**, and **optimization problems** where finding peak-performing segments enables trend identification and strategic decision making in sequence-based data analysis.
+
+This teaches **subarray optimization algorithms** and **sum-based ranking techniques** that are essential for **segment analysis and efficient subarray performance evaluation operations**.
+
+**Your task:** Implement subarray sum analysis using heap-based selection to efficiently identify kth largest segment sums with optimal performance.
+
+### Examples
+
+**Input:**
+```
+arr = [10, -10, 20, -40], k = 3
+```
+**Output:**
+```
+10
+```
+
+---
+
+**Input:**
+```
+arr = [1, 2, 3], k = 2
+```
+**Output:**
+```
+5
 ```
