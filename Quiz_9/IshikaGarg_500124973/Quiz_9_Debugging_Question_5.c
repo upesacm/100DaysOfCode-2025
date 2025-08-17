@@ -3,7 +3,7 @@
 In main, the heap is defined as:
 
 int heap[100] = {0, 50, 30, 40, 10, 20, 35}; // 1-indexed
-int size = 5;
+int size = 6;
 
 Here heap[1]..heap[6] are valid elements. 
 
