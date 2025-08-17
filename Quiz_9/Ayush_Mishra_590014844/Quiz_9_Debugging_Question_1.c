@@ -16,7 +16,7 @@ void insert(int heap[], int *size, int value)
 {
     if (*size >= MAX - 1)
     {
-        printf("Heap overflow. Cannot insert more elements.\n");
+        printf("Heap overflow cannot insert more elements\n");
         return;
     }
 
