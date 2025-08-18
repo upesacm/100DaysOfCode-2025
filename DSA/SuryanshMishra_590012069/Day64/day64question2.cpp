@@ -23,7 +23,7 @@ double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacit
         } else {
             double fraction = (double)remainingCapacity / weight;
             totalValue += fraction * value;
-            break; // Knapsack is full
+            break;
         }
     }
     
