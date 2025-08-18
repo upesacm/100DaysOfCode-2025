@@ -18,7 +18,6 @@ double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacit
         int weight = weights[idx];
         int value = values[idx];
         if (weight <= remainingCapacity) {
-            // Take the entire item
             totalValue += value;
             remainingCapacity -= weight;
         } else {
