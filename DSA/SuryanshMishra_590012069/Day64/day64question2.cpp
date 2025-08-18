@@ -26,6 +26,5 @@ double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacit
             break;
         }
     }
-    
     return totalValue;
 }
