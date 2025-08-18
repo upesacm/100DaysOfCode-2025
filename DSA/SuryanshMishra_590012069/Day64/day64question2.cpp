@@ -3,7 +3,6 @@
 #include <functional>
 using namespace std;
 
-// Return maximum value achievable in fractional knapsack
 double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacity) {
     int n = weights.size();
     if (n == 0 || capacity <= 0) return 0.0;
