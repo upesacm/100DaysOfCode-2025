@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <functional>
 using namespace std;
-
 double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacity) {
     int n = weights.size();
     if (n == 0 || capacity <= 0) return 0.0;
