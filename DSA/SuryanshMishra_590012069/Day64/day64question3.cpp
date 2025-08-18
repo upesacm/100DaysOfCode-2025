@@ -6,7 +6,6 @@ struct Job {
     int deadline;
     int profit;
 };
-
 int jobScheduling(vector<Job>& jobs) {
     int n = jobs.size();
     if (n == 0) return 0;
