@@ -13,7 +13,6 @@ double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacit
     sort(items.begin(), items.end(), greater<pair<double, int>>());    
     double totalValue = 0.0;
     int remainingCapacity = capacity;
-    
     for (auto& item : items) {
         int idx = item.second;
         int weight = weights[idx];
