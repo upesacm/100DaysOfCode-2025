@@ -54,6 +54,5 @@ pair<int, int> jobSchedulingWithCount(vector<Job>& jobs) {
             }
         }
     }
-    
     return {jobCount, totalProfit};
 }
