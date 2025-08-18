@@ -31,7 +31,6 @@ int jobScheduling(vector<Job>& jobs) {
     }
     return totalProfit;
 }
-// Alternative function that returns both count and profit
 pair<int, int> jobSchedulingWithCount(vector<Job>& jobs) {
     int n = jobs.size();
     if (n == 0) return {0, 0};
