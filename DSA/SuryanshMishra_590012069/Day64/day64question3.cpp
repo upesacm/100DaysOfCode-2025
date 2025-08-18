@@ -34,7 +34,6 @@ int jobScheduling(vector<Job>& jobs) {
 pair<int, int> jobSchedulingWithCount(vector<Job>& jobs) {
     int n = jobs.size();
     if (n == 0) return {0, 0};
-    
     // Sort jobs by profit in descending order
     sort(jobs.begin(), jobs.end(), [](const Job& a, const Job& b) {
         return a.profit > b.profit;
