@@ -1,32 +1,52 @@
-<h2 align="center">Day 64 (18/08/2025)</h2>
+<h2 align="center">Day 65 (19/08/2025)</h2>
 
-## 1. Select Maximum Activities
-A problem that demonstrates activity selection optimization and teaches interval scheduling algorithms using greedy approach for efficient resource allocation and time management operations.
+## 1. Minimum Coins
+A problem that demonstrates coin change optimization and teaches denomination-based greedy algorithms using minimum selection strategy for efficient currency exchange and payment systems operations.
 
-Given **start and end times** of activities, find the **maximum number of non-overlapping activities** you can perform using greedy selection strategy. This operation is fundamental in **interval scheduling** and **resource optimization** where you need to **maximize activity participation** within time constraints efficiently. The technique uses **earliest finish time greedy approach** to always select activities that end first, as this leaves maximum room for subsequent activities. This concept is essential in **project management**, **meeting scheduling**, and **resource allocation** where maximizing concurrent operations enables optimal time utilization and efficient workflow management in time-sensitive environments.
+Given **coins of different denominations**, find the **minimum number of coins** to make a **given amount** using greedy denomination selection. This operation is fundamental in **currency optimization** and **payment processing** where you need to **minimize transaction components** while achieving target values efficiently. The technique uses **largest denomination first greedy approach** to select maximum value coins iteratively, reducing the total count of coins needed for amount formation. This concept is essential in **financial systems**, **vending machines**, and **cash register operations** where minimizing change components enables efficient transaction processing and optimal currency distribution in automated payment environments.
 
-This demonstrates **activity selection algorithms** and **interval scheduling techniques** that are crucial for **resource optimization and efficient time management operations**.
+This demonstrates **coin change algorithms** and **denomination optimization techniques** that are crucial for **currency systems and efficient payment processing operations**.
 
-**Your task:** Implement greedy activity selection using earliest finish time strategy to maximize non-overlapping activity participation with optimal scheduling.
+**Your task:** Implement greedy coin selection using largest denomination priority to achieve minimum coin count for target amount formation.
 
 ### Examples
 
 **Input:**
 ```
-start = [1, 3, 0, 5, 8, 5]
-end = [2, 4, 6, 7, 9, 9]
+coins = [1, 2, 5, 10], amount = 23
 ```
 **Output:**
 ```
-4
+5 (10+10+2+1)
 ```
 
 ---
 
 **Input:**
 ```
-start = [1, 2, 3]
-end = [2, 3, 4]
+coins = [1, 5, 6, 9], amount = 11
+```
+**Output:**
+```
+2 (5+6)
+```
+
+---
+
+## 2. Maximum Chain of Pairs
+A problem that introduces pair chaining optimization and teaches sequential selection algorithms using coordinate-based greedy approach for efficient sequence building and dependency management operations.
+
+Given **coordinate pairs (a, b)**, find the **maximum number of chainable pairs** where each subsequent pair **(c, d)** satisfies **c > b** using greedy chaining strategy. This operation is fundamental in **sequence optimization** and **dependency resolution** where you need to **build longest valid chains** following ordering constraints efficiently. The technique uses **end-coordinate based greedy approach** to sort pairs by second element and select pairs that maintain the chaining property, maximizing chain length. This concept is essential in **scheduling systems**, **workflow management**, and **dependency graphs** where building maximum valid sequences enables optimal task ordering and efficient pipeline construction in constraint-based environments.
+
+This introduces **pair chaining algorithms** and **sequence optimization techniques** that are essential for **dependency management and efficient chain building operations**.
+
+**Your task:** Implement greedy pair chaining using end-coordinate sorting to achieve maximum valid pair sequence with optimal constraint satisfaction.
+
+### Examples
+
+**Input:**
+```
+pairs = [(5, 24), (15, 25), (27, 40), (50, 60)]
 ```
 **Output:**
 ```
@@ -35,66 +55,44 @@ end = [2, 3, 4]
 
 ---
 
-## 2. Fractional Knapsack
-A problem that introduces fractional optimization techniques and teaches value-density based selection algorithms using greedy approach for efficient capacity utilization and profit maximization operations.
+**Input:**
+```
+pairs = [(1, 2), (2, 3), (3, 4)]
+```
+**Output:**
+```
+2
+```
 
-Given **weights and values** of items with **bag capacity**, find the **maximum total value** by taking **fractional portions** of items using value-density optimization. This operation is fundamental in **resource allocation** and **profit maximization** where you need to **optimize value extraction** within capacity constraints efficiently. The technique uses **value-to-weight ratio greedy approach** to prioritize items with highest value density, taking full items when possible and fractional amounts when needed. This concept is essential in **investment optimization**, **cargo loading**, and **portfolio management** where maximizing value within constraints enables efficient resource distribution and optimal return generation in capacity-limited scenarios.
+---
 
-This introduces **fractional optimization algorithms** and **value-density maximization techniques** that are essential for **capacity optimization and efficient profit maximization operations**.
+## 3. Schedule Tasks Without Overlap
+A problem that teaches overlap elimination optimization and demonstrates interval removal algorithms using greedy approach with minimal deletion strategy for efficient conflict resolution operations.
 
-**Your task:** Implement greedy fractional knapsack using value-density ratios to achieve optimal capacity utilization with maximum value extraction.
+Given **start and end times** of tasks, **remove minimum tasks** to ensure **no overlapping intervals** using optimal elimination strategy. This operation is fundamental in **conflict resolution** and **schedule optimization** where you need to **minimize removals** while achieving non-overlapping arrangements efficiently. The technique uses **end-time based greedy approach** to sort intervals and remove conflicting tasks strategically, keeping maximum possible tasks while eliminating all overlaps. This concept is essential in **resource scheduling**, **meeting management**, and **system optimization** where minimizing disruptions while resolving conflicts enables efficient schedule maintenance and optimal resource utilization in multi-constraint environments.
+
+This teaches **interval conflict resolution algorithms** and **minimal removal techniques** that are crucial for **schedule optimization and efficient overlap elimination operations**.
+
+**Your task:** Implement greedy overlap elimination using minimal removal strategy to achieve maximum non-overlapping task retention with optimal conflict resolution.
 
 ### Examples
 
 **Input:**
 ```
-weights = [10, 20, 30], values = [60, 100, 120], capacity = 50
+intervals = [(1, 2), (2, 3), (3, 4), (1, 3)]
 ```
 **Output:**
 ```
-240.0
+Remove 1 → Remaining 3
 ```
 
 ---
 
 **Input:**
 ```
-weights = [5, 10], values = [50, 60], capacity = 10
+intervals = [(1, 2), (1, 2), (1, 2)]
 ```
 **Output:**
 ```
-80.0
-```
-
----
-
-## 3. Job Scheduling for Profit
-A problem that teaches deadline-aware optimization and demonstrates profit-based scheduling algorithms using greedy approach with union-find structures for efficient job sequencing operations.
-
-Given **jobs with deadlines and profits**, find the **optimal job sequence** for **maximum profit** using deadline-aware greedy selection. This operation is fundamental in **task scheduling** and **profit optimization** where you need to **maximize earnings** within deadline constraints efficiently. The technique uses **profit-based greedy approach** combined with union-find or slot-based allocation to ensure jobs are scheduled before their deadlines while maximizing total profit. This concept is essential in **project management**, **manufacturing scheduling**, and **service optimization** where meeting deadlines while maximizing profit enables efficient business operations and optimal resource utilization in deadline-critical environments.
-
-This teaches **deadline-aware scheduling algorithms** and **profit optimization techniques** that are crucial for **job sequencing and efficient profit maximization operations**.
-
-**Your task:** Implement greedy job scheduling using profit-based selection with deadline management to achieve optimal job sequencing with maximum profit generation.
-
-### Examples
-
-**Input:**
-```
-jobs = [(1, 4, 20), (2, 1, 10), (3, 1, 40), (4, 1, 30)]
-```
-**Output:**
-```
-2 jobs, Profit: 60
-```
-
----
-
-**Input:**
-```
-jobs = [(1, 2, 100), (2, 1, 19), (3, 2, 27)]
-```
-**Output:**
-```
-2 jobs, Profit: 127
+Remove 2 → Remaining 1
 ```
