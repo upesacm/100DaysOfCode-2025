@@ -7,7 +7,6 @@ struct Job {
     int profit;
 };
 
-// Return maximum profit achievable from job scheduling
 int jobScheduling(vector<Job>& jobs) {
     int n = jobs.size();
     if (n == 0) return 0;
