@@ -29,7 +29,6 @@ int jobScheduling(vector<Job>& jobs) {
             }
         }
     }
-    
     return totalProfit;
 }
 
