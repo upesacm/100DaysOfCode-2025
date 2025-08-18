@@ -37,7 +37,6 @@ pair<int, int> jobSchedulingWithCount(vector<Job>& jobs) {
     sort(jobs.begin(), jobs.end(), [](const Job& a, const Job& b) {
         return a.profit > b.profit;
     });
-    
     // Find maximum deadline to determine time slots
     int maxDeadline = 0;
     for (const Job& job : jobs) {
