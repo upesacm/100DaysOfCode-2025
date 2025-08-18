@@ -17,7 +17,6 @@ int jobScheduling(vector<Job>& jobs) {
         maxDeadline = max(maxDeadline, job.deadline);
     }
     
-    // Create time slots array (1-indexed, slot[i] represents time slot i)
     vector<bool> slot(maxDeadline + 1, false);
     int totalProfit = 0;
     int jobCount = 0;
