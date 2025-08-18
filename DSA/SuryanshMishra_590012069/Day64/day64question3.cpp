@@ -13,7 +13,6 @@ int jobScheduling(vector<Job>& jobs) {
         return a.profit > b.profit;
     });
     
-    // Find maximum deadline to determine time slots
     int maxDeadline = 0;
     for (const Job& job : jobs) {
         maxDeadline = max(maxDeadline, job.deadline);
