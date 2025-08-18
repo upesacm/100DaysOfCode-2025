@@ -16,7 +16,6 @@ int jobScheduling(vector<Job>& jobs) {
     for (const Job& job : jobs) {
         maxDeadline = max(maxDeadline, job.deadline);
     }
-    
     vector<bool> slot(maxDeadline + 1, false);
     int totalProfit = 0;
     int jobCount = 0;
