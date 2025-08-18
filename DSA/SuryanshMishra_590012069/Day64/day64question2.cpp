@@ -1,0 +1,42 @@
+#include <vector>
+#include <algorithm>
+#include <functional>
+using namespace std;
+
+// Return maximum value achievable in fractional knapsack
+double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacity) {
+    int n = weights.size();
+    if (n == 0 || capacity <= 0) return 0.0;
+    
+    // Create items with value-to-weight ratio
+    vector<pair<double, int>> items; // (ratio, index)
+    for (int i = 0; i < n; i++) {
+        double ratio = (double)values[i] / weights[i];
+        items.push_back({ratio, i});
+    }
+    
+    // Sort by value-to-weight ratio in descending order
+    sort(items.begin(), items.end(), greater<pair<double, int>>());
+    
+    double totalValue = 0.0;
+    int remainingCapacity = capacity;
+    
+    for (auto& item : items) {
+        int idx = item.second;
+        int weight = weights[idx];
+        int value = values[idx];
+        
+        if (weight <= remainingCapacity) {
+            // Take the entire item
+            totalValue += value;
+            remainingCapacity -= weight;
+        } else {
+            // Take fractional part
+            double fraction = (double)remainingCapacity / weight;
+            totalValue += fraction * value;
+            break; // Knapsack is full
+        }
+    }
+    
+    return totalValue;
+}
