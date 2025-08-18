@@ -12,7 +12,6 @@ int jobScheduling(vector<Job>& jobs) {
     sort(jobs.begin(), jobs.end(), [](const Job& a, const Job& b) {
         return a.profit > b.profit;
     });
-    
     int maxDeadline = 0;
     for (const Job& job : jobs) {
         maxDeadline = max(maxDeadline, job.deadline);
