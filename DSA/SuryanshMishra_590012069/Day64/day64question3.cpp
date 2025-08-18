@@ -1,7 +1,6 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
 struct Job {
     int id;
     int deadline;
