@@ -44,7 +44,6 @@ pair<int, int> jobSchedulingWithCount(vector<Job>& jobs) {
     vector<bool> slot(maxDeadline + 1, false);
     int totalProfit = 0;
     int jobCount = 0;
-    
     // For each job (sorted by profit)
     for (const Job& job : jobs) {
         // Find a free slot for this job (latest possible slot before deadline)
