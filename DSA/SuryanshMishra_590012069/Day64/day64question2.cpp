@@ -9,8 +9,7 @@ double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacit
     for (int i = 0; i < n; i++) {
         double ratio = (double)values[i] / weights[i];
         items.push_back({ratio, i});
-    }
-    
+    }    
     // Sort by value-to-weight ratio in descending order
     sort(items.begin(), items.end(), greater<pair<double, int>>());
     
