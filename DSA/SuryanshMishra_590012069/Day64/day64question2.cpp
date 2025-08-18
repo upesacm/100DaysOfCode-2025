@@ -5,7 +5,7 @@ using namespace std;
 double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacity) {
     int n = weights.size();
     if (n == 0 || capacity <= 0) return 0.0;
-    vector<pair<double, int>> items; // (ratio, index)
+    vector<pair<double, int>> items;
     for (int i = 0; i < n; i++) {
         double ratio = (double)values[i] / weights[i];
         items.push_back({ratio, i});
