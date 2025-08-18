@@ -6,7 +6,6 @@ double fractionalKnapsack(vector<int>& weights, vector<int>& values, int capacit
     int n = weights.size();
     if (n == 0 || capacity <= 0) return 0.0;
     
-    // Create items with value-to-weight ratio
     vector<pair<double, int>> items; // (ratio, index)
     for (int i = 0; i < n; i++) {
         double ratio = (double)values[i] / weights[i];
