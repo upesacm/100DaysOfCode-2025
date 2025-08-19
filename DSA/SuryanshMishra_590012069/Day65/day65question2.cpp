@@ -11,7 +11,6 @@ int maxChainLength(vector<pair<int, int>>& pairs) {
     int lastEnd = pairs[0].second;    
     for (int i = 1; i < n; i++) {
         int currentStart = pairs[i].first;        
-        // If current pair's start is greater than last pair's end, we can chain it
         if (currentStart > lastEnd) {
             chainLength++;
             lastEnd = pairs[i].second;
