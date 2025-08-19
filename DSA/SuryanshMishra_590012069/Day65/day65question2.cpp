@@ -34,6 +34,5 @@ vector<pair<int, int>> maxChainPairs(vector<pair<int, int>>& pairs) {
             lastEnd = pairs[i].second;
         }
     }
-    
     return chain;
 }
