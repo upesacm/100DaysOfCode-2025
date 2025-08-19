@@ -8,8 +8,7 @@ int maxChainLength(vector<pair<int, int>>& pairs) {
         return a.second < b.second;
     }); 
     int chainLength = 1;
-    int lastEnd = pairs[0].second;
-    
+    int lastEnd = pairs[0].second;    
     for (int i = 1; i < n; i++) {
         int currentStart = pairs[i].first;
         
