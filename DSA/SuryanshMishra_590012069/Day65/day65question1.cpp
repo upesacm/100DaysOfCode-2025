@@ -11,7 +11,6 @@ int minCoins(vector<int>& coins, int amount) {
         coinCount += numCoins;
         amount -= numCoins * coin;
     }    
-    // If amount is not 0, it means we couldn't make exact change
     return (amount == 0) ? coinCount : -1;
 }
 
