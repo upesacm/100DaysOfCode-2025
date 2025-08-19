@@ -25,7 +25,7 @@ pair<int, vector<pair<int, int>>> minRemovalWithRemaining(vector<pair<int, int>>
         return a.second < b.second;
     });
     vector<pair<int, int>> remaining;
-    remaining.push_back(intervals[0]); // First interval is always kept
+    remaining.push_back(intervals[0]);
     int lastEnd = intervals[0].second;
     
     // Greedily keep non-overlapping intervals
