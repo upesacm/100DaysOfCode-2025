@@ -30,7 +30,6 @@ pair<int, vector<int>> minCoinsWithDetails(vector<int>& coins, int amount) {
         coinCount += numCoins;
         amount -= numCoins * coin;
         
-        // Add used coins to result
         for (int i = 0; i < numCoins; i++) {
             usedCoins.push_back(coin);
         }
