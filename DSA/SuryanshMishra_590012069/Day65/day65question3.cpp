@@ -5,7 +5,6 @@ int minRemovalForNonOverlapping(vector<pair<int, int>>& intervals) {
     int n = intervals.size();
     if (n <= 1) return 0;
     
-    // Sort intervals by end time (greedy: keep intervals that end earliest)
     sort(intervals.begin(), intervals.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
         return a.second < b.second;
     });
