@@ -1,7 +1,6 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-// Return minimum number of intervals to remove to make all non-overlapping
 int minRemovalForNonOverlapping(vector<pair<int, int>>& intervals) {
     int n = intervals.size();
     if (n <= 1) return 0;
