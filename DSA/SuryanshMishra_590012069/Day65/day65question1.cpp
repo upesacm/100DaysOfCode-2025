@@ -28,8 +28,7 @@ pair<int, vector<int>> minCoinsWithDetails(vector<int>& coins, int amount) {
         // Use as many coins of this denomination as possible
         int numCoins = amount / coin;
         coinCount += numCoins;
-        amount -= numCoins * coin;
-        
+        amount -= numCoins * coin;        
         for (int i = 0; i < numCoins; i++) {
             usedCoins.push_back(coin);
         }
