@@ -15,8 +15,7 @@ int maxChainLength(vector<pair<int, int>>& pairs) {
             chainLength++;
             lastEnd = pairs[i].second;
         }
-    }
-    
+    }    
     return chainLength;
 }
 
