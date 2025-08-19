@@ -6,8 +6,7 @@ int minCoins(vector<int>& coins, int amount) {
     sort(coins.begin(), coins.end(), greater<int>());    
     int coinCount = 0;
     for (int coin : coins) {
-        if (amount == 0) break;
-        
+        if (amount == 0) break;        
         // Use as many coins of this denomination as possible
         int numCoins = amount / coin;
         coinCount += numCoins;
