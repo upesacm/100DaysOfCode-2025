@@ -2,7 +2,6 @@
 #include <algorithm>
 using namespace std;
 
-// Return minimum number of coins to make amount using greedy approach
 int minCoins(vector<int>& coins, int amount) {
     if (amount == 0) return 0;
     
