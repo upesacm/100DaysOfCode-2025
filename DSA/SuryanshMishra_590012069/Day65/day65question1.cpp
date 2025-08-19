@@ -5,7 +5,6 @@ int minCoins(vector<int>& coins, int amount) {
     if (amount == 0) return 0;    
     sort(coins.begin(), coins.end(), greater<int>());    
     int coinCount = 0;
-    
     for (int coin : coins) {
         if (amount == 0) break;
         
