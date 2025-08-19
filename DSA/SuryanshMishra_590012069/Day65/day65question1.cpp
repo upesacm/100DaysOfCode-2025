@@ -39,7 +39,6 @@ pair<int, vector<int>> minCoinsWithDetails(vector<int>& coins, int amount) {
     // If amount is not 0, it means we couldn't make exact change
     if (amount != 0) {
         return {-1, {}};
-    }
-    
+    }    
     return {coinCount, usedCoins};
 }
