@@ -25,7 +25,7 @@ vector<pair<int, int>> maxChainPairs(vector<pair<int, int>>& pairs) {
         return a.second < b.second;
     });    
     vector<pair<int, int>> chain;
-    chain.push_back(pairs[0]); // First pair is always included
+    chain.push_back(pairs[0]);
     int lastEnd = pairs[0].second;
     
     // Greedily select pairs that can be chained
