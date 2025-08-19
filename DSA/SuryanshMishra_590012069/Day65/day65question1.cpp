@@ -4,7 +4,6 @@ using namespace std;
 int minCoins(vector<int>& coins, int amount) {
     if (amount == 0) return 0;
     
-    // Sort coins in descending order for greedy approach
     sort(coins.begin(), coins.end(), greater<int>());
     
     int coinCount = 0;
