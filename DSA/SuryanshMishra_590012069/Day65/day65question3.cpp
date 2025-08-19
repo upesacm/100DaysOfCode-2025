@@ -16,7 +16,7 @@ int minRemovalForNonOverlapping(vector<pair<int, int>>& intervals) {
             lastEnd = intervals[i].second;
         }
     }
-    return n - kept; // Total intervals - kept intervals = removed intervals
+    return n - kept;
 }
 
 // Alternative version that returns both removed count and remaining intervals
