@@ -25,7 +25,6 @@ pair<int, vector<int>> minCoinsWithDetails(vector<int>& coins, int amount) {
     for (int coin : coins) {
         if (amount == 0) break;
         
-        // Use as many coins of this denomination as possible
         int numCoins = amount / coin;
         coinCount += numCoins;
         amount -= numCoins * coin;        
