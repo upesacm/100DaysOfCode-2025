@@ -24,7 +24,6 @@ pair<int, vector<pair<int, int>>> minRemovalWithRemaining(vector<pair<int, int>>
     sort(intervals.begin(), intervals.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
         return a.second < b.second;
     });
-    
     vector<pair<int, int>> remaining;
     remaining.push_back(intervals[0]); // First interval is always kept
     int lastEnd = intervals[0].second;
