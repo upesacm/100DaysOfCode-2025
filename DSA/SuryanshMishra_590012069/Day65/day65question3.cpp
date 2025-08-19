@@ -28,8 +28,7 @@ pair<int, vector<pair<int, int>>> minRemovalWithRemaining(vector<pair<int, int>>
     remaining.push_back(intervals[0]);
     int lastEnd = intervals[0].second;    
     for (int i = 1; i < n; i++) {
-        int currentStart = intervals[i].first;
-        
+        int currentStart = intervals[i].first;        
         if (currentStart >= lastEnd) {
             remaining.push_back(intervals[i]);
             lastEnd = intervals[i].second;
