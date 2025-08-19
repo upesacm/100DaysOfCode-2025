@@ -23,8 +23,7 @@ vector<pair<int, int>> maxChainPairs(vector<pair<int, int>>& pairs) {
     if (n == 0) return {};    
     sort(pairs.begin(), pairs.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
         return a.second < b.second;
-    });
-    
+    });    
     vector<pair<int, int>> chain;
     chain.push_back(pairs[0]); // First pair is always included
     int lastEnd = pairs[0].second;
