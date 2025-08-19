@@ -30,7 +30,6 @@ pair<int, vector<pair<int, int>>> minRemovalWithRemaining(vector<pair<int, int>>
     for (int i = 1; i < n; i++) {
         int currentStart = intervals[i].first;
         
-        // If current interval doesn't overlap with last kept interval
         if (currentStart >= lastEnd) {
             remaining.push_back(intervals[i]);
             lastEnd = intervals[i].second;
