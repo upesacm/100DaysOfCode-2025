@@ -13,7 +13,6 @@ int minCoins(vector<int>& coins, int amount) {
     }    
     return (amount == 0) ? coinCount : -1;
 }
-
 pair<int, vector<int>> minCoinsWithDetails(vector<int>& coins, int amount) {
     if (amount == 0) return {0, {}};
     
