@@ -33,7 +33,6 @@ pair<int, vector<pair<int, int>>> minRemovalWithRemaining(vector<pair<int, int>>
             remaining.push_back(intervals[i]);
             lastEnd = intervals[i].second;
         }
-        // Otherwise, we remove this interval
     }
     
     int removed = n - remaining.size();
