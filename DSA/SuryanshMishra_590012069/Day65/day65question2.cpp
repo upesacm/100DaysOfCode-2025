@@ -4,7 +4,6 @@ using namespace std;
 int maxChainLength(vector<pair<int, int>>& pairs) {
     int n = pairs.size();
     if (n == 0) return 0;
-    
     // Sort pairs by their end coordinate (second element)
     sort(pairs.begin(), pairs.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
         return a.second < b.second;
