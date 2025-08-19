@@ -3,8 +3,7 @@
 using namespace std;
 int minRemovalForNonOverlapping(vector<pair<int, int>>& intervals) {
     int n = intervals.size();
-    if (n <= 1) return 0;
-    
+    if (n <= 1) return 0;    
     sort(intervals.begin(), intervals.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
         return a.second < b.second;
     });
