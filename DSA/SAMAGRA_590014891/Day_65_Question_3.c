@@ -21,7 +21,7 @@ int eraseOverlapIntervals(Interval intervals[], int n) {
             end = intervals[i].end;
         }
     }
-    return n - count; // tasks to remove
+    return n - count; 
 }
 
 int main() {
