@@ -18,7 +18,6 @@ int maxChainLength(vector<pair<int, int>>& pairs) {
     }    
     return chainLength;
 }
-// Alternative version that returns the actual chain
 vector<pair<int, int>> maxChainPairs(vector<pair<int, int>>& pairs) {
     int n = pairs.size();
     if (n == 0) return {};
