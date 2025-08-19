@@ -18,7 +18,6 @@ int minRemovalForNonOverlapping(vector<pair<int, int>>& intervals) {
     }
     return n - kept;
 }
-
 pair<int, vector<pair<int, int>>> minRemovalWithRemaining(vector<pair<int, int>>& intervals) {
     int n = intervals.size();
     if (n <= 1) return {0, intervals};
