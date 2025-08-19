@@ -20,8 +20,7 @@ pair<int, vector<int>> minCoinsWithDetails(vector<int>& coins, int amount) {
     sort(coins.begin(), coins.end(), greater<int>());
     
     int coinCount = 0;
-    vector<int> usedCoins;
-    
+    vector<int> usedCoins;    
     for (int coin : coins) {
         if (amount == 0) break;       
         int numCoins = amount / coin;
