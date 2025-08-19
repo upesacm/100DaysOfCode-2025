@@ -1,7 +1,6 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-// Return maximum number of chainable pairs
 int maxChainLength(vector<pair<int, int>>& pairs) {
     int n = pairs.size();
     if (n == 0) return 0;
