@@ -6,7 +6,8 @@ int maxChainLength(vector<pair<int, int>>& pairs) {
     if (n == 0) return 0;
     sort(pairs.begin(), pairs.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
         return a.second < b.second;
-    });        
+    }); 
+           
     int chainLength = 1;
     int lastEnd = pairs[0].second;
     
