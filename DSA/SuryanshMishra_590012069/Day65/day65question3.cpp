@@ -12,7 +12,6 @@ int minRemovalForNonOverlapping(vector<pair<int, int>>& intervals) {
     for (int i = 1; i < n; i++) {
         int currentStart = intervals[i].first;
         
-        // If current interval doesn't overlap with last kept interval
         if (currentStart >= lastEnd) {
             kept++;
             lastEnd = intervals[i].second;
