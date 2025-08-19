@@ -2,8 +2,7 @@
 #include <algorithm>
 using namespace std;
 int minCoins(vector<int>& coins, int amount) {
-    if (amount == 0) return 0;
-    
+    if (amount == 0) return 0;    
     sort(coins.begin(), coins.end(), greater<int>());
     
     int coinCount = 0;
