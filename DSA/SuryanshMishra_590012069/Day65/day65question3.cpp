@@ -28,7 +28,6 @@ pair<int, vector<pair<int, int>>> minRemovalWithRemaining(vector<pair<int, int>>
     remaining.push_back(intervals[0]);
     int lastEnd = intervals[0].second;
     
-    // Greedily keep non-overlapping intervals
     for (int i = 1; i < n; i++) {
         int currentStart = intervals[i].first;
         
