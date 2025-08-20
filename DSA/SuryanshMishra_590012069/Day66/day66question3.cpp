@@ -46,8 +46,7 @@ int minCandiesOptimized(vector<int>& ratings) {
     if (n == 0) return 0;
     if (n == 1) return 1;    
     int total = 1;
-    int up = 0, down = 0, peak = 0;
-    
+    int up = 0, down = 0, peak = 0;    
     for (int i = 1; i < n; i++) {
         if (ratings[i] > ratings[i - 1]) {
             up++;
