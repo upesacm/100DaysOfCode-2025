@@ -2,7 +2,6 @@
 #include <algorithm>
 using namespace std;
 
-// Return minimum candies needed to satisfy rating constraints
 int minCandies(vector<int>& ratings) {
     int n = ratings.size();
     if (n == 0) return 0;
