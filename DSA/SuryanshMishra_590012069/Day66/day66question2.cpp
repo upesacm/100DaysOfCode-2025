@@ -45,7 +45,6 @@ int maxProfitSafe(vector<int>& prices) {
         int currentProfit = prices[i] - minPrice;        
         maxProfit = max(maxProfit, currentProfit);        
         minPrice = min(minPrice, prices[i]);
-    }
-    
+    }    
     return maxProfit; // Returns 0 if no profit possible
 }
