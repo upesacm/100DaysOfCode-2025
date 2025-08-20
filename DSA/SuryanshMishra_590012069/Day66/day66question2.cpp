@@ -28,7 +28,6 @@ pair<int, pair<int, int>> maxProfitWithDays(vector<int>& prices) {
             minPriceDay = i;
         }
         
-        // Calculate profit if selling at current price
         int currentProfit = prices[i] - minPrice;
         
         // If current profit is better, update buy and sell days
