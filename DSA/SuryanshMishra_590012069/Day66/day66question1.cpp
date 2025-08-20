@@ -19,8 +19,7 @@ int minPlatforms(vector<int>& arrivals, vector<int>& departures) {
             platforms--;
             j++;
         }
-    }
-    
+    }    
     return maxPlatforms;
 }
 
