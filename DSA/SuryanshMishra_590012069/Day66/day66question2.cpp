@@ -3,7 +3,6 @@
 #include <climits>
 using namespace std;
 
-// Return maximum profit from buying and selling stock once
 int maxProfit(vector<int>& prices) {
     int n = prices.size();
     if (n <= 1) return 0;
