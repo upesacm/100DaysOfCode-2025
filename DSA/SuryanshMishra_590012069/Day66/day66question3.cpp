@@ -23,8 +23,7 @@ int minCandies(vector<int>& ratings) {
 }
 pair<int, vector<int>> minCandiesWithDistribution(vector<int>& ratings) {
     int n = ratings.size();
-    if (n == 0) return {0, {}};
-    
+    if (n == 0) return {0, {}};    
     vector<int> candies(n, 1); // Each child gets at least 1 candy
     
     // Left to right pass: ensure higher rated child gets more than left neighbor
