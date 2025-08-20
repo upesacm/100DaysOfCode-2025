@@ -28,7 +28,7 @@ int minPlatformsEvents(vector<int>& arrivals, vector<int>& departures) {
     vector<pair<int, int>> events;    
     for (int i = 0; i < n; i++) {
         events.push_back({arrivals[i], 1});
-        events.push_back({departures[i], -1}); // Departure event
+        events.push_back({departures[i], -1});
     }
     
     // Sort events by time, with departures before arrivals at same time
