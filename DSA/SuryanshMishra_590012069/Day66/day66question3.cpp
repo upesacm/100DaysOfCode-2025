@@ -44,8 +44,7 @@ pair<int, vector<int>> minCandiesWithDistribution(vector<int>& ratings) {
 int minCandiesOptimized(vector<int>& ratings) {
     int n = ratings.size();
     if (n == 0) return 0;
-    if (n == 1) return 1;
-    
+    if (n == 1) return 1;    
     int total = 1; // First child gets 1 candy
     int up = 0, down = 0, peak = 0;
     
