@@ -5,8 +5,7 @@ int minPlatforms(vector<int>& arrivals, vector<int>& departures) {
     int n = arrivals.size();
     if (n == 0) return 0;    
     sort(arrivals.begin(), arrivals.end());
-    sort(departures.begin(), departures.end());
-    
+    sort(departures.begin(), departures.end());    
     int platforms = 0;
     int maxPlatforms = 0;
     int i = 0, j = 0;
