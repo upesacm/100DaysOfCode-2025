@@ -45,7 +45,7 @@ int minCandiesOptimized(vector<int>& ratings) {
     int n = ratings.size();
     if (n == 0) return 0;
     if (n == 1) return 1;    
-    int total = 1; // First child gets 1 candy
+    int total = 1;
     int up = 0, down = 0, peak = 0;
     
     for (int i = 1; i < n; i++) {
