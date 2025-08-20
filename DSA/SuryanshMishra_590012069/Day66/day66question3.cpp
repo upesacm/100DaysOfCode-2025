@@ -5,7 +5,6 @@ int minCandies(vector<int>& ratings) {
     int n = ratings.size();
     if (n == 0) return 0;    
     vector<int> candies(n, 1);
-    // Left to right pass: ensure higher rated child gets more than left neighbor
     for (int i = 1; i < n; i++) {
         if (ratings[i] > ratings[i - 1]) {
             candies[i] = candies[i - 1] + 1;
