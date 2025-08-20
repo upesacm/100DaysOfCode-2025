@@ -21,8 +21,7 @@ pair<int, pair<int, int>> maxProfitWithDays(vector<int>& prices) {
     int maxProfit = 0;
     int buyDay = 0;
     int sellDay = 0;
-    int minPriceDay = 0;
-    
+    int minPriceDay = 0;    
     for (int i = 1; i < n; i++) {
         // If we found a new minimum price, update it
         if (prices[i] < minPrice) {
