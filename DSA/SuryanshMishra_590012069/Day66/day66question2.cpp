@@ -8,7 +8,6 @@ int maxProfit(vector<int>& prices) {
     int minPrice = INT_MAX;
     int maxProfit = 0;    
     for (int price : prices) {
-        // Update minimum price seen so far (best buying opportunity)
         minPrice = min(minPrice, price);
         
         // Calculate profit if selling at current price
