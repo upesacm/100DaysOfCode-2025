@@ -34,7 +34,6 @@ pair<int, pair<int, int>> maxProfitWithDays(vector<int>& prices) {
             sellDay = i;
         }
     }
-    
     return {maxProfit, {buyDay, sellDay}};
 }
 
