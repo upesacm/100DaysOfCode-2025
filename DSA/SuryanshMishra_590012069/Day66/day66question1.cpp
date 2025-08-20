@@ -15,7 +15,6 @@ int minPlatforms(vector<int>& arrivals, vector<int>& departures) {
             maxPlatforms = max(maxPlatforms, platforms);
             i++;
         }
-        // If next event is departure, decrement platform count
         else {
             platforms--;
             j++;
