@@ -18,8 +18,7 @@ int minCandies(vector<int>& ratings) {
     int total = 0;
     for (int candy : candies) {
         total += candy;
-    }
-    
+    }    
     return total;
 }
 
