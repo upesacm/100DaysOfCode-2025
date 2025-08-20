@@ -11,8 +11,7 @@ int maxProfit(vector<int>& prices) {
         minPrice = min(minPrice, price);        
         int currentProfit = price - minPrice;        
         maxProfit = max(maxProfit, currentProfit);
-    }
-    
+    }    
     return maxProfit;
 }
 
