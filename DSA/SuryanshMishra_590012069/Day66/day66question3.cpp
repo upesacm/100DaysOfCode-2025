@@ -21,7 +21,6 @@ int minCandies(vector<int>& ratings) {
     }    
     return total;
 }
-
 // Alternative version that returns both total and distribution
 pair<int, vector<int>> minCandiesWithDistribution(vector<int>& ratings) {
     int n = ratings.size();
