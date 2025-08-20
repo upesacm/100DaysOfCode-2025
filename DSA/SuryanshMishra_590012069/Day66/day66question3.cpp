@@ -64,7 +64,6 @@ int minCandiesOptimized(vector<int>& ratings) {
                 total++;
             }
         }
-    }
-    
+    }    
     return total;
 }
