@@ -32,7 +32,7 @@ int minPlatformsEvents(vector<int>& arrivals, vector<int>& departures) {
     }
     sort(events.begin(), events.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
         if (a.first == b.first) {
-            return a.second < b.second; // Departure (-1) before arrival (1)
+            return a.second < b.second;
         }
         return a.first < b.first;
     });
