@@ -6,8 +6,7 @@ int maxProfit(vector<int>& prices) {
     int n = prices.size();
     if (n <= 1) return 0;    
     int minPrice = INT_MAX;
-    int maxProfit = 0;
-    
+    int maxProfit = 0;    
     for (int price : prices) {
         // Update minimum price seen so far (best buying opportunity)
         minPrice = min(minPrice, price);
