@@ -61,7 +61,7 @@ int minCandiesOptimized(vector<int>& ratings) {
             down++;
             total += 1 + down;
             if (peak < down) {
-                total++; // Adjust peak if needed
+                total++;
             }
         }
     }
