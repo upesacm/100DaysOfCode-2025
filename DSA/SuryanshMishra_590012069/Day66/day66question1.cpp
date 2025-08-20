@@ -41,7 +41,6 @@ int minPlatformsEvents(vector<int>& arrivals, vector<int>& departures) {
     for (const auto& event : events) {
         platforms += event.second;
         maxPlatforms = max(maxPlatforms, platforms);
-    }
-    
+    }    
     return maxPlatforms;
 }
