@@ -41,7 +41,6 @@ pair<int, vector<int>> minCandiesWithDistribution(vector<int>& ratings) {
     }    
     return {total, candies};
 }
-// Space-optimized version using constant extra space
 int minCandiesOptimized(vector<int>& ratings) {
     int n = ratings.size();
     if (n == 0) return 0;
