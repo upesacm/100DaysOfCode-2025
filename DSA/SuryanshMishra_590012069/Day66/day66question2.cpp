@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <climits>
 using namespace std;
-
 int maxProfit(vector<int>& prices) {
     int n = prices.size();
     if (n <= 1) return 0;
