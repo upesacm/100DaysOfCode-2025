@@ -9,8 +9,7 @@ int maxProfit(vector<int>& prices) {
     int maxProfit = 0;    
     for (int price : prices) {
         minPrice = min(minPrice, price);        
-        int currentProfit = price - minPrice;
-        
+        int currentProfit = price - minPrice;        
         maxProfit = max(maxProfit, currentProfit);
     }
     
