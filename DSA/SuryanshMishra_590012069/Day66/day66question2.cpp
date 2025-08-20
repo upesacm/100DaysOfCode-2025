@@ -4,8 +4,7 @@
 using namespace std;
 int maxProfit(vector<int>& prices) {
     int n = prices.size();
-    if (n <= 1) return 0;
-    
+    if (n <= 1) return 0;    
     int minPrice = INT_MAX;
     int maxProfit = 0;
     
