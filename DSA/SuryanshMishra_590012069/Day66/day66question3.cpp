@@ -34,8 +34,7 @@ pair<int, vector<int>> minCandiesWithDistribution(vector<int>& ratings) {
         if (ratings[i] > ratings[i + 1]) {
             candies[i] = max(candies[i], candies[i + 1] + 1);
         }
-    }
-    
+    }    
     // Calculate total candies
     int total = 0;
     for (int candy : candies) {
