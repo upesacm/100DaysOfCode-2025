@@ -37,7 +37,6 @@ pair<int, pair<int, int>> maxProfitWithDays(vector<int>& prices) {
     return {maxProfit, {buyDay, sellDay}};
 }
 
-// Version that handles the case where no profit is possible
 int maxProfitSafe(vector<int>& prices) {
     int n = prices.size();
     if (n <= 1) return 0;
