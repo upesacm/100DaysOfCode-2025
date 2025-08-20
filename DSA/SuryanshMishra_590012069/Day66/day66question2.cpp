@@ -43,7 +43,6 @@ int maxProfitSafe(vector<int>& prices) {
     int maxProfit = 0;    
     for (int i = 1; i < n; i++) {
         int currentProfit = prices[i] - minPrice;        
-        // Update maximum profit (only if positive)
         maxProfit = max(maxProfit, currentProfit);
         
         // Update minimum price for future transactions
