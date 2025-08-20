@@ -5,7 +5,6 @@ int minPlatforms(vector<int>& arrivals, vector<int>& departures) {
     int n = arrivals.size();
     if (n == 0) return 0;
     
-    // Sort arrival and departure times
     sort(arrivals.begin(), arrivals.end());
     sort(departures.begin(), departures.end());
     
