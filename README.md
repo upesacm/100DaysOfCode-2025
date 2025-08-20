@@ -1,52 +1,19 @@
-<h2 align="center">Day 65 (19/08/2025)</h2>
+<h2 align="center">Day 66 (20/08/2025)</h2>
 
-## 1. Minimum Coins
-A problem that demonstrates coin change optimization and teaches denomination-based greedy algorithms using minimum selection strategy for efficient currency exchange and payment systems operations.
+## 1. Minimum Platforms at Railway Station
+A problem that demonstrates resource allocation optimization and teaches interval overlap analysis using greedy approach for efficient infrastructure planning and scheduling operations.
 
-Given **coins of different denominations**, find the **minimum number of coins** to make a **given amount** using greedy denomination selection. This operation is fundamental in **currency optimization** and **payment processing** where you need to **minimize transaction components** while achieving target values efficiently. The technique uses **largest denomination first greedy approach** to select maximum value coins iteratively, reducing the total count of coins needed for amount formation. This concept is essential in **financial systems**, **vending machines**, and **cash register operations** where minimizing change components enables efficient transaction processing and optimal currency distribution in automated payment environments.
+Given **arrival and departure times** of trains, find the **minimum number of platforms** needed so that **no train waits** using interval management techniques. This operation is fundamental in **resource scheduling** and **capacity planning** where you need to **optimize infrastructure utilization** to handle overlapping demands efficiently. The technique uses **event-based greedy approach** by processing arrival and departure events chronologically, maintaining active train count to determine peak platform requirements. This concept is essential in **transportation systems**, **server allocation**, and **meeting room scheduling** where minimizing resources while satisfying all demands enables cost-effective operations and optimal facility utilization in high-traffic environments.
 
-This demonstrates **coin change algorithms** and **denomination optimization techniques** that are crucial for **currency systems and efficient payment processing operations**.
+This demonstrates **interval overlap algorithms** and **resource optimization techniques** that are crucial for **capacity planning and efficient infrastructure management operations**.
 
-**Your task:** Implement greedy coin selection using largest denomination priority to achieve minimum coin count for target amount formation.
-
-### Examples
-
-**Input:**
-```
-coins = [1, 2, 5, 10], amount = 23
-```
-**Output:**
-```
-5 (10+10+2+1)
-```
-
----
-
-**Input:**
-```
-coins = [1, 5, 6, 9], amount = 11
-```
-**Output:**
-```
-2 (5+6)
-```
-
----
-
-## 2. Maximum Chain of Pairs
-A problem that introduces pair chaining optimization and teaches sequential selection algorithms using coordinate-based greedy approach for efficient sequence building and dependency management operations.
-
-Given **coordinate pairs (a, b)**, find the **maximum number of chainable pairs** where each subsequent pair **(c, d)** satisfies **c > b** using greedy chaining strategy. This operation is fundamental in **sequence optimization** and **dependency resolution** where you need to **build longest valid chains** following ordering constraints efficiently. The technique uses **end-coordinate based greedy approach** to sort pairs by second element and select pairs that maintain the chaining property, maximizing chain length. This concept is essential in **scheduling systems**, **workflow management**, and **dependency graphs** where building maximum valid sequences enables optimal task ordering and efficient pipeline construction in constraint-based environments.
-
-This introduces **pair chaining algorithms** and **sequence optimization techniques** that are essential for **dependency management and efficient chain building operations**.
-
-**Your task:** Implement greedy pair chaining using end-coordinate sorting to achieve maximum valid pair sequence with optimal constraint satisfaction.
+**Your task:** Implement greedy platform allocation using event-based chronological processing to minimize required platforms while ensuring no scheduling conflicts.
 
 ### Examples
 
 **Input:**
 ```
-pairs = [(5, 24), (15, 25), (27, 40), (50, 60)]
+arr = [900, 940, 950, 1100, 1500, 1800], dep = [910, 1200, 1120, 1130, 1900, 2000]
 ```
 **Output:**
 ```
@@ -57,42 +24,75 @@ pairs = [(5, 24), (15, 25), (27, 40), (50, 60)]
 
 **Input:**
 ```
-pairs = [(1, 2), (2, 3), (3, 4)]
+arr = [100, 200, 300], dep = [150, 250, 350]
 ```
 **Output:**
 ```
-2
+1
 ```
 
 ---
 
-## 3. Schedule Tasks Without Overlap
-A problem that teaches overlap elimination optimization and demonstrates interval removal algorithms using greedy approach with minimal deletion strategy for efficient conflict resolution operations.
+## 2. Buy and Sell Stocks (Once)
+A problem that introduces profit maximization techniques and teaches single-pass optimization algorithms using greedy approach for efficient trading strategy and financial analysis operations.
 
-Given **start and end times** of tasks, **remove minimum tasks** to ensure **no overlapping intervals** using optimal elimination strategy. This operation is fundamental in **conflict resolution** and **schedule optimization** where you need to **minimize removals** while achieving non-overlapping arrangements efficiently. The technique uses **end-time based greedy approach** to sort intervals and remove conflicting tasks strategically, keeping maximum possible tasks while eliminating all overlaps. This concept is essential in **resource scheduling**, **meeting management**, and **system optimization** where minimizing disruptions while resolving conflicts enables efficient schedule maintenance and optimal resource utilization in multi-constraint environments.
+Given **stock prices** over time, find the **best day to buy and sell** to achieve **maximum profit** with single transaction constraint. This operation is fundamental in **trading optimization** and **financial analysis** where you need to **identify optimal entry and exit points** for maximum return efficiently. The technique uses **minimum price tracking greedy approach** to maintain the lowest buying price seen so far while calculating maximum profit at each selling opportunity. This concept is essential in **investment strategies**, **arbitrage opportunities**, and **market analysis** where timing decisions enable profit maximization and risk management in dynamic financial markets with price volatility.
 
-This teaches **interval conflict resolution algorithms** and **minimal removal techniques** that are crucial for **schedule optimization and efficient overlap elimination operations**.
+This introduces **trading optimization algorithms** and **profit maximization techniques** that are essential for **financial analysis and efficient investment strategy operations**.
 
-**Your task:** Implement greedy overlap elimination using minimal removal strategy to achieve maximum non-overlapping task retention with optimal conflict resolution.
+**Your task:** Implement greedy stock trading using minimum price tracking to identify optimal buy-sell timing for maximum single-transaction profit.
 
 ### Examples
 
 **Input:**
 ```
-intervals = [(1, 2), (2, 3), (3, 4), (1, 3)]
+prices = [7, 1, 5, 3, 6, 4]
 ```
 **Output:**
 ```
-Remove 1 → Remaining 3
+5
 ```
 
 ---
 
 **Input:**
 ```
-intervals = [(1, 2), (1, 2), (1, 2)]
+prices = [7, 6, 4, 3, 1]
 ```
 **Output:**
 ```
-Remove 2 → Remaining 1
+0 (no profit)
+```
+
+---
+
+## 3. Distribute Candies Fairly
+A problem that teaches constraint satisfaction optimization and demonstrates neighbor-aware distribution algorithms using greedy approach with bidirectional scanning for fair resource allocation operations.
+
+Given **children's ratings**, distribute **candies** such that **children with higher ratings** get **more candies than neighbors** using constraint-based optimization. This operation is fundamental in **fair distribution** and **constraint satisfaction** where you need to **satisfy relative ordering requirements** while minimizing total resources efficiently. The technique uses **two-pass greedy approach** scanning left-to-right and right-to-left to ensure each child receives more candies than lower-rated neighbors while maintaining minimum distribution. This concept is essential in **reward systems**, **salary structures**, and **resource allocation** where maintaining fairness while optimizing costs enables equitable distribution and efficient resource management in hierarchical systems.
+
+This teaches **constraint satisfaction algorithms** and **bidirectional optimization techniques** that are crucial for **fair distribution and efficient resource allocation operations**.
+
+**Your task:** Implement greedy candy distribution using bidirectional scanning to satisfy rating constraints while minimizing total candy allocation.
+
+### Examples
+
+**Input:**
+```
+ratings = [1, 0, 2]
+```
+**Output:**
+```
+5
+```
+
+---
+
+**Input:**
+```
+ratings = [1, 2, 2]
+```
+**Output:**
+```
+4
 ```
