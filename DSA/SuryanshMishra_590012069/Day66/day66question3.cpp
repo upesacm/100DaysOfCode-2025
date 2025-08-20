@@ -38,8 +38,7 @@ pair<int, vector<int>> minCandiesWithDistribution(vector<int>& ratings) {
     int total = 0;
     for (int candy : candies) {
         total += candy;
-    }
-    
+    }    
     return {total, candies};
 }
 
