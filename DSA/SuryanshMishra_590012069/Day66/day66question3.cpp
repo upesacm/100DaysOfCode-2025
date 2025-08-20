@@ -1,7 +1,6 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-
 int minCandies(vector<int>& ratings) {
     int n = ratings.size();
     if (n == 0) return 0;
