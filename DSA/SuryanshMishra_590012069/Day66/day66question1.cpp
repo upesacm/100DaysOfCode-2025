@@ -35,8 +35,7 @@ int minPlatformsEvents(vector<int>& arrivals, vector<int>& departures) {
             return a.second < b.second;
         }
         return a.first < b.first;
-    });
-    
+    });    
     int platforms = 0;
     int maxPlatforms = 0;
     
