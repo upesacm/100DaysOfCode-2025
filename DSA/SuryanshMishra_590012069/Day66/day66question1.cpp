@@ -2,7 +2,6 @@
 #include <algorithm>
 using namespace std;
 
-// Return minimum number of platforms needed
 int minPlatforms(vector<int>& arrivals, vector<int>& departures) {
     int n = arrivals.size();
     if (n == 0) return 0;
