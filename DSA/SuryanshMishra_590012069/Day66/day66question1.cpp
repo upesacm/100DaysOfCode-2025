@@ -8,8 +8,7 @@ int minPlatforms(vector<int>& arrivals, vector<int>& departures) {
     sort(departures.begin(), departures.end());    
     int platforms = 0;
     int maxPlatforms = 0;
-    int i = 0, j = 0;
-    
+    int i = 0, j = 0;    
     // Use two pointers to process events chronologically
     while (i < n && j < n) {
         // If next event is arrival, increment platform count
