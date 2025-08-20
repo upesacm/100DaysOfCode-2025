@@ -30,7 +30,6 @@ pair<int, vector<int>> minCandiesWithDistribution(vector<int>& ratings) {
             candies[i] = candies[i - 1] + 1;
         }
     }    
-    // Right to left pass: ensure higher rated child gets more than right neighbor
     for (int i = n - 2; i >= 0; i--) {
         if (ratings[i] > ratings[i + 1]) {
             candies[i] = max(candies[i], candies[i + 1] + 1);
