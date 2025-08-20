@@ -15,7 +15,6 @@ int minCandies(vector<int>& ratings) {
             candies[i] = max(candies[i], candies[i + 1] + 1);
         }
     }    
-    // Calculate total candies
     int total = 0;
     for (int candy : candies) {
         total += candy;
