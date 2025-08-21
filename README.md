@@ -1,96 +1,85 @@
-<h2 align="center">Day 66 (20/08/2025)</h2>
+<h2 align="center">Day 67 (21/08/2025)</h2>
 
-## 1. Minimum Platforms at Railway Station
-A problem that demonstrates resource allocation optimization and teaches interval overlap analysis using greedy approach for efficient infrastructure planning and scheduling operations.
+## 1. Largest Number from Array
+A problem that demonstrates custom sorting optimization and teaches lexicographic comparison algorithms using greedy approach for efficient string concatenation and numerical maximization operations.
 
-Given **arrival and departure times** of trains, find the **minimum number of platforms** needed so that **no train waits** using interval management techniques. This operation is fundamental in **resource scheduling** and **capacity planning** where you need to **optimize infrastructure utilization** to handle overlapping demands efficiently. The technique uses **event-based greedy approach** by processing arrival and departure events chronologically, maintaining active train count to determine peak platform requirements. This concept is essential in **transportation systems**, **server allocation**, and **meeting room scheduling** where minimizing resources while satisfying all demands enables cost-effective operations and optimal facility utilization in high-traffic environments.
+Given a **list of numbers**, arrange them to form the **largest possible number** using custom comparison-based sorting strategy. This operation is fundamental in **lexicographic optimization** and **string manipulation** where you need to **maximize numerical value** through strategic ordering efficiently. The technique uses **custom comparator greedy approach** that compares concatenated results (a+b vs b+a) to determine optimal ordering, as traditional numerical sorting doesn't guarantee maximum concatenated value. This concept is essential in **data formatting**, **identifier generation**, and **optimization problems** where arranging elements strategically enables maximum value extraction and optimal sequence generation in string-based numerical systems.
 
-This demonstrates **interval overlap algorithms** and **resource optimization techniques** that are crucial for **capacity planning and efficient infrastructure management operations**.
+This demonstrates **custom sorting algorithms** and **lexicographic optimization techniques** that are crucial for **string manipulation and efficient numerical maximization operations**.
 
-**Your task:** Implement greedy platform allocation using event-based chronological processing to minimize required platforms while ensuring no scheduling conflicts.
-
-### Examples
-
-**Input:**
-```
-arr = [900, 940, 950, 1100, 1500, 1800], dep = [910, 1200, 1120, 1130, 1900, 2000]
-```
-**Output:**
-```
-3
-```
-
----
-
-**Input:**
-```
-arr = [100, 200, 300], dep = [150, 250, 350]
-```
-**Output:**
-```
-1
-```
-
----
-
-## 2. Buy and Sell Stocks (Once)
-A problem that introduces profit maximization techniques and teaches single-pass optimization algorithms using greedy approach for efficient trading strategy and financial analysis operations.
-
-Given **stock prices** over time, find the **best day to buy and sell** to achieve **maximum profit** with single transaction constraint. This operation is fundamental in **trading optimization** and **financial analysis** where you need to **identify optimal entry and exit points** for maximum return efficiently. The technique uses **minimum price tracking greedy approach** to maintain the lowest buying price seen so far while calculating maximum profit at each selling opportunity. This concept is essential in **investment strategies**, **arbitrage opportunities**, and **market analysis** where timing decisions enable profit maximization and risk management in dynamic financial markets with price volatility.
-
-This introduces **trading optimization algorithms** and **profit maximization techniques** that are essential for **financial analysis and efficient investment strategy operations**.
-
-**Your task:** Implement greedy stock trading using minimum price tracking to identify optimal buy-sell timing for maximum single-transaction profit.
+**Your task:** Implement greedy number arrangement using custom concatenation comparator to achieve maximum possible numerical value from array elements.
 
 ### Examples
 
 **Input:**
 ```
-prices = [7, 1, 5, 3, 6, 4]
+[10, 2]
 ```
 **Output:**
 ```
-5
+"210"
 ```
 
 ---
 
 **Input:**
 ```
-prices = [7, 6, 4, 3, 1]
+[3, 30, 34, 5, 9]
 ```
 **Output:**
 ```
-0 (no profit)
+"9534330"
 ```
 
 ---
 
-## 3. Distribute Candies Fairly
-A problem that teaches constraint satisfaction optimization and demonstrates neighbor-aware distribution algorithms using greedy approach with bidirectional scanning for fair resource allocation operations.
+## 2. Ropes with Minimum Cost
+A problem that introduces cost minimization optimization and teaches heap-based aggregation algorithms using greedy approach for efficient resource combination and expense reduction operations.
 
-Given **children's ratings**, distribute **candies** such that **children with higher ratings** get **more candies than neighbors** using constraint-based optimization. This operation is fundamental in **fair distribution** and **constraint satisfaction** where you need to **satisfy relative ordering requirements** while minimizing total resources efficiently. The technique uses **two-pass greedy approach** scanning left-to-right and right-to-left to ensure each child receives more candies than lower-rated neighbors while maintaining minimum distribution. This concept is essential in **reward systems**, **salary structures**, and **resource allocation** where maintaining fairness while optimizing costs enables equitable distribution and efficient resource management in hierarchical systems.
+Given **lengths of ropes**, connect them with the **least total cost** where cost equals **sum of lengths at each connection step** using min-heap optimization strategy. This operation is fundamental in **cost minimization** and **resource aggregation** where you need to **minimize cumulative expenses** through optimal combination sequence efficiently. The technique uses **min-heap greedy approach** to always combine the two shortest ropes first, as connecting shorter elements early reduces the cost impact on subsequent combinations. This concept is essential in **manufacturing processes**, **network design**, and **merger optimization** where strategic combination ordering enables cost reduction and efficient resource utilization in multi-stage operations.
 
-This teaches **constraint satisfaction algorithms** and **bidirectional optimization techniques** that are crucial for **fair distribution and efficient resource allocation operations**.
+This introduces **heap-based optimization algorithms** and **cost minimization techniques** that are essential for **resource combination and efficient expense reduction operations**.
 
-**Your task:** Implement greedy candy distribution using bidirectional scanning to satisfy rating constraints while minimizing total candy allocation.
+**Your task:** Implement greedy rope connection using min-heap to always select shortest ropes for combination, achieving optimal cost minimization through strategic sequencing.
 
 ### Examples
 
 **Input:**
 ```
-ratings = [1, 0, 2]
+[4, 3, 2, 6]
 ```
 **Output:**
 ```
-5
+29
 ```
 
 ---
 
 **Input:**
 ```
-ratings = [1, 2, 2]
+[1, 2, 3, 4, 5]
+```
+**Output:**
+```
+33
+```
+
+---
+
+## 3. Max Number of Non-overlapping Meetings
+A problem that teaches interval scheduling optimization and demonstrates meeting room allocation algorithms using greedy approach for efficient time management and resource utilization operations.
+
+Given **start and end times** of meetings, find the **maximum number of non-overlapping meetings** that can be held in a **single room** using optimal scheduling strategy. This operation is fundamental in **meeting scheduling** and **resource optimization** where you need to **maximize meeting participation** within time and space constraints efficiently. The technique uses **earliest finish time greedy approach** to select meetings that end first, as this leaves maximum time availability for subsequent meetings in the same room. This concept is essential in **conference management**, **resource booking**, and **calendar optimization** where maximizing utilization while avoiding conflicts enables efficient scheduling and optimal facility management in shared-resource environments.
+
+This teaches **interval scheduling algorithms** and **meeting optimization techniques** that are crucial for **resource allocation and efficient time management operations**.
+
+**Your task:** Implement greedy meeting scheduling using earliest finish time selection to maximize non-overlapping meeting participation in single-room constraint.
+
+### Examples
+
+**Input:**
+```
+start = [1, 3, 0, 5, 8, 5], end = [2, 4, 6, 7, 9, 9]
 ```
 **Output:**
 ```
