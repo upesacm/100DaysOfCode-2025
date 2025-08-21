@@ -1,87 +1,98 @@
-<h2 align="center">Day 67 (21/08/2025)</h2>
+<h2 align="center">Day 68 (22/08/2025)</h2>
 
-## 1. Largest Number from Array
-A problem that demonstrates custom sorting optimization and teaches lexicographic comparison algorithms using greedy approach for efficient string concatenation and numerical maximization operations.
+## 1. Min Jumps to Reach End
+A problem that demonstrates jump optimization techniques and teaches range-based greedy algorithms using maximum reach calculation for efficient path traversal and movement minimization operations.
 
-Given a **list of numbers**, arrange them to form the **largest possible number** using custom comparison-based sorting strategy. This operation is fundamental in **lexicographic optimization** and **string manipulation** where you need to **maximize numerical value** through strategic ordering efficiently. The technique uses **custom comparator greedy approach** that compares concatenated results (a+b vs b+a) to determine optimal ordering, as traditional numerical sorting doesn't guarantee maximum concatenated value. This concept is essential in **data formatting**, **identifier generation**, and **optimization problems** where arranging elements strategically enables maximum value extraction and optimal sequence generation in string-based numerical systems.
+Given an **array where each element represents maximum jump distance**, find the **minimum number of jumps** to reach the **end position** using greedy range optimization strategy. This operation is fundamental in **path optimization** and **movement planning** where you need to **minimize steps** while maximizing coverage efficiently. The technique uses **greedy maximum reach approach** that tracks the farthest reachable position at each step, making jumps only when necessary to extend reach beyond current range. This concept is essential in **game pathfinding**, **route planning**, and **resource traversal** where minimizing moves while ensuring progress enables efficient navigation and optimal movement strategies in constrained environments.
 
-This demonstrates **custom sorting algorithms** and **lexicographic optimization techniques** that are crucial for **string manipulation and efficient numerical maximization operations**.
+This demonstrates **jump optimization algorithms** and **range-based traversal techniques** that are crucial for **path planning and efficient movement minimization operations**.
 
-**Your task:** Implement greedy number arrangement using custom concatenation comparator to achieve maximum possible numerical value from array elements.
-
-### Examples
-
-**Input:**
-```
-[10, 2]
-```
-**Output:**
-```
-"210"
-```
-
----
-
-**Input:**
-```
-[3, 30, 34, 5, 9]
-```
-**Output:**
-```
-"9534330"
-```
-
----
-
-## 2. Ropes with Minimum Cost
-A problem that introduces cost minimization optimization and teaches heap-based aggregation algorithms using greedy approach for efficient resource combination and expense reduction operations.
-
-Given **lengths of ropes**, connect them with the **least total cost** where cost equals **sum of lengths at each connection step** using min-heap optimization strategy. This operation is fundamental in **cost minimization** and **resource aggregation** where you need to **minimize cumulative expenses** through optimal combination sequence efficiently. The technique uses **min-heap greedy approach** to always combine the two shortest ropes first, as connecting shorter elements early reduces the cost impact on subsequent combinations. This concept is essential in **manufacturing processes**, **network design**, and **merger optimization** where strategic combination ordering enables cost reduction and efficient resource utilization in multi-stage operations.
-
-This introduces **heap-based optimization algorithms** and **cost minimization techniques** that are essential for **resource combination and efficient expense reduction operations**.
-
-**Your task:** Implement greedy rope connection using min-heap to always select shortest ropes for combination, achieving optimal cost minimization through strategic sequencing.
+**Your task:** Implement greedy jump optimization using maximum reach tracking to minimize required jumps while ensuring end position reachability.
 
 ### Examples
 
 **Input:**
 ```
-[4, 3, 2, 6]
+arr = [2, 3, 1, 1, 4]
 ```
 **Output:**
 ```
-29
+2
 ```
 
 ---
 
 **Input:**
 ```
-[1, 2, 3, 4, 5]
+arr = [1, 1, 1, 1]
 ```
 **Output:**
 ```
-33
+3
 ```
 
 ---
 
-## 3. Max Number of Non-overlapping Meetings
-A problem that teaches interval scheduling optimization and demonstrates meeting room allocation algorithms using greedy approach for efficient time management and resource utilization operations.
+## 2. Rearrange Characters (Greedy Frequency)
+A problem that introduces frequency-based optimization and teaches priority-based arrangement algorithms using greedy approach for efficient character distribution and constraint satisfaction operations.
 
-Given **start and end times** of meetings, find the **maximum number of non-overlapping meetings** that can be held in a **single room** using optimal scheduling strategy. This operation is fundamental in **meeting scheduling** and **resource optimization** where you need to **maximize meeting participation** within time and space constraints efficiently. The technique uses **earliest finish time greedy approach** to select meetings that end first, as this leaves maximum time availability for subsequent meetings in the same room. This concept is essential in **conference management**, **resource booking**, and **calendar optimization** where maximizing utilization while avoiding conflicts enables efficient scheduling and optimal facility management in shared-resource environments.
+Given a **string**, rearrange characters so that **no two identical characters are adjacent** using frequency-based greedy scheduling strategy. This operation is fundamental in **constraint satisfaction** and **sequence arrangement** where you need to **distribute elements optimally** while avoiding conflicts efficiently. The technique uses **max-heap frequency greedy approach** to always place the most frequent remaining character, followed by the next most frequent to avoid adjacency, ensuring balanced distribution. This concept is essential in **task scheduling**, **resource allocation**, and **load balancing** where preventing clustering while maintaining availability enables smooth operations and optimal distribution in constraint-based systems.
 
-This teaches **interval scheduling algorithms** and **meeting optimization techniques** that are crucial for **resource allocation and efficient time management operations**.
+This introduces **frequency-based scheduling algorithms** and **constraint satisfaction techniques** that are essential for **character arrangement and efficient distribution optimization operations**.
 
-**Your task:** Implement greedy meeting scheduling using earliest finish time selection to maximize non-overlapping meeting participation in single-room constraint.
+**Your task:** Implement greedy character rearrangement using frequency-based priority scheduling to achieve non-adjacent placement with optimal character distribution.
 
 ### Examples
 
 **Input:**
 ```
-start = [1, 3, 0, 5, 8, 5], end = [2, 4, 6, 7, 9, 9]
+"aab"
 ```
 **Output:**
 ```
-4
+"aba"
+```
+
+---
+
+**Input:**
+```
+"aaab"
+```
+**Output:**
+```
+""
+```
+
+---
+
+## 3. Max Sum After K Negations
+A problem that teaches sign optimization techniques and demonstrates value maximization algorithms using greedy approach with selective negation for efficient sum enhancement operations.
+
+Given an **array and K operations**, flip **up to K numbers** to **maximize the total sum** using strategic negation optimization approach. This operation is fundamental in **value maximization** and **sign optimization** where you need to **enhance total value** through selective modifications efficiently. The technique uses **greedy negative-first approach** by prioritizing negation of most negative numbers first, then handling remaining operations on smallest absolute values to maximize benefit. This concept is essential in **profit optimization**, **score maximization**, and **financial adjustments** where strategic value modifications enable sum enhancement and optimal return generation in constrained operation scenarios.
+
+This teaches **sign optimization algorithms** and **value maximization techniques** that are crucial for **sum enhancement and efficient negation strategy operations**.
+
+**Your task:** Implement greedy negation strategy using priority-based value selection to maximize sum through optimal K-operation utilization.
+
+### Examples
+
+**Input:**
+```
+nums = [4, 2, 3], k = 1
+```
+**Output:**
+```
+5
+```
+
+---
+
+**Input:**
+```
+nums = [3, -1, 0, 2], k = 3
+```
+**Output:**
+```
+6
 ```
