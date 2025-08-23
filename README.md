@@ -1,30 +1,96 @@
-<h2 align="center">Day 68 (22/08/2025)</h2>
+<h2 align="center">Day 69 (23/08/2025)</h2>
 
-## 1. Min Jumps to Reach End
-A problem that demonstrates jump optimization techniques and teaches range-based greedy algorithms using maximum reach calculation for efficient path traversal and movement minimization operations.
+## 1. Rearrange Array to Form Palindrome
+A problem that demonstrates character frequency analysis and teaches palindrome feasibility algorithms using counting-based validation for efficient string arrangement and symmetry verification operations.
 
-Given an **array where each element represents maximum jump distance**, find the **minimum number of jumps** to reach the **end position** using greedy range optimization strategy. This operation is fundamental in **path optimization** and **movement planning** where you need to **minimize steps** while maximizing coverage efficiently. The technique uses **greedy maximum reach approach** that tracks the farthest reachable position at each step, making jumps only when necessary to extend reach beyond current range. This concept is essential in **game pathfinding**, **route planning**, and **resource traversal** where minimizing moves while ensuring progress enables efficient navigation and optimal movement strategies in constrained environments.
+Given a **string**, check if characters can be **rearranged to form a palindrome** using frequency-based feasibility analysis approach. This operation is fundamental in **palindrome validation** and **arrangement checking** where you need to **determine structural possibility** without actual rearrangement efficiently. The technique uses **character frequency counting** to verify palindrome constraints: at most one character can have odd frequency (for middle position), while all others must have even frequencies for symmetric placement. This concept is essential in **string validation**, **data integrity checking**, and **structural analysis** where determining feasibility before processing enables efficient validation and optimal decision making in arrangement-based applications.
 
-This demonstrates **jump optimization algorithms** and **range-based traversal techniques** that are crucial for **path planning and efficient movement minimization operations**.
+This demonstrates **frequency analysis algorithms** and **palindrome validation techniques** that are crucial for **string feasibility checking and efficient arrangement verification operations**.
 
-**Your task:** Implement greedy jump optimization using maximum reach tracking to minimize required jumps while ensuring end position reachability.
+**Your task:** Implement character frequency analysis using counting-based validation to determine palindrome rearrangement feasibility without actual string manipulation.
 
 ### Examples
 
 **Input:**
 ```
-arr = [2, 3, 1, 1, 4]
+"civic"
 ```
 **Output:**
 ```
-2
+Yes
 ```
 
 ---
 
 **Input:**
 ```
-arr = [1, 1, 1, 1]
+"aabbcc"
+```
+**Output:**
+```
+Yes
+```
+
+---
+
+**Input:**
+```
+"abc"
+```
+**Output:**
+```
+No
+```
+
+---
+
+## 2. Split Array into Equal Sum
+A problem that introduces partition feasibility analysis and teaches subset sum validation algorithms using mathematical approach for efficient array division and balance verification operations.
+
+Given an **array**, check if it can be **divided into two parts** with **equal sum** using subset sum feasibility validation strategy. This operation is fundamental in **partition analysis** and **balance checking** where you need to **determine equal distribution possibility** for optimal resource allocation efficiently. The technique uses **total sum analysis** first to check if sum is even (necessary condition), then applies subset sum algorithms to verify if a subset with target sum (total/2) exists. This concept is essential in **load balancing**, **resource distribution**, and **team formation** where ensuring equal partitions enables fair allocation and optimal system balance in distribution-based scenarios.
+
+This introduces **partition analysis algorithms** and **subset sum validation techniques** that are essential for **array division checking and efficient balance verification operations**.
+
+**Your task:** Implement partition feasibility analysis using subset sum validation to determine equal-sum division possibility with optimal mathematical verification.
+
+### Examples
+
+**Input:**
+```
+arr = [1, 2, 3, 5]
+```
+**Output:**
+```
+false
+```
+
+---
+
+**Input:**
+```
+arr = [1, 5, 11, 5]
+```
+**Output:**
+```
+true
+```
+
+---
+
+## 3. Longest Substring Without Repeating
+A problem that teaches sliding window optimization and demonstrates character uniqueness algorithms using two-pointer technique for efficient substring analysis and length maximization operations.
+
+Given a **string**, find the **length of longest substring** without **repeating characters** using sliding window optimization approach. This operation is fundamental in **substring analysis** and **uniqueness validation** where you need to **maximize unique character sequences** while maintaining efficiency. The technique uses **sliding window with hash set** to expand the window when characters are unique and contract from left when duplicates are found, maintaining the longest valid substring length. This concept is essential in **text processing**, **pattern analysis**, and **data streaming** where finding optimal unique sequences enables efficient parsing and maximum utilization in character-based processing systems.
+
+This teaches **sliding window algorithms** and **substring optimization techniques** that are crucial for **text analysis and efficient uniqueness validation operations**.
+
+**Your task:** Implement sliding window optimization using two-pointer technique with character tracking to find maximum length substring without character repetition.
+
+### Examples
+
+**Input:**
+```
+"abcabcbb"
 ```
 **Output:**
 ```
@@ -33,66 +99,11 @@ arr = [1, 1, 1, 1]
 
 ---
 
-## 2. Rearrange Characters (Greedy Frequency)
-A problem that introduces frequency-based optimization and teaches priority-based arrangement algorithms using greedy approach for efficient character distribution and constraint satisfaction operations.
-
-Given a **string**, rearrange characters so that **no two identical characters are adjacent** using frequency-based greedy scheduling strategy. This operation is fundamental in **constraint satisfaction** and **sequence arrangement** where you need to **distribute elements optimally** while avoiding conflicts efficiently. The technique uses **max-heap frequency greedy approach** to always place the most frequent remaining character, followed by the next most frequent to avoid adjacency, ensuring balanced distribution. This concept is essential in **task scheduling**, **resource allocation**, and **load balancing** where preventing clustering while maintaining availability enables smooth operations and optimal distribution in constraint-based systems.
-
-This introduces **frequency-based scheduling algorithms** and **constraint satisfaction techniques** that are essential for **character arrangement and efficient distribution optimization operations**.
-
-**Your task:** Implement greedy character rearrangement using frequency-based priority scheduling to achieve non-adjacent placement with optimal character distribution.
-
-### Examples
-
 **Input:**
 ```
-"aab"
+"bbbbb"
 ```
 **Output:**
 ```
-"aba"
-```
-
----
-
-**Input:**
-```
-"aaab"
-```
-**Output:**
-```
-""
-```
-
----
-
-## 3. Max Sum After K Negations
-A problem that teaches sign optimization techniques and demonstrates value maximization algorithms using greedy approach with selective negation for efficient sum enhancement operations.
-
-Given an **array and K operations**, flip **up to K numbers** to **maximize the total sum** using strategic negation optimization approach. This operation is fundamental in **value maximization** and **sign optimization** where you need to **enhance total value** through selective modifications efficiently. The technique uses **greedy negative-first approach** by prioritizing negation of most negative numbers first, then handling remaining operations on smallest absolute values to maximize benefit. This concept is essential in **profit optimization**, **score maximization**, and **financial adjustments** where strategic value modifications enable sum enhancement and optimal return generation in constrained operation scenarios.
-
-This teaches **sign optimization algorithms** and **value maximization techniques** that are crucial for **sum enhancement and efficient negation strategy operations**.
-
-**Your task:** Implement greedy negation strategy using priority-based value selection to maximize sum through optimal K-operation utilization.
-
-### Examples
-
-**Input:**
-```
-nums = [4, 2, 3], k = 1
-```
-**Output:**
-```
-5
-```
-
----
-
-**Input:**
-```
-nums = [3, -1, 0, 2], k = 3
-```
-**Output:**
-```
-6
+1
 ```
