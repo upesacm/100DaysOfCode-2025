@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node *left, *right;
+};
+
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->left = newNode->right = NULL;
+    return newNode;
+}
+
+int countLeaves(struct Node* root) {
+    if (root == NULL) return 0;
+    if (root->left == NULL && root->right == NULL) return 1;
+    return countLeaves(root->left) + countLeaves(root->right);
+}
+
+int main() {
+    int n, val;
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
+
+    struct Node* nodes[n];
+    for (int i = 0; i < n; i++) {
+        printf("Enter value for node %d: ", i + 1);
+        scanf("%d", &val);
+        nodes[i] = createNode(val);
+    }
+
+    printf("Enter left and right child indices (-1 for NULL) for each node:\n");
+    for (int i = 0; i < n; i++) {
+        int l, r;
+        printf("Node %d (%d): ", i, nodes[i]->data);
+        scanf("%d %d", &l, &r);
+        if (l != -1) nodes[i]->left = nodes[l];
+        if (r != -1) nodes[i]->right = nodes[r];
+    }
+
+    int leafCount = countLeaves(nodes[0]);
+    printf("Number of leaf nodes: %d\n", leafCount);
+    return 0;
+}
