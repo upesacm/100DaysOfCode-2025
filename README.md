@@ -1,116 +1,110 @@
-<h2 align="center">Day 71 (25/08/2025)</h2>
+<h2 align="center">Day 73 (27/08/2025)</h2>
 
-## 1. Inorder Traversal of Binary Tree
-A problem that demonstrates tree traversal fundamentals and teaches recursive navigation algorithms using left-root-right ordering for efficient binary tree exploration and data extraction operations.
+## 1. Sum of All Nodes
+A problem that demonstrates tree aggregation techniques and teaches recursive accumulation algorithms using node value summation for efficient binary tree total calculation and data consolidation operations.
 
-Given a **binary tree**, print its **inorder traversal** using recursive left-root-right navigation strategy. This operation is fundamental in **tree traversal** and **data structure navigation** where you need to **visit nodes systematically** in sorted order for binary search trees efficiently. The technique uses **recursive inorder approach** visiting left subtree first, then current node, finally right subtree, which naturally produces sorted sequence for BST structures. This concept is essential in **expression evaluation**, **syntax parsing**, and **data retrieval** where systematic node visitation enables ordered processing and structured data access in hierarchical tree-based systems.
+Given a **binary tree**, find the **sum of all node values** using recursive accumulation strategy. This operation is fundamental in **tree aggregation** and **value consolidation** where you need to **compute total values** across hierarchical structures efficiently. The technique uses **recursive sum calculation** by adding current node value to sums from left and right subtrees, ensuring complete tree traversal for accurate total computation. This concept is essential in **financial calculations**, **statistical analysis**, and **data aggregation** where computing totals from hierarchical data enables comprehensive analysis and optimal decision making in tree-structured information systems.
 
-This demonstrates **tree traversal algorithms** and **recursive navigation techniques** that are crucial for **binary tree exploration and efficient data extraction operations**.
+This demonstrates **tree aggregation algorithms** and **recursive accumulation techniques** that are crucial for **value summation and efficient data consolidation operations**.
 
-**Your task:** Implement recursive inorder traversal using left-root-right visitation pattern to systematically explore binary tree nodes in proper sequence.
+**Your task:** Implement recursive sum calculation using complete tree traversal to accumulate all node values in binary tree structure for total computation.
 
 ### Examples
 
 **Input:**
 ```
     1
-     \
-      3
-     /
-    2
+   / \
+  2   3
 ```
 **Output:**
 ```
-1 3 2
+6
 ```
 
 ---
 
 **Input:**
 ```
-    4
+  10
+ /
+5
+```
+**Output:**
+```
+15
+```
+
+---
+
+## 2. Level Order Traversal
+A problem that introduces breadth-first exploration and teaches queue-based traversal algorithms using level-by-level processing for efficient binary tree horizontal navigation and systematic data access operations.
+
+Given a **binary tree**, print elements **level by level** using breadth-first traversal approach. This operation is fundamental in **level-wise processing** and **breadth-first exploration** where you need to **access nodes horizontally** across tree levels efficiently. The technique uses **queue-based level traversal** by processing nodes level by level from left to right, using queue to maintain order and ensure systematic horizontal navigation. This concept is essential in **tree printing**, **hierarchical display**, and **level-based analysis** where processing nodes by depth enables organized presentation and optimal level-wise operations in structured tree visualization systems.
+
+This introduces **breadth-first algorithms** and **queue-based traversal techniques** that are essential for **level-wise processing and efficient horizontal navigation operations**.
+
+**Your task:** Implement queue-based level order traversal using breadth-first approach to systematically process binary tree nodes level by level.
+
+### Examples
+
+**Input:**
+```
+    1
+   / \
+  2   3
+```
+**Output:**
+```
+1 2 3
+```
+
+---
+
+**Input:**
+```
+  10
+   \
+   20
+```
+**Output:**
+```
+10 20
+```
+
+---
+
+## 3. Find Max in Binary Tree
+A problem that teaches tree optimization search and demonstrates recursive maximum finding algorithms using value comparison for efficient binary tree extremum detection and optimal value identification operations.
+
+Given a **binary tree**, find the **maximum value node** in the tree using recursive comparison strategy. This operation is fundamental in **extremum search** and **optimization analysis** where you need to **identify optimal values** across hierarchical structures efficiently. The technique uses **recursive maximum comparison** by comparing current node value with maximum values from left and right subtrees, ensuring complete tree exploration for accurate extremum detection. This concept is essential in **performance analysis**, **optimization problems**, and **data mining** where finding maximum values enables peak identification and optimal threshold determination in value-based tree analysis systems.
+
+This teaches **optimization search algorithms** and **recursive comparison techniques** that are crucial for **extremum detection and efficient maximum value identification operations**.
+
+**Your task:** Implement recursive maximum search using value comparison to identify the largest node value throughout the binary tree structure.
+
+### Examples
+
+**Input:**
+```
+    3
    / \
   2   5
 ```
 **Output:**
 ```
-2 4 5
+5
 ```
 
 ---
-
-## 2. Count Leaf Nodes
-A problem that introduces node classification analysis and teaches leaf identification algorithms using recursive counting approach for efficient tree structure analysis and terminal node detection operations.
-
-Given a **binary tree**, count the **number of leaf nodes** (nodes with no children) using recursive structural analysis strategy. This operation is fundamental in **tree analysis** and **node classification** where you need to **identify terminal elements** for structural understanding efficiently. The technique uses **recursive leaf detection** by checking if a node has no left or right children, then recursively counting leaves in subtrees for complete tree analysis. This concept is essential in **decision trees**, **file systems**, and **organizational structures** where identifying endpoints enables structural analysis and optimal resource allocation in hierarchical systems.
-
-This introduces **node classification algorithms** and **structural analysis techniques** that are essential for **tree examination and efficient leaf detection operations**.
-
-**Your task:** Implement recursive leaf counting using null-child validation to identify and count terminal nodes throughout the binary tree structure.
-
-### Examples
-
-**Input:**
-```
-    1
-   / \
-  2   3
-```
-**Output:**
-```
-2
-```
-
----
-
-**Input:**
-```
-   10
-    \
-    20
-   /
-  15
-```
-**Output:**
-```
-1
-```
-
----
-
-## 3. Height of Binary Tree
-A problem that teaches tree depth measurement and demonstrates recursive height calculation algorithms using maximum subtree depth for efficient tree structure analysis and depth determination operations.
-
-Given a **binary tree**, find its **height** (maximum depth from root to any leaf) using recursive depth calculation approach. This operation is fundamental in **tree analysis** and **structural measurement** where you need to **determine maximum path length** for performance and balance assessment efficiently. The technique uses **recursive maximum depth calculation** by finding heights of left and right subtrees, then taking maximum plus one for current level. This concept is essential in **balanced trees**, **performance optimization**, and **memory management** where understanding tree depth enables efficient algorithms and optimal data structure selection in depth-sensitive applications.
-
-This teaches **depth calculation algorithms** and **recursive measurement techniques** that are crucial for **tree analysis and efficient height determination operations**.
-
-**Your task:** Implement recursive height calculation using maximum subtree depth comparison to determine the longest path from root to any leaf node.
-
-### Examples
 
 **Input:**
 ```
   1
- /
-2
-/
-3
+   \
+    9
 ```
 **Output:**
 ```
-3
-```
-
----
-
-**Input:**
-```
-    1
-   / \
-  2   3
-```
-**Output:**
-```
-2
+9
 ```
