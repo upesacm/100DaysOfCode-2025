@@ -1,98 +1,110 @@
-<h2 align="center">Day 65 (19/08/2025)</h2>
+<h2 align="center">Day 73 (27/08/2025)</h2>
 
-## 1. Minimum Coins
-A problem that demonstrates coin change optimization and teaches denomination-based greedy algorithms using minimum selection strategy for efficient currency exchange and payment systems operations.
+## 1. Sum of All Nodes
+A problem that demonstrates tree aggregation techniques and teaches recursive accumulation algorithms using node value summation for efficient binary tree total calculation and data consolidation operations.
 
-Given **coins of different denominations**, find the **minimum number of coins** to make a **given amount** using greedy denomination selection. This operation is fundamental in **currency optimization** and **payment processing** where you need to **minimize transaction components** while achieving target values efficiently. The technique uses **largest denomination first greedy approach** to select maximum value coins iteratively, reducing the total count of coins needed for amount formation. This concept is essential in **financial systems**, **vending machines**, and **cash register operations** where minimizing change components enables efficient transaction processing and optimal currency distribution in automated payment environments.
+Given a **binary tree**, find the **sum of all node values** using recursive accumulation strategy. This operation is fundamental in **tree aggregation** and **value consolidation** where you need to **compute total values** across hierarchical structures efficiently. The technique uses **recursive sum calculation** by adding current node value to sums from left and right subtrees, ensuring complete tree traversal for accurate total computation. This concept is essential in **financial calculations**, **statistical analysis**, and **data aggregation** where computing totals from hierarchical data enables comprehensive analysis and optimal decision making in tree-structured information systems.
 
-This demonstrates **coin change algorithms** and **denomination optimization techniques** that are crucial for **currency systems and efficient payment processing operations**.
+This demonstrates **tree aggregation algorithms** and **recursive accumulation techniques** that are crucial for **value summation and efficient data consolidation operations**.
 
-**Your task:** Implement greedy coin selection using largest denomination priority to achieve minimum coin count for target amount formation.
-
-### Examples
-
-**Input:**
-```
-coins = [1, 2, 5, 10], amount = 23
-```
-**Output:**
-```
-5 (10+10+2+1)
-```
-
----
-
-**Input:**
-```
-coins = [1, 5, 6, 9], amount = 11
-```
-**Output:**
-```
-2 (5+6)
-```
-
----
-
-## 2. Maximum Chain of Pairs
-A problem that introduces pair chaining optimization and teaches sequential selection algorithms using coordinate-based greedy approach for efficient sequence building and dependency management operations.
-
-Given **coordinate pairs (a, b)**, find the **maximum number of chainable pairs** where each subsequent pair **(c, d)** satisfies **c > b** using greedy chaining strategy. This operation is fundamental in **sequence optimization** and **dependency resolution** where you need to **build longest valid chains** following ordering constraints efficiently. The technique uses **end-coordinate based greedy approach** to sort pairs by second element and select pairs that maintain the chaining property, maximizing chain length. This concept is essential in **scheduling systems**, **workflow management**, and **dependency graphs** where building maximum valid sequences enables optimal task ordering and efficient pipeline construction in constraint-based environments.
-
-This introduces **pair chaining algorithms** and **sequence optimization techniques** that are essential for **dependency management and efficient chain building operations**.
-
-**Your task:** Implement greedy pair chaining using end-coordinate sorting to achieve maximum valid pair sequence with optimal constraint satisfaction.
+**Your task:** Implement recursive sum calculation using complete tree traversal to accumulate all node values in binary tree structure for total computation.
 
 ### Examples
 
 **Input:**
 ```
-pairs = [(5, 24), (15, 25), (27, 40), (50, 60)]
+    1
+   / \
+  2   3
 ```
 **Output:**
 ```
-3
+6
 ```
 
 ---
 
 **Input:**
 ```
-pairs = [(1, 2), (2, 3), (3, 4)]
+  10
+ /
+5
 ```
 **Output:**
 ```
-2
+15
 ```
 
 ---
 
-## 3. Schedule Tasks Without Overlap
-A problem that teaches overlap elimination optimization and demonstrates interval removal algorithms using greedy approach with minimal deletion strategy for efficient conflict resolution operations.
+## 2. Level Order Traversal
+A problem that introduces breadth-first exploration and teaches queue-based traversal algorithms using level-by-level processing for efficient binary tree horizontal navigation and systematic data access operations.
 
-Given **start and end times** of tasks, **remove minimum tasks** to ensure **no overlapping intervals** using optimal elimination strategy. This operation is fundamental in **conflict resolution** and **schedule optimization** where you need to **minimize removals** while achieving non-overlapping arrangements efficiently. The technique uses **end-time based greedy approach** to sort intervals and remove conflicting tasks strategically, keeping maximum possible tasks while eliminating all overlaps. This concept is essential in **resource scheduling**, **meeting management**, and **system optimization** where minimizing disruptions while resolving conflicts enables efficient schedule maintenance and optimal resource utilization in multi-constraint environments.
+Given a **binary tree**, print elements **level by level** using breadth-first traversal approach. This operation is fundamental in **level-wise processing** and **breadth-first exploration** where you need to **access nodes horizontally** across tree levels efficiently. The technique uses **queue-based level traversal** by processing nodes level by level from left to right, using queue to maintain order and ensure systematic horizontal navigation. This concept is essential in **tree printing**, **hierarchical display**, and **level-based analysis** where processing nodes by depth enables organized presentation and optimal level-wise operations in structured tree visualization systems.
 
-This teaches **interval conflict resolution algorithms** and **minimal removal techniques** that are crucial for **schedule optimization and efficient overlap elimination operations**.
+This introduces **breadth-first algorithms** and **queue-based traversal techniques** that are essential for **level-wise processing and efficient horizontal navigation operations**.
 
-**Your task:** Implement greedy overlap elimination using minimal removal strategy to achieve maximum non-overlapping task retention with optimal conflict resolution.
+**Your task:** Implement queue-based level order traversal using breadth-first approach to systematically process binary tree nodes level by level.
 
 ### Examples
 
 **Input:**
 ```
-intervals = [(1, 2), (2, 3), (3, 4), (1, 3)]
+    1
+   / \
+  2   3
 ```
 **Output:**
 ```
-Remove 1 → Remaining 3
+1 2 3
 ```
 
 ---
 
 **Input:**
 ```
-intervals = [(1, 2), (1, 2), (1, 2)]
+  10
+   \
+   20
 ```
 **Output:**
 ```
-Remove 2 → Remaining 1
+10 20
+```
+
+---
+
+## 3. Find Max in Binary Tree
+A problem that teaches tree optimization search and demonstrates recursive maximum finding algorithms using value comparison for efficient binary tree extremum detection and optimal value identification operations.
+
+Given a **binary tree**, find the **maximum value node** in the tree using recursive comparison strategy. This operation is fundamental in **extremum search** and **optimization analysis** where you need to **identify optimal values** across hierarchical structures efficiently. The technique uses **recursive maximum comparison** by comparing current node value with maximum values from left and right subtrees, ensuring complete tree exploration for accurate extremum detection. This concept is essential in **performance analysis**, **optimization problems**, and **data mining** where finding maximum values enables peak identification and optimal threshold determination in value-based tree analysis systems.
+
+This teaches **optimization search algorithms** and **recursive comparison techniques** that are crucial for **extremum detection and efficient maximum value identification operations**.
+
+**Your task:** Implement recursive maximum search using value comparison to identify the largest node value throughout the binary tree structure.
+
+### Examples
+
+**Input:**
+```
+    3
+   / \
+  2   5
+```
+**Output:**
+```
+5
+```
+
+---
+
+**Input:**
+```
+  1
+   \
+    9
+```
+**Output:**
+```
+9
 ```
