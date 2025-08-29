@@ -1,39 +1,71 @@
-<h2 align="center">Day 75 (29/08/2025)</h2>
+<h2 align="center">Day 76 (30/08/2025)</h2>
 
-## 1. Left View of Binary Tree
-A problem that demonstrates perspective-based tree traversal and teaches leftmost node identification algorithms using level-order processing for efficient binary tree boundary visualization and side-specific data access operations.
+## 1. Convert to Sum Tree
+A problem that demonstrates tree transformation techniques and teaches recursive subtree summation algorithms using post-order modification for efficient binary tree value aggregation and structural data consolidation operations.
 
-Given a **binary tree**, print the **leftmost node at each level** using level-wise boundary identification strategy. This operation is fundamental in **tree visualization** and **boundary analysis** where you need to **identify visible nodes from specific perspectives** for display optimization efficiently. The technique uses **level-order traversal with first-node tracking** by processing nodes level by level and capturing the first (leftmost) node encountered at each depth. This concept is essential in **UI rendering**, **tree visualization**, and **profile analysis** where displaying boundary elements enables clear visual representation and optimal perspective-based presentation in hierarchical display systems.
+Given a **binary tree**, transform it into a **sum tree** where every node contains the **sum of its left and right subtrees**, with **leaf nodes becoming 0** using recursive bottom-up transformation strategy. This operation is fundamental in **tree restructuring** and **value aggregation** where you need to **consolidate subtree information** into parent nodes efficiently. The technique uses **post-order recursive transformation** by first converting subtrees, then updating current node to sum of original subtree values, preserving structural integrity while aggregating data. This concept is essential in **data aggregation systems**, **hierarchical calculations**, and **summary generation** where consolidating child information enables efficient parent-level analysis and optimal aggregated reporting in tree-structured data systems.
 
-This demonstrates **perspective-based traversal algorithms** and **boundary identification techniques** that are crucial for **tree visualization and efficient side-specific node access operations**.
+This demonstrates **tree transformation algorithms** and **recursive aggregation techniques** that are crucial for **structural modification and efficient value consolidation operations**.
 
-**Your task:** Implement level-order traversal with leftmost tracking to identify and print the first visible node from left perspective at each tree level.
+**Your task:** Implement post-order recursive transformation using subtree summation to convert binary tree into sum tree with aggregated parent values.
 
 ### Examples
 
 **Input:**
 ```
-    1
-   / \
-  2   3
-   \
-    4
+      10
+     /  \
+   -2    6
+   /  \ /  \
+  8  -4 7  5
 ```
-**Output:**
+**Output (sum tree):**
 ```
-1 2 4
+      20
+     /  \
+    4   12
+   /  \ /  \
+  0  0 0  0
 ```
 
 ---
 
-## 2. Right View of Binary Tree
-A problem that introduces right-perspective analysis and teaches rightmost node selection algorithms using level-based boundary detection for efficient binary tree right-side visualization and perspective-specific data extraction operations.
+## 2. Print Ancestors of a Node
+A problem that introduces path tracking analysis and teaches recursive ancestor identification algorithms using backtracking approach for efficient binary tree lineage discovery and hierarchical relationship exploration operations.
 
-Given a **binary tree**, print the **rightmost node at each level** using right-boundary identification approach. This operation is fundamental in **perspective visualization** and **right-side analysis** where you need to **capture visible elements from right viewpoint** for comprehensive display representation efficiently. The technique uses **level-order traversal with last-node tracking** by processing all nodes at each level and retaining the rightmost (last) node encountered at each depth. This concept is essential in **architectural visualization**, **profile rendering**, and **boundary detection** where identifying right-edge elements enables complete perspective analysis and optimal right-side representation in structured tree visualization systems.
+Given a **binary tree and target node value**, print **all ancestors** of the given node using recursive path tracking strategy. This operation is fundamental in **lineage analysis** and **hierarchical navigation** where you need to **trace parent relationships** up to root efficiently. The technique uses **recursive path finding with backtracking** by searching for target node while maintaining path, then printing all nodes in path when target is found. This concept is essential in **genealogy systems**, **organizational hierarchies**, and **dependency tracking** where identifying ancestor relationships enables lineage analysis and optimal hierarchical understanding in parent-child structured systems.
 
-This introduces **right-perspective algorithms** and **rightmost selection techniques** that are essential for **boundary visualization and efficient right-side node identification operations**.
+This introduces **ancestor tracking algorithms** and **path discovery techniques** that are essential for **lineage analysis and efficient hierarchical relationship exploration operations**.
 
-**Your task:** Implement level-based traversal with rightmost tracking to capture and print the last visible node from right perspective at each tree level.
+**Your task:** Implement recursive path tracking using backtracking to discover and print all ancestor nodes from target to root in hierarchical order.
+
+### Examples
+
+**Input:**
+```
+Tree:
+    1
+   / \
+  2   3
+ /
+4
+Node = 4
+```
+**Output:**
+```
+2 1
+```
+
+---
+
+## 3. Count Nodes at Given Level
+A problem that teaches level-specific enumeration and demonstrates depth-based counting algorithms using recursive level tracking for efficient binary tree node quantification and level-wise population analysis operations.
+
+Given a **binary tree and target level**, count the **number of nodes** present at that **specific level** using recursive depth-based counting strategy. This operation is fundamental in **level analysis** and **population assessment** where you need to **quantify nodes at specific depths** for structural understanding efficiently. The technique uses **recursive level tracking** by decrementing target level at each depth until reaching target, then counting nodes at that specific level. This concept is essential in **capacity planning**, **load distribution**, and **structural analysis** where understanding node distribution across levels enables optimal resource allocation and efficient level-based operations in hierarchical tree systems.
+
+This teaches **level-specific counting algorithms** and **depth-based enumeration techniques** that are crucial for **population analysis and efficient level-wise node quantification operations**.
+
+**Your task:** Implement recursive level tracking using depth-based counting to quantify and return total nodes present at specified tree level.
 
 ### Examples
 
@@ -44,34 +76,9 @@ This introduces **right-perspective algorithms** and **rightmost selection techn
   2   3
  /
 4
+Level = 2
 ```
 **Output:**
 ```
-1 3 4
-```
-
----
-
-## 3. Diameter of Binary Tree
-A problem that teaches tree metric calculation and demonstrates longest path algorithms using recursive height-based analysis for efficient binary tree span measurement and maximum distance determination operations.
-
-Given a **binary tree**, find the **diameter** (length of longest path between any two nodes) using recursive path analysis strategy. This operation is fundamental in **tree metrics** and **span analysis** where you need to **determine maximum connectivity distance** for structural assessment efficiently. The technique uses **recursive height calculation with diameter tracking** by computing left and right subtree heights at each node, calculating potential diameter through current node, and maintaining global maximum. This concept is essential in **network analysis**, **social graphs**, and **communication systems** where measuring maximum distances enables connectivity assessment and optimal path planning in tree-structured networks.
-
-This teaches **tree metric algorithms** and **longest path techniques** that are crucial for **span measurement and efficient maximum distance calculation operations**.
-
-**Your task:** Implement recursive diameter calculation using height-based analysis to determine the longest possible path between any two nodes in binary tree.
-
-### Examples
-
-**Input:**
-```
-    1
-   / \
-  2   3
- / \
-4   5
-```
-**Output:**
-```
-4 (Path: 4 → 2 → 1 → 3)
+2 (Nodes 2 and 3)
 ```
