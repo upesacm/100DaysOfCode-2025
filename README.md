@@ -1,13 +1,65 @@
-<h2 align="center">Day 74 (28/08/2025)</h2>
+<h2 align="center">Day 75 (29/08/2025)</h2>
 
-## 1. Print Nodes at K Distance
-A problem that demonstrates distance-based tree traversal and teaches level-specific access algorithms using recursive depth tracking for efficient binary tree node selection and targeted data retrieval operations.
+## 1. Left View of Binary Tree
+A problem that demonstrates perspective-based tree traversal and teaches leftmost node identification algorithms using level-order processing for efficient binary tree boundary visualization and side-specific data access operations.
 
-Given a **binary tree and distance K**, print all nodes that are **exactly K distance from the root** using recursive level-based traversal strategy. This operation is fundamental in **level-specific access** and **distance-based filtering** where you need to **retrieve nodes at specific depths** for targeted analysis efficiently. The technique uses **recursive depth tracking** by decrementing K at each level until reaching target distance, then collecting nodes at that specific level. This concept is essential in **hierarchical navigation**, **organizational charts**, and **network analysis** where accessing nodes at specific distances enables targeted operations and optimal level-based processing in structured tree systems.
+Given a **binary tree**, print the **leftmost node at each level** using level-wise boundary identification strategy. This operation is fundamental in **tree visualization** and **boundary analysis** where you need to **identify visible nodes from specific perspectives** for display optimization efficiently. The technique uses **level-order traversal with first-node tracking** by processing nodes level by level and capturing the first (leftmost) node encountered at each depth. This concept is essential in **UI rendering**, **tree visualization**, and **profile analysis** where displaying boundary elements enables clear visual representation and optimal perspective-based presentation in hierarchical display systems.
 
-This demonstrates **distance-based traversal algorithms** and **level-specific access techniques** that are crucial for **targeted node selection and efficient depth-based retrieval operations**.
+This demonstrates **perspective-based traversal algorithms** and **boundary identification techniques** that are crucial for **tree visualization and efficient side-specific node access operations**.
 
-**Your task:** Implement recursive distance tracking using depth-based filtering to collect and print all nodes at exactly K distance from root.
+**Your task:** Implement level-order traversal with leftmost tracking to identify and print the first visible node from left perspective at each tree level.
+
+### Examples
+
+**Input:**
+```
+    1
+   / \
+  2   3
+   \
+    4
+```
+**Output:**
+```
+1 2 4
+```
+
+---
+
+## 2. Right View of Binary Tree
+A problem that introduces right-perspective analysis and teaches rightmost node selection algorithms using level-based boundary detection for efficient binary tree right-side visualization and perspective-specific data extraction operations.
+
+Given a **binary tree**, print the **rightmost node at each level** using right-boundary identification approach. This operation is fundamental in **perspective visualization** and **right-side analysis** where you need to **capture visible elements from right viewpoint** for comprehensive display representation efficiently. The technique uses **level-order traversal with last-node tracking** by processing all nodes at each level and retaining the rightmost (last) node encountered at each depth. This concept is essential in **architectural visualization**, **profile rendering**, and **boundary detection** where identifying right-edge elements enables complete perspective analysis and optimal right-side representation in structured tree visualization systems.
+
+This introduces **right-perspective algorithms** and **rightmost selection techniques** that are essential for **boundary visualization and efficient right-side node identification operations**.
+
+**Your task:** Implement level-based traversal with rightmost tracking to capture and print the last visible node from right perspective at each tree level.
+
+### Examples
+
+**Input:**
+```
+    1
+   / \
+  2   3
+ /
+4
+```
+**Output:**
+```
+1 3 4
+```
+
+---
+
+## 3. Diameter of Binary Tree
+A problem that teaches tree metric calculation and demonstrates longest path algorithms using recursive height-based analysis for efficient binary tree span measurement and maximum distance determination operations.
+
+Given a **binary tree**, find the **diameter** (length of longest path between any two nodes) using recursive path analysis strategy. This operation is fundamental in **tree metrics** and **span analysis** where you need to **determine maximum connectivity distance** for structural assessment efficiently. The technique uses **recursive height calculation with diameter tracking** by computing left and right subtree heights at each node, calculating potential diameter through current node, and maintaining global maximum. This concept is essential in **network analysis**, **social graphs**, and **communication systems** where measuring maximum distances enables connectivity assessment and optimal path planning in tree-structured networks.
+
+This teaches **tree metric algorithms** and **longest path techniques** that are crucial for **span measurement and efficient maximum distance calculation operations**.
+
+**Your task:** Implement recursive diameter calculation using height-based analysis to determine the longest possible path between any two nodes in binary tree.
 
 ### Examples
 
@@ -18,75 +70,8 @@ This demonstrates **distance-based traversal algorithms** and **level-specific a
   2   3
  / \
 4   5
-K = 2
 ```
 **Output:**
 ```
-4 5
-```
-
----
-
-## 2. Check if Tree is Balanced
-A problem that introduces tree balance validation and teaches height-difference analysis algorithms using recursive balance checking for efficient binary tree stability assessment and structural optimization verification operations.
-
-Given a **binary tree**, check if it is **balanced** where **height difference between left and right subtrees is at most 1** using recursive balance validation strategy. This operation is fundamental in **tree stability analysis** and **performance optimization** where you need to **ensure balanced structure** for optimal operation efficiency. The technique uses **recursive height calculation with balance checking** at each node, verifying that height difference between subtrees doesn't exceed 1 while computing heights bottom-up. This concept is essential in **self-balancing trees**, **database indexing**, and **search optimization** where maintaining balance enables logarithmic operations and optimal query performance in tree-based data structures.
-
-This introduces **balance validation algorithms** and **height-difference analysis techniques** that are essential for **tree stability checking and efficient structural optimization verification operations**.
-
-**Your task:** Implement recursive balance checking using height-difference validation to determine if binary tree maintains balanced structure throughout all levels.
-
-### Examples
-
-**Input:**
-```
-  1
- /
-2
-/
-3
-```
-**Output:**
-```
-No
-```
-
----
-
-**Input:**
-```
-    1
-   / \
-  2   3
-```
-**Output:**
-```
-Yes
-```
-
----
-
-## 3. Print All Root to Leaf Paths
-A problem that teaches path enumeration techniques and demonstrates backtracking algorithms using recursive path tracking for efficient binary tree route discovery and complete path exploration operations.
-
-Given a **binary tree**, print **all paths from root to every leaf** using recursive backtracking path enumeration strategy. This operation is fundamental in **path discovery** and **route enumeration** where you need to **identify all possible traversal routes** for comprehensive analysis efficiently. The technique uses **recursive path building with backtracking** by maintaining current path and extending it at each node, printing complete path when reaching leaves, then backtracking for alternative routes. This concept is essential in **decision trees**, **file system traversal**, and **network routing** where discovering all possible paths enables comprehensive analysis and optimal route selection in hierarchical navigation systems.
-
-This teaches **path enumeration algorithms** and **backtracking techniques** that are crucial for **route discovery and efficient complete path exploration operations**.
-
-**Your task:** Implement recursive backtracking using path building to discover and print all possible routes from root to every leaf node.
-
-### Examples
-
-**Input:**
-```
-    1
-   / \
-  2   3
-   \
-    5
-```
-**Output:**
-```
-1->2->5
-1->3
+4 (Path: 4 → 2 → 1 → 3)
 ```
