@@ -1,107 +1,88 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Node definition
+// Binary Tree Node
 struct Node {
     int data;
     struct Node* left;
     struct Node* right;
 };
 
-// Function to create a new node
-struct Node* newNode(int data) {
-    struct Node* node = (struct Node*)malloc(sizeof(struct Node));
-    node->data = data;
-    node->left = node->right = NULL;
-    return node;
+// Function to create new node
+struct Node* newNode(int key) {
+    struct Node* temp = (struct Node*)malloc(sizeof(struct Node));
+    temp->data = key;
+    temp->left = temp->right = NULL;
+    return temp;
 }
 
-// Function to print Left View
-void leftView(struct Node* root) {
-    if (root == NULL) return;
+// Queue structure for BFS
+struct Queue {
+    int front, rear, size;
+    unsigned capacity;
+    struct Node** array;
+};
 
-    struct Node* queue[100]; // simple static queue
-    int front = 0, rear = 0;
+// Create a queue
+struct Queue* createQueue(unsigned capacity) {
+    struct Queue* queue = (struct Queue*)malloc(sizeof(struct Queue));
+    queue->capacity = capacity;
+    queue->front = queue->size = 0;
+    queue->rear = capacity - 1;
+    queue->array = (struct Node**)malloc(queue->capacity * sizeof(struct Node*));
+    return queue;
+}
 
-    queue[rear++] = root;
+// Queue utility functions
+int isEmpty(struct Queue* queue) { return (queue->size == 0); }
 
-    while (front < rear) {
-        int size = rear - front;
+void enqueue(struct Queue* queue, struct Node* item) {
+    if (queue->size == queue->capacity) return;
+    queue->rear = (queue->rear + 1) % queue->capacity;
+    queue->array[queue->rear] = item;
+    queue->size++;
+}
 
-        for (int i = 0; i < size; i++) {
-            struct Node* node = queue[front++];
-
-            // First node at this level = leftmost
-            if (i == 0)
-                printf("%d ", node->data);
-
-            if (node->left) queue[rear++] = node->left;
-            if (node->right) queue[rear++] = node->right;
-        }
-    }
+struct Node* dequeue(struct Queue* queue) {
+    if (isEmpty(queue)) return NULL;
+    struct Node* item = queue->array[queue->front];
+    queue->front = (queue->front + 1) % queue->capacity;
+    queue->size--;
+    return item;
 }
 
 // Function to print Right View
 void rightView(struct Node* root) {
     if (root == NULL) return;
 
-    struct Node* queue[100];
-    int front = 0, rear = 0;
+    struct Queue* q = createQueue(100); // assuming max 100 nodes
+    enqueue(q, root);
 
-    queue[rear++] = root;
+    while (!isEmpty(q)) {
+        int n = q->size; // number of nodes at current level
+        for (int i = 0; i < n; i++) {
+            struct Node* node = dequeue(q);
 
-    while (front < rear) {
-        int size = rear - front;
-
-        for (int i = 0; i < size; i++) {
-            struct Node* node = queue[front++];
-
-            // Last node at this level = rightmost
-            if (i == size - 1)
+            // Last node at this level → Right view
+            if (i == n - 1) {
                 printf("%d ", node->data);
+            }
 
-            if (node->left) queue[rear++] = node->left;
-            if (node->right) queue[rear++] = node->right;
+            if (node->left) enqueue(q, node->left);
+            if (node->right) enqueue(q, node->right);
         }
     }
 }
 
 // Driver code
 int main() {
-    /* Example 1 (for Left View):
-             1
-            / \
-           2   3
-            \
-             4
-       Expected Left View: 1 2 4
-    */
-    struct Node* root1 = newNode(1);
-    root1->left = newNode(2);
-    root1->right = newNode(3);
-    root1->left->right = newNode(4);
-
-    printf("Left View: ");
-    leftView(root1);  // Output: 1 2 4
-
-    printf("\n");
-
-    /* Example 2 (for Right View):
-             1
-            / \
-           2   3
-          /
-         4
-       Expected Right View: 1 3 4
-    */
-    struct Node* root2 = newNode(1);
-    root2->left = newNode(2);
-    root2->right = newNode(3);
-    root2->left->left = newNode(4);
+    struct Node* root = newNode(1);
+    root->left = newNode(2);
+    root->right = newNode(3);
+    root->left->left = newNode(4);
 
     printf("Right View: ");
-    rightView(root2);  // Output: 1 3 4
+    rightView(root);  // Output: 1 3 4
 
     return 0;
 }
-
