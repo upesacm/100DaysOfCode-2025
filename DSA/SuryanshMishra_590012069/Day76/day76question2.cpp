@@ -18,8 +18,6 @@ private:
         if (node->val == target) return true;
         bool foundInLeft = helper(node->left, target);
         bool foundInRight = helper(node->right, target);
-        
-        // If target found in either subtree, current node is an ancestor
         if (foundInLeft || foundInRight) {
             std::cout << node->val << " ";
             return true;
