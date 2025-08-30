@@ -18,7 +18,6 @@ private:
         if (currentLevel == targetLevel) return 1;
         int leftCount = helper(node->left, targetLevel, currentLevel + 1);
         int rightCount = helper(node->right, targetLevel, currentLevel + 1);
-        
         return leftCount + rightCount;
     }
 };
