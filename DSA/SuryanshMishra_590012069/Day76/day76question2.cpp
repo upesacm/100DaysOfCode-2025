@@ -27,7 +27,7 @@ private:
         
         // If target found in either subtree, current node is an ancestor
         if (foundInLeft || foundInRight) {
-            cout << node->val << " ";
+            std::cout << node->val << " ";
             return true;
         }
         
