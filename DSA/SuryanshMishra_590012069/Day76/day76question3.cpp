@@ -15,8 +15,6 @@ public:
 private:
     int helper(TreeNode* node, int targetLevel, int currentLevel) {
         if (!node) return 0;
-        
-        // If we reached the target level, count this node
         if (currentLevel == targetLevel) return 1;
         
         // Recursively count nodes at target level in left and right subtrees
