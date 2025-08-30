@@ -19,8 +19,7 @@ private:
         int oldVal = node->val;
         
         int leftSum = helper(node->left);
-        int rightSum = helper(node->right);
-        
+        int rightSum = helper(node->right);        
         node->val = leftSum + rightSum;        
         return oldVal + leftSum + rightSum;
     }
