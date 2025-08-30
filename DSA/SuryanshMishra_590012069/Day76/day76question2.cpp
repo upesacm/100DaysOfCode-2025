@@ -16,8 +16,6 @@ private:
     bool helper(TreeNode* node, int target) {
         if (!node) return false;
         if (node->val == target) return true;
-        
-        // Search in left and right subtrees
         bool foundInLeft = helper(node->left, target);
         bool foundInRight = helper(node->right, target);
         
