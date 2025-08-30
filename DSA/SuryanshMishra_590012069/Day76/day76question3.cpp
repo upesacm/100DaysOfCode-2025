@@ -11,8 +11,7 @@ public:
     int countNodesAtLevel(TreeNode* root, int level) {
         if (!root) return 0;
         return helper(root, level, 0);
-    }
-    
+    }    
 private:
     int helper(TreeNode* node, int targetLevel, int currentLevel) {
         if (!node) return 0;
