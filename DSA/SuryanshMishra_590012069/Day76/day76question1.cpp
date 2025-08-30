@@ -16,8 +16,7 @@ private:
     int helper(TreeNode* node) {
         if (!node) return 0;
         
-        int oldVal = node->val;
-        
+        int oldVal = node->val;        
         int leftSum = helper(node->left);
         int rightSum = helper(node->right);        
         node->val = leftSum + rightSum;        
