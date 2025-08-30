@@ -7,13 +7,12 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-
 class Solution {
 public:
     void printAncestors(TreeNode* root, int target) {
         helper(root, target);
     }
-    
+   
 private:
     bool helper(TreeNode* node, int target) {
         if (!node) return false;
