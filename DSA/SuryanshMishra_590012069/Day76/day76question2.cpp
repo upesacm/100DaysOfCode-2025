@@ -15,8 +15,6 @@ public:
 private:
     bool helper(TreeNode* node, int target) {
         if (!node) return false;
-        
-        // If target found, return true (but don't print current node)
         if (node->val == target) return true;
         
         // Search in left and right subtrees
