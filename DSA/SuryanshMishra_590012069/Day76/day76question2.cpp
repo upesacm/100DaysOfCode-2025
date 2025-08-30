@@ -12,7 +12,6 @@ public:
     void printAncestors(TreeNode* root, int target) {
         helper(root, target);
     }
-   
 private:
     bool helper(TreeNode* node, int target) {
         if (!node) return false;
