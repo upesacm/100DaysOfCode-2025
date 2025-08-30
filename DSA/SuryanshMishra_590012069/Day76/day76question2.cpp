@@ -22,7 +22,6 @@ private:
             std::cout << node->val << " ";
             return true;
         }
-        
         return false;
     }
 };
