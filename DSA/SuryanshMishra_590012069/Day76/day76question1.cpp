@@ -21,8 +21,7 @@ private:
         int leftSum = helper(node->left);
         int rightSum = helper(node->right);
         
-        node->val = leftSum + rightSum;
-        
+        node->val = leftSum + rightSum;        
         return oldVal + leftSum + rightSum;
     }
 };
