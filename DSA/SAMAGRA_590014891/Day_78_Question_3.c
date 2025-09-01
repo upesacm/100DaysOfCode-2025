@@ -13,8 +13,7 @@ struct Node* newNode(int val) {
     return node;
 }
 
-struct Node* insert(struct Node* root, int val) 
-{
+struct Node* insert(struct Node* root, int val) {
     if (root == NULL) return newNode(val);
     if (val < root->data)
         root->left = insert(root->left, val);
@@ -37,13 +36,18 @@ int findMax(struct Node* root) {
 
 int main() {
     struct Node* root = NULL;
-    root = insert(root, 8);
-    root = insert(root, 3);
-    root = insert(root, 10);
-    root = insert(root, 1);
-    root = insert(root, 6);
-    root = insert(root, 14);
+    int n, val;
+
+    printf("Enter number of elements to insert: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &val);
+        root = insert(root, val);
+    }
 
     printf("Min = %d, Max = %d\n", findMin(root), findMax(root));
+
     return 0;
 }
