@@ -13,7 +13,8 @@ struct Node* newNode(int val) {
     return node;
 }
 
-struct Node* insert(struct Node* root, int val) {
+struct Node* insert(struct Node* root, int val) 
+{
     if (root == NULL) return newNode(val);
     if (val < root->data)
         root->left = insert(root->left, val);
