@@ -1,13 +1,13 @@
-<h2 align="center">Day 78 (01/09/2025)</h2>
+<h2 align="center">Day 79 (02/09/2025)</h2>
 
-## 1. Search in BST
-A problem that demonstrates efficient search optimization and teaches BST property utilization algorithms using binary search approach for logarithmic time complexity and optimal data retrieval operations.
+## 1. Inorder Traversal of BST
+A problem that demonstrates BST ordering property and teaches sorted sequence generation algorithms using inorder traversal for efficient binary search tree data extraction and natural ordering verification operations.
 
-Given a **Binary Search Tree and a key**, check if the **key exists** in the tree using BST property-based search strategy. This operation is fundamental in **ordered data retrieval** and **efficient searching** where you need to **locate elements quickly** in sorted hierarchical structures. The technique uses **BST binary search approach** by comparing key with current node and navigating left for smaller values or right for larger values, leveraging the ordered property for logarithmic search complexity. This concept is essential in **database indexing**, **symbol tables**, and **sorted collections** where fast lookups enable efficient data access and optimal query performance in ordered tree-based storage systems.
+Given a **Binary Search Tree**, print elements in **sorted order** using inorder traversal strategy. This operation is fundamental in **sorted data extraction** and **ordering verification** where you need to **retrieve elements in ascending sequence** from BST structures efficiently. The technique uses **inorder traversal (left-root-right)** which naturally produces sorted output for BST due to ordering property, making it optimal for generating sorted sequences without additional sorting. This concept is essential in **sorted reporting**, **range queries**, and **data validation** where extracting ordered sequences enables efficient analysis and optimal sorted data processing in binary search tree applications.
 
-This demonstrates **BST search algorithms** and **binary search techniques** that are crucial for **efficient data retrieval and optimal logarithmic lookup operations**.
+This demonstrates **BST traversal algorithms** and **sorted extraction techniques** that are crucial for **ordered data retrieval and efficient sorting verification operations**.
 
-**Your task:** Implement BST search using binary search approach with BST property navigation to efficiently locate target key with optimal time complexity.
+**Your task:** Implement inorder traversal using left-root-right navigation to extract BST elements in naturally sorted ascending order sequence.
 
 ### Examples
 
@@ -17,9 +17,88 @@ Tree:
     5
    / \
   3   7
- / \ / \
-2  4 6  8
-Key = 4
+ / \
+2   4
+```
+**Output:**
+```
+2 3 4 5 7
+```
+
+---
+
+**Input:**
+```
+Tree:
+   10
+  /  \
+ 8   12
+```
+**Output:**
+```
+8 10 12
+```
+
+---
+
+## 2. Count Nodes in BST
+A problem that introduces BST size measurement and teaches recursive counting algorithms using complete tree traversal for efficient binary search tree node enumeration and structure analysis operations.
+
+Given a **Binary Search Tree**, find the **total number of nodes** using recursive counting strategy. This operation is fundamental in **tree size analysis** and **capacity measurement** where you need to **quantify BST structure** for memory and performance assessment efficiently. The technique uses **recursive node counting** by adding one for current node plus counts from left and right subtrees, ensuring complete tree traversal for accurate enumeration regardless of BST ordering. This concept is essential in **memory management**, **performance optimization**, and **capacity planning** where understanding tree size enables efficient resource allocation and optimal algorithm selection in BST-based data systems.
+
+This introduces **BST counting algorithms** and **size measurement techniques** that are essential for **structure analysis and efficient node enumeration operations**.
+
+**Your task:** Implement recursive node counting using complete tree traversal to determine total BST size with accurate structure measurement.
+
+### Examples
+
+**Input:**
+```
+Tree:
+  5
+ / \
+3   7
+```
+**Output:**
+```
+3
+```
+
+---
+
+**Input:**
+```
+Tree:
+    8
+   / \
+  6  10
+ /
+4
+```
+**Output:**
+```
+4
+```
+
+---
+
+## 3. Check if Valid BST
+A problem that teaches BST property validation and demonstrates range-based verification algorithms using recursive boundary checking for efficient binary search tree structure validation and ordering constraint verification operations.
+
+Given a **binary tree**, verify if it is a **valid Binary Search Tree** using range-based validation strategy. This operation is fundamental in **structure validation** and **property verification** where you need to **ensure BST ordering constraints** are satisfied throughout the tree efficiently. The technique uses **recursive range validation** by maintaining min-max bounds for each node, ensuring left subtree values are less than current node and right subtree values are greater, propagating constraints down the tree. This concept is essential in **data integrity checking**, **tree validation**, and **correctness verification** where ensuring BST properties enables reliable operations and optimal structure maintenance in binary search tree systems.
+
+This teaches **BST validation algorithms** and **property verification techniques** that are crucial for **structure validation and efficient ordering constraint checking operations**.
+
+**Your task:** Implement recursive range validation using boundary checking to verify complete BST property satisfaction throughout tree structure.
+
+### Examples
+
+**Input:**
+```
+Tree:
+  2
+ / \
+1   3
 ```
 **Output:**
 ```
@@ -31,90 +110,13 @@ Yes
 **Input:**
 ```
 Tree:
-  5
- / \
-3   7
-Key = 10
+    5
+   / \
+  1   4
+     / \
+    3   6
 ```
 **Output:**
 ```
 No
-```
-
----
-
-## 2. Insert into BST
-A problem that introduces dynamic tree construction and teaches ordered insertion algorithms using BST maintenance approach for efficient data addition while preserving sorted structure and optimal tree organization operations.
-
-Given a **Binary Search Tree and new value**, insert the value while **maintaining BST properties** using recursive ordered insertion strategy. This operation is fundamental in **dynamic data structures** and **ordered collection management** where you need to **add elements efficiently** while preserving sorted order. The technique uses **BST property-based insertion** by comparing new value with nodes and recursively navigating to appropriate subtree, creating new leaf node at correct position to maintain ordering. This concept is essential in **dynamic databases**, **real-time indexing**, and **growing collections** where maintaining sorted order during insertions enables efficient subsequent operations and optimal data organization in evolving tree structures.
-
-This introduces **BST insertion algorithms** and **ordered maintenance techniques** that are essential for **dynamic tree construction and efficient sorted data addition operations**.
-
-**Your task:** Implement BST insertion using recursive navigation with BST property preservation to add new values while maintaining optimal sorted structure.
-
-### Examples
-
-**Input:**
-```
-Tree:
-  5
- / \
-3   7
-Insert: 4
-```
-**Output Tree (inorder):**
-```
-3 4 5 7
-```
-
----
-
-**Input:**
-```
-Tree:
-  10
-Insert: 20
-```
-**Output Tree (inorder):**
-```
-10 20
-```
-
----
-
-## 3. Minimum & Maximum in BST
-A problem that teaches extremum identification and demonstrates BST boundary access algorithms using leftmost/rightmost navigation for efficient minimum and maximum value discovery operations.
-
-Given a **Binary Search Tree**, find the **minimum and maximum elements** using BST property-based boundary navigation strategy. This operation is fundamental in **range analysis** and **boundary identification** where you need to **locate extreme values** efficiently in sorted structures. The technique uses **leftmost/rightmost traversal** by following left pointers for minimum (smallest) value and right pointers for maximum (largest) value, leveraging BST ordering for direct access to extremes. This concept is essential in **statistical analysis**, **range queries**, and **optimization problems** where identifying bounds enables efficient range operations and optimal threshold determination in ordered tree-based data systems.
-
-This teaches **extremum identification algorithms** and **BST boundary techniques** that are crucial for **range analysis and efficient minimum-maximum discovery operations**.
-
-**Your task:** Implement BST extremum finding using leftmost/rightmost navigation to efficiently locate minimum and maximum values with optimal tree traversal.
-
-### Examples
-
-**Input:**
-```
-Tree:
-    8
-   / \
-  3  10
- / \   \
-1   6  14
-```
-**Output:**
-```
-Min = 1, Max = 14
-```
-
----
-
-**Input:**
-```
-Tree:
-  5
-```
-**Output:**
-```
-Min = 5, Max = 5
 ```
