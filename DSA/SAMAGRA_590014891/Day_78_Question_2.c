@@ -32,11 +32,20 @@ void inorder(struct Node* root) {
 
 int main() {
     struct Node* root = NULL;
-    root = insert(root, 5);
-    root = insert(root, 3);
-    root = insert(root, 7);
-    root = insert(root, 4);
+    int n, val;
 
+    printf("Enter number of elements to insert: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &val);
+        root = insert(root, val);
+    }
+
+    printf("Inorder Traversal of BST: ");
     inorder(root);
+    printf("\n");
+
     return 0;
 }
