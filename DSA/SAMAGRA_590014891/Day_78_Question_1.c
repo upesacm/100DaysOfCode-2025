@@ -13,6 +13,15 @@ struct Node* newNode(int val) {
     return node;
 }
 
+struct Node* insert(struct Node* root, int val) {
+    if (root == NULL) return newNode(val);
+    if (val < root->data)
+        root->left = insert(root->left, val);
+    else if (val > root->data)
+        root->right = insert(root->right, val);
+    return root;
+}
+
 int search(struct Node* root, int key) {
     if (root == NULL) return 0;
     if (root->data == key) return 1;
@@ -21,15 +30,21 @@ int search(struct Node* root, int key) {
 }
 
 int main() {
-    struct Node* root = newNode(5);
-    root->left = newNode(3);
-    root->right = newNode(7);
-    root->left->left = newNode(2);
-    root->left->right = newNode(4);
-    root->right->left = newNode(6);
-    root->right->right = newNode(8);
+    struct Node* root = NULL;
+    int n, val, key;
 
-    int key = 4;
+    printf("Enter number of elements to insert in BST: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter value %d: ", i + 1);
+        scanf("%d", &val);
+        root = insert(root, val);
+    }
+
+    printf("Enter key to search: ");
+    scanf("%d", &key);
+
     if (search(root, key))
         printf("Yes\n");
     else
