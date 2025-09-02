@@ -1,11 +1,3 @@
-<h2 align="center">Quiz 11 (31/08/2025)</h2>
-
-**Time:** Sunday, 8:00 PM - 9:00 PM (1 Hour)
-
-## Format
-- MCQs: Submit via Google Form
-- Debugging Questions: Submit to GitHub
-
 ## Repository Structure
 ```
 📁 Quiz_11/
@@ -22,5 +14,3 @@
 - Submit within time limit
 
 Good luck!
-
----
