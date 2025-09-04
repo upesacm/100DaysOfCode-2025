@@ -1,13 +1,58 @@
-<h2 align="center">Day 79 (02/09/2025)</h2>
+<h2 align="center">Day 80 (03/09/2025)</h2>
 
-## 1. Inorder Traversal of BST
-A problem that demonstrates BST ordering property and teaches sorted sequence generation algorithms using inorder traversal for efficient binary search tree data extraction and natural ordering verification operations.
+## 1. Lowest Common Ancestor (LCA)
+A problem that demonstrates ancestral relationship analysis and teaches BST property-based ancestor finding algorithms using efficient navigation for optimal common parent identification and hierarchical relationship discovery operations.
 
-Given a **Binary Search Tree**, print elements in **sorted order** using inorder traversal strategy. This operation is fundamental in **sorted data extraction** and **ordering verification** where you need to **retrieve elements in ascending sequence** from BST structures efficiently. The technique uses **inorder traversal (left-root-right)** which naturally produces sorted output for BST due to ordering property, making it optimal for generating sorted sequences without additional sorting. This concept is essential in **sorted reporting**, **range queries**, and **data validation** where extracting ordered sequences enables efficient analysis and optimal sorted data processing in binary search tree applications.
+Given a **BST and two nodes**, find their **Lowest Common Ancestor** using BST property-based navigation strategy. This operation is fundamental in **hierarchical analysis** and **relationship discovery** where you need to **identify common ancestors** efficiently in ordered tree structures. The technique uses **BST property navigation** by comparing node values with current node: if both nodes are smaller, go left; if both larger, go right; otherwise current node is LCA. This concept is essential in **genealogy systems**, **organizational hierarchies**, and **version control** where finding common ancestors enables relationship analysis and optimal merge point identification in tree-structured lineage systems.
 
-This demonstrates **BST traversal algorithms** and **sorted extraction techniques** that are crucial for **ordered data retrieval and efficient sorting verification operations**.
+This demonstrates **LCA algorithms** and **BST navigation techniques** that are crucial for **ancestral analysis and efficient common parent discovery operations**.
 
-**Your task:** Implement inorder traversal using left-root-right navigation to extract BST elements in naturally sorted ascending order sequence.
+**Your task:** Implement BST property-based LCA finding using value comparison navigation to efficiently locate lowest common ancestor with optimal tree traversal.
+
+### Examples
+
+**Input:**
+```
+Tree:
+      6
+    /   \
+   2     8
+  / \   / \
+ 0   4 7   9
+Nodes = 2, 8
+```
+**Output:**
+```
+6
+```
+
+---
+
+**Input:**
+```
+Tree:
+      6
+    /   \
+   2     8
+  / \   / \
+ 0   4 7   9
+Nodes = 2, 4
+```
+**Output:**
+```
+2
+```
+
+---
+
+## 2. Delete Node in BST
+A problem that introduces dynamic BST maintenance and teaches node removal algorithms using successor/predecessor replacement for efficient binary search tree modification while preserving ordering properties.
+
+Given a **BST and target node**, delete the node while **maintaining BST properties** using case-based removal strategy. This operation is fundamental in **dynamic data management** and **structure maintenance** where you need to **remove elements efficiently** while preserving sorted order. The technique uses **case-based deletion**: leaf nodes removed directly, single-child nodes replaced by child, two-child nodes replaced by inorder successor (or predecessor) to maintain BST ordering. This concept is essential in **database operations**, **dynamic indexing**, and **cache management** where removing elements while maintaining structure enables efficient data management and optimal tree integrity in evolving BST systems.
+
+This introduces **BST deletion algorithms** and **structure maintenance techniques** that are essential for **dynamic tree modification and efficient node removal operations**.
+
+**Your task:** Implement BST node deletion using case-based removal with successor replacement to maintain optimal BST properties after modification.
 
 ### Examples
 
@@ -16,13 +61,14 @@ This demonstrates **BST traversal algorithms** and **sorted extraction technique
 Tree:
     5
    / \
-  3   7
+  3   6
  / \
 2   4
+Delete: 3
 ```
 **Output:**
 ```
-2 3 4 5 7
+2 4 5 6
 ```
 
 ---
@@ -32,77 +78,40 @@ Tree:
 Tree:
    10
   /  \
- 8   12
+ 5   15
+Delete: 10
 ```
 **Output:**
 ```
-8 10 12
+5 15
 ```
 
 ---
 
-## 2. Count Nodes in BST
-A problem that introduces BST size measurement and teaches recursive counting algorithms using complete tree traversal for efficient binary search tree node enumeration and structure analysis operations.
+## 3. Kth Smallest in BST
+A problem that teaches order statistic queries and demonstrates inorder traversal optimization algorithms using counting approach for efficient BST rank-based element retrieval and position-based access operations.
 
-Given a **Binary Search Tree**, find the **total number of nodes** using recursive counting strategy. This operation is fundamental in **tree size analysis** and **capacity measurement** where you need to **quantify BST structure** for memory and performance assessment efficiently. The technique uses **recursive node counting** by adding one for current node plus counts from left and right subtrees, ensuring complete tree traversal for accurate enumeration regardless of BST ordering. This concept is essential in **memory management**, **performance optimization**, and **capacity planning** where understanding tree size enables efficient resource allocation and optimal algorithm selection in BST-based data systems.
+Given a **BST and integer K**, find the **Kth smallest element** using inorder traversal with counting strategy. This operation is fundamental in **order statistics** and **rank-based queries** where you need to **access elements by position** in sorted order efficiently. The technique uses **inorder traversal with counter** by traversing left-root-right while maintaining count, returning element when count reaches K, leveraging BST's natural sorting property. This concept is essential in **ranking systems**, **percentile calculations**, and **statistical analysis** where accessing elements by rank enables efficient order-based queries and optimal position-specific retrieval in sorted tree structures.
 
-This introduces **BST counting algorithms** and **size measurement techniques** that are essential for **structure analysis and efficient node enumeration operations**.
+This teaches **order statistic algorithms** and **rank-based access techniques** that are crucial for **position-based queries and efficient Kth element retrieval operations**.
 
-**Your task:** Implement recursive node counting using complete tree traversal to determine total BST size with accurate structure measurement.
+**Your task:** Implement inorder traversal with counting using position tracking to efficiently locate Kth smallest element in BST sorted order.
 
 ### Examples
 
 **Input:**
 ```
 Tree:
-  5
+  3
  / \
-3   7
-```
-**Output:**
-```
-3
-```
-
----
-
-**Input:**
-```
-Tree:
-    8
-   / \
-  6  10
- /
-4
-```
-**Output:**
-```
-4
-```
-
----
-
-## 3. Check if Valid BST
-A problem that teaches BST property validation and demonstrates range-based verification algorithms using recursive boundary checking for efficient binary search tree structure validation and ordering constraint verification operations.
-
-Given a **binary tree**, verify if it is a **valid Binary Search Tree** using range-based validation strategy. This operation is fundamental in **structure validation** and **property verification** where you need to **ensure BST ordering constraints** are satisfied throughout the tree efficiently. The technique uses **recursive range validation** by maintaining min-max bounds for each node, ensuring left subtree values are less than current node and right subtree values are greater, propagating constraints down the tree. This concept is essential in **data integrity checking**, **tree validation**, and **correctness verification** where ensuring BST properties enables reliable operations and optimal structure maintenance in binary search tree systems.
-
-This teaches **BST validation algorithms** and **property verification techniques** that are crucial for **structure validation and efficient ordering constraint checking operations**.
-
-**Your task:** Implement recursive range validation using boundary checking to verify complete BST property satisfaction throughout tree structure.
-
-### Examples
-
-**Input:**
-```
-Tree:
+1   4
+ \
   2
- / \
-1   3
+K = 1
 ```
 **Output:**
 ```
-Yes
+1
 ```
 
 ---
@@ -112,11 +121,14 @@ Yes
 Tree:
     5
    / \
-  1   4
-     / \
-    3   6
+  3   6
+ / \
+2   4
+/
+1
+K = 3
 ```
 **Output:**
 ```
-No
+3
 ```

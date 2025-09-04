@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+// Define a node in the tree
+struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+};
+
+// Create a new node
+struct Node* createNode(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->left = newNode->right = NULL;
+    return newNode;
+}
+
+// Check if tree is a valid BST using min-max range
+int isValidBST(struct Node* root, int min, int max) {
+    if (root == NULL) return 1;
+
+    if (root->data <= min || root->data >= max)
+        return 0;
+
+    return isValidBST(root->left, min, root->data) &&
+           isValidBST(root->right, root->data, max);
+}
+
+int main() {
+    // Example Tree:
+    //       5
+    //      / \
+    //     1   4
+    //        / \
+    //       3   6
+    struct Node* root = createNode(5);
+    root->left = createNode(1);
+    root->right = createNode(4);
+    root->right->left = createNode(3);
+    root->right->right = createNode(6);
+
+    int result = isValidBST(root, INT_MIN, INT_MAX);
+    printf("Is the tree a valid BST? %s\n", result ? "Yes" : "No");  // Output: No
+
+    return 0;
+}
