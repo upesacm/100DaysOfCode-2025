@@ -1,29 +1,29 @@
-<h2 align="center">Day 80 (03/09/2025)</h2>
+<h2 align="center">Day 81 (04/09/2025)</h2>
 
-## 1. Lowest Common Ancestor (LCA)
-A problem that demonstrates ancestral relationship analysis and teaches BST property-based ancestor finding algorithms using efficient navigation for optimal common parent identification and hierarchical relationship discovery operations.
+## 1. Range Sum of BST
+A problem that demonstrates range-based aggregation and teaches pruned traversal algorithms using BST property optimization for efficient binary search tree range query processing and selective summation operations.
 
-Given a **BST and two nodes**, find their **Lowest Common Ancestor** using BST property-based navigation strategy. This operation is fundamental in **hierarchical analysis** and **relationship discovery** where you need to **identify common ancestors** efficiently in ordered tree structures. The technique uses **BST property navigation** by comparing node values with current node: if both nodes are smaller, go left; if both larger, go right; otherwise current node is LCA. This concept is essential in **genealogy systems**, **organizational hierarchies**, and **version control** where finding common ancestors enables relationship analysis and optimal merge point identification in tree-structured lineage systems.
+Given a **BST and range [L, R]**, find the **sum of all values within the range** using optimized traversal strategy. This operation is fundamental in **range analytics** and **selective aggregation** where you need to **compute totals for specific value ranges** efficiently without processing irrelevant nodes. The technique uses **pruned BST traversal** by leveraging ordering property to skip entire subtrees: if current value is less than L, skip left subtree; if greater than R, skip right subtree; otherwise include value and explore both sides. This concept is essential in **financial reporting**, **statistical analysis**, and **database queries** where range-based calculations enable efficient filtered aggregation and optimal selective processing in ordered tree structures.
 
-This demonstrates **LCA algorithms** and **BST navigation techniques** that are crucial for **ancestral analysis and efficient common parent discovery operations**.
+This demonstrates **range query algorithms** and **pruned traversal techniques** that are crucial for **selective aggregation and efficient range-based summation operations**.
 
-**Your task:** Implement BST property-based LCA finding using value comparison navigation to efficiently locate lowest common ancestor with optimal tree traversal.
+**Your task:** Implement pruned BST traversal using range optimization to efficiently calculate sum of values within specified bounds with minimal node visits.
 
 ### Examples
 
 **Input:**
 ```
 Tree:
-      6
-    /   \
-   2     8
-  / \   / \
- 0   4 7   9
-Nodes = 2, 8
+     10
+    /  \
+   5   15
+  / \    \
+ 3   7   18
+L=7, R=15
 ```
 **Output:**
 ```
-6
+32
 ```
 
 ---
@@ -31,44 +31,43 @@ Nodes = 2, 8
 **Input:**
 ```
 Tree:
-      6
-    /   \
-   2     8
-  / \   / \
- 0   4 7   9
-Nodes = 2, 4
+     10
+    /  \
+   5   15
+  / \ /  \
+ 3  7 13 18
+L=6, R=10
 ```
 **Output:**
 ```
-2
+17
 ```
 
 ---
 
-## 2. Delete Node in BST
-A problem that introduces dynamic BST maintenance and teaches node removal algorithms using successor/predecessor replacement for efficient binary search tree modification while preserving ordering properties.
+## 2. BST to Sorted Linked List
+A problem that introduces structure conversion techniques and teaches inorder flattening algorithms using BST to linear transformation for efficient binary search tree linearization and sequential data structure creation operations.
 
-Given a **BST and target node**, delete the node while **maintaining BST properties** using case-based removal strategy. This operation is fundamental in **dynamic data management** and **structure maintenance** where you need to **remove elements efficiently** while preserving sorted order. The technique uses **case-based deletion**: leaf nodes removed directly, single-child nodes replaced by child, two-child nodes replaced by inorder successor (or predecessor) to maintain BST ordering. This concept is essential in **database operations**, **dynamic indexing**, and **cache management** where removing elements while maintaining structure enables efficient data management and optimal tree integrity in evolving BST systems.
+Given a **Binary Search Tree**, convert it into a **sorted linked list** using inorder traversal-based flattening strategy. This operation is fundamental in **structure transformation** and **data format conversion** where you need to **linearize hierarchical data** while preserving sorted order efficiently. The technique uses **inorder traversal with linking** by processing nodes in left-root-right order and connecting them sequentially to form sorted linked list, leveraging BST's natural ordering for optimal conversion. This concept is essential in **data serialization**, **format migration**, and **sequential processing** where converting tree structures enables linear access and optimal sequential operations in flattened data representations.
 
-This introduces **BST deletion algorithms** and **structure maintenance techniques** that are essential for **dynamic tree modification and efficient node removal operations**.
+This introduces **structure conversion algorithms** and **tree flattening techniques** that are essential for **linearization and efficient sequential data transformation operations**.
 
-**Your task:** Implement BST node deletion using case-based removal with successor replacement to maintain optimal BST properties after modification.
+**Your task:** Implement inorder-based BST flattening using sequential linking to convert hierarchical structure into sorted linear linked list representation.
 
 ### Examples
 
 **Input:**
 ```
 Tree:
-    5
+    4
    / \
-  3   6
- / \
-2   4
-Delete: 3
+  2   6
+ / \ / \
+1  3 5  7
 ```
-**Output:**
+**Output List:**
 ```
-2 4 5 6
+1 → 2 → 3 → 4 → 5 → 6 → 7
 ```
 
 ---
@@ -76,42 +75,41 @@ Delete: 3
 **Input:**
 ```
 Tree:
-   10
-  /  \
- 5   15
-Delete: 10
-```
-**Output:**
-```
-5 15
-```
-
----
-
-## 3. Kth Smallest in BST
-A problem that teaches order statistic queries and demonstrates inorder traversal optimization algorithms using counting approach for efficient BST rank-based element retrieval and position-based access operations.
-
-Given a **BST and integer K**, find the **Kth smallest element** using inorder traversal with counting strategy. This operation is fundamental in **order statistics** and **rank-based queries** where you need to **access elements by position** in sorted order efficiently. The technique uses **inorder traversal with counter** by traversing left-root-right while maintaining count, returning element when count reaches K, leveraging BST's natural sorting property. This concept is essential in **ranking systems**, **percentile calculations**, and **statistical analysis** where accessing elements by rank enables efficient order-based queries and optimal position-specific retrieval in sorted tree structures.
-
-This teaches **order statistic algorithms** and **rank-based access techniques** that are crucial for **position-based queries and efficient Kth element retrieval operations**.
-
-**Your task:** Implement inorder traversal with counting using position tracking to efficiently locate Kth smallest element in BST sorted order.
-
-### Examples
-
-**Input:**
-```
-Tree:
-  3
- / \
-1   4
- \
   2
-K = 1
+ / \
+1   3
+```
+**Output List:**
+```
+1 → 2 → 3
+```
+
+---
+
+## 3. Print Nodes in Range
+A problem that teaches range-based filtering and demonstrates selective traversal algorithms using BST property pruning for efficient binary search tree range query processing and bounded element extraction operations.
+
+Given a **BST and range [L, R]**, print all nodes whose **values fall within the range** using optimized range traversal strategy. This operation is fundamental in **filtered data retrieval** and **range-based queries** where you need to **extract elements within specific bounds** efficiently without examining irrelevant nodes. The technique uses **pruned inorder traversal** by leveraging BST ordering to skip subtrees outside range: traverse left only if current > L, traverse right only if current < R, print current if within bounds. This concept is essential in **search filtering**, **report generation**, and **data extraction** where range-based selection enables efficient bounded queries and optimal filtered retrieval in ordered tree systems.
+
+This teaches **range filtering algorithms** and **selective traversal techniques** that are crucial for **bounded extraction and efficient range-based query processing operations**.
+
+**Your task:** Implement pruned range traversal using BST property optimization to efficiently extract and print all nodes within specified value bounds.
+
+### Examples
+
+**Input:**
+```
+Tree:
+     10
+    /  \
+   5   15
+  / \    \
+ 3   7   18
+L=7, R=15
 ```
 **Output:**
 ```
-1
+7 10 15
 ```
 
 ---
@@ -119,16 +117,14 @@ K = 1
 **Input:**
 ```
 Tree:
-    5
-   / \
-  3   6
- / \
-2   4
-/
-1
-K = 3
+      6
+    /   \
+   2     8
+  / \   / \
+ 0   4 7   9
+L=2, R=8
 ```
 **Output:**
 ```
-3
+2 4 6 7 8
 ```
