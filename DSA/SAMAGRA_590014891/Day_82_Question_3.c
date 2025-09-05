@@ -21,6 +21,7 @@ void inorder(struct Node* root) {
     inorder(root->right);
 }
 
+
 void convertBSTHelper(struct Node* root, int* sum) {
     if (!root) return;
     convertBSTHelper(root->right, sum);
