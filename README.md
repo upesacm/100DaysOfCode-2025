@@ -1,58 +1,62 @@
-<h2 align="center">Day 81 (04/09/2025)</h2>
+<h2 align="center">Day 82 (05/09/2025)</h2>
 
-## 1. Range Sum of BST
-A problem that demonstrates range-based aggregation and teaches pruned traversal algorithms using BST property optimization for efficient binary search tree range query processing and selective summation operations.
+## 1. Balance BST from Sorted Array
+A problem that demonstrates optimal tree construction and teaches divide-and-conquer building algorithms using recursive middle-element selection for efficient balanced binary search tree creation and height optimization operations.
 
-Given a **BST and range [L, R]**, find the **sum of all values within the range** using optimized traversal strategy. This operation is fundamental in **range analytics** and **selective aggregation** where you need to **compute totals for specific value ranges** efficiently without processing irrelevant nodes. The technique uses **pruned BST traversal** by leveraging ordering property to skip entire subtrees: if current value is less than L, skip left subtree; if greater than R, skip right subtree; otherwise include value and explore both sides. This concept is essential in **financial reporting**, **statistical analysis**, and **database queries** where range-based calculations enable efficient filtered aggregation and optimal selective processing in ordered tree structures.
+Given a **sorted array**, construct a **height-balanced BST** using divide-and-conquer approach. This operation is fundamental in **optimal tree construction** and **performance optimization** where you need to **create balanced structures** for logarithmic operation guarantees efficiently. The technique uses **recursive middle-element selection** by choosing middle element as root and recursively building left and right subtrees from remaining halves, ensuring balanced height distribution. This concept is essential in **database indexing**, **search optimization**, and **data structure initialization** where creating balanced trees enables optimal performance and efficient worst-case operation guarantees in BST-based systems.
 
-This demonstrates **range query algorithms** and **pruned traversal techniques** that are crucial for **selective aggregation and efficient range-based summation operations**.
+This demonstrates **balanced construction algorithms** and **divide-and-conquer techniques** that are crucial for **optimal tree building and efficient height-balanced BST creation operations**.
 
-**Your task:** Implement pruned BST traversal using range optimization to efficiently calculate sum of values within specified bounds with minimal node visits.
+**Your task:** Implement recursive divide-and-conquer construction using middle-element selection to build optimally balanced BST from sorted input array.
 
 ### Examples
 
 **Input:**
 ```
-Tree:
-     10
-    /  \
-   5   15
-  / \    \
- 3   7   18
-L=7, R=15
+[1, 2, 3, 4, 5, 6, 7]
 ```
-**Output:**
+**Output (Preorder):**
 ```
-32
+4 2 1 3 6 5 7
+```
+**Resulting Tree:**
+```
+    4
+   / \
+  2   6
+ / \ / \
+1  3 5  7
 ```
 
 ---
 
 **Input:**
 ```
-Tree:
-     10
-    /  \
-   5   15
-  / \ /  \
- 3  7 13 18
-L=6, R=10
+[10, 20, 30, 40]
 ```
-**Output:**
+**Output (Preorder):**
 ```
-17
+20 10 30 40
+```
+**Resulting Tree:**
+```
+   20
+  /  \
+10   30
+      \
+      40
 ```
 
 ---
 
-## 2. BST to Sorted Linked List
-A problem that introduces structure conversion techniques and teaches inorder flattening algorithms using BST to linear transformation for efficient binary search tree linearization and sequential data structure creation operations.
+## 2. Check if BST is Balanced
+A problem that introduces balance validation and teaches height-difference analysis algorithms using recursive balance checking for efficient binary search tree stability assessment and performance guarantee verification operations.
 
-Given a **Binary Search Tree**, convert it into a **sorted linked list** using inorder traversal-based flattening strategy. This operation is fundamental in **structure transformation** and **data format conversion** where you need to **linearize hierarchical data** while preserving sorted order efficiently. The technique uses **inorder traversal with linking** by processing nodes in left-root-right order and connecting them sequentially to form sorted linked list, leveraging BST's natural ordering for optimal conversion. This concept is essential in **data serialization**, **format migration**, and **sequential processing** where converting tree structures enables linear access and optimal sequential operations in flattened data representations.
+Given a **Binary Search Tree**, check if it is **height-balanced** where **height difference between subtrees is at most 1** using recursive validation strategy. This operation is fundamental in **performance analysis** and **structure validation** where you need to **verify optimal tree properties** for operation efficiency guarantees. The technique uses **recursive height calculation with balance checking** by computing subtree heights and ensuring height difference doesn't exceed 1 at each node while propagating validation upward. This concept is essential in **performance monitoring**, **tree maintenance**, and **optimization verification** where ensuring balance enables predictable performance and optimal operation complexity in BST applications.
 
-This introduces **structure conversion algorithms** and **tree flattening techniques** that are essential for **linearization and efficient sequential data transformation operations**.
+This introduces **balance validation algorithms** and **height analysis techniques** that are essential for **stability checking and efficient performance guarantee verification operations**.
 
-**Your task:** Implement inorder-based BST flattening using sequential linking to convert hierarchical structure into sorted linear linked list representation.
+**Your task:** Implement recursive balance validation using height-difference analysis to verify BST maintains balanced structure throughout all levels.
 
 ### Examples
 
@@ -65,9 +69,9 @@ Tree:
  / \ / \
 1  3 5  7
 ```
-**Output List:**
+**Output:**
 ```
-1 → 2 → 3 → 4 → 5 → 6 → 7
+Yes
 ```
 
 ---
@@ -75,41 +79,46 @@ Tree:
 **Input:**
 ```
 Tree:
-  2
- / \
-1   3
+  1
+   \
+    2
+     \
+      3
 ```
-**Output List:**
+**Output:**
 ```
-1 → 2 → 3
+No
 ```
 
 ---
 
-## 3. Print Nodes in Range
-A problem that teaches range-based filtering and demonstrates selective traversal algorithms using BST property pruning for efficient binary search tree range query processing and bounded element extraction operations.
+## 3. Convert BST to Greater Tree
+A problem that teaches cumulative transformation and demonstrates reverse inorder modification algorithms using greater-sum accumulation for efficient binary search tree value enhancement and prefix-sum based node updating operations.
 
-Given a **BST and range [L, R]**, print all nodes whose **values fall within the range** using optimized range traversal strategy. This operation is fundamental in **filtered data retrieval** and **range-based queries** where you need to **extract elements within specific bounds** efficiently without examining irrelevant nodes. The technique uses **pruned inorder traversal** by leveraging BST ordering to skip subtrees outside range: traverse left only if current > L, traverse right only if current < R, print current if within bounds. This concept is essential in **search filtering**, **report generation**, and **data extraction** where range-based selection enables efficient bounded queries and optimal filtered retrieval in ordered tree systems.
+Given a **Binary Search Tree**, transform it so each node's value becomes **original value plus sum of all greater nodes** using reverse inorder accumulation strategy. This operation is fundamental in **cumulative calculations** and **value transformation** where you need to **enhance node values** with aggregate information efficiently. The technique uses **reverse inorder traversal (right-root-left)** while maintaining running sum of visited nodes, adding accumulated sum to each node's value as it processes nodes in descending order. This concept is essential in **financial calculations**, **ranking systems**, and **cumulative analysis** where incorporating aggregate information enables enhanced data representation and optimal cumulative value computation in ordered tree structures.
 
-This teaches **range filtering algorithms** and **selective traversal techniques** that are crucial for **bounded extraction and efficient range-based query processing operations**.
+This teaches **cumulative transformation algorithms** and **reverse traversal techniques** that are crucial for **value enhancement and efficient aggregate-based node modification operations**.
 
-**Your task:** Implement pruned range traversal using BST property optimization to efficiently extract and print all nodes within specified value bounds.
+**Your task:** Implement reverse inorder transformation using cumulative sum tracking to enhance each node with accumulated greater-value information.
 
 ### Examples
 
 **Input:**
 ```
 Tree:
-     10
-    /  \
-   5   15
-  / \    \
- 3   7   18
-L=7, R=15
+  5
+ / \
+2  13
 ```
-**Output:**
+**Output Inorder:**
 ```
-7 10 15
+20 18 13
+```
+**Resulting Tree:**
+```
+  18
+ /  \
+20  13
 ```
 
 ---
@@ -117,14 +126,21 @@ L=7, R=15
 **Input:**
 ```
 Tree:
-      6
-    /   \
-   2     8
-  / \   / \
- 0   4 7   9
-L=2, R=8
+    2
+   / \
+  0   3
+ / \
+-4  1
 ```
-**Output:**
+**Output Inorder:**
 ```
-2 4 6 7 8
+2 6 5 3 3
+```
+**Resulting Tree:**
+```
+    5
+   / \
+  6   3
+ / \
+2   3
 ```
