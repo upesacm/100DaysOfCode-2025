@@ -1,0 +1,42 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+# Function to insert nodes into BST
+def insert(root, data):
+    if root is None:
+        return Node(data)
+    if data < root.data:
+        root.left = insert(root.left, data)
+    elif data > root.data:
+        root.right = insert(root.right, data)
+    return root
+
+# Function to check height and balance
+def check_balance(root):
+    if root is None:
+        return 0, True
+    
+    left_height, left_balanced = check_balance(root.left)
+    right_height, right_balanced = check_balance(root.right)
+    
+    height = 1 + max(left_height, right_height)
+    balanced = (left_balanced and right_balanced and abs(left_height - right_height) <= 1)
+
+    return height, balanced
+
+def is_balanced(root):
+    _, balanced = check_balance(root)
+    return balanced
+
+try:
+    values = list(map(int, input("Enter the nodes of the tree in level order ('N' where there's no node), separated by spaces: ").split()))
+    root = None
+    for num in values:
+        root = insert(root, num)
+        
+    print("Yes" if is_balanced(root) else "No")
+except:
+    print("Invalid input. Please try with a valid input.")
