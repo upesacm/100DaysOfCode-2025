@@ -17,7 +17,7 @@
 # If L <= root.val <= R, include root.val and search both subtrees.
 
 class TreeNode:
-    def _init_(self, val=0, left=None, right=None):
+    def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
@@ -57,4 +57,5 @@ root.left.right.left = TreeNode(6)
 root.right.right.right = TreeNode(20)
 
 result = range_sum_bst(root, 7, 15)
+
 print(f"Range sum [7,15]: {result}")
