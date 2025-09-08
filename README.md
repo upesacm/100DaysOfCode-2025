@@ -1,132 +1,124 @@
-<h2 align="center">Day 83 (06/09/2025)</h2>
+<h2 align="center">Day 85 (08/09/2025)</h2>
 
-## 1. Vertical Order Traversal of BST
-A problem that demonstrates multi-dimensional tree analysis and teaches column-based grouping algorithms using coordinate mapping for efficient binary search tree vertical organization and spatial data structure processing operations.
+## 1. BFS Traversal of Graph
+A problem that demonstrates breadth-first exploration and teaches level-wise graph traversal algorithms using queue-based systematic navigation for efficient graph node visitation and shortest-path foundation operations.
 
-Given a **Binary Search Tree**, print nodes **column by column** from left to right using coordinate-based grouping strategy. This operation is fundamental in **spatial tree analysis** and **multi-dimensional organization** where you need to **group nodes by vertical position** for layout and visualization purposes efficiently. The technique uses **coordinate mapping with level-order traversal** by assigning horizontal distance (HD) coordinates to nodes: left child gets HD-1, right child gets HD+1, then grouping nodes by same HD values. This concept is essential in **tree visualization**, **layout algorithms**, and **spatial indexing** where organizing nodes by position enables structured display and optimal coordinate-based processing in geometric tree applications.
+Given a **graph with vertices and edges**, perform **Breadth-First Search** starting from node 0 using queue-based level-order exploration strategy. This operation is fundamental in **graph exploration** and **systematic traversal** where you need to **visit nodes level by level** for comprehensive graph analysis efficiently. The technique uses **queue-based BFS** by starting from source node, visiting all immediate neighbors first, then their neighbors, ensuring level-wise exploration pattern. This concept is essential in **shortest path algorithms**, **social network analysis**, and **web crawling** where level-wise exploration enables optimal distance-based processing and efficient breadth-first navigation in connected graph structures.
 
-This demonstrates **coordinate mapping algorithms** and **spatial grouping techniques** that are crucial for **vertical organization and efficient multi-dimensional tree processing operations**.
+This demonstrates **BFS algorithms** and **queue-based traversal techniques** that are crucial for **level-wise exploration and efficient breadth-first graph navigation operations**.
 
-**Your task:** Implement coordinate-based vertical traversal using horizontal distance mapping to group and display BST nodes by column position.
+**Your task:** Implement queue-based BFS using level-order exploration to systematically visit all reachable nodes in breadth-first manner from starting vertex.
 
 ### Examples
 
 **Input:**
 ```
-Tree:
-    3
-   / \
-  9  20
-    /  \
-   15   7
-```
-**Output:**
-```
-[[9], [3,15], [20], [7]]
-```
-
----
-
-**Input:**
-```
-Tree:
-    4
-   / \
-  2   6
- / \ / \
-1  3 5  7
-```
-**Output:**
-```
-[[4], [2], [1,5,6], [3], [7]]
-```
-
----
-
-## 2. Serialize & Deserialize BST
-A problem that introduces data persistence techniques and teaches tree encoding/decoding algorithms using preorder serialization for efficient binary search tree storage and reconstruction operations.
-
-Given a **Binary Search Tree**, design methods to **serialize (encode) and deserialize (decode)** the tree using string representation strategy. This operation is fundamental in **data persistence** and **tree storage** where you need to **convert trees to/from string format** for file storage and network transmission efficiently. The technique uses **preorder traversal for serialization** and **recursive reconstruction for deserialization**, leveraging BST properties to reconstruct structure from preorder sequence without needing null markers. This concept is essential in **data serialization**, **network protocols**, and **backup systems** where converting between tree and string formats enables persistent storage and optimal data transmission in BST-based applications.
-
-This introduces **serialization algorithms** and **tree reconstruction techniques** that are essential for **data persistence and efficient tree encoding/decoding operations**.
-
-**Your task:** Implement preorder-based serialization and BST property-based deserialization to enable efficient tree-to-string conversion and reconstruction.
-
-### Examples
-
-**Input Tree:**
-```
-  2
+Vertices = 5
+Edges = [[0,1],[0,2],[1,3],[2,4]]
+Graph:
+  0
  / \
-1   3
+1   2
+|   |
+3   4
 ```
-**Serialized:**
+**Output:**
 ```
-"2,1,3"
-```
-**Deserialized Inorder:**
-```
-1 2 3
+0 1 2 3 4
 ```
 
 ---
 
-**Input Tree:**
+**Input:**
 ```
-  5
- / \
-3   7
+Vertices = 4
+Edges = [[0,1],[1,2],[2,3]]
+Graph:
+0 - 1 - 2 - 3
 ```
-**Serialized:**
+**Output:**
 ```
-"5,3,7"
-```
-**Deserialized Inorder:**
-```
-3 5 7
+0 1 2 3
 ```
 
 ---
 
-## 3. Two Sum in BST
-A problem that teaches target-sum searching and demonstrates BST-optimized pair finding algorithms using inorder traversal with two-pointer technique for efficient binary search tree complement detection operations.
+## 2. DFS Traversal of Graph
+A problem that introduces depth-first exploration and teaches recursive graph traversal algorithms using stack-based deep navigation for efficient graph node visitation and path-finding foundation operations.
 
-Given a **BST and target sum**, check if there exist **two nodes whose sum equals target** using BST-optimized search strategy. This operation is fundamental in **pair detection** and **complement searching** where you need to **find matching value pairs** efficiently in ordered structures. The technique uses **inorder traversal to create sorted array** then applies **two-pointer technique** to find complementary values, or alternatively uses **BST search for complements** during traversal. This concept is essential in **matching algorithms**, **financial calculations**, and **optimization problems** where finding target sums enables efficient pair identification and optimal complement detection in ordered tree-based data systems.
+Given a **graph with vertices and edges**, perform **Depth-First Search** starting from node 0 using recursive deep exploration strategy. This operation is fundamental in **graph exploration** and **path analysis** where you need to **visit nodes by going deep** before backtracking for comprehensive graph traversal efficiently. The technique uses **recursive DFS** or **stack-based approach** by exploring as far as possible along each branch before backtracking, ensuring complete path exploration. This concept is essential in **path finding**, **cycle detection**, and **topological sorting** where depth-first exploration enables complete path analysis and optimal deep navigation in connected graph structures.
 
-This teaches **pair detection algorithms** and **BST search optimization techniques** that are crucial for **target-sum finding and efficient complement identification operations**.
+This introduces **DFS algorithms** and **recursive traversal techniques** that are essential for **depth-first exploration and efficient deep graph navigation operations**.
 
-**Your task:** Implement BST-optimized two-sum detection using either inorder-based two-pointer approach or complement search strategy for efficient pair finding.
+**Your task:** Implement recursive DFS using deep exploration to systematically visit all reachable nodes by going as deep as possible before backtracking.
 
 ### Examples
 
 **Input:**
 ```
-Tree:
-    5
-   / \
-  3   6
- / \   \
-2   4   7
-Target = 9
+Vertices = 5
+Edges = [[0,1],[0,2],[1,3],[2,4]]
+Graph:
+  0
+ / \
+1   2
+|   |
+3   4
 ```
 **Output:**
 ```
-Yes
+0 1 3 2 4
 ```
 
 ---
 
 **Input:**
 ```
-Tree:
-    5
-   / \
-  3   6
- / \   \
-2   4   7
-Target = 28
+Vertices = 4
+Edges = [[0,1],[1,2],[2,3]]
+Graph:
+0 - 1 - 2 - 3
 ```
 **Output:**
 ```
-No
+0 1 2 3
+```
+
+---
+
+## 3. Count Connected Components
+A problem that teaches graph connectivity analysis and demonstrates component identification algorithms using union-find or traversal-based counting for efficient graph structure analysis and disconnected region detection operations.
+
+Given an **undirected graph**, find the **number of connected components** using component identification strategy. This operation is fundamental in **connectivity analysis** and **graph partitioning** where you need to **identify separate connected regions** for structural understanding efficiently. The technique uses **DFS/BFS from unvisited nodes** or **Union-Find data structure** to group connected vertices and count distinct components, ensuring complete graph coverage. This concept is essential in **network analysis**, **cluster detection**, and **social group identification** where finding connected components enables network segmentation and optimal component-based processing in disconnected graph structures.
+
+This teaches **connectivity algorithms** and **component detection techniques** that are crucial for **graph partitioning and efficient connected region identification operations**.
+
+**Your task:** Implement component counting using traversal-based or union-find approach to identify and count all disconnected regions in undirected graph.
+
+### Examples
+
+**Input:**
+```
+Vertices = 5
+Edges = [[0,1],[1,2],[3,4]]
+Graph:
+0 - 1 - 2    3 - 4
+```
+**Output:**
+```
+2
+```
+
+---
+
+**Input:**
+```
+Vertices = 4
+Edges = [[0,1],[2,3]]
+Graph:
+0 - 1    2 - 3
+```
+**Output:**
+```
+2
 ```
