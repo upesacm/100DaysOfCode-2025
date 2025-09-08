@@ -1,0 +1,14 @@
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def rangeSumBST(root: TreeNode, L: int, R: int) -> int:
+    if not root:
+        return 0
+    if root.val < L:   
+        return rangeSumBST(root.right, L, R)
+    if root.val > R:  
+        return rangeSumBST(root.left, L, R)
+    return root.val + rangeSumBST(root.left, L, R) + rangeSumBST(root.right, L, R)
