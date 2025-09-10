@@ -1,140 +1,124 @@
-<h2 align="center">Day 87 (10/09/2025)</h2>
+<h2 align="center">Day 88 (11/09/2025)</h2>
 
-## 1. Shortest Path in Unweighted Graph
-A problem that demonstrates BFS-based distance calculation and teaches level-wise shortest path algorithms using queue-based exploration for efficient unweighted graph distance computation and optimal path finding operations.
+## 1. Flood Fill (Graph BFS/DFS on Grid)
+A problem that demonstrates grid-based graph traversal and teaches pixel replacement algorithms using connected component exploration for efficient image processing and region filling operations.
 
-Given an **unweighted graph and source vertex**, find the **shortest distance from source to all nodes** using BFS-based shortest path strategy. This operation is fundamental in **distance analysis** and **path optimization** where you need to **calculate minimum hop distances** in equal-weight networks efficiently. The technique uses **BFS with distance tracking** by exploring nodes level by level, assigning distances based on BFS levels, ensuring optimal paths due to BFS's level-wise nature in unweighted graphs. This concept is essential in **social networks**, **network routing**, and **game pathfinding** where finding shortest paths enables optimal navigation and efficient distance-based analysis in uniform-cost graph structures.
+Given a **2D image grid and starting pixel coordinates**, perform **flood fill operation** to replace connected pixels of same color using traversal-based region detection strategy. This operation is fundamental in **image processing** and **graphics applications** where you need to **fill connected regions with new color** for editing and visual effects efficiently. The technique uses **DFS or BFS traversal** to explore all connected pixels of same color, replacing them with new color while maintaining boundary detection. This concept is essential in **paint bucket tools**, **image segmentation**, and **region analysis** where filling connected areas enables efficient color replacement and optimal region-based processing in grid-based graphics applications.
 
-This demonstrates **BFS pathfinding algorithms** and **distance computation techniques** that are crucial for **shortest path analysis and efficient unweighted graph navigation operations**.
+This demonstrates **grid traversal algorithms** and **connected component techniques** that are crucial for **region filling and efficient pixel-based processing operations**.
 
-**Your task:** Implement BFS-based shortest path calculation using level-wise exploration to compute minimum distances from source to all reachable vertices.
+**Your task:** Implement flood fill using DFS or BFS traversal to replace connected pixels of same color with new color starting from given coordinates.
 
 ### Examples
 
 **Input:**
 ```
-Vertices = 6
-Edges = [[0,1],[0,2],[1,3],[2,4],[4,5]]
-Source = 0
-Graph:
+Image = [[1,1,1],[1,1,0],[1,0,1]]
+Start = (1,1)
+NewColor = 2
+```
+**Output:**
+```
+[[2,2,2],[2,2,0],[2,0,1]]
+```
+
+---
+
+**Input:**
+```
+Image = [[0,0,0],[0,0,0]]
+Start = (0,0)
+NewColor = 1
+```
+**Output:**
+```
+[[1,1,1],[1,1,1]]
+```
+
+---
+
+## 2. Number of Islands
+A problem that introduces connected component counting and teaches grid-based clustering algorithms using DFS exploration for efficient land mass detection and spatial grouping operations.
+
+Given a **2D binary grid representing land and water**, count the **number of distinct islands** using connected component analysis strategy. This operation is fundamental in **geographical analysis** and **clustering problems** where you need to **identify separate connected regions** of land for mapping and spatial analysis efficiently. The technique uses **DFS traversal** to explore each unvisited land cell and mark all connected land cells as visited, counting each complete traversal as one island. This concept is essential in **geographical mapping**, **cluster detection**, and **pattern recognition** where identifying distinct regions enables efficient spatial organization and optimal connected component analysis in grid-based geographical systems.
+
+This introduces **connected component algorithms** and **grid clustering techniques** that are essential for **region counting and efficient spatial grouping operations**.
+
+**Your task:** Implement DFS-based island counting to identify and count all distinct connected land regions in the binary grid.
+
+### Examples
+
+**Input:**
+```
+Grid = [[1,1,0,0],[1,0,0,1],[0,0,1,1]]
+```
+**Output:**
+```
+3
+```
+
+---
+
+**Input:**
+```
+Grid = [[1,1,0],[0,1,0],[0,0,1]]
+```
+**Output:**
+```
+2
+```
+
+---
+
+## 3. Bipartite Graph Check
+A problem that teaches graph coloring concepts and demonstrates two-coloring validation algorithms using BFS/DFS traversal for efficient bipartition detection and graph classification operations.
+
+Given a **graph with vertices and edges**, determine if the graph is **bipartite** (can be colored with two colors) using alternating coloring strategy. This operation is fundamental in **graph theory** and **matching problems** where you need to **verify if vertices can be split into two sets** with no edges within each set efficiently. The technique uses **BFS or DFS with coloring** to assign alternating colors to adjacent vertices, checking for conflicts that would indicate odd cycles. This concept is essential in **matching algorithms**, **scheduling problems**, and **conflict resolution** where bipartite structure enables efficient pairing and optimal resource allocation in graph-based optimization systems.
+
+This teaches **graph coloring algorithms** and **bipartition detection techniques** that are crucial for **two-coloring validation and efficient graph classification operations**.
+
+**Your task:** Implement BFS or DFS-based two-coloring to check if the graph can be properly colored with two colors without adjacent vertices sharing same color.
+
+### Examples
+
+**Input:**
+```
+Graph Structure:
+Vertices = 4
+Edges = [[0,1],[1,2],[2,3],[3,0]]
+
+Visual representation:
+0 --- 1
+|     |
+|     |
+3 --- 2
+
+Bipartite coloring possible:
+Set A: {0, 2} (Color 1)
+Set B: {1, 3} (Color 2)
+```
+**Output:**
+```
+Yes
+```
+
+---
+
+**Input:**
+```
+Graph Structure:
+Vertices = 3
+Edges = [[0,1],[1,2],[2,0]]
+
+Visual representation:
   0
  / \
-1   2
-|   |
-3   4
-    |
-    5
+1---2
+
+Triangle graph - odd cycle detected
+No valid 2-coloring possible
 ```
 **Output:**
 ```
-Distances = [0,1,1,2,2,3]
-```
-
----
-
-**Input:**
-```
-Vertices = 4
-Edges = [[0,1],[1,2],[2,3]]
-Source = 0
-Graph:
-0 - 1 - 2 - 3
-```
-**Output:**
-```
-[0,1,2,3]
-```
-
----
-
-## 2. Dijkstra's Algorithm (Shortest Path in Weighted Graph)
-A problem that introduces weighted graph pathfinding and teaches greedy shortest path algorithms using priority queue optimization for efficient weighted graph distance computation and optimal route discovery operations.
-
-Given a **weighted graph with non-negative weights and source vertex**, find the **shortest distance from source to all vertices** using Dijkstra's greedy shortest path strategy. This operation is fundamental in **weighted pathfinding** and **route optimization** where you need to **minimize total path costs** in weighted networks efficiently. The technique uses **priority queue with greedy selection** by always processing the vertex with minimum known distance, relaxing adjacent edges to find shorter paths, ensuring optimality through greedy choice property. This concept is essential in **GPS navigation**, **network routing protocols**, and **logistics optimization** where finding minimum-cost paths enables efficient routing and optimal cost-based navigation in weighted graph transportation systems.
-
-This introduces **Dijkstra's algorithm** and **greedy pathfinding techniques** that are essential for **weighted graph optimization and efficient minimum-cost path discovery operations**.
-
-**Your task:** Implement Dijkstra's algorithm using priority queue optimization to compute shortest weighted distances from source to all vertices in non-negative weighted graph.
-
-### Examples
-
-**Input:**
-```
-Vertices = 5
-Edges = [[0,1,2],[0,2,4],[1,2,1],[2,3,7],[1,4,3]]
-Source = 0
-Weighted Graph:
-  0 -(2)- 1
-  |(4)   |(1)|(3)
-  2 -(7)- 3   4
-```
-**Output:**
-```
-[0,2,3,10,5]
-```
-
----
-
-**Input:**
-```
-Vertices = 3
-Edges = [[0,1,5],[1,2,2]]
-Source = 0
-Graph:
-0 -(5)- 1 -(2)- 2
-```
-**Output:**
-```
-[0,5,7]
-```
-
----
-
-## 3. Bellman-Ford Algorithm
-A problem that teaches negative weight handling and demonstrates relaxation-based shortest path algorithms using iterative edge processing for efficient weighted graph distance computation with negative cycle detection operations.
-
-Given a **weighted graph with possible negative weights and source vertex**, find the **shortest distance from source to all vertices** using Bellman-Ford relaxation-based strategy. This operation is fundamental in **negative weight pathfinding** and **cycle detection** where you need to **handle negative edge weights** while detecting negative cycles efficiently. The technique uses **iterative edge relaxation** by processing all edges V-1 times to find shortest paths, then checking for negative cycles in the Vth iteration, ensuring correctness even with negative weights. This concept is essential in **financial modeling**, **arbitrage detection**, and **constraint systems** where handling negative weights enables optimal pathfinding and efficient negative cycle identification in signed-weight graph applications.
-
-This teaches **Bellman-Ford algorithm** and **negative weight handling techniques** that are crucial for **signed graph optimization and efficient negative cycle detection operations**.
-
-**Your task:** Implement Bellman-Ford algorithm using iterative edge relaxation to compute shortest distances while detecting negative cycles in weighted graphs.
-
-### Examples
-
-**Input:**
-```
-Vertices = 5
-Edges = [[0,1,-1],[0,2,4],[1,2,3],[1,3,2],[1,4,2],[3,2,5],[3,1,1],[4,3,-3]]
-Source = 0
-Graph with negative weights:
-   0
-  /|\
-(-1) 4
- /   |
-1 -(2)-> 4
-|\      /(-3)
-| (2)  /
-|   \ /
-(3)  3
-|   /|\
-2<-5  1
-```
-**Output:**
-```
-[0,-1,2,-2,1]
-```
-
----
-
-**Input:**
-```
-Vertices = 3
-Edges = [[0,1,5],[1,2,-2]]
-Source = 0
-Graph:
-0 -(5)- 1 -(-2)- 2
-```
-**Output:**
-```
-[0,5,3]
+No
 ```
