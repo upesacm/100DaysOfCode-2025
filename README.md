@@ -1,140 +1,199 @@
-<h2 align="center">Day 87 (10/09/2025)</h2>
+<h2 align="center">Day 89 (12/09/2025)</h2>
 
-## 1. Shortest Path in Unweighted Graph
-A problem that demonstrates BFS-based distance calculation and teaches level-wise shortest path algorithms using queue-based exploration for efficient unweighted graph distance computation and optimal path finding operations.
+## 1. Kruskal's Algorithm (MST)
+A problem that demonstrates edge-based minimum spanning tree construction and teaches union-find optimization algorithms using greedy edge selection for efficient network connectivity and minimal cost tree building operations.
 
-Given an **unweighted graph and source vertex**, find the **shortest distance from source to all nodes** using BFS-based shortest path strategy. This operation is fundamental in **distance analysis** and **path optimization** where you need to **calculate minimum hop distances** in equal-weight networks efficiently. The technique uses **BFS with distance tracking** by exploring nodes level by level, assigning distances based on BFS levels, ensuring optimal paths due to BFS's level-wise nature in unweighted graphs. This concept is essential in **social networks**, **network routing**, and **game pathfinding** where finding shortest paths enables optimal navigation and efficient distance-based analysis in uniform-cost graph structures.
+Given a **weighted undirected graph**, find the **minimum spanning tree cost** using edge-sorting strategy. This operation is fundamental in **network design** and **infrastructure optimization** where you need to **connect all vertices with minimum total weight** for cost-effective connectivity efficiently. The technique uses **greedy algorithm with union-find data structure** to sort edges by weight and select minimum cost edges that don't create cycles, ensuring optimal spanning tree construction. This concept is essential in **network routing**, **circuit design**, and **resource optimization** where minimizing connection costs enables efficient infrastructure planning and optimal cost-based connectivity in weighted graph systems.
 
-This demonstrates **BFS pathfinding algorithms** and **distance computation techniques** that are crucial for **shortest path analysis and efficient unweighted graph navigation operations**.
+This demonstrates **greedy algorithms** and **union-find techniques** that are crucial for **minimum spanning tree construction and efficient cost optimization operations**.
 
-**Your task:** Implement BFS-based shortest path calculation using level-wise exploration to compute minimum distances from source to all reachable vertices.
+**Your task:** Implement Kruskal's algorithm using edge sorting and union-find to construct minimum spanning tree with optimal total weight.
 
 ### Examples
 
 **Input:**
 ```
-Vertices = 6
-Edges = [[0,1],[0,2],[1,3],[2,4],[4,5]]
-Source = 0
-Graph:
-  0
- / \
-1   2
+Graph Structure:
+Vertices = 4
+Edges with weights:
+0---1 (weight: 10)
 |   |
-3   4
-    |
-    5
+|   3 (weight: 15)
+|  /|
+| / |
+2   | (0-2: 6, 0-3: 5, 2-3: 4)
+ \ /
+  3
+
+Visual representation:
+    10
+0 ----- 1
+|\ 6    |
+|  \    | 15
+5|   \2  |
+ |    \ /|
+ 3 ---- 2
+    4
+
+Selected edges in MST:
+2-3 (4) + 0-3 (5) + 0-1 (10) = 19
 ```
 **Output:**
 ```
-Distances = [0,1,1,2,2,3]
+19
 ```
 
 ---
 
 **Input:**
 ```
+Graph Structure:
+Vertices = 3
+Edges with weights:
+0 --- 1 (weight: 1)
+|     |
+|3    |2
+|     |
+2 ----
+
+Visual representation:
+0 --- 1
+|  1  |
+|3    |2
+|     |
+2 ----
+
+Selected edges in MST:
+0-1 (1) + 1-2 (2) = 3
+```
+**Output:**
+```
+3
+```
+
+---
+
+## 2. Prim's Algorithm (MST)
+A problem that introduces vertex-based minimum spanning tree construction and teaches priority queue optimization algorithms using incremental vertex addition for efficient network growth and minimal weight tree expansion operations.
+
+Given a **weighted undirected graph**, find the **MST cost using vertex-growing strategy**. This operation is fundamental in **network expansion** and **incremental connectivity** where you need to **grow spanning tree vertex by vertex** selecting minimum weight edges efficiently. The technique uses **priority queue with visited tracking** to always select the minimum weight edge connecting tree to remaining vertices, ensuring optimal incremental tree construction. This concept is essential in **network protocols**, **cluster analysis**, and **progressive optimization** where vertex-based growth enables efficient incremental connectivity and optimal weight-based expansion in dynamic graph systems.
+
+This introduces **priority queue algorithms** and **incremental construction techniques** that are essential for **vertex-based MST building and efficient progressive optimization operations**.
+
+**Your task:** Implement Prim's algorithm using priority queue and visited tracking to grow minimum spanning tree incrementally from starting vertex.
+
+### Examples
+
+**Input:**
+```
+Graph Structure:
+Vertices = 5
+Edges with weights:
+
+Visual representation:
+    2     3
+0 ---- 1 ---- 2
+|  6  /| 5   /|
+|   /8 |   /7 |
+|  /   |  /   |
+| /    | /    |
+3 ---- 4 ----/
+   9
+
+Adjacency with weights:
+0-1: 2, 0-3: 6
+1-2: 3, 1-3: 8, 1-4: 5  
+2-4: 7
+3-4: 9
+
+Selected edges in MST:
+0-1 (2) + 1-2 (3) + 1-4 (5) + 0-3 (6) = 16
+```
+**Output:**
+```
+16
+```
+
+---
+
+**Input:**
+```
+Graph Structure:
+Vertices = 4
+Edges with weights:
+
+Visual representation:
+0 --- 1
+|  1  |
+|2    |3
+|     |
+2 --- 3
+   4
+
+Selected edges in MST:
+0-1 (1) + 0-2 (2) + 2-3 (4) = 7
+```
+**Output:**
+```
+7
+```
+
+---
+
+## 3. Strongly Connected Components (Kosaraju)
+A problem that teaches directed graph decomposition and demonstrates two-pass DFS algorithms using transpose graph analysis for efficient component identification and connectivity classification operations.
+
+Given a **directed graph**, find the **number of strongly connected components** using dual-traversal strategy. This operation is fundamental in **graph analysis** and **dependency resolution** where you need to **identify mutually reachable vertex groups** for structural understanding efficiently. The technique uses **Kosaraju's two-pass algorithm** with first DFS on original graph for finish time ordering, then DFS on transpose graph in reverse finish order to identify SCCs. This concept is essential in **compiler design**, **web link analysis**, and **social network clustering** where identifying strongly connected regions enables efficient structural analysis and optimal component-based processing in directed graph systems.
+
+This teaches **two-pass algorithms** and **graph decomposition techniques** that are crucial for **strongly connected component detection and efficient connectivity analysis operations**.
+
+**Your task:** Implement Kosaraju's algorithm using two DFS passes on original and transpose graphs to identify all strongly connected components.
+
+### Examples
+
+**Input:**
+```
+Directed Graph Structure:
+Vertices = 5
+Edges = [[1,0],[0,2],[2,1],[0,3],[3,4]]
+
+Visual representation:
+1 ← 0 → 3 → 4
+↓ ↗ ↑
+→ 2
+
+Strongly Connected Components:
+SCC 1: {0, 1, 2} - mutual reachability
+SCC 2: {3} - single vertex  
+SCC 3: {4} - single vertex
+
+Total SCCs: 3
+```
+**Output:**
+```
+3
+```
+
+---
+
+**Input:**
+```
+Directed Graph Structure:
 Vertices = 4
 Edges = [[0,1],[1,2],[2,3]]
-Source = 0
-Graph:
-0 - 1 - 2 - 3
+
+Visual representation:
+0 → 1 → 2 → 3
+
+No cycles - each vertex is its own SCC
+SCC 1: {0}
+SCC 2: {1}  
+SCC 3: {2}
+SCC 4: {3}
+
+Total SCCs: 4
 ```
 **Output:**
 ```
-[0,1,2,3]
-```
-
----
-
-## 2. Dijkstra's Algorithm (Shortest Path in Weighted Graph)
-A problem that introduces weighted graph pathfinding and teaches greedy shortest path algorithms using priority queue optimization for efficient weighted graph distance computation and optimal route discovery operations.
-
-Given a **weighted graph with non-negative weights and source vertex**, find the **shortest distance from source to all vertices** using Dijkstra's greedy shortest path strategy. This operation is fundamental in **weighted pathfinding** and **route optimization** where you need to **minimize total path costs** in weighted networks efficiently. The technique uses **priority queue with greedy selection** by always processing the vertex with minimum known distance, relaxing adjacent edges to find shorter paths, ensuring optimality through greedy choice property. This concept is essential in **GPS navigation**, **network routing protocols**, and **logistics optimization** where finding minimum-cost paths enables efficient routing and optimal cost-based navigation in weighted graph transportation systems.
-
-This introduces **Dijkstra's algorithm** and **greedy pathfinding techniques** that are essential for **weighted graph optimization and efficient minimum-cost path discovery operations**.
-
-**Your task:** Implement Dijkstra's algorithm using priority queue optimization to compute shortest weighted distances from source to all vertices in non-negative weighted graph.
-
-### Examples
-
-**Input:**
-```
-Vertices = 5
-Edges = [[0,1,2],[0,2,4],[1,2,1],[2,3,7],[1,4,3]]
-Source = 0
-Weighted Graph:
-  0 -(2)- 1
-  |(4)   |(1)|(3)
-  2 -(7)- 3   4
-```
-**Output:**
-```
-[0,2,3,10,5]
-```
-
----
-
-**Input:**
-```
-Vertices = 3
-Edges = [[0,1,5],[1,2,2]]
-Source = 0
-Graph:
-0 -(5)- 1 -(2)- 2
-```
-**Output:**
-```
-[0,5,7]
-```
-
----
-
-## 3. Bellman-Ford Algorithm
-A problem that teaches negative weight handling and demonstrates relaxation-based shortest path algorithms using iterative edge processing for efficient weighted graph distance computation with negative cycle detection operations.
-
-Given a **weighted graph with possible negative weights and source vertex**, find the **shortest distance from source to all vertices** using Bellman-Ford relaxation-based strategy. This operation is fundamental in **negative weight pathfinding** and **cycle detection** where you need to **handle negative edge weights** while detecting negative cycles efficiently. The technique uses **iterative edge relaxation** by processing all edges V-1 times to find shortest paths, then checking for negative cycles in the Vth iteration, ensuring correctness even with negative weights. This concept is essential in **financial modeling**, **arbitrage detection**, and **constraint systems** where handling negative weights enables optimal pathfinding and efficient negative cycle identification in signed-weight graph applications.
-
-This teaches **Bellman-Ford algorithm** and **negative weight handling techniques** that are crucial for **signed graph optimization and efficient negative cycle detection operations**.
-
-**Your task:** Implement Bellman-Ford algorithm using iterative edge relaxation to compute shortest distances while detecting negative cycles in weighted graphs.
-
-### Examples
-
-**Input:**
-```
-Vertices = 5
-Edges = [[0,1,-1],[0,2,4],[1,2,3],[1,3,2],[1,4,2],[3,2,5],[3,1,1],[4,3,-3]]
-Source = 0
-Graph with negative weights:
-   0
-  /|\
-(-1) 4
- /   |
-1 -(2)-> 4
-|\      /(-3)
-| (2)  /
-|   \ /
-(3)  3
-|   /|\
-2<-5  1
-```
-**Output:**
-```
-[0,-1,2,-2,1]
-```
-
----
-
-**Input:**
-```
-Vertices = 3
-Edges = [[0,1,5],[1,2,-2]]
-Source = 0
-Graph:
-0 -(5)- 1 -(-2)- 2
-```
-**Output:**
-```
-[0,5,3]
+4
 ```
