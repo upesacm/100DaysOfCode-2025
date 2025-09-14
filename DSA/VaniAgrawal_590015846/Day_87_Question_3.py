@@ -1,32 +1,27 @@
-# Your task: Implement component counting using traversal-based or union-find approach to identify and count all disconnected regions in undirected graph.
-from collections import deque
-
-def count_connected_components():
-    vertices_str = input("Enter the number of vertices: ")
-    num_vertices = int(vertices_str)
-    edges_str = input("Enter the edges as a list of pairs (e.g., [[0,1],[1,2],[3,4]]): ")
-    edges = eval(edges_str)
-
-    adj = [[] for _ in range(num_vertices)]
-    for u, v in edges:
-        adj[u].append(v)
-        adj[v].append(u)
+# Your task: Implement Bellman-Ford algorithm using iterative edge relaxation to compute shortest distances while detecting negative cycles in weighted graphs.
+def bellman_ford_algorithm():
+    num_vertices = int(input("Enter the number of vertices: "))
+    edges = eval(input("Enter the edges as a list of lists, e.g., [[0,1,-1],[0,2,4]]: "))
+    source = int(input("Enter the source vertex: "))
     
-    visited = [False] * num_vertices
-    count = 0
-    
-    for i in range(num_vertices):
-        if not visited[i]:
-            count += 1
-            queue = deque([i])
-            visited[i] = True
-            while queue:
-                node = queue.popleft()
-                for neighbor in adj[node]:
-                    if not visited[neighbor]:
-                        visited[neighbor] = True
-                        queue.append(neighbor)
-    
-    print("Output:", count)
+    distances = [float('inf')] * num_vertices
+    distances[source] = 0
 
-count_connected_components()
+    for _ in range(num_vertices - 1):
+        for u, v, weight in edges:
+            if distances[u] != float('inf') and distances[u] + weight < distances[v]:
+                distances[v] = distances[u] + weight
+
+    # Check for negative cycles
+    has_negative_cycle = False
+    for u, v, weight in edges:
+        if distances[u] != float('inf') and distances[u] + weight < distances[v]:
+            has_negative_cycle = True
+            break
+    
+    if has_negative_cycle:
+        print("Graph contains a negative weight cycle")
+    else:
+        print("Output:", distances)
+
+bellman_ford_algorithm()
