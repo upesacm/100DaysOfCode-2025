@@ -17,6 +17,8 @@ def dijkstra(graph, start):
         current_dist, current_node = heapq.heappop(pq)
         
         # BUG FIX: Skip if we've already processed this node with a shorter distance
+        # This optimization prevents redundant processing of nodes
+        # Without this, the same node can be processed multiple times with different distances
         if current_dist > distances[current_node]:
             continue
             
@@ -41,6 +43,10 @@ result = dijkstra(graph, 0)
 print(f"Shortest distances: {result}")
 # Expected: {0: 0, 1: 3, 2: 1, 3: 4}
 
-#Task1: The missing optimization is the check to skip processing a node if we've already found a shorter path to it. Without this, the same node can be processed multiple times with different distances, leading to inefficiency.
-#Task2: The algorithm still works because it eventually finds the correct shortest paths through the relaxation process (updating distances when a shorter path is found). However, it's inefficient because it processes nodes multiple times unnecessarily, increasing the number of operations.
-#Task3: The algorithm returns the correct shortest distances: {0: 0, 1: 3, 2: 1, 3: 4}. It might be inefficient because without the optimization check, the same node can be pushed into the priority queue multiple times with different distances, leading to redundant processing.
+# TASKS EXPLANATION:
+# 1. The missing optimization is the check to skip processing a node if we've already
+#    found a shorter path to it (current_dist > distances[current_node]).
+# 2. The algorithm still works because it eventually finds the correct shortest paths
+#    through the relaxation process, but it's inefficient due to redundant processing.
+# 3. It returns the correct distances but might be inefficient because the same node
+#    can be pushed into the priority queue multiple times, increasing operations.
