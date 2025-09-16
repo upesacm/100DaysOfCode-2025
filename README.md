@@ -1,35 +1,37 @@
-<h2 align="center">Day 93 (16/09/2025)</h2>
+<h2 align="center">Day 94 (17/09/2025)</h2>
 
-## 1. House Robber
-A problem that demonstrates constraint-based optimization and teaches non-adjacent selection dynamic programming using maximum profit strategy for efficient resource extraction and conflict avoidance operations.
+## 1. Longest Increasing Subsequence (LIS)
+A problem that demonstrates sequence optimization and teaches subsequence analysis dynamic programming using length maximization strategy for efficient pattern detection and optimal ordering identification operations.
 
-Given an **array of house values**, find the **maximum amount you can rob** without robbing **two adjacent houses** using DP strategy. This operation is fundamental in **constrained optimization** and **selection problems** where you need to **maximize profit with adjacency restrictions** for optimal resource allocation efficiently. The technique uses **DP with state tracking** where each position stores maximum loot possible up to that house, considering both rob and skip decisions. This concept is essential in **resource scheduling**, **conflict resolution**, and **optimization with constraints** where adjacency limitations enable efficient profit maximization and optimal selection in restricted choice systems.
+Given an **integer array**, find the **length of longest strictly increasing subsequence** using DP strategy. This operation is fundamental in **sequence analysis** and **pattern recognition** where you need to **identify optimal increasing trends** for data analysis efficiently. The technique uses **DP with binary search optimization** where each position tracks longest increasing subsequence ending at that index, or uses patience sorting approach for O(n log n) complexity. This concept is essential in **stock analysis**, **scheduling optimization**, and **data mining** where finding increasing patterns enables efficient trend identification and optimal sequence-based analysis in ordered data systems.
 
-This demonstrates **constraint-based DP** and **selection optimization techniques** that are crucial for **maximum profit extraction and efficient conflict-free optimization operations**.
+This demonstrates **sequence DP algorithms** and **optimization techniques** that are crucial for **pattern detection and efficient subsequence analysis operations**.
 
-**Your task:** Implement dynamic programming to find maximum robbery amount while avoiding adjacent house selections.
+**Your task:** Implement dynamic programming to find longest increasing subsequence length using either O(n²) or O(n log n) approach.
 
 ### Examples
 
 **Input:**
 ```
-Houses: [1, 2, 3, 1]
+Array: [10, 9, 2, 5, 3, 7, 101, 18]
 
-DP Decision Analysis:
-House 0 (value=1): Rob it → max_loot = 1
-House 1 (value=2): Skip house 0, rob house 1 → max_loot = 2  
-House 2 (value=3): Rob house 0+2 or just house 1?
-         Option 1: house[0] + house[2] = 1 + 3 = 4
-         Option 2: house[1] only = 2
-         Choose max → max_loot = 4
-House 3 (value=1): house[1] + house[3] = 2 + 1 = 3 vs current max 4
-         Keep max_loot = 4
+DP Analysis (O(n²) approach):
+Index 0 (10): LIS length = 1, LIS = [10]
+Index 1 (9):  LIS length = 1, LIS = [9] (9 < 10, can't extend)
+Index 2 (2):  LIS length = 1, LIS = [2] (2 < all previous)
+Index 3 (5):  LIS length = 2, LIS = [2, 5] (extends from index 2)
+Index 4 (3):  LIS length = 2, LIS = [2, 3] (extends from index 2)
+Index 5 (7):  LIS length = 3, LIS = [2, 3, 7] or [2, 5, 7]
+Index 6 (101): LIS length = 4, LIS = [2, 3, 7, 101]
+Index 7 (18):  LIS length = 4, LIS = [2, 3, 7, 18]
 
 Visual representation:
-[1, 2, 3, 1]
- ✓  ✗  ✓  ✗  → Rob houses 0,2 = 1+3 = 4
+[10, 9, 2, 5, 3, 7, 101, 18]
+      ✓  ✓  ✗  ✓   ✓    ✗   → LIS = [2, 3, 7, 101]
+      ✓  ✓     ✓   ✓         → Alternative = [2, 5, 7, 101]
 
-DP Array: [1, 2, 4, 4]
+DP Array: [1, 1, 1, 2, 2, 3, 4, 4]
+Maximum LIS length: 4
 ```
 **Output:**
 ```
@@ -40,115 +42,67 @@ DP Array: [1, 2, 4, 4]
 
 **Input:**
 ```
-Houses: [2, 7, 9, 3, 1]
+Array: [0, 1, 0, 3, 2, 3]
 
-DP Decision Analysis:
-House 0 (value=2): max_loot = 2
-House 1 (value=7): max_loot = max(2, 7) = 7
-House 2 (value=9): max_loot = max(7, 2+9) = 11  
-House 3 (value=3): max_loot = max(11, 7+3) = 11
-House 4 (value=1): max_loot = max(11, 11+1) = 12
+DP Analysis:
+Index 0 (0): LIS length = 1, LIS = [0]
+Index 1 (1): LIS length = 2, LIS = [0, 1]
+Index 2 (0): LIS length = 1, LIS = [0] (can't extend any)
+Index 3 (3): LIS length = 3, LIS = [0, 1, 3]
+Index 4 (2): LIS length = 3, LIS = [0, 1, 2]
+Index 5 (3): LIS length = 4, LIS = [0, 1, 2, 3]
 
 Visual representation:
-[2, 7, 9, 3, 1]
- ✓  ✗  ✓  ✗  ✓  → Rob houses 0,2,4 = 2+9+1 = 12
+[0, 1, 0, 3, 2, 3]
+ ✓  ✓  ✗  ✗  ✓  ✓  → LIS = [0, 1, 2, 3]
 
-DP Array: [2, 7, 11, 11, 12]
+DP Array: [1, 2, 1, 3, 3, 4]
+Maximum LIS length: 4
 ```
 **Output:**
 ```
-12
+4
 ```
 
 ---
 
-## 2. Maximum Subarray Sum (Kadane's Algorithm)
-A problem that introduces sliding window optimization and teaches contiguous sum maximization using greedy dynamic programming for efficient subarray analysis and optimal segment identification operations.
+## 2. Longest Common Subsequence (LCS)
+A problem that introduces string matching optimization and teaches two-sequence dynamic programming using character alignment strategy for efficient similarity detection and optimal common pattern identification operations.
 
-Given an **integer array**, find the **maximum sum of any contiguous subarray** using Kadane's algorithm strategy. This operation is fundamental in **sequence analysis** and **range optimization** where you need to **find optimal contiguous segment** for maximum value extraction efficiently. The technique uses **single-pass DP** that maintains current subarray sum and global maximum, deciding at each position whether to extend current subarray or start fresh. This concept is essential in **financial analysis**, **signal processing**, and **data analytics** where finding peak performance segments enables efficient trend identification and optimal period-based analysis in sequential data systems.
+Given **two strings**, find the **length of longest common subsequence** using 2D DP strategy. This operation is fundamental in **text comparison** and **sequence alignment** where you need to **find maximum matching characters** preserving order efficiently. The technique uses **2D DP table** where dp[i][j] represents LCS length for first i characters of string1 and first j characters of string2. This concept is essential in **DNA sequencing**, **plagiarism detection**, and **version control** where finding common subsequences enables efficient similarity analysis and optimal alignment-based comparison in string processing systems.
 
-This introduces **greedy DP algorithms** and **sliding optimization techniques** that are essential for **contiguous sum maximization and efficient subarray analysis operations**.
+This introduces **2D DP algorithms** and **string matching techniques** that are essential for **sequence alignment and efficient similarity detection operations**.
 
-**Your task:** Implement Kadane's algorithm to find maximum sum contiguous subarray using single-pass dynamic programming approach.
+**Your task:** Implement 2D dynamic programming to find longest common subsequence length between two input strings.
 
 ### Examples
 
 **Input:**
 ```
-Array: [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+String1: "abcde"
+String2: "ace"
 
-Kadane's Algorithm Step-by-step:
-Index 0: current_sum = -2, max_sum = -2
-Index 1: current_sum = max(1, -2+1) = 1, max_sum = 1
-Index 2: current_sum = max(-3, 1-3) = -2, max_sum = 1  
-Index 3: current_sum = max(4, -2+4) = 4, max_sum = 4
-Index 4: current_sum = max(-1, 4-1) = 3, max_sum = 4
-Index 5: current_sum = max(2, 3+2) = 5, max_sum = 5
-Index 6: current_sum = max(1, 5+1) = 6, max_sum = 6
-Index 7: current_sum = max(-5, 6-5) = 1, max_sum = 6
-Index 8: current_sum = max(4, 1+4) = 5, max_sum = 6
+2D DP Table Construction:
+    ""  a  c  e
+""   0  0  0  0
+a    0  1  1  1  (match 'a')
+b    0  1  1  1  (no new matches)
+c    0  1  2  2  (match 'c')
+d    0  1  2  2  (no new matches)
+e    0  1  2  3  (match 'e')
 
-Maximum subarray visualization:
-[-2, 1, -3, [4, -1, 2, 1], -5, 4]
-              ↑____________↑
-              Maximum sum = 6
+LCS Reconstruction:
+Step back through table:
+- dp[5][3] = 3, came from dp[4][2] (matched 'e')
+- dp[4][2] = 2, came from dp[2][1] (matched 'c')  
+- dp[2][1] = 1, came from dp[0][0] (matched 'a')
 
-Subarray: [4, -1, 2, 1] = 4-1+2+1 = 6
-```
-**Output:**
-```
-6
-```
+Visual alignment:
+String1: a b c d e
+String2: a   c   e
+LCS:     a   c   e
 
----
-
-**Input:**
-```
-Array: [1]
-
-Single element analysis:
-Index 0: current_sum = 1, max_sum = 1
-
-Maximum subarray: [1]
-Sum = 1
-```
-**Output:**
-```
-1
-```
-
----
-
-## 3. Coin Change (Min Coins)
-A problem that teaches unbounded knapsack optimization and demonstrates minimum count dynamic programming using greedy selection strategy for efficient denomination combination and optimal change-making operations.
-
-Given **coin denominations and target amount**, find the **minimum number of coins** needed to make the amount using DP strategy. This operation is fundamental in **combinatorial optimization** and **change-making problems** where you need to **minimize resource count** for exact value formation efficiently. The technique uses **bottom-up DP** where each amount stores minimum coins needed, considering all denominations and selecting optimal combinations. This concept is essential in **currency systems**, **resource allocation**, and **inventory management** where minimizing unit count enables efficient cost optimization and optimal denomination-based problem solving in monetary exchange systems.
-
-This teaches **unbounded knapsack DP** and **minimum counting techniques** that are crucial for **change optimization and efficient denomination combination operations**.
-
-**Your task:** Implement dynamic programming to find minimum coins needed for target amount using available denominations.
-
-### Examples
-
-**Input:**
-```
-Coins: [1, 2, 5]
-Amount: 11
-
-DP Table Construction:
-Amount 0: 0 coins (base case)
-Amount 1: min(dp[1-1]+1) = dp[0]+1 = 1 → [1]
-Amount 2: min(dp[2-1]+1, dp[2-2]+1) = min(2, 1) = 1 → [2]  
-Amount 3: min(dp[2]+1, dp[1]+1) = min(2, 2) = 2 → [2,1]
-Amount 4: min(dp[3]+1, dp[2]+1) = min(3, 2) = 2 → [2,2]
-Amount 5: min(dp[4]+1, dp[3]+1, dp[0]+1) = min(3, 3, 1) = 1 → [5]
-...
-Amount 11: min(dp[10]+1, dp[9]+1, dp[6]+1) = min(3, 3, 2) = 3
-
-Optimal solution visualization:
-11 = 5 + 5 + 1 (3 coins)
-
-DP Array: [0, 1, 1, 2, 2, 1, 2, 2, 3, 3, 2, 3]
+LCS = "ace", length = 3
 ```
 **Output:**
 ```
@@ -159,21 +113,104 @@ DP Array: [0, 1, 1, 2, 2, 1, 2, 2, 3, 3, 2, 3]
 
 **Input:**
 ```
-Coins: [2]
-Amount: 3
+String1: "abc"
+String2: "abc"
 
-DP Analysis:
-Amount 0: 0 coins
-Amount 1: No way (2 > 1) → impossible
-Amount 2: dp[2-2]+1 = dp[0]+1 = 1 → [2]
-Amount 3: dp[3-2]+1 = dp[1]+1 → impossible (dp[1] = ∞)
+2D DP Table Construction:
+    ""  a  b  c
+""   0  0  0  0
+a    0  1  1  1
+b    0  1  2  2
+c    0  1  2  3
 
-No valid combination:
-Amount 3 cannot be formed using only coins of value 2
+Perfect match case:
+All characters align perfectly
+LCS = "abc", length = 3
 
-Result: No solution possible
+Visual alignment:
+String1: a b c
+String2: a b c
+LCS:     a b c
 ```
 **Output:**
 ```
--1
+3
+```
+
+---
+
+## 3. Edit Distance (Levenshtein)
+A problem that teaches string transformation optimization and demonstrates multi-operation dynamic programming using minimum cost strategy for efficient text editing and optimal sequence conversion operations.
+
+Given **two strings**, find the **minimum edit operations** (insert, delete, replace) to transform word1 into word2 using DP strategy. This operation is fundamental in **text processing** and **spell checking** where you need to **find minimum changes** for string transformation efficiently. The technique uses **2D DP** where each cell represents minimum operations to transform substring prefixes, considering three possible operations at each step. This concept is essential in **spell checkers**, **DNA analysis**, and **natural language processing** where measuring string similarity enables efficient correction systems and optimal transformation-based text analysis in editing applications.
+
+This teaches **transformation DP** and **multi-operation optimization techniques** that are crucial for **string editing and efficient transformation cost minimization operations**.
+
+**Your task:** Implement 2D dynamic programming to find minimum edit distance using insert, delete, and replace operations.
+
+### Examples
+
+**Input:**
+```
+Word1: "horse"
+Word2: "ros"
+
+2D DP Table Construction:
+     ""  r  o  s
+""    0  1  2  3  (insert r,o,s)
+h     1  1  2  3  (replace h→r, then insert o,s)
+o     2  2  1  2  (delete h, match o, insert s)
+r     3  2  2  2  (delete h,o, match r, insert s)
+s     4  3  3  2  (delete h,o, match r, match s)
+e     5  4  4  3  (delete h,o,e, match r,s, insert s)
+
+Operation trace back:
+horse → rorse (replace h→r)
+rorse → rose  (delete r)  
+rose  → ros   (delete e)
+
+Visual transformation:
+horse
+↓ replace h→r
+rorse  
+↓ delete o
+rrose
+↓ delete r  
+rose
+↓ delete e
+ros
+
+Total operations: 3
+```
+**Output:**
+```
+3
+```
+
+---
+
+**Input:**
+```
+Word1: "intention"
+Word2: "execution"
+
+2D DP Table Construction:
+         ""  e  x  e  c  u  t  i  o  n
+    ""    0  1  2  3  4  5  6  7  8  9
+    i     1  1  2  3  4  5  6  6  7  8
+    n     2  2  2  3  4  5  6  7  7  7
+    t     3  3  3  3  4  5  5  6  7  8
+    e     4  3  4  3  4  5  6  6  7  8
+    n     5  4  4  4  4  5  6  7  7  7
+    t     6  5  5  5  5  5  5  6  7  8
+    i     7  6  6  6  6  6  6  5  6  7
+    o     8  7  7  7  7  7  7  6  5  6
+    n     9  8  8  8  8  8  8  7  6  5
+
+Minimum operations needed: 5
+Transformation sequence involves multiple insert/delete/replace operations
+```
+**Output:**
+```
+5
 ```
