@@ -1,182 +1,207 @@
-<h2 align="center">Day 90 (13/09/2025)</h2>
+<h2 align="center">Day 95 (18/09/2025)</h2>
 
-## 1. Hamiltonian Path in Graph
-A problem that demonstrates complete path traversal and teaches backtracking exploration algorithms using vertex visitation tracking for efficient all-vertex path detection and exhaustive search operations.
+## 1. Unique Paths in Grid
+A problem that demonstrates combinatorial path counting and teaches grid traversal dynamic programming using directional constraints for efficient route enumeration and optimal navigation analysis operations.
 
-Given an **undirected graph**, determine if there exists a **Hamiltonian path** (visits each vertex exactly once) using backtracking strategy. This operation is fundamental in **route planning** and **scheduling problems** where you need to **visit all locations exactly once** for optimal coverage efficiently. The technique uses **recursive backtracking with visited tracking** to explore all possible paths, checking if any path visits every vertex exactly once without repetition. This concept is essential in **traveling salesman problems**, **circuit design**, and **task scheduling** where complete vertex coverage enables efficient route optimization and optimal sequential processing in graph-based navigation systems.
+Given **grid dimensions m×n**, find the **number of unique paths** from top-left to bottom-right when you can only move **right or down** using DP strategy. This operation is fundamental in **combinatorial counting** and **path analysis** where you need to **enumerate all possible routes** with movement restrictions efficiently. The technique uses **2D DP** where each cell represents number of ways to reach that position, with recurrence dp[i][j] = dp[i-1][j] + dp[i][j-1]. This concept is essential in **robotics navigation**, **game pathfinding**, and **probability analysis** where counting valid paths enables efficient route planning and optimal movement-based decision making in grid-based systems.
 
-This demonstrates **backtracking algorithms** and **exhaustive search techniques** that are crucial for **complete path detection and efficient vertex traversal operations**.
+This demonstrates **combinatorial DP** and **grid traversal techniques** that are crucial for **path enumeration and efficient route counting operations**.
 
-**Your task:** Implement backtracking-based Hamiltonian path detection to check if graph contains a path visiting all vertices exactly once.
+**Your task:** Implement dynamic programming to count all unique paths in grid with right-down movement constraints.
 
 ### Examples
 
 **Input:**
 ```
-Graph Structure:
-Vertices = 4
-Edges = [[0,1],[1,2],[2,3],[3,0]]
+Grid dimensions: m=3, n=7 (3 rows, 7 columns)
 
-Visual representation:
-0 --- 1
-|     |
-|     |
-3 --- 2
+DP Grid Visualization:
+     0  1  2  3  4  5  6
+  0  1  1  1  1  1  1  1  (only one way to reach top row)
+  1  1  2  3  4  5  6  7  (ways = left + up)
+  2  1  3  6 10 15 21 28  (ways = left + up)
 
-Possible Hamiltonian paths:
-0 → 1 → 2 → 3 (visits all vertices once)
-0 → 3 → 2 → 1 (visits all vertices once)
-1 → 0 → 3 → 2 (visits all vertices once)
-And other valid permutations...
+Step-by-step calculation:
+Row 0: All positions = 1 (only right moves)
+Col 0: All positions = 1 (only down moves)
+
+For position (1,1): dp[1][1] = dp[0][1] + dp[1][0] = 1 + 1 = 2
+For position (1,2): dp[1][2] = dp[0][2] + dp[1][1] = 1 + 2 = 3
+...
+For position (2,6): dp[2][6] = dp[1][6] + dp[2][5] = 7 + 21 = 28
+
+Total unique paths from (0,0) to (2,6): 28
 ```
 **Output:**
 ```
-Yes
+28
 ```
 
 ---
 
 **Input:**
 ```
-Graph Structure:
-Vertices = 3
-Edges = [[0,1],[1,2]]
+Grid dimensions: m=3, n=2 (3 rows, 2 columns)
 
-Visual representation:
-0 --- 1 --- 2
+DP Grid Visualization:
+     0  1
+  0  1  1  (top row: only right moves)
+  1  1  2  (ways = 1 + 1 = 2)
+  2  1  3  (ways = 1 + 2 = 3)
 
-Hamiltonian path exists:
-0 → 1 → 2 (visits all vertices exactly once)
-Path length = 3 vertices
+All possible paths visualization:
+Path 1: (0,0) → (0,1) → (1,1) → (2,1)  [Right, Down, Down]
+Path 2: (0,0) → (1,0) → (1,1) → (2,1)  [Down, Right, Down]  
+Path 3: (0,0) → (1,0) → (2,0) → (2,1)  [Down, Down, Right]
+
+Total unique paths: 3
 ```
 **Output:**
 ```
-Yes
-```
-
----
-
-## 2. Eulerian Path/Circuit
-A problem that introduces edge traversal analysis and teaches degree-based classification algorithms using mathematical conditions for efficient complete edge coverage and path existence determination operations.
-
-Given an **undirected graph**, determine if **Eulerian Path or Circuit exists** using degree analysis strategy. This operation is fundamental in **network traversal** and **routing optimization** where you need to **traverse all edges exactly once** for complete coverage efficiently. The technique uses **vertex degree analysis** where Eulerian Circuit exists if all vertices have even degree, and Eulerian Path exists if exactly two vertices have odd degree. This concept is essential in **mail delivery**, **street cleaning**, and **network inspection** where complete edge traversal enables efficient route planning and optimal coverage-based navigation in graph connectivity systems.
-
-This introduces **degree analysis algorithms** and **mathematical graph theory** that are essential for **edge traversal classification and efficient path existence determination operations**.
-
-**Your task:** Implement degree-based analysis to determine existence of Eulerian Path or Circuit using vertex degree counting and mathematical conditions.
-
-### Examples
-
-**Input:**
-```
-Graph Structure:
-Vertices = 4
-Edges = [[0,1],[1,2],[2,0],[0,3]]
-
-Visual representation:
-  1
- /|\
-0---2
-|
 3
-
-Degree analysis:
-Vertex 0: degree 3 (connected to 1,2,3) - ODD
-Vertex 1: degree 2 (connected to 0,2) - EVEN  
-Vertex 2: degree 2 (connected to 0,1) - EVEN
-Vertex 3: degree 1 (connected to 0) - ODD
-
-Exactly 2 odd-degree vertices → Eulerian Path exists
-Path: 3 → 0 → 1 → 2 → 0
-```
-**Output:**
-```
-Eulerian Path Exists
 ```
 
 ---
 
-**Input:**
-```
-Graph Structure:
-Vertices = 3
-Edges = [[0,1],[1,2],[2,0]]
+## 2. Unique Paths with Obstacles
+A problem that introduces constraint-based path counting and teaches obstacle-aware dynamic programming using blocked cell handling for efficient navigation planning and restricted route analysis operations.
 
-Visual representation:
-0 --- 1
- \   /
-  \ /
-   2
+Given a **grid with obstacles (1=blocked, 0=free)**, find the **number of unique paths** from top-left to bottom-right using obstacle-avoiding DP strategy. This operation is fundamental in **constrained navigation** and **blocked path analysis** where you need to **count valid routes avoiding obstacles** for realistic pathfinding efficiently. The technique uses **modified 2D DP** where blocked cells have 0 paths and free cells accumulate paths from accessible neighbors. This concept is essential in **robot navigation**, **maze solving**, and **route optimization** where obstacle avoidance enables efficient path planning and optimal navigation in restricted grid environments.
 
-Degree analysis:
-Vertex 0: degree 2 (connected to 1,2) - EVEN
-Vertex 1: degree 2 (connected to 0,2) - EVEN
-Vertex 2: degree 2 (connected to 0,1) - EVEN
+This introduces **constraint-aware DP** and **obstacle handling techniques** that are essential for **restricted path counting and efficient obstacle-aware navigation operations**.
 
-All vertices have even degree → Eulerian Circuit exists
-Circuit: 0 → 1 → 2 → 0
-```
-**Output:**
-```
-Eulerian Circuit Exists
-```
-
----
-
-## 3. Word Ladder (Shortest Transformation Sequence)
-A problem that teaches string transformation optimization and demonstrates BFS shortest path algorithms using character-level graph construction for efficient word sequence finding and lexical distance operations.
-
-Given **begin word, end word, and dictionary**, find the **shortest transformation sequence length** using BFS strategy on word graph. This operation is fundamental in **natural language processing** and **sequence optimization** where you need to **find minimal steps between word states** for efficient transformation efficiently. The technique uses **BFS on implicit word graph** where each word is a vertex and edges exist between words differing by one character, ensuring shortest path discovery. This concept is essential in **spell checkers**, **language games**, and **text processing** where finding optimal transformation sequences enables efficient word manipulation and optimal lexical navigation in string-based search systems.
-
-This teaches **BFS optimization algorithms** and **implicit graph construction techniques** that are crucial for **shortest sequence finding and efficient string transformation operations**.
-
-**Your task:** Implement BFS-based word ladder to find shortest transformation sequence from begin word to end word using single-character changes.
+**Your task:** Implement obstacle-aware dynamic programming to count paths while avoiding blocked cells in the grid.
 
 ### Examples
 
 **Input:**
 ```
-Transformation Problem:
-Begin = "hit"
-End = "cog"  
-WordList = ["hot","dot","dog","lot","log","cog"]
+Grid with obstacles:
+[[0,0,0],
+ [0,1,0],
+ [0,0,0]]
 
-BFS Transformation Graph:
-Level 1: "hit" → "hot" (change i→o)
-Level 2: "hot" → "dot", "hot" → "lot" (change h→d, h→l)  
-Level 3: "dot" → "dog", "lot" → "log" (change t→g)
-Level 4: "dog" → "cog", "log" → "cog" (change d→c, l→c)
+DP Grid Analysis:
+     0  1  2
+  0  1  1  1  (top row: no obstacles)
+  1  1  0  1  (middle: obstacle blocks dp[1][1] = 0)
+  2  1  1  2  (bottom: dp[2][2] = dp[1][2] + dp[2][1] = 1 + 1 = 2)
 
-Shortest paths:
-hit → hot → dot → dog → cog (5 words)
-hit → hot → lot → log → cog (5 words)
+Visual path representation:
+Grid:    Paths:
+0 0 0    1 1 1
+0 X 0 →  1 0 1  (X = obstacle, blocks all paths through it)
+0 0 0    1 1 2
 
-Transformation sequence length: 5
+Valid paths:
+Path 1: (0,0) → (0,1) → (0,2) → (1,2) → (2,2)  [R,R,D,D]
+Path 2: (0,0) → (1,0) → (2,0) → (2,1) → (2,2)  [D,D,R,R]
+
+Total unique paths: 2
 ```
 **Output:**
 ```
-5
+2
 ```
 
 ---
 
 **Input:**
 ```
-Transformation Problem:
-Begin = "hit"
-End = "cog"
-WordList = ["hot","dot","dog","lot","log"]
+Grid with obstacles:
+[[0,1],
+ [0,0]]
 
-BFS Analysis:
-Level 1: "hit" → "hot"
-Level 2: "hot" → "dot", "hot" → "lot"
-Level 3: "dot" → "dog", "lot" → "log" 
-Level 4: No valid transformation to "cog"
+DP Grid Analysis:
+     0  1
+  0  1  0  (obstacle at (0,1) blocks path)
+  1  1  1  (dp[1][1] = dp[0][1] + dp[1][0] = 0 + 1 = 1)
 
-Target "cog" not in wordList
-No transformation sequence possible
+Visual representation:
+Grid:    Paths:
+0 X      1 0   (X = obstacle at (0,1))
+0 0  →   1 1
+
+Only one valid path:
+Path: (0,0) → (1,0) → (1,1)  [Down, Right]
+
+Total unique paths: 1
 ```
 **Output:**
 ```
-0
+1
+```
+
+---
+
+## 3. Minimum Path Sum
+A problem that teaches cost optimization and demonstrates weighted grid dynamic programming using minimum selection strategy for efficient route cost minimization and optimal path value operations.
+
+Given a **grid with positive integers**, find the **minimum sum path** from top-left to bottom-right using cost-minimizing DP strategy. This operation is fundamental in **cost optimization** and **weighted pathfinding** where you need to **minimize total path cost** for resource-efficient navigation. The technique uses **2D DP** where each cell stores minimum sum to reach that position, with recurrence dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1]). This concept is essential in **logistics optimization**, **resource allocation**, and **travel planning** where minimizing path costs enables efficient route selection and optimal cost-based navigation in weighted grid systems.
+
+This teaches **cost optimization DP** and **minimum path techniques** that are crucial for **weighted pathfinding and efficient cost minimization operations**.
+
+**Your task:** Implement cost-minimizing dynamic programming to find minimum sum path through weighted grid.
+
+### Examples
+
+**Input:**
+```
+Grid with costs:
+[[1,3,1],
+ [1,5,1],
+ [4,2,1]]
+
+DP Cost Analysis:
+Step-by-step minimum cost calculation:
+     0  1  2
+  0  1  4  5  (cumulative: 1, 1+3=4, 4+1=5)
+  1  2  7  6  (min: 1+1=2, min(4,2)+5=7, min(5,7)+1=6)
+  2  6  8  7  (min: 2+4=6, min(7,6)+2=8, min(6,8)+1=7)
+
+Path reconstruction:
+Minimum path: (0,0)→(0,1)→(0,2)→(1,2)→(2,2)
+Cost breakdown: 1 → 3 → 1 → 1 → 1 = 7
+
+Visual path representation:
+Grid:       DP Costs:    Optimal Path:
+1 3 1       1 4 5        ✓ ✓ ✓
+1 5 1   →   2 7 6    →   ✗ ✗ ✓
+4 2 1       6 8 7        ✗ ✗ ✓
+
+Total minimum cost: 7
+```
+**Output:**
+```
+7
+```
+
+---
+
+**Input:**
+```
+Grid with costs:
+[[1,2,3],
+ [4,5,6]]
+
+DP Cost Analysis:
+     0  1  2
+  0  1  3  6  (cumulative: 1, 1+2=3, 3+3=6)
+  1  5  8 12  (min: 1+4=5, min(3,5)+5=8, min(6,8)+6=12)
+
+Path reconstruction:
+Only one possible minimum path due to grid shape:
+Path: (0,0)→(0,1)→(0,2)→(1,2)
+Cost: 1 → 2 → 3 → 6 = 12
+
+Visual representation:
+Grid:       DP Costs:    Optimal Path:
+1 2 3       1 3 6        ✓ ✓ ✓
+4 5 6   →   5 8 12   →   ✗ ✗ ✓
+
+Total minimum cost: 12
+```
+**Output:**
+```
+12
 ```
