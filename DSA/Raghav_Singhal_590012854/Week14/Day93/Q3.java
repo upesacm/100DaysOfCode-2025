@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class CoinChange {
+public class Q3 {
     public static int coinChange(int[] coins, int amount) {
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, amount + 1);
