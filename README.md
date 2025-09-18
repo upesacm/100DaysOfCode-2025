@@ -1,216 +1,207 @@
-<h2 align="center">Day 94 (17/09/2025)</h2>
+<h2 align="center">Day 95 (18/09/2025)</h2>
 
-## 1. Longest Increasing Subsequence (LIS)
-A problem that demonstrates sequence optimization and teaches subsequence analysis dynamic programming using length maximization strategy for efficient pattern detection and optimal ordering identification operations.
+## 1. Unique Paths in Grid
+A problem that demonstrates combinatorial path counting and teaches grid traversal dynamic programming using directional constraints for efficient route enumeration and optimal navigation analysis operations.
 
-Given an **integer array**, find the **length of longest strictly increasing subsequence** using DP strategy. This operation is fundamental in **sequence analysis** and **pattern recognition** where you need to **identify optimal increasing trends** for data analysis efficiently. The technique uses **DP with binary search optimization** where each position tracks longest increasing subsequence ending at that index, or uses patience sorting approach for O(n log n) complexity. This concept is essential in **stock analysis**, **scheduling optimization**, and **data mining** where finding increasing patterns enables efficient trend identification and optimal sequence-based analysis in ordered data systems.
+Given **grid dimensions m×n**, find the **number of unique paths** from top-left to bottom-right when you can only move **right or down** using DP strategy. This operation is fundamental in **combinatorial counting** and **path analysis** where you need to **enumerate all possible routes** with movement restrictions efficiently. The technique uses **2D DP** where each cell represents number of ways to reach that position, with recurrence dp[i][j] = dp[i-1][j] + dp[i][j-1]. This concept is essential in **robotics navigation**, **game pathfinding**, and **probability analysis** where counting valid paths enables efficient route planning and optimal movement-based decision making in grid-based systems.
 
-This demonstrates **sequence DP algorithms** and **optimization techniques** that are crucial for **pattern detection and efficient subsequence analysis operations**.
+This demonstrates **combinatorial DP** and **grid traversal techniques** that are crucial for **path enumeration and efficient route counting operations**.
 
-**Your task:** Implement dynamic programming to find longest increasing subsequence length using either O(n²) or O(n log n) approach.
+**Your task:** Implement dynamic programming to count all unique paths in grid with right-down movement constraints.
 
 ### Examples
 
 **Input:**
 ```
-Array: [10, 9, 2, 5, 3, 7, 101, 18]
+Grid dimensions: m=3, n=7 (3 rows, 7 columns)
 
-DP Analysis (O(n²) approach):
-Index 0 (10): LIS length = 1, LIS = [10]
-Index 1 (9):  LIS length = 1, LIS = [9] (9 < 10, can't extend)
-Index 2 (2):  LIS length = 1, LIS = [2] (2 < all previous)
-Index 3 (5):  LIS length = 2, LIS = [2, 5] (extends from index 2)
-Index 4 (3):  LIS length = 2, LIS = [2, 3] (extends from index 2)
-Index 5 (7):  LIS length = 3, LIS = [2, 3, 7] or [2, 5, 7]
-Index 6 (101): LIS length = 4, LIS = [2, 3, 7, 101]
-Index 7 (18):  LIS length = 4, LIS = [2, 3, 7, 18]
+DP Grid Visualization:
+     0  1  2  3  4  5  6
+  0  1  1  1  1  1  1  1  (only one way to reach top row)
+  1  1  2  3  4  5  6  7  (ways = left + up)
+  2  1  3  6 10 15 21 28  (ways = left + up)
+
+Step-by-step calculation:
+Row 0: All positions = 1 (only right moves)
+Col 0: All positions = 1 (only down moves)
+
+For position (1,1): dp[1][1] = dp[0][1] + dp[1][0] = 1 + 1 = 2
+For position (1,2): dp[1][2] = dp[0][2] + dp[1][1] = 1 + 2 = 3
+...
+For position (2,6): dp[2][6] = dp[1][6] + dp[2][5] = 7 + 21 = 28
+
+Total unique paths from (0,0) to (2,6): 28
+```
+**Output:**
+```
+28
+```
+
+---
+
+**Input:**
+```
+Grid dimensions: m=3, n=2 (3 rows, 2 columns)
+
+DP Grid Visualization:
+     0  1
+  0  1  1  (top row: only right moves)
+  1  1  2  (ways = 1 + 1 = 2)
+  2  1  3  (ways = 1 + 2 = 3)
+
+All possible paths visualization:
+Path 1: (0,0) → (0,1) → (1,1) → (2,1)  [Right, Down, Down]
+Path 2: (0,0) → (1,0) → (1,1) → (2,1)  [Down, Right, Down]  
+Path 3: (0,0) → (1,0) → (2,0) → (2,1)  [Down, Down, Right]
+
+Total unique paths: 3
+```
+**Output:**
+```
+3
+```
+
+---
+
+## 2. Unique Paths with Obstacles
+A problem that introduces constraint-based path counting and teaches obstacle-aware dynamic programming using blocked cell handling for efficient navigation planning and restricted route analysis operations.
+
+Given a **grid with obstacles (1=blocked, 0=free)**, find the **number of unique paths** from top-left to bottom-right using obstacle-avoiding DP strategy. This operation is fundamental in **constrained navigation** and **blocked path analysis** where you need to **count valid routes avoiding obstacles** for realistic pathfinding efficiently. The technique uses **modified 2D DP** where blocked cells have 0 paths and free cells accumulate paths from accessible neighbors. This concept is essential in **robot navigation**, **maze solving**, and **route optimization** where obstacle avoidance enables efficient path planning and optimal navigation in restricted grid environments.
+
+This introduces **constraint-aware DP** and **obstacle handling techniques** that are essential for **restricted path counting and efficient obstacle-aware navigation operations**.
+
+**Your task:** Implement obstacle-aware dynamic programming to count paths while avoiding blocked cells in the grid.
+
+### Examples
+
+**Input:**
+```
+Grid with obstacles:
+[[0,0,0],
+ [0,1,0],
+ [0,0,0]]
+
+DP Grid Analysis:
+     0  1  2
+  0  1  1  1  (top row: no obstacles)
+  1  1  0  1  (middle: obstacle blocks dp[1][1] = 0)
+  2  1  1  2  (bottom: dp[2][2] = dp[1][2] + dp[2][1] = 1 + 1 = 2)
+
+Visual path representation:
+Grid:    Paths:
+0 0 0    1 1 1
+0 X 0 →  1 0 1  (X = obstacle, blocks all paths through it)
+0 0 0    1 1 2
+
+Valid paths:
+Path 1: (0,0) → (0,1) → (0,2) → (1,2) → (2,2)  [R,R,D,D]
+Path 2: (0,0) → (1,0) → (2,0) → (2,1) → (2,2)  [D,D,R,R]
+
+Total unique paths: 2
+```
+**Output:**
+```
+2
+```
+
+---
+
+**Input:**
+```
+Grid with obstacles:
+[[0,1],
+ [0,0]]
+
+DP Grid Analysis:
+     0  1
+  0  1  0  (obstacle at (0,1) blocks path)
+  1  1  1  (dp[1][1] = dp[0][1] + dp[1][0] = 0 + 1 = 1)
 
 Visual representation:
-[10, 9, 2, 5, 3, 7, 101, 18]
-      ✓  ✓  ✗  ✓   ✓    ✗   → LIS = [2, 3, 7, 101]
-      ✓  ✓     ✓   ✓         → Alternative = [2, 5, 7, 101]
+Grid:    Paths:
+0 X      1 0   (X = obstacle at (0,1))
+0 0  →   1 1
 
-DP Array: [1, 1, 1, 2, 2, 3, 4, 4]
-Maximum LIS length: 4
+Only one valid path:
+Path: (0,0) → (1,0) → (1,1)  [Down, Right]
+
+Total unique paths: 1
 ```
 **Output:**
 ```
-4
+1
+```
+
+---
+
+## 3. Minimum Path Sum
+A problem that teaches cost optimization and demonstrates weighted grid dynamic programming using minimum selection strategy for efficient route cost minimization and optimal path value operations.
+
+Given a **grid with positive integers**, find the **minimum sum path** from top-left to bottom-right using cost-minimizing DP strategy. This operation is fundamental in **cost optimization** and **weighted pathfinding** where you need to **minimize total path cost** for resource-efficient navigation. The technique uses **2D DP** where each cell stores minimum sum to reach that position, with recurrence dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1]). This concept is essential in **logistics optimization**, **resource allocation**, and **travel planning** where minimizing path costs enables efficient route selection and optimal cost-based navigation in weighted grid systems.
+
+This teaches **cost optimization DP** and **minimum path techniques** that are crucial for **weighted pathfinding and efficient cost minimization operations**.
+
+**Your task:** Implement cost-minimizing dynamic programming to find minimum sum path through weighted grid.
+
+### Examples
+
+**Input:**
+```
+Grid with costs:
+[[1,3,1],
+ [1,5,1],
+ [4,2,1]]
+
+DP Cost Analysis:
+Step-by-step minimum cost calculation:
+     0  1  2
+  0  1  4  5  (cumulative: 1, 1+3=4, 4+1=5)
+  1  2  7  6  (min: 1+1=2, min(4,2)+5=7, min(5,7)+1=6)
+  2  6  8  7  (min: 2+4=6, min(7,6)+2=8, min(6,8)+1=7)
+
+Path reconstruction:
+Minimum path: (0,0)→(0,1)→(0,2)→(1,2)→(2,2)
+Cost breakdown: 1 → 3 → 1 → 1 → 1 = 7
+
+Visual path representation:
+Grid:       DP Costs:    Optimal Path:
+1 3 1       1 4 5        ✓ ✓ ✓
+1 5 1   →   2 7 6    →   ✗ ✗ ✓
+4 2 1       6 8 7        ✗ ✗ ✓
+
+Total minimum cost: 7
+```
+**Output:**
+```
+7
 ```
 
 ---
 
 **Input:**
 ```
-Array: [0, 1, 0, 3, 2, 3]
+Grid with costs:
+[[1,2,3],
+ [4,5,6]]
 
-DP Analysis:
-Index 0 (0): LIS length = 1, LIS = [0]
-Index 1 (1): LIS length = 2, LIS = [0, 1]
-Index 2 (0): LIS length = 1, LIS = [0] (can't extend any)
-Index 3 (3): LIS length = 3, LIS = [0, 1, 3]
-Index 4 (2): LIS length = 3, LIS = [0, 1, 2]
-Index 5 (3): LIS length = 4, LIS = [0, 1, 2, 3]
+DP Cost Analysis:
+     0  1  2
+  0  1  3  6  (cumulative: 1, 1+2=3, 3+3=6)
+  1  5  8 12  (min: 1+4=5, min(3,5)+5=8, min(6,8)+6=12)
+
+Path reconstruction:
+Only one possible minimum path due to grid shape:
+Path: (0,0)→(0,1)→(0,2)→(1,2)
+Cost: 1 → 2 → 3 → 6 = 12
 
 Visual representation:
-[0, 1, 0, 3, 2, 3]
- ✓  ✓  ✗  ✗  ✓  ✓  → LIS = [0, 1, 2, 3]
+Grid:       DP Costs:    Optimal Path:
+1 2 3       1 3 6        ✓ ✓ ✓
+4 5 6   →   5 8 12   →   ✗ ✗ ✓
 
-DP Array: [1, 2, 1, 3, 3, 4]
-Maximum LIS length: 4
+Total minimum cost: 12
 ```
 **Output:**
 ```
-4
-```
-
----
-
-## 2. Longest Common Subsequence (LCS)
-A problem that introduces string matching optimization and teaches two-sequence dynamic programming using character alignment strategy for efficient similarity detection and optimal common pattern identification operations.
-
-Given **two strings**, find the **length of longest common subsequence** using 2D DP strategy. This operation is fundamental in **text comparison** and **sequence alignment** where you need to **find maximum matching characters** preserving order efficiently. The technique uses **2D DP table** where dp[i][j] represents LCS length for first i characters of string1 and first j characters of string2. This concept is essential in **DNA sequencing**, **plagiarism detection**, and **version control** where finding common subsequences enables efficient similarity analysis and optimal alignment-based comparison in string processing systems.
-
-This introduces **2D DP algorithms** and **string matching techniques** that are essential for **sequence alignment and efficient similarity detection operations**.
-
-**Your task:** Implement 2D dynamic programming to find longest common subsequence length between two input strings.
-
-### Examples
-
-**Input:**
-```
-String1: "abcde"
-String2: "ace"
-
-2D DP Table Construction:
-    ""  a  c  e
-""   0  0  0  0
-a    0  1  1  1  (match 'a')
-b    0  1  1  1  (no new matches)
-c    0  1  2  2  (match 'c')
-d    0  1  2  2  (no new matches)
-e    0  1  2  3  (match 'e')
-
-LCS Reconstruction:
-Step back through table:
-- dp[5][3] = 3, came from dp[4][2] (matched 'e')
-- dp[4][2] = 2, came from dp[2][1] (matched 'c')  
-- dp[2][1] = 1, came from dp[0][0] (matched 'a')
-
-Visual alignment:
-String1: a b c d e
-String2: a   c   e
-LCS:     a   c   e
-
-LCS = "ace", length = 3
-```
-**Output:**
-```
-3
-```
-
----
-
-**Input:**
-```
-String1: "abc"
-String2: "abc"
-
-2D DP Table Construction:
-    ""  a  b  c
-""   0  0  0  0
-a    0  1  1  1
-b    0  1  2  2
-c    0  1  2  3
-
-Perfect match case:
-All characters align perfectly
-LCS = "abc", length = 3
-
-Visual alignment:
-String1: a b c
-String2: a b c
-LCS:     a b c
-```
-**Output:**
-```
-3
-```
-
----
-
-## 3. Edit Distance (Levenshtein)
-A problem that teaches string transformation optimization and demonstrates multi-operation dynamic programming using minimum cost strategy for efficient text editing and optimal sequence conversion operations.
-
-Given **two strings**, find the **minimum edit operations** (insert, delete, replace) to transform word1 into word2 using DP strategy. This operation is fundamental in **text processing** and **spell checking** where you need to **find minimum changes** for string transformation efficiently. The technique uses **2D DP** where each cell represents minimum operations to transform substring prefixes, considering three possible operations at each step. This concept is essential in **spell checkers**, **DNA analysis**, and **natural language processing** where measuring string similarity enables efficient correction systems and optimal transformation-based text analysis in editing applications.
-
-This teaches **transformation DP** and **multi-operation optimization techniques** that are crucial for **string editing and efficient transformation cost minimization operations**.
-
-**Your task:** Implement 2D dynamic programming to find minimum edit distance using insert, delete, and replace operations.
-
-### Examples
-
-**Input:**
-```
-Word1: "horse"
-Word2: "ros"
-
-2D DP Table Construction:
-     ""  r  o  s
-""    0  1  2  3  (insert r,o,s)
-h     1  1  2  3  (replace h→r, then insert o,s)
-o     2  2  1  2  (delete h, match o, insert s)
-r     3  2  2  2  (delete h,o, match r, insert s)
-s     4  3  3  2  (delete h,o, match r, match s)
-e     5  4  4  3  (delete h,o,e, match r,s, insert s)
-
-Operation trace back:
-horse → rorse (replace h→r)
-rorse → rose  (delete r)  
-rose  → ros   (delete e)
-
-Visual transformation:
-horse
-↓ replace h→r
-rorse  
-↓ delete o
-rrose
-↓ delete r  
-rose
-↓ delete e
-ros
-
-Total operations: 3
-```
-**Output:**
-```
-3
-```
-
----
-
-**Input:**
-```
-Word1: "intention"
-Word2: "execution"
-
-2D DP Table Construction:
-         ""  e  x  e  c  u  t  i  o  n
-    ""    0  1  2  3  4  5  6  7  8  9
-    i     1  1  2  3  4  5  6  6  7  8
-    n     2  2  2  3  4  5  6  7  7  7
-    t     3  3  3  3  4  5  5  6  7  8
-    e     4  3  4  3  4  5  6  6  7  8
-    n     5  4  4  4  4  5  6  7  7  7
-    t     6  5  5  5  5  5  5  6  7  8
-    i     7  6  6  6  6  6  6  5  6  7
-    o     8  7  7  7  7  7  7  6  5  6
-    n     9  8  8  8  8  8  8  7  6  5
-
-Minimum operations needed: 5
-Transformation sequence involves multiple insert/delete/replace operations
-```
-**Output:**
-```
-5
+12
 ```
