@@ -1,131 +1,48 @@
-<h2 align="center">Day 95 (18/09/2025)</h2>
+<h2 align="center">Day 97 (20/09/2025)</h2>
 
-## 1. Unique Paths in Grid
-A problem that demonstrates combinatorial path counting and teaches grid traversal dynamic programming using directional constraints for efficient route enumeration and optimal navigation analysis operations.
+## 1. Palindrome Partitioning (Min Cuts)
+A problem that demonstrates string partitioning optimization and teaches interval-based dynamic programming using palindrome verification for efficient substring division and minimal cut operations.
 
-Given **grid dimensions m×n**, find the **number of unique paths** from top-left to bottom-right when you can only move **right or down** using DP strategy. This operation is fundamental in **combinatorial counting** and **path analysis** where you need to **enumerate all possible routes** with movement restrictions efficiently. The technique uses **2D DP** where each cell represents number of ways to reach that position, with recurrence dp[i][j] = dp[i-1][j] + dp[i][j-1]. This concept is essential in **robotics navigation**, **game pathfinding**, and **probability analysis** where counting valid paths enables efficient route planning and optimal movement-based decision making in grid-based systems.
+Given a **string**, find the **minimum number of cuts** needed to partition it into palindromic substrings using DP strategy. This operation is fundamental in **string processing** and **optimization problems** where you need to **minimize partition operations** while satisfying palindrome constraints efficiently. The technique uses **2D DP for palindrome detection** combined with **1D DP for minimum cuts**, where cuts[i] represents minimum cuts needed for substring[0...i]. This concept is essential in **text analysis**, **DNA sequencing**, and **pattern recognition** where palindromic partitioning enables efficient string decomposition and optimal structure-based analysis in sequence processing systems.
 
-This demonstrates **combinatorial DP** and **grid traversal techniques** that are crucial for **path enumeration and efficient route counting operations**.
+This demonstrates **interval DP** and **string optimization techniques** that are crucial for **palindrome partitioning and efficient substring division operations**.
 
-**Your task:** Implement dynamic programming to count all unique paths in grid with right-down movement constraints.
-
-### Examples
-
-**Input:**
-```
-Grid dimensions: m=3, n=7 (3 rows, 7 columns)
-
-DP Grid Visualization:
-     0  1  2  3  4  5  6
-  0  1  1  1  1  1  1  1  (only one way to reach top row)
-  1  1  2  3  4  5  6  7  (ways = left + up)
-  2  1  3  6 10 15 21 28  (ways = left + up)
-
-Step-by-step calculation:
-Row 0: All positions = 1 (only right moves)
-Col 0: All positions = 1 (only down moves)
-
-For position (1,1): dp[1][1] = dp[0][1] + dp[1][0] = 1 + 1 = 2
-For position (1,2): dp[1][2] = dp[0][2] + dp[1][1] = 1 + 2 = 3
-...
-For position (2,6): dp[2][6] = dp[1][6] + dp[2][5] = 7 + 21 = 28
-
-Total unique paths from (0,0) to (2,6): 28
-```
-**Output:**
-```
-28
-```
-
----
-
-**Input:**
-```
-Grid dimensions: m=3, n=2 (3 rows, 2 columns)
-
-DP Grid Visualization:
-     0  1
-  0  1  1  (top row: only right moves)
-  1  1  2  (ways = 1 + 1 = 2)
-  2  1  3  (ways = 1 + 2 = 3)
-
-All possible paths visualization:
-Path 1: (0,0) → (0,1) → (1,1) → (2,1)  [Right, Down, Down]
-Path 2: (0,0) → (1,0) → (1,1) → (2,1)  [Down, Right, Down]  
-Path 3: (0,0) → (1,0) → (2,0) → (2,1)  [Down, Down, Right]
-
-Total unique paths: 3
-```
-**Output:**
-```
-3
-```
-
----
-
-## 2. Unique Paths with Obstacles
-A problem that introduces constraint-based path counting and teaches obstacle-aware dynamic programming using blocked cell handling for efficient navigation planning and restricted route analysis operations.
-
-Given a **grid with obstacles (1=blocked, 0=free)**, find the **number of unique paths** from top-left to bottom-right using obstacle-avoiding DP strategy. This operation is fundamental in **constrained navigation** and **blocked path analysis** where you need to **count valid routes avoiding obstacles** for realistic pathfinding efficiently. The technique uses **modified 2D DP** where blocked cells have 0 paths and free cells accumulate paths from accessible neighbors. This concept is essential in **robot navigation**, **maze solving**, and **route optimization** where obstacle avoidance enables efficient path planning and optimal navigation in restricted grid environments.
-
-This introduces **constraint-aware DP** and **obstacle handling techniques** that are essential for **restricted path counting and efficient obstacle-aware navigation operations**.
-
-**Your task:** Implement obstacle-aware dynamic programming to count paths while avoiding blocked cells in the grid.
+**Your task:** Implement dynamic programming to find minimum cuts for palindromic partitioning using palindrome precomputation and cut optimization.
 
 ### Examples
 
 **Input:**
 ```
-Grid with obstacles:
-[[0,0,0],
- [0,1,0],
- [0,0,0]]
+String: "aab"
 
-DP Grid Analysis:
-     0  1  2
-  0  1  1  1  (top row: no obstacles)
-  1  1  0  1  (middle: obstacle blocks dp[1][1] = 0)
-  2  1  1  2  (bottom: dp[2][2] = dp[1][2] + dp[2][1] = 1 + 1 = 2)
+Step 1: Palindrome Detection Table
+    0  1  2  (indices)
+    a  a  b  (characters)
+0a  T  T  F  
+1a  ·  T  F  
+2b  ·  ·  T  
 
-Visual path representation:
-Grid:    Paths:
-0 0 0    1 1 1
-0 X 0 →  1 0 1  (X = obstacle, blocks all paths through it)
-0 0 0    1 1 2
+Palindrome analysis:
+- "a" at [0,0]: True (single char)
+- "a" at [1,1]: True (single char)  
+- "b" at [2,2]: True (single char)
+- "aa" at [0,1]: True (s[0]==s[1])
+- "ab" at [1,2]: False (s[1]!=s[2])
+- "aab" at [0,2]: False (s[0]!=s[2])
 
-Valid paths:
-Path 1: (0,0) → (0,1) → (0,2) → (1,2) → (2,2)  [R,R,D,D]
-Path 2: (0,0) → (1,0) → (2,0) → (2,1) → (2,2)  [D,D,R,R]
+Step 2: Minimum Cuts DP
+cuts[0] = 0 (single char "a" - no cuts needed)
+cuts[1] = 0 (substring "aa" is palindrome - no cuts needed)
+cuts[2] = min(cuts[1]+1, cuts[0]+1) where cut creates palindromes
+        = min(0+1, invalid) = 1
 
-Total unique paths: 2
-```
-**Output:**
-```
-2
-```
-
----
-
-**Input:**
-```
-Grid with obstacles:
-[[0,1],
- [0,0]]
-
-DP Grid Analysis:
-     0  1
-  0  1  0  (obstacle at (0,1) blocks path)
-  1  1  1  (dp[1][1] = dp[0][1] + dp[1][0] = 0 + 1 = 1)
+Optimal partitioning:
+"aab" → "aa" | "b" (1 cut)
 
 Visual representation:
-Grid:    Paths:
-0 X      1 0   (X = obstacle at (0,1))
-0 0  →   1 1
-
-Only one valid path:
-Path: (0,0) → (1,0) → (1,1)  [Down, Right]
-
-Total unique paths: 1
+String: a a b
+Parts:  [aa] [b]
+Cuts:   1 cut between "aa" and "b"
 ```
 **Output:**
 ```
@@ -134,74 +51,179 @@ Total unique paths: 1
 
 ---
 
-## 3. Minimum Path Sum
-A problem that teaches cost optimization and demonstrates weighted grid dynamic programming using minimum selection strategy for efficient route cost minimization and optimal path value operations.
+**Input:**
+```
+String: "a"
 
-Given a **grid with positive integers**, find the **minimum sum path** from top-left to bottom-right using cost-minimizing DP strategy. This operation is fundamental in **cost optimization** and **weighted pathfinding** where you need to **minimize total path cost** for resource-efficient navigation. The technique uses **2D DP** where each cell stores minimum sum to reach that position, with recurrence dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1]). This concept is essential in **logistics optimization**, **resource allocation**, and **travel planning** where minimizing path costs enables efficient route selection and optimal cost-based navigation in weighted grid systems.
+Palindrome Detection:
+Single character is always a palindrome.
 
-This teaches **cost optimization DP** and **minimum path techniques** that are crucial for **weighted pathfinding and efficient cost minimization operations**.
+Minimum Cuts Analysis:
+cuts[0] = 0 (no cuts needed for single palindrome)
 
-**Your task:** Implement cost-minimizing dynamic programming to find minimum sum path through weighted grid.
+Optimal partitioning:
+"a" → ["a"] (0 cuts - already palindrome)
+
+Visual representation:
+String: a
+Parts:  [a]  
+Cuts:   0 cuts needed
+```
+**Output:**
+```
+0
+```
+
+---
+
+## 2. Longest Palindromic Subsequence
+A problem that introduces palindrome optimization and teaches subsequence-based dynamic programming using character matching strategy for efficient palindromic pattern detection and maximum length operations.
+
+Given a **string**, find the **length of longest palindromic subsequence** using DP strategy. This operation is fundamental in **sequence analysis** and **pattern matching** where you need to **find maximum palindromic structure** within sequences efficiently. The technique uses **2D DP** where dp[i][j] represents LPS length in substring[i...j], with recurrence based on character matching at endpoints. This concept is essential in **DNA analysis**, **text processing**, and **bioinformatics** where palindromic sequences enable efficient genetic pattern identification and optimal structure-based analysis in biological sequence systems.
+
+This introduces **palindrome DP** and **subsequence optimization techniques** that are essential for **palindromic pattern detection and efficient sequence structure analysis operations**.
+
+**Your task:** Implement 2D dynamic programming to find longest palindromic subsequence using interval-based character matching.
 
 ### Examples
 
 **Input:**
 ```
-Grid with costs:
-[[1,3,1],
- [1,5,1],
- [4,2,1]]
+String: "bbbab"
 
-DP Cost Analysis:
-Step-by-step minimum cost calculation:
-     0  1  2
-  0  1  4  5  (cumulative: 1, 1+3=4, 4+1=5)
-  1  2  7  6  (min: 1+1=2, min(4,2)+5=7, min(5,7)+1=6)
-  2  6  8  7  (min: 2+4=6, min(7,6)+2=8, min(6,8)+1=7)
+2D DP Table Construction:
+Substring intervals (i,j) where i≤j:
+    0  1  2  3  4  (indices)
+    b  b  b  a  b  (characters)
 
-Path reconstruction:
-Minimum path: (0,0)→(0,1)→(0,2)→(1,2)→(2,2)
-Cost breakdown: 1 → 3 → 1 → 1 → 1 = 7
+    0  1  2  3  4
+0b  1  2  3  3  4  
+1b  ·  1  2  2  3
+2b  ·  ·  1  1  3  
+3a  ·  ·  ·  1  1
+4b  ·  ·  ·  ·  1
 
-Visual path representation:
-Grid:       DP Costs:    Optimal Path:
-1 3 1       1 4 5        ✓ ✓ ✓
-1 5 1   →   2 7 6    →   ✗ ✗ ✓
-4 2 1       6 8 7        ✗ ✗ ✓
+Step-by-step calculation:
+- Single chars: dp[i][i] = 1 (diagonal)
+- dp[0][1]: s[0]==s[1] → 1+dp[1][0] = 1+0 = 2 → "bb"
+- dp[0][2]: s[0]==s[2] → 1+dp[1][1] = 1+1 = 2 → "bb" 
+- dp[1][2]: s[1]==s[2] → 1+dp[2][1] = 1+0 = 2 → "bb"
+- dp[0][4]: s[0]==s[4] → 1+dp[1][3] = 1+2 = 4 → "bbbb"
 
-Total minimum cost: 7
+Optimal LPS reconstruction:
+Characters: b b b a b
+Indices:    0 1 2 3 4
+Selected:   ✓ ✓ ✓ ✗ ✓  → "bbbb"
+
+LPS: "bbbb" with length 4
 ```
 **Output:**
 ```
-7
+4
 ```
 
 ---
 
 **Input:**
 ```
-Grid with costs:
-[[1,2,3],
- [4,5,6]]
+String: "cbbd"
 
-DP Cost Analysis:
-     0  1  2
-  0  1  3  6  (cumulative: 1, 1+2=3, 3+3=6)
-  1  5  8 12  (min: 1+4=5, min(3,5)+5=8, min(6,8)+6=12)
+2D DP Table Construction:
+    0  1  2  3  (indices)  
+    c  b  b  d  (characters)
 
-Path reconstruction:
-Only one possible minimum path due to grid shape:
-Path: (0,0)→(0,1)→(0,2)→(1,2)
-Cost: 1 → 2 → 3 → 6 = 12
+    0  1  2  3
+0c  1  1  2  2
+1b  ·  1  2  2  
+2b  ·  ·  1  1
+3d  ·  ·  ·  1
 
-Visual representation:
-Grid:       DP Costs:    Optimal Path:
-1 2 3       1 3 6        ✓ ✓ ✓
-4 5 6   →   5 8 12   →   ✗ ✗ ✓
+Key calculations:
+- dp[1][2]: s[1]==s[2] → 1+dp[2][1] = 1+0 = 2 → "bb"
+- dp[0][2]: s[0]≠s[2] → max(dp[0][1],dp[1][2]) = max(1,2) = 2
+- dp[0][3]: s[0]≠s[3] → max(dp[0][2],dp[1][3]) = max(2,2) = 2
 
-Total minimum cost: 12
+Optimal LPS reconstruction:
+Characters: c b b d
+Indices:    0 1 2 3  
+Selected:   ✗ ✓ ✓ ✗  → "bb"
+
+LPS: "bb" with length 2
 ```
 **Output:**
 ```
-12
+2
+```
+
+---
+
+## 3. Matrix Chain Multiplication
+A problem that teaches optimization ordering and demonstrates interval-based dynamic programming using cost minimization strategy for efficient multiplication sequencing and optimal parenthesization operations.
+
+Given **matrix dimensions array**, find the **minimum scalar multiplications** needed to multiply the matrix chain using optimal parenthesization DP strategy. This operation is fundamental in **computational optimization** and **algorithm efficiency** where you need to **minimize multiplication operations** through optimal grouping efficiently. The technique uses **interval DP** where dp[i][j] represents minimum cost to multiply matrices from i to j, considering all possible split points. This concept is essential in **numerical computing**, **graphics processing**, and **scientific calculations** where operation minimization enables efficient computation and optimal resource utilization in mathematical processing systems.
+
+This teaches **interval optimization DP** and **cost minimization techniques** that are crucial for **operation sequencing and efficient computational optimization operations**.
+
+**Your task:** Implement interval dynamic programming to find optimal matrix multiplication order minimizing scalar operations.
+
+### Examples
+
+**Input:**
+```
+Matrix dimensions: [1,2,3,4]
+Matrices: A₁(1×2), A₂(2×3), A₃(3×4)
+
+3D DP Analysis - Chain length vs Cost:
+Length 1: dp[1][1]=0, dp[2][2]=0, dp[3][3]=0 (single matrices)
+
+Length 2: 
+- dp[1][2]: A₁×A₂ = (1×2×3) = 6 operations
+- dp[2][3]: A₂×A₃ = (2×3×4) = 24 operations
+
+Length 3:
+- dp[1][3]: Split at k=1: dp[1][1] + dp[2][3] + (1×2×4) = 0+24+8 = 32
+           Split at k=2: dp[1][2] + dp[3][3] + (1×3×4) = 6+0+12 = 18
+           Choose minimum: 18
+
+Optimal parenthesization analysis:
+Option 1: (A₁×A₂)×A₃ = 6 + 1×3×4 = 6 + 12 = 18 ✓
+Option 2: A₁×(A₂×A₃) = 24 + 1×2×4 = 24 + 8 = 32
+
+Visual representation:
+Matrices: [1×2] [2×3] [3×4]
+Grouping: ([1×2][2×3]) [3×4]
+Step 1:   A₁×A₂ → [1×3] (cost: 1×2×3 = 6)  
+Step 2:   [1×3]×A₃ → [1×4] (cost: 1×3×4 = 12)
+Total cost: 6 + 12 = 18
+```
+**Output:**
+```
+18
+```
+
+---
+
+**Input:**
+```
+Matrix dimensions: [10,20,30]  
+Matrices: A₁(10×20), A₂(20×30)
+
+Single multiplication case:
+Only one way to multiply: A₁ × A₂
+Cost = 10 × 20 × 30 = 6000 operations
+
+DP Analysis:
+Length 1: dp[1][1] = 0, dp[2][2] = 0
+Length 2: dp[1][2] = 10×20×30 = 6000
+
+No optimization possible with only 2 matrices.
+
+Visual representation:
+Matrices: [10×20] [20×30]
+Operation: A₁ × A₂ = [10×30]
+Cost: 10 × 20 × 30 = 6000 scalar multiplications
+```
+**Output:**
+```
+6000
 ```
