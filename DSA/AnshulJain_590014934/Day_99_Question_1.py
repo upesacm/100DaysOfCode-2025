@@ -1,0 +1,5 @@
+arr = list(map(int, input("Enter array elements separated by space: ").split()))
+s = input("Enter a string: ")
+positive_sum = sum(x for x in arr if x > 0)
+vowel_count = sum(1 for ch in s.lower() if ch in "aeiou")
+print("Sum:", positive_sum, ", Vowels:", vowel_count)
